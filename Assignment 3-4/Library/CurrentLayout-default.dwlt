@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 677, y: 492}
   m_MaxSize: {x: 14001, y: 14042}
   vertical: 0
-  controlID: 28
+  controlID: 134
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -218,7 +218,7 @@ MonoBehaviour:
   m_MinSize: {x: 402, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 29
+  controlID: 69
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -243,7 +243,7 @@ MonoBehaviour:
   m_MinSize: {x: 402, y: 221}
   m_MaxSize: {x: 8002, y: 4021}
   vertical: 0
-  controlID: 30
+  controlID: 70
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -467,20 +467,19 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/pal
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/pal
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\doofe\Documents\Unity Projects\SingletonGUI\Assignment
-    3-4
+  m_LastProjectPath: C:\Users\doofe\Documents\GitHub\CaveHero\Assignment 3-4
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 163a0000
-    m_LastClickedID: 14870
+    m_SelectedIDs: 1e3a0000
+    m_LastClickedID: 14878
     m_ExpandedIDs: 00000000163a000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -602,7 +601,7 @@ MonoBehaviour:
     m_PrefName: Preview_InspectorPreview
   m_PreviewWindow: {fileID: 0}
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 57
+  m_LastVerticalScrollValue: 0
 --- !u!114 &16
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -632,23 +631,23 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 66390000
-      m_LastClickedID: 14694
-      m_ExpandedIDs: 3afbffff
+      m_SelectedIDs: 82390000
+      m_LastClickedID: 14722
+      m_ExpandedIDs: 3afbffff3c390000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: PACPOWERPELLET (3)
+        m_OriginalName: PACPOWERPELLET (3)
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: 14756
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 4}
       m_SearchString: 
@@ -694,9 +693,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: -4.5378146, y: -0.72496456, z: -16.122005}
+    m_Target: {x: -4.748224, y: 0.80188936, z: -24.642363}
     speed: 2
-    m_Value: {x: -4.4934773, y: -0.7376323, z: -16.111689}
+    m_Value: {x: -4.798439, y: 0.6889919, z: -24.620453}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -746,9 +745,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 2.7404056
+    m_Target: 5.08262
     speed: 2
-    m_Value: 2.8695347
+    m_Value: 4.8637514
   m_Ortho:
     m_Target: 1
     speed: 2
