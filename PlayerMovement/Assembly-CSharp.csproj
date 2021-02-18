@@ -60,6 +60,7 @@
     <Compile Include="Assets\EnergyBar.cs" />
     <Compile Include="Assets\CharacterMovement.cs" />
     <Compile Include="Assets\Health.cs" />
+    <Compile Include="Assets\FollowPlayer.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
