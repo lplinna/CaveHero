@@ -61,6 +61,9 @@
     <Compile Include="Assets\EnergyBar.cs" />
     <Compile Include="Assets\CharacterMovement.cs" />
     <Compile Include="Assets\Health.cs" />
+    <Compile Include="Assets\BeetleBehavior.cs" />
+    <Compile Include="Assets\BatBehavior.cs" />
+    <Compile Include="Assets\SpiderBehavior.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
