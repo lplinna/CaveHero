@@ -66,10 +66,18 @@ public class PlayerCharacter : MonoBehaviour
         }
 
         // moves the player
+        var playerway = (pos - transform.position);
+        var hit =Physics2D.Raycast(transform.position,playerway.normalized,playerway.magnitude * 80f);
+
+        if (hit.collider)
+        {
+            pos = transform.position;
+        }
         transform.position = pos;
+        
 
         // prints current energy and speed of player to console
-        Debug.Log(currEnergy + " " + speed);
+        //Debug.Log(currEnergy + " " + speed);
 
         // Checks to see if user is holding a movement key and shift to enact sprinting
         if (Input.GetKey("left shift") && (Input.GetKey("a") || Input.GetKey("d") || Input.GetKey("s") || Input.GetKey("w")))
