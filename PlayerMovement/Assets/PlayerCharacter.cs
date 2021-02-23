@@ -10,12 +10,13 @@ public class PlayerCharacter : MonoBehaviour
     public float currEnergy = 0.0f;
     // max amount of energy
     public float maxEnergy = 100.0f;
+    public Vector3 playerwayP;
     // To create the visual energy bar
     public EnergyBar energyBar;
 
     public SpriteRenderer playerSprite;
     public Sprite upSprite, leftSprite, rightSprite, downSprite;
-
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -67,6 +68,7 @@ public class PlayerCharacter : MonoBehaviour
 
         // moves the player
         var playerway = (pos - transform.position);
+        if(playerway!= Vector3.zero) { playerwayP = playerway; }
         var hit =Physics2D.Raycast(transform.position,playerway.normalized,playerway.magnitude * 80f);
 
         if (hit.collider)
