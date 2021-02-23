@@ -8063,6 +8063,7 @@ GameObject:
   - component: {fileID: 1925083805}
   - component: {fileID: 1925083804}
   - component: {fileID: 1925083807}
+  - component: {fileID: 1925083809}
   m_Layer: 8
   m_Name: Pickaxe
   m_TagString: Enemy
@@ -8155,7 +8156,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1925083803}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.4887, y: -4.6234, z: -0.5691229}
+  m_LocalPosition: {x: 0.76, y: -0.85, z: -0.5691229}
   m_LocalScale: {x: 7.8893185, y: 1.7066573, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -8174,6 +8175,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canHit: 0
+--- !u!114 &1925083809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1925083803}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceac2121fdcdd2746909ca9fdec2c198, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1104956769}
+  offset: {x: 0, y: 0, z: 0}
 --- !u!1 &1939340755
 GameObject:
   m_ObjectHideFlags: 0

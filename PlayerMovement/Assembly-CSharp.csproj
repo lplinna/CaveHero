@@ -67,6 +67,7 @@
     <Compile Include="Assets\CharacterMovement.cs" />
     <Compile Include="Assets\Health.cs" />
     <Compile Include="Assets\BeetleBehavior.cs" />
+    <Compile Include="Assets\Pickaxe.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
