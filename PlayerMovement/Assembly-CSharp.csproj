@@ -55,19 +55,21 @@
     <Analyzer Include="C:\Program Files (x86)\Microsoft Visual Studio Tools for Unity\16.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\HealthBar.cs" />
-    <Compile Include="Assets\FollowPlayer.cs" />
-    <Compile Include="Assets\BatBehavior.cs" />
-    <Compile Include="Assets\PlayerCharacter.cs" />
-    <Compile Include="Assets\EnergyBar.cs" />
-    <Compile Include="Assets\EnemyHealth.cs" />
-    <Compile Include="Assets\SpiderBehavior.cs" />
-    <Compile Include="Assets\PickaxeBehavior.cs" />
-    <Compile Include="Assets\PlayerAttackMining.cs" />
-    <Compile Include="Assets\CharacterMovement.cs" />
-    <Compile Include="Assets\Health.cs" />
-    <Compile Include="Assets\BeetleBehavior.cs" />
-    <Compile Include="Assets\Pickaxe.cs" />
+    <Compile Include="Assets\Player\HealthBar.cs" />
+    <Compile Include="Assets\Player\FollowPlayer.cs" />
+    <Compile Include="Assets\Enemy\BatBehavior.cs" />
+    <Compile Include="Assets\Player\PlayerCharacter.cs" />
+    <Compile Include="Assets\Player\EnergyBar.cs" />
+    <Compile Include="Assets\Enemy\EnemyHealth.cs" />
+    <Compile Include="Assets\Enemy\SpiderBehavior.cs" />
+    <Compile Include="Assets\Pickaxe\PickaxeBehavior.cs" />
+    <Compile Include="Assets\Pickaxe\PlayerAttackMining.cs" />
+    <Compile Include="Assets\Player\CharacterMovement.cs" />
+    <Compile Include="Assets\Player\Health.cs" />
+    <Compile Include="Assets\Pickaxe\Pickaxe.cs" />
+    <Compile Include="Assets\Enemy\BeetleBehavior.cs" />
+    <Compile Include="Assets\Pickaxe\Stone\StoneBreaking.cs" />
+    <Compile Include="Assets\Pickaxe\Stone\StoneHealth.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
