@@ -18,6 +18,8 @@ public class PickaxeBehavior : MonoBehaviour
 
     public void OnCollisionStay2D(Collision2D collision)
     {
+
+        Debug.Log(collision.collider.gameObject.name);
         if (collision.gameObject.CompareTag("Enemy") && canHit)
         {
             Debug.Log("Enemy hit!");

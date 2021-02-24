@@ -31,7 +31,7 @@ public class BatBehavior: MonoBehaviour
 
         if (enemytimer < 20)  //Bat dashes towards player
         {
-            body.velocity = Vector3.Lerp(body.velocity, towards.normalized * 2f, 0.1f);
+            body.velocity = Vector3.Lerp(body.velocity, towards.normalized * 4f, 0.1f);
 
         }
 

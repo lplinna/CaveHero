@@ -18,6 +18,14 @@ public class StoneHealth : MonoBehaviour
     {
         currHealth = 20f;
         stone.sprite = stoneSprite;
+        
+        
+    }
+
+
+    void Perish()
+    {
+        this.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -29,7 +37,7 @@ public class StoneHealth : MonoBehaviour
             if (currHealth <= 0)
             {
                 stone.sprite = brokenSprite;
-                this.gameObject.SetActive(false);
+                Invoke("Perish", 0.2f);
             }
         }
     }
