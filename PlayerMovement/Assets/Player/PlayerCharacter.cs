@@ -90,7 +90,11 @@ public class PlayerCharacter : MonoBehaviour
 
         if (hit.collider)
         {
-            pos = transform.position;
+            bool isEnemy = hit.collider.gameObject.CompareTag("Bat") || hit.collider.gameObject.CompareTag("Beetle") || hit.collider.gameObject.CompareTag("Spider");
+            if (!isEnemy)
+            {
+                pos = transform.position;
+            }
         }
         transform.position = pos;
 

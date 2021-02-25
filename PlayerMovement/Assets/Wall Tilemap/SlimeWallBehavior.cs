@@ -11,8 +11,8 @@ public class SlimeWallBehavior : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D other)
     {
-
-        if (other.gameObject.CompareTag("Enemy") && other.gameObject.name!="BatEnemy")
+        bool isEnemyNotBat = other.gameObject.CompareTag("Spider") || other.gameObject.CompareTag("Beetle");
+        if (isEnemyNotBat)
         {
             var c = GetComponent<Collider2D>();
             var b = c.ClosestPoint(other.transform.position);
@@ -20,6 +20,8 @@ public class SlimeWallBehavior : MonoBehaviour
 
             var f = Vector2.LerpUnclamped(d.normalized, other.attachedRigidbody.velocity.normalized, 2.0f);
             other.attachedRigidbody.velocity = f;
+
+           
 
             Debug.DrawLine(other.transform.position, b, Color.red);
 

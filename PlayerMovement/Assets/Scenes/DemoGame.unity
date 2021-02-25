@@ -7612,7 +7612,7 @@ GameObject:
   - component: {fileID: 686545386}
   m_Layer: 8
   m_Name: SpiderEnemy
-  m_TagString: Enemy
+  m_TagString: Spider
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8067,7 +8067,7 @@ GameObject:
   - component: {fileID: 1045308455}
   m_Layer: 8
   m_Name: BatEnemy (1)
-  m_TagString: Enemy
+  m_TagString: Bat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8127,7 +8127,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 1045308454}
   m_BodyType: 0
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 0.2
   m_LinearDrag: 0
@@ -8915,7 +8915,7 @@ GameObject:
   - component: {fileID: 1363099541}
   m_Layer: 8
   m_Name: BatEnemy
-  m_TagString: Enemy
+  m_TagString: Bat
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -8943,7 +8943,7 @@ Rigidbody2D:
   m_GameObject: {fileID: 1363099534}
   m_BodyType: 0
   m_Simulated: 1
-  m_UseFullKinematicContacts: 0
+  m_UseFullKinematicContacts: 1
   m_UseAutoMass: 0
   m_Mass: 0.2
   m_LinearDrag: 0
@@ -10075,7 +10075,7 @@ GameObject:
   - component: {fileID: 2049910597}
   m_Layer: 8
   m_Name: BeetleEnemy
-  m_TagString: Enemy
+  m_TagString: Beetle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

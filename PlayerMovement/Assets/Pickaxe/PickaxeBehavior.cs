@@ -20,7 +20,8 @@ public class PickaxeBehavior : MonoBehaviour
     {
 
         Debug.Log(collision.collider.gameObject.name);
-        if (collision.gameObject.CompareTag("Enemy") && canHit)
+        bool isEnemy = collision.gameObject.CompareTag("Bat") || collision.gameObject.CompareTag("Beetle") || collision.gameObject.CompareTag("Spider");
+        if (isEnemy && canHit)
         {
             Debug.Log("Enemy hit!");
             var dm = collision.gameObject.GetComponent<EnemyHealth>();

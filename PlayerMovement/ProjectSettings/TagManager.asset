@@ -6,6 +6,9 @@ TagManager:
   tags:
   - Enemy
   - Stone
+  - Bat
+  - Spider
+  - Beetle
   layers:
   - Default
   - TransparentFX
