@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
 public class PlayerCharacter : MonoBehaviour
 {
     // walking speed
@@ -16,7 +17,7 @@ public class PlayerCharacter : MonoBehaviour
 
     public SpriteRenderer playerSprite;
     public Sprite upSprite, sideSprite, downSprite, idleRight;
-    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +30,7 @@ public class PlayerCharacter : MonoBehaviour
     {
         PlayerMovement();
     }
+
     // drains energy
     public void Drain(float drainEnergy)
     {
