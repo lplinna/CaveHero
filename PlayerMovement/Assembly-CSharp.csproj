@@ -56,7 +56,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Player\HealthBar.cs" />
-    <Compile Include="Assets\SlimeWallBehavior.cs" />
+    <Compile Include="Assets\Wall Tilemap\SlimeWallBehavior.cs" />
     <Compile Include="Assets\Player\FollowPlayer.cs" />
     <Compile Include="Assets\Enemy\BatBehavior.cs" />
     <Compile Include="Assets\Pickaxe\Stone\StoneHealth.cs" />
@@ -66,10 +66,10 @@
     <Compile Include="Assets\Enemy\SpiderBehavior.cs" />
     <Compile Include="Assets\Pickaxe\PickaxeBehavior.cs" />
     <Compile Include="Assets\Pickaxe\PlayerAttackMining.cs" />
+    <Compile Include="Assets\Pickaxe\Stone\StonePickup.cs" />
     <Compile Include="Assets\Player\CharacterMovement.cs" />
     <Compile Include="Assets\Player\Health.cs" />
     <Compile Include="Assets\Enemy\BeetleBehavior.cs" />
-    <Compile Include="Assets\Pickaxe\Stone\StonePickup.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
