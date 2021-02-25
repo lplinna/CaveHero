@@ -55,7 +55,7 @@ public class PlayerAttackMining : MonoBehaviour
         if (swiping)
         {
             Quaternion q = Quaternion.AngleAxis(sangle, Vector3.forward);
-            Vector3 p = q * Vector3.right;
+            Vector3 p = (q * Vector3.right) * 0.7f;
             Debug.DrawLine(transform.position, transform.position + p, Color.blue);
             pickaxe.transform.position = transform.position + p;
             pickaxe.transform.rotation = q;
