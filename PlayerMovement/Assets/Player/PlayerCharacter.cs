@@ -18,11 +18,15 @@ public class PlayerCharacter : MonoBehaviour
     public SpriteRenderer playerSprite;
     public Sprite upSprite, sideSprite, downSprite, idleRight;
 
+    public Rigidbody2D playerPhysics;
+    public Vector3 move = Vector3.zero;
+
     // Start is called before the first frame update
     void Start()
     {
         // sets current energy to max energy at start of scene
         currEnergy = maxEnergy;
+        playerPhysics = GetComponent<Rigidbody2D>();
     }
 
     // Update is called once per frame
@@ -50,53 +54,30 @@ public class PlayerCharacter : MonoBehaviour
     //all player movement statements
     public void PlayerMovement()
     {
-        // used to transform the player's position
-        Vector3 pos = transform.position;
+        float rawHorizontalAxis = Input.GetAxisRaw("Horizontal");
+        float rawVerticalAxis = Input.GetAxisRaw("Vertical");
+        move.x = rawHorizontalAxis;
+        move.y = rawVerticalAxis;
 
-        // forward movement
-        if (Input.GetKey("w"))
+        if (move != Vector3.zero)
         {
-            pos.y += speed * Time.deltaTime;
-            playerSprite.sprite = upSprite;
-        }
-
-        // backwards movement
-        if (Input.GetKey("s"))
-        {
-            pos.y -= speed * Time.deltaTime;
-            playerSprite.sprite = downSprite;
-        }
-
-        // left movement
-        if (Input.GetKey("d"))
-        {
-            pos.x += speed * Time.deltaTime;
-            playerSprite.sprite = sideSprite;
-            playerSprite.flipX = false;
-        }
-
-        // right movement
-        if (Input.GetKey("a"))
-        {
-            pos.x -= speed * Time.deltaTime;
-            playerSprite.sprite = sideSprite;
-            playerSprite.flipX = true;
+            Vector3 translation = move * speed * Time.fixedDeltaTime;
+            Vector3 newPosition = transform.position + translation;
+            playerPhysics.MovePosition(newPosition);
         }
 
         // moves the player
-        var playerway = (pos - transform.position);
-        if (playerway != Vector3.zero) { playerwayP = playerway; }
-        var hit = Physics2D.Raycast(transform.position, playerway.normalized, playerway.magnitude * 80f);
+        if (move != Vector3.zero) { playerwayP = move; }
+        var hit = Physics2D.Raycast(transform.position, move.normalized, move.magnitude * 80f);
 
         if (hit.collider)
         {
             bool isEnemy = hit.collider.gameObject.CompareTag("Bat") || hit.collider.gameObject.CompareTag("Beetle") || hit.collider.gameObject.CompareTag("Spider");
             if (!isEnemy)
             {
-                pos = transform.position;
+                move = transform.position;
             }
         }
-        transform.position = pos;
 
 
         // prints current energy and speed of player to console
