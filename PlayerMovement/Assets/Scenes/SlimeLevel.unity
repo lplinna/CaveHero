@@ -211,7 +211,7 @@ GameObject:
   - component: {fileID: 118884654}
   - component: {fileID: 118884653}
   - component: {fileID: 118884652}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Stone (1)
   m_TagString: Stone
   m_Icon: {fileID: 0}
@@ -12830,7 +12830,7 @@ GameObject:
   - component: {fileID: 365747912}
   - component: {fileID: 365747911}
   - component: {fileID: 365747910}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Stone
   m_TagString: Stone
   m_Icon: {fileID: 0}
@@ -47210,7 +47210,7 @@ GameObject:
   - component: {fileID: 907979602}
   - component: {fileID: 907979601}
   - component: {fileID: 907979600}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Stone (3)
   m_TagString: Stone
   m_Icon: {fileID: 0}
@@ -48058,7 +48058,7 @@ GameObject:
   - component: {fileID: 1150842644}
   - component: {fileID: 1150842643}
   - component: {fileID: 1150842642}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Stone (4)
   m_TagString: Stone
   m_Icon: {fileID: 0}
@@ -48532,7 +48532,7 @@ GameObject:
   - component: {fileID: 1599381975}
   - component: {fileID: 1599381974}
   - component: {fileID: 1599381973}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Stone (5)
   m_TagString: Stone
   m_Icon: {fileID: 0}
@@ -49046,7 +49046,7 @@ GameObject:
   - component: {fileID: 1925083805}
   - component: {fileID: 1925083804}
   - component: {fileID: 1925083807}
-  m_Layer: 8
+  m_Layer: 13
   m_Name: Pickaxe
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -49748,7 +49748,7 @@ GameObject:
   - component: {fileID: 2124214024}
   - component: {fileID: 2124214023}
   - component: {fileID: 2124214022}
-  m_Layer: 8
+  m_Layer: 12
   m_Name: Stone (2)
   m_TagString: Stone
   m_Icon: {fileID: 0}

@@ -11,6 +11,7 @@ public class PickaxeBehavior : MonoBehaviour
 
 
     public bool canHit;
+    public bool PowerAttack;
     private void Start()
     {
         canHit = true;
@@ -21,12 +22,20 @@ public class PickaxeBehavior : MonoBehaviour
 
         Debug.Log(collision.collider.gameObject.name);
         bool isEnemy = collision.gameObject.CompareTag("Bat") || collision.gameObject.CompareTag("Beetle") || collision.gameObject.CompareTag("Spider");
-        if (isEnemy && canHit)
+        if (isEnemy)
         {
             Debug.Log("Enemy hit!");
             var dm = collision.gameObject.GetComponent<EnemyHealth>();
-            dm.Damage(30f);
-            canHit = false;
+            if (canHit)
+            {
+                dm.Damage(30f);
+                canHit = false;
+            }
+
+            if (PowerAttack)
+            {
+                dm.Damage(5f);
+            }
 
         }
 

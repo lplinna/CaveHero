@@ -7,6 +7,7 @@ public class SpiderBehavior : MonoBehaviour
     public GameObject target;
     Rigidbody2D body;
     float reftime;
+    Vector2 zagway;
     
 
     // Start is called before the first frame update
@@ -28,6 +29,7 @@ public class SpiderBehavior : MonoBehaviour
         oof.z = 0f;
         oof.y *= 0.2f;
         body.velocity = oof.normalized * 6f;
+        zagway = body.velocity;
     }
     
     void FixedUpdate()
@@ -50,9 +52,9 @@ public class SpiderBehavior : MonoBehaviour
         }
 
 
-        if (towards.magnitude > 3f)
+        if (towards.magnitude > 5f)
         {
-            body.velocity = Vector3.Lerp(body.velocity, towards.normalized, 0.05f);
+            body.velocity = Vector3.Lerp(towards.normalized * 3f, zagway, 0.2f);
         }
 
         if(towards.magnitude < 0.2f)

@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAttackMining : MonoBehaviour
 {
 
-    bool swiping = false;
+    int swiping = 0;
     float sangle;
     float eangle;
     float rotateDirection;
@@ -31,11 +31,11 @@ public class PlayerAttackMining : MonoBehaviour
     void Update()
     {
         
-        if(Input.GetMouseButtonDown(0) && swiping==false)
+        if(Input.GetMouseButtonDown(0) && swiping==0)
         {
             // var b = Camera.main.ScreenToWorldPoint(Input.mousePosition);
             //Debug.DrawLine(b, transform.position, Color.blue);
-            swiping = true;
+            swiping = 1;
             var pangle = GetPlayerRotation();
             sangle = -20f + pangle;
             eangle = 20f + pangle;
@@ -52,7 +52,7 @@ public class PlayerAttackMining : MonoBehaviour
             
         }
 
-        if (swiping)
+        if (swiping == 1) //If it's a normal swing
         {
             Quaternion q = Quaternion.AngleAxis(sangle, Vector3.forward);
             Vector3 p = (q * Vector3.right) * 0.7f;
@@ -61,14 +61,62 @@ public class PlayerAttackMining : MonoBehaviour
             pickaxe.transform.rotation = q;
 
             sangle += rotateDirection;
-            if (Mathf.Abs(sangle-eangle) < 0.2f)
+            if (Mathf.Abs(sangle - eangle) < 0.2f)
             {
-                swiping = false;
+                swiping = 0;
                 pickaxe.SetActive(false);
             }
 
 
         }
+
+
+        if (swiping == 2) //If it's a power attack
+        {
+            var b = Camera.main.ScreenToWorldPoint(Input.mousePosition) - player.transform.position;
+            b.Normalize();
+            Quaternion q = Quaternion.LookRotation(b, Vector3.forward);
+
+            if(eangle > 0)
+            {
+                eangle -= rotateDirection;
+                q*= Quaternion.AngleAxis(Mathf.Sin(eangle)*60, Vector3.forward);
+                player.Drain(0.07f);
+            }
+            else
+            {
+                swiping = 0;
+                pickaxe.SetActive(false);
+                pickaxe.GetComponent<PickaxeBehavior>().PowerAttack = false;
+            }
+
+            pickaxe.transform.position = player.transform.position + (q * Vector3.up);
+            pickaxe.transform.rotation = q  * Quaternion.AngleAxis(90, Vector3.forward);
+
+        }
+       
+
+
+        if(Input.GetMouseButtonDown(1) && swiping == 0)
+        {
+            swiping = 2;
+            var pangle = GetPlayerRotation();
+            eangle = 8f;
+            rotateDirection = 0.02f;
+            pickaxe.SetActive(true);
+            pickaxe.GetComponent<PickaxeBehavior>().PowerAttack = true;
+        }
+
+
+        if(swiping==2 && player.currEnergy < 0)
+        {
+            pickaxe.SetActive(false);
+            pickaxe.GetComponent<PickaxeBehavior>().PowerAttack = false;
+            swiping = 0;
+        }
+        
+
+
 
 
     }
