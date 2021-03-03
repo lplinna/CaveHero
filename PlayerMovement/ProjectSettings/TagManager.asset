@@ -9,6 +9,7 @@ TagManager:
   - Bat
   - Spider
   - Beetle
+  - Pickaxe
   layers:
   - Default
   - TransparentFX

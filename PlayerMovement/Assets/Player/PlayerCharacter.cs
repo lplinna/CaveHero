@@ -16,7 +16,8 @@ public class PlayerCharacter : MonoBehaviour
     public EnergyBar energyBar;
 
     public SpriteRenderer playerSprite;
-    public Sprite upSprite, sideSprite, downSprite, idleRight;
+    public Sprite upSprite, sideSprite, downSprite, idle;
+    public Animator playerAnim;
 
     public Rigidbody2D playerPhysics;
     public Vector3 move = Vector3.zero;
@@ -27,28 +28,15 @@ public class PlayerCharacter : MonoBehaviour
         // sets current energy to max energy at start of scene
         currEnergy = maxEnergy;
         playerPhysics = GetComponent<Rigidbody2D>();
+        playerAnim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     void Update()
     {
         PlayerMovement();
-    }
-
-    // drains energy
-    public void Drain(float drainEnergy)
-    {
-        currEnergy -= drainEnergy;
-
-        energyBar.SetEnergy(currEnergy);
-    }
-
-    // gains energy
-    public void Gain(float gainEnergy)
-    {
-        currEnergy += gainEnergy;
-
-        energyBar.SetEnergy(currEnergy);
+        PlayerAnimation();
+        PlayerSprint();
     }
 
     //all player movement statements
@@ -78,8 +66,60 @@ public class PlayerCharacter : MonoBehaviour
                 move = transform.position;
             }
         }
+    }
 
+    public void PlayerAnimation()
+    {
+        if (Input.GetKey("d"))
+        {
+            playerAnim.SetBool("WalkSide", true);
+            playerAnim.SetBool("Idle", false);
+            playerSprite.flipX = false;
+            playerAnim.SetBool("WalkDown", false);
+            playerAnim.SetBool("WalkUp", false);
+            idle = sideSprite;
+        }
+        else if (Input.GetKey("a"))
+        {
+            playerAnim.SetBool("WalkSide", true);
+            playerAnim.SetBool("Idle", false);
+            playerSprite.flipX = true;
+            playerAnim.SetBool("WalkDown", false);
+            playerAnim.SetBool("WalkUp", false);
+            idle = sideSprite;
+        }
+        else if (Input.GetKey("s"))
+        {
+            playerAnim.SetBool("WalkDown", true);
+            playerAnim.SetBool("Idle", false);
+            playerAnim.SetBool("WalkSide", false);
+            playerAnim.SetBool("WalkUp", false);
+            idle = downSprite;
 
+        }
+        else if (Input.GetKey("w"))
+        {
+            playerAnim.SetBool("WalkUp", true);
+            playerAnim.SetBool("Idle", false);
+            playerAnim.SetBool("WalkSide", false);
+            playerAnim.SetBool("WalkDown", false);
+            idle = upSprite;
+
+        }
+        else
+        {
+
+            playerSprite.sprite = idle;
+
+            playerAnim.SetBool("Idle", true);
+            playerAnim.SetBool("WalkSide", false);
+            playerAnim.SetBool("WalkDown", false);
+            playerAnim.SetBool("WalkUp", false);
+        }
+    }
+
+    public void PlayerSprint()
+    {
         // prints current energy and speed of player to console
         //Debug.Log(currEnergy + " " + speed);
 
@@ -107,5 +147,21 @@ public class PlayerCharacter : MonoBehaviour
                 Gain(0.03f);
             }
         }
+    }
+
+    // drains energy
+    public void Drain(float drainEnergy)
+    {
+        currEnergy -= drainEnergy;
+
+        energyBar.SetEnergy(currEnergy);
+    }
+
+    // gains energy
+    public void Gain(float gainEnergy)
+    {
+        currEnergy += gainEnergy;
+
+        energyBar.SetEnergy(currEnergy);
     }
 }

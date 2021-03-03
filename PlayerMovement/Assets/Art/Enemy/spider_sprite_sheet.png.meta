@@ -1,0 +1,680 @@
+fileFormatVersion: 2
+guid: c40fd6bc9d1f04f4dafc026f95256f58
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -986924079635733974
+    second: SpiderForwardWalk1
+  - first:
+      213: 8744539645465201944
+    second: SpiderForwardWalk2
+  - first:
+      213: -4449110842770402084
+    second: SpiderForwardWalk3
+  - first:
+      213: 7145750511018426139
+    second: SpiderForwardWalk4
+  - first:
+      213: -6556066355132681355
+    second: SpiderBackWalk1
+  - first:
+      213: -4692159465880701905
+    second: SpiderBackWalk2
+  - first:
+      213: -4597746631047318087
+    second: SpiderBackWalk3
+  - first:
+      213: 2464648185927863004
+    second: SpiderBackWalk4
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SpiderForwardWalk1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 31
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7.5, y: -11.5}
+        - {x: 7.5, y: -9.5}
+        - {x: 8.5, y: -10.5}
+        - {x: 10.5, y: -10.5}
+        - {x: 13.5, y: -7.5}
+        - {x: 13.5, y: -6.5}
+        - {x: 15.5, y: -5.5}
+        - {x: 15.5, y: 1.5}
+        - {x: 14.5, y: 2.5}
+        - {x: 15.5, y: 4.5}
+        - {x: 15.5, y: 6.5}
+        - {x: 9.5, y: 12.5}
+        - {x: -3.5, y: 12.5}
+        - {x: -5.5, y: 10.5}
+        - {x: -7.5, y: 10.5}
+        - {x: -10.5, y: 7.5}
+        - {x: -10.5, y: 5.5}
+        - {x: -11.5, y: 5.5}
+        - {x: -14.5, y: 2.5}
+        - {x: -14.5, y: -0.5}
+        - {x: -15.5, y: -1.5}
+        - {x: -15.5, y: -9.5}
+        - {x: -12.5, y: -12.5}
+        - {x: -10.5, y: -12.5}
+        - {x: -6.5, y: -10.5}
+        - {x: -5.5, y: -12.5}
+        - {x: 5.5, y: -12.5}
+      physicsShape:
+      - - {x: 7.5, y: -11.5}
+        - {x: 7.5, y: -9.5}
+        - {x: 8.5, y: -10.5}
+        - {x: 10.5, y: -10.5}
+        - {x: 13.5, y: -7.5}
+        - {x: 13.5, y: -6.5}
+        - {x: 15.5, y: -5.5}
+        - {x: 15.5, y: 1.5}
+        - {x: 14.5, y: 2.5}
+        - {x: 15.5, y: 4.5}
+        - {x: 15.5, y: 6.5}
+        - {x: 9.5, y: 12.5}
+        - {x: -3.5, y: 12.5}
+        - {x: -5.5, y: 10.5}
+        - {x: -7.5, y: 10.5}
+        - {x: -10.5, y: 7.5}
+        - {x: -10.5, y: 5.5}
+        - {x: -11.5, y: 5.5}
+        - {x: -14.5, y: 2.5}
+        - {x: -14.5, y: -0.5}
+        - {x: -15.5, y: -1.5}
+        - {x: -15.5, y: -9.5}
+        - {x: -12.5, y: -12.5}
+        - {x: -10.5, y: -12.5}
+        - {x: -6.5, y: -10.5}
+        - {x: -5.5, y: -12.5}
+        - {x: 5.5, y: -12.5}
+      tessellationDetail: 1
+      bones: []
+      spriteID: a22680d47cdbd42f0800000000000000
+      internalID: -986924079635733974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderForwardWalk2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 33
+        width: 31
+        height: 24
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 6.5, y: -12}
+        - {x: 7.5, y: -9}
+        - {x: 8.5, y: -10}
+        - {x: 10.5, y: -10}
+        - {x: 14.5, y: -7}
+        - {x: 15.5, y: -6}
+        - {x: 15.5, y: 1}
+        - {x: 14.5, y: 2}
+        - {x: 15.5, y: 4}
+        - {x: 15.5, y: 6}
+        - {x: 9.5, y: 12}
+        - {x: -3.5, y: 12}
+        - {x: -5.5, y: 10}
+        - {x: -7.5, y: 10}
+        - {x: -10.5, y: 7}
+        - {x: -10.5, y: 6}
+        - {x: -14.5, y: 3}
+        - {x: -14.5, y: -1}
+        - {x: -15.5, y: -2}
+        - {x: -15.5, y: -10}
+        - {x: -13.5, y: -12}
+        - {x: -8.5, y: -12}
+        - {x: -6.5, y: -11}
+        - {x: -5.5, y: -12}
+      physicsShape:
+      - - {x: 6.5, y: -12}
+        - {x: 7.5, y: -9}
+        - {x: 8.5, y: -10}
+        - {x: 10.5, y: -10}
+        - {x: 14.5, y: -7}
+        - {x: 15.5, y: -6}
+        - {x: 15.5, y: 1}
+        - {x: 14.5, y: 2}
+        - {x: 15.5, y: 4}
+        - {x: 15.5, y: 6}
+        - {x: 9.5, y: 12}
+        - {x: -3.5, y: 12}
+        - {x: -5.5, y: 10}
+        - {x: -7.5, y: 10}
+        - {x: -10.5, y: 7}
+        - {x: -10.5, y: 6}
+        - {x: -14.5, y: 3}
+        - {x: -14.5, y: -1}
+        - {x: -15.5, y: -2}
+        - {x: -15.5, y: -10}
+        - {x: -13.5, y: -12}
+        - {x: -8.5, y: -12}
+        - {x: -6.5, y: -11}
+        - {x: -5.5, y: -12}
+      tessellationDetail: 1
+      bones: []
+      spriteID: 81d064c1a78da5970800000000000000
+      internalID: 8744539645465201944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderForwardWalk3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 32
+        width: 31
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7.5, y: -11.5}
+        - {x: 7.5, y: -9.5}
+        - {x: 8.5, y: -10.5}
+        - {x: 10.5, y: -10.5}
+        - {x: 13.5, y: -7.5}
+        - {x: 13.5, y: -6.5}
+        - {x: 15.5, y: -5.5}
+        - {x: 15.5, y: 1.5}
+        - {x: 14.5, y: 2.5}
+        - {x: 15.5, y: 4.5}
+        - {x: 15.5, y: 6.5}
+        - {x: 9.5, y: 12.5}
+        - {x: -3.5, y: 12.5}
+        - {x: -5.5, y: 10.5}
+        - {x: -7.5, y: 10.5}
+        - {x: -10.5, y: 7.5}
+        - {x: -10.5, y: 5.5}
+        - {x: -11.5, y: 5.5}
+        - {x: -14.5, y: 2.5}
+        - {x: -14.5, y: -0.5}
+        - {x: -15.5, y: -1.5}
+        - {x: -15.5, y: -9.5}
+        - {x: -12.5, y: -12.5}
+        - {x: -10.5, y: -12.5}
+        - {x: -6.5, y: -10.5}
+        - {x: -5.5, y: -12.5}
+        - {x: 5.5, y: -12.5}
+      physicsShape:
+      - - {x: 7.5, y: -11.5}
+        - {x: 7.5, y: -9.5}
+        - {x: 8.5, y: -10.5}
+        - {x: 10.5, y: -10.5}
+        - {x: 13.5, y: -7.5}
+        - {x: 13.5, y: -6.5}
+        - {x: 15.5, y: -5.5}
+        - {x: 15.5, y: 1.5}
+        - {x: 14.5, y: 2.5}
+        - {x: 15.5, y: 4.5}
+        - {x: 15.5, y: 6.5}
+        - {x: 9.5, y: 12.5}
+        - {x: -3.5, y: 12.5}
+        - {x: -5.5, y: 10.5}
+        - {x: -7.5, y: 10.5}
+        - {x: -10.5, y: 7.5}
+        - {x: -10.5, y: 5.5}
+        - {x: -11.5, y: 5.5}
+        - {x: -14.5, y: 2.5}
+        - {x: -14.5, y: -0.5}
+        - {x: -15.5, y: -1.5}
+        - {x: -15.5, y: -9.5}
+        - {x: -12.5, y: -12.5}
+        - {x: -10.5, y: -12.5}
+        - {x: -6.5, y: -10.5}
+        - {x: -5.5, y: -12.5}
+        - {x: 5.5, y: -12.5}
+      tessellationDetail: 1
+      bones: []
+      spriteID: cd4d45ac2459142c0800000000000000
+      internalID: -4449110842770402084
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderForwardWalk4
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 32
+        width: 31
+        height: 25
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7.5, y: -9.5}
+        - {x: 8.5, y: -10.5}
+        - {x: 10.5, y: -10.5}
+        - {x: 13.5, y: -7.5}
+        - {x: 13.5, y: -5.5}
+        - {x: 15.5, y: -4.5}
+        - {x: 15.5, y: 2.5}
+        - {x: 14.5, y: 3.5}
+        - {x: 15.5, y: 4.5}
+        - {x: 15.5, y: 6.5}
+        - {x: 9.5, y: 12.5}
+        - {x: -3.5, y: 12.5}
+        - {x: -4.5, y: 11.5}
+        - {x: -7.5, y: 11.5}
+        - {x: -10.5, y: 8.5}
+        - {x: -10.5, y: 5.5}
+        - {x: -11.5, y: 5.5}
+        - {x: -14.5, y: 2.5}
+        - {x: -14.5, y: -0.5}
+        - {x: -15.5, y: -1.5}
+        - {x: -15.5, y: -9.5}
+        - {x: -12.5, y: -12.5}
+        - {x: -10.5, y: -12.5}
+        - {x: -6.5, y: -10.5}
+        - {x: -5.5, y: -12.5}
+        - {x: 0.5, y: -12.5}
+        - {x: 1.5, y: -11.5}
+        - {x: 2.5, y: -12.5}
+        - {x: 4.5, y: -12.5}
+      physicsShape:
+      - - {x: 7.5, y: -9.5}
+        - {x: 8.5, y: -10.5}
+        - {x: 10.5, y: -10.5}
+        - {x: 13.5, y: -7.5}
+        - {x: 13.5, y: -5.5}
+        - {x: 15.5, y: -4.5}
+        - {x: 15.5, y: 2.5}
+        - {x: 14.5, y: 3.5}
+        - {x: 15.5, y: 4.5}
+        - {x: 15.5, y: 6.5}
+        - {x: 9.5, y: 12.5}
+        - {x: -3.5, y: 12.5}
+        - {x: -4.5, y: 11.5}
+        - {x: -7.5, y: 11.5}
+        - {x: -10.5, y: 8.5}
+        - {x: -10.5, y: 5.5}
+        - {x: -11.5, y: 5.5}
+        - {x: -14.5, y: 2.5}
+        - {x: -14.5, y: -0.5}
+        - {x: -15.5, y: -1.5}
+        - {x: -15.5, y: -9.5}
+        - {x: -12.5, y: -12.5}
+        - {x: -10.5, y: -12.5}
+        - {x: -6.5, y: -10.5}
+        - {x: -5.5, y: -12.5}
+        - {x: 0.5, y: -12.5}
+        - {x: 1.5, y: -11.5}
+        - {x: 2.5, y: -12.5}
+        - {x: 4.5, y: -12.5}
+      tessellationDetail: 1
+      bones: []
+      spriteID: b1fb1deda3eca2360800000000000000
+      internalID: 7145750511018426139
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderBackWalk1
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 31
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8.5, y: -9.5}
+        - {x: 10.5, y: -9.5}
+        - {x: 13.5, y: -6.5}
+        - {x: 13.5, y: -5.5}
+        - {x: 15.5, y: -4.5}
+        - {x: 15.5, y: 2.5}
+        - {x: 12.5, y: 5.5}
+        - {x: 12.5, y: 8.5}
+        - {x: 9.5, y: 11.5}
+        - {x: -4.5, y: 11.5}
+        - {x: -5.5, y: 10.5}
+        - {x: -9.5, y: 9.5}
+        - {x: -15.5, y: 3.5}
+        - {x: -15.5, y: -10.5}
+        - {x: -13.5, y: -10.5}
+        - {x: -12.5, y: -9.5}
+        - {x: -8.5, y: -9.5}
+        - {x: -7.5, y: -10.5}
+        - {x: -5.5, y: -10.5}
+        - {x: -4.5, y: -11.5}
+        - {x: 6.5, y: -11.5}
+      physicsShape:
+      - - {x: 8.5, y: -9.5}
+        - {x: 10.5, y: -9.5}
+        - {x: 13.5, y: -6.5}
+        - {x: 13.5, y: -5.5}
+        - {x: 15.5, y: -4.5}
+        - {x: 15.5, y: 2.5}
+        - {x: 12.5, y: 5.5}
+        - {x: 12.5, y: 8.5}
+        - {x: 9.5, y: 11.5}
+        - {x: -4.5, y: 11.5}
+        - {x: -5.5, y: 10.5}
+        - {x: -9.5, y: 9.5}
+        - {x: -15.5, y: 3.5}
+        - {x: -15.5, y: -10.5}
+        - {x: -13.5, y: -10.5}
+        - {x: -12.5, y: -9.5}
+        - {x: -8.5, y: -9.5}
+        - {x: -7.5, y: -10.5}
+        - {x: -5.5, y: -10.5}
+        - {x: -4.5, y: -11.5}
+        - {x: 6.5, y: -11.5}
+      tessellationDetail: 1
+      bones: []
+      spriteID: 5733d62b26c2405a0800000000000000
+      internalID: -6556066355132681355
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderBackWalk2
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 31
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 7.5, y: -9.5}
+        - {x: 10.5, y: -9.5}
+        - {x: 13.5, y: -6.5}
+        - {x: 13.5, y: -4.5}
+        - {x: 15.5, y: -3.5}
+        - {x: 15.5, y: 3.5}
+        - {x: 12.5, y: 6.5}
+        - {x: 12.5, y: 8.5}
+        - {x: 9.5, y: 11.5}
+        - {x: -5.5, y: 11.5}
+        - {x: -7.5, y: 10.5}
+        - {x: -10.5, y: 9.5}
+        - {x: -15.5, y: 3.5}
+        - {x: -15.5, y: -10.5}
+        - {x: -13.5, y: -10.5}
+        - {x: -12.5, y: -9.5}
+        - {x: -8.5, y: -9.5}
+        - {x: -7.5, y: -10.5}
+        - {x: -5.5, y: -10.5}
+        - {x: -4.5, y: -11.5}
+        - {x: 1.5, y: -11.5}
+        - {x: 2.5, y: -10.5}
+        - {x: 3.5, y: -11.5}
+        - {x: 5.5, y: -11.5}
+      physicsShape:
+      - - {x: 7.5, y: -9.5}
+        - {x: 10.5, y: -9.5}
+        - {x: 13.5, y: -6.5}
+        - {x: 13.5, y: -4.5}
+        - {x: 15.5, y: -3.5}
+        - {x: 15.5, y: 3.5}
+        - {x: 12.5, y: 6.5}
+        - {x: 12.5, y: 8.5}
+        - {x: 9.5, y: 11.5}
+        - {x: -5.5, y: 11.5}
+        - {x: -7.5, y: 10.5}
+        - {x: -10.5, y: 9.5}
+        - {x: -15.5, y: 3.5}
+        - {x: -15.5, y: -10.5}
+        - {x: -13.5, y: -10.5}
+        - {x: -12.5, y: -9.5}
+        - {x: -8.5, y: -9.5}
+        - {x: -7.5, y: -10.5}
+        - {x: -5.5, y: -10.5}
+        - {x: -4.5, y: -11.5}
+        - {x: 1.5, y: -11.5}
+        - {x: 2.5, y: -10.5}
+        - {x: 3.5, y: -11.5}
+        - {x: 5.5, y: -11.5}
+      tessellationDetail: 1
+      bones: []
+      spriteID: f24b1be63d912eeb0800000000000000
+      internalID: -4692159465880701905
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderBackWalk3
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 31
+        height: 23
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8.5, y: -9.5}
+        - {x: 10.5, y: -9.5}
+        - {x: 13.5, y: -6.5}
+        - {x: 13.5, y: -5.5}
+        - {x: 15.5, y: -4.5}
+        - {x: 15.5, y: 2.5}
+        - {x: 12.5, y: 5.5}
+        - {x: 12.5, y: 8.5}
+        - {x: 9.5, y: 11.5}
+        - {x: -4.5, y: 11.5}
+        - {x: -5.5, y: 10.5}
+        - {x: -9.5, y: 9.5}
+        - {x: -15.5, y: 3.5}
+        - {x: -15.5, y: -10.5}
+        - {x: -13.5, y: -10.5}
+        - {x: -12.5, y: -9.5}
+        - {x: -8.5, y: -9.5}
+        - {x: -7.5, y: -10.5}
+        - {x: -5.5, y: -10.5}
+        - {x: -4.5, y: -11.5}
+        - {x: 6.5, y: -11.5}
+      physicsShape:
+      - - {x: 8.5, y: -9.5}
+        - {x: 10.5, y: -9.5}
+        - {x: 13.5, y: -6.5}
+        - {x: 13.5, y: -5.5}
+        - {x: 15.5, y: -4.5}
+        - {x: 15.5, y: 2.5}
+        - {x: 12.5, y: 5.5}
+        - {x: 12.5, y: 8.5}
+        - {x: 9.5, y: 11.5}
+        - {x: -4.5, y: 11.5}
+        - {x: -5.5, y: 10.5}
+        - {x: -9.5, y: 9.5}
+        - {x: -15.5, y: 3.5}
+        - {x: -15.5, y: -10.5}
+        - {x: -13.5, y: -10.5}
+        - {x: -12.5, y: -9.5}
+        - {x: -8.5, y: -9.5}
+        - {x: -7.5, y: -10.5}
+        - {x: -5.5, y: -10.5}
+        - {x: -4.5, y: -11.5}
+        - {x: 6.5, y: -11.5}
+      tessellationDetail: 1
+      bones: []
+      spriteID: 9b5fc298cc58130c0800000000000000
+      internalID: -4597746631047318087
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SpiderBackWalk4
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 1
+        width: 31
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 8.5, y: -11}
+        - {x: 9.5, y: -9}
+        - {x: 10.5, y: -9}
+        - {x: 14.5, y: -6}
+        - {x: 15.5, y: -5}
+        - {x: 15.5, y: 2}
+        - {x: 12.5, y: 5}
+        - {x: 12.5, y: 8}
+        - {x: 9.5, y: 11}
+        - {x: -4.5, y: 11}
+        - {x: -5.5, y: 10}
+        - {x: -9.5, y: 9}
+        - {x: -15.5, y: 3}
+        - {x: -15.5, y: -11}
+        - {x: -13.5, y: -11}
+        - {x: -12.5, y: -10}
+        - {x: -8.5, y: -10}
+        - {x: -7.5, y: -11}
+      physicsShape:
+      - - {x: 8.5, y: -11}
+        - {x: 9.5, y: -9}
+        - {x: 10.5, y: -9}
+        - {x: 14.5, y: -6}
+        - {x: 15.5, y: -5}
+        - {x: 15.5, y: 2}
+        - {x: 12.5, y: 5}
+        - {x: 12.5, y: 8}
+        - {x: 9.5, y: 11}
+        - {x: -4.5, y: 11}
+        - {x: -5.5, y: 10}
+        - {x: -9.5, y: 9}
+        - {x: -15.5, y: 3}
+        - {x: -15.5, y: -11}
+        - {x: -13.5, y: -11}
+        - {x: -12.5, y: -10}
+        - {x: -8.5, y: -10}
+        - {x: -7.5, y: -11}
+      tessellationDetail: 1
+      bones: []
+      spriteID: cda8a828770343220800000000000000
+      internalID: 2464648185927863004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

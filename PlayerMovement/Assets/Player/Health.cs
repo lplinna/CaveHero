@@ -40,7 +40,7 @@ public class Health : MonoBehaviour
 
     public void Death()
     {
-        SceneManager.LoadScene("DemoGame");
+        SceneManager.LoadScene("SlimeLevel");
     }
 
     public IEnumerator Regenerate()
