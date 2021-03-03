@@ -8,7 +8,8 @@ public class SpiderBehavior : MonoBehaviour
     Rigidbody2D body;
     float reftime;
     Vector2 zagway;
-    
+    SpriteRenderer spiderSprite;
+    Sprite forward, backward;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,20 @@ public class SpiderBehavior : MonoBehaviour
         reftime = Time.time + (Random.value * 4f);
         RandomizeZigZag();
 
+    }
+
+    void Update()
+    {
+        if (gameObject.transform.position.x > Vector3.zero.x)
+        {
+            spiderSprite.sprite = forward;
+            spiderSprite.flipX = true;
+        }
+        else if (gameObject.transform.position.x < Vector3.zero.x)
+        {
+            spiderSprite.sprite = forward;
+            spiderSprite.flipX = false;
+        }
     }
 
 
