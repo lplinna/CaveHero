@@ -1,7 +1,22 @@
 fileFormatVersion: 2
 guid: 9a1a3b165ea14014e93c7d695597ca8d
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 936544209403871315
+    second: Ruby Stone
+  - first:
+      213: -7839519191455988894
+    second: Ruby Break
+  - first:
+      213: -3844403061934583504
+    second: Ruby Broken
+  - first:
+      213: -1313590321540527759
+    second: Ruby Stone_3
+  - first:
+      213: -658727588735763362
+    second: Ruby
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -87,7 +102,211 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Ruby Stone
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 32
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13, y: 9.5}
+        - {x: 13, y: 12.5}
+        - {x: 10, y: 15.5}
+        - {x: -7, y: 15.5}
+        - {x: -8, y: 14.5}
+        - {x: -10, y: 14.5}
+        - {x: -15, y: 10.5}
+        - {x: -15, y: -2.5}
+        - {x: -10, y: -7.5}
+        - {x: -4, y: -9.5}
+        - {x: 3, y: -11.5}
+        - {x: 9, y: -8.5}
+        - {x: 15, y: -3.5}
+        - {x: 15, y: 7.5}
+      physicsShape:
+      - - {x: 15, y: -4.5}
+        - {x: 15, y: 6.5}
+        - {x: 14, y: 8.5}
+        - {x: 13, y: 9.5}
+        - {x: 13, y: 12.5}
+        - {x: 10, y: 15.5}
+        - {x: -7, y: 15.5}
+        - {x: -8, y: 14.5}
+        - {x: -10, y: 14.5}
+        - {x: -15, y: 10.5}
+        - {x: -15, y: -1.5}
+        - {x: -12, y: -4.5}
+        - {x: -12, y: -6.5}
+        - {x: -9, y: -9.5}
+        - {x: -6, y: -9.5}
+        - {x: 0, y: -12.5}
+        - {x: 5, y: -12.5}
+        - {x: 9, y: -8.5}
+        - {x: 10, y: -6.5}
+        - {x: 14, y: -5.5}
+      tessellationDetail: 1
+      bones: []
+      spriteID: 35087f51ff54ffc00800000000000000
+      internalID: 936544209403871315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruby Break
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 32
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13, y: 9.5}
+        - {x: 13, y: 12.5}
+        - {x: 10, y: 15.5}
+        - {x: -7, y: 15.5}
+        - {x: -8, y: 14.5}
+        - {x: -10, y: 14.5}
+        - {x: -15, y: 10.5}
+        - {x: -15, y: -1.5}
+        - {x: -11, y: -4.5}
+        - {x: -9, y: -8.5}
+        - {x: -4, y: -10.5}
+        - {x: 9, y: -10.5}
+        - {x: 15, y: -3.5}
+        - {x: 15, y: 7.5}
+      physicsShape:
+      - - {x: 15, y: -4.5}
+        - {x: 15, y: 6.5}
+        - {x: 14, y: 8.5}
+        - {x: 13, y: 9.5}
+        - {x: 13, y: 12.5}
+        - {x: 10, y: 15.5}
+        - {x: -7, y: 15.5}
+        - {x: -8, y: 14.5}
+        - {x: -10, y: 14.5}
+        - {x: -15, y: 10.5}
+        - {x: -15, y: -1.5}
+        - {x: -12, y: -4.5}
+        - {x: -12, y: -6.5}
+        - {x: -9, y: -9.5}
+        - {x: -6, y: -9.5}
+        - {x: 0, y: -12.5}
+        - {x: 5, y: -12.5}
+        - {x: 9, y: -8.5}
+        - {x: 10, y: -6.5}
+        - {x: 14, y: -5.5}
+      tessellationDetail: 1
+      bones: []
+      spriteID: 2638867b4de643390800000000000000
+      internalID: -7839519191455988894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruby Broken
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 0
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13, y: 9.5}
+        - {x: 13, y: 12.5}
+        - {x: 10, y: 15.5}
+        - {x: 8, y: 15.5}
+        - {x: 7, y: 14.5}
+        - {x: 6, y: 15.5}
+        - {x: -7, y: 15.5}
+        - {x: -10, y: 12.5}
+        - {x: -12, y: 12.5}
+        - {x: -15, y: 10.5}
+        - {x: -15, y: -0.5}
+        - {x: -12, y: -3.5}
+        - {x: -9, y: -8.5}
+        - {x: -5, y: -10.5}
+        - {x: 9, y: -10.5}
+        - {x: 15, y: -3.5}
+        - {x: 15, y: 7.5}
+      physicsShape:
+      - - {x: 15, y: -4.5}
+        - {x: 15, y: 6.5}
+        - {x: 14, y: 8.5}
+        - {x: 13, y: 9.5}
+        - {x: 13, y: 12.5}
+        - {x: 10, y: 15.5}
+        - {x: 8, y: 15.5}
+        - {x: 7, y: 14.5}
+        - {x: 6, y: 15.5}
+        - {x: -7, y: 15.5}
+        - {x: -10, y: 12.5}
+        - {x: -12, y: 12.5}
+        - {x: -15, y: 10.5}
+        - {x: -15, y: -1.5}
+        - {x: -12, y: -3.5}
+        - {x: -12, y: -6.5}
+        - {x: -9, y: -9.5}
+        - {x: -6, y: -9.5}
+        - {x: 0, y: -12.5}
+        - {x: 5, y: -12.5}
+        - {x: 9, y: -8.5}
+        - {x: 10, y: -6.5}
+        - {x: 14, y: -5.5}
+      tessellationDetail: 1
+      bones: []
+      spriteID: 03117ff98cfe5aac0800000000000000
+      internalID: -3844403061934583504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Ruby
+      rect:
+        serializedVersion: 2
+        x: 43
+        y: 11
+        width: 11
+        height: 11
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -5.5, y: 5.5}
+        - {x: -5.5, y: -4.5}
+        - {x: -4.5, y: -5.5}
+        - {x: 5.5, y: -5.5}
+        - {x: 5.5, y: 4.5}
+        - {x: 4.5, y: 5.5}
+      physicsShape:
+      - - {x: -5.5, y: 5.5}
+        - {x: -5.5, y: -4.5}
+        - {x: -4.5, y: -5.5}
+        - {x: 5.5, y: -5.5}
+        - {x: 5.5, y: 4.5}
+        - {x: 4.5, y: 5.5}
+      tessellationDetail: 1
+      bones: []
+      spriteID: e5cb7a58fbabbd6f0800000000000000
+      internalID: -658727588735763362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

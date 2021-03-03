@@ -52,20 +52,21 @@ public class PlayerCharacter : MonoBehaviour
             Vector3 translation = move * speed * Time.fixedDeltaTime;
             Vector3 newPosition = transform.position + translation;
             playerPhysics.MovePosition(newPosition);
+            playerwayP = move;
         }
 
         // moves the player
-        if (move != Vector3.zero) { playerwayP = move; }
-        var hit = Physics2D.Raycast(transform.position, move.normalized, move.magnitude * 80f);
+        //if (move != Vector3.zero) { playerwayP = move; }
+        //var hit = Physics2D.Raycast(transform.position, move.normalized, move.magnitude * 80f);
 
-        if (hit.collider)
-        {
-            bool isEnemy = hit.collider.gameObject.CompareTag("Bat") || hit.collider.gameObject.CompareTag("Beetle") || hit.collider.gameObject.CompareTag("Spider");
-            if (!isEnemy)
-            {
-                move = transform.position;
-            }
-        }
+        //if (hit.collider)
+        //{
+        //    bool isEnemy = hit.collider.gameObject.CompareTag("Bat") || hit.collider.gameObject.CompareTag("Beetle") || hit.collider.gameObject.CompareTag("Spider");
+        //    if (!isEnemy)
+        //    {
+        //        move = transform.position;
+        //    }
+        //}
     }
 
     public void PlayerAnimation()
@@ -78,6 +79,7 @@ public class PlayerCharacter : MonoBehaviour
             playerAnim.SetBool("WalkDown", false);
             playerAnim.SetBool("WalkUp", false);
             idle = sideSprite;
+            playerSprite.sprite = idle;
         }
         else if (Input.GetKey("a"))
         {
@@ -87,6 +89,7 @@ public class PlayerCharacter : MonoBehaviour
             playerAnim.SetBool("WalkDown", false);
             playerAnim.SetBool("WalkUp", false);
             idle = sideSprite;
+            playerSprite.sprite = idle;
         }
         else if (Input.GetKey("s"))
         {
@@ -95,7 +98,7 @@ public class PlayerCharacter : MonoBehaviour
             playerAnim.SetBool("WalkSide", false);
             playerAnim.SetBool("WalkUp", false);
             idle = downSprite;
-
+            playerSprite.sprite = idle;
         }
         else if (Input.GetKey("w"))
         {
@@ -104,6 +107,7 @@ public class PlayerCharacter : MonoBehaviour
             playerAnim.SetBool("WalkSide", false);
             playerAnim.SetBool("WalkDown", false);
             idle = upSprite;
+            playerSprite.sprite = idle;
 
         }
         else
@@ -163,5 +167,13 @@ public class PlayerCharacter : MonoBehaviour
         currEnergy += gainEnergy;
 
         energyBar.SetEnergy(currEnergy);
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.gameObject.CompareTag("Stone"))
+        {
+            collision.gameObject.SetActive(false);
+        }
     }
 }

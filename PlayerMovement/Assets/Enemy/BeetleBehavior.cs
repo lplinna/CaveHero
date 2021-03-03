@@ -12,6 +12,10 @@ public class BeetleBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        //Leave until we add them to a level!
+        this.gameObject.SetActive(false);
+
+
         target = GameObject.FindGameObjectWithTag("Player");
         body = GetComponent<Rigidbody2D>();
         body.freezeRotation = true;

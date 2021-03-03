@@ -1,7 +1,31 @@
 fileFormatVersion: 2
 guid: ed8163f8469de914792ed4fc7dad53dd
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 3022109880367985782
+    second: Amethyst Stone
+  - first:
+      213: -834171269925834051
+    second: Amethyst Stone Break
+  - first:
+      213: 591582048457526522
+    second: Amethyst Stone Broken
+  - first:
+      213: -212280611446404283
+    second: Amethyst Stone_3
+  - first:
+      213: -663404148454930302
+    second: Amethyst Stone_4
+  - first:
+      213: -3915684618978268171
+    second: Amethyst Stone_5
+  - first:
+      213: -3804672677688139927
+    second: Amethyst Stone_6
+  - first:
+      213: 1703228400598544337
+    second: Amethyst
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -87,7 +111,234 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Amethyst Stone
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 32
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13, y: 9}
+        - {x: 13, y: 12}
+        - {x: 10, y: 15}
+        - {x: 8, y: 15}
+        - {x: 7, y: 14}
+        - {x: 5, y: 16}
+        - {x: -2, y: 16}
+        - {x: -3, y: 15}
+        - {x: -7, y: 15}
+        - {x: -8, y: 14}
+        - {x: -10, y: 14}
+        - {x: -15, y: 10}
+        - {x: -15, y: -2}
+        - {x: -11, y: -7}
+        - {x: -6, y: -10}
+        - {x: -1, y: -12}
+        - {x: 9, y: -12}
+        - {x: 15, y: -4}
+        - {x: 15, y: 7}
+      physicsShape:
+      - - {x: 13, y: -6}
+        - {x: 15, y: -5}
+        - {x: 15, y: 7}
+        - {x: 13, y: 9}
+        - {x: 13, y: 12}
+        - {x: 10, y: 15}
+        - {x: 8, y: 15}
+        - {x: 7, y: 14}
+        - {x: 5, y: 16}
+        - {x: -2, y: 16}
+        - {x: -3, y: 15}
+        - {x: -7, y: 15}
+        - {x: -8, y: 14}
+        - {x: -10, y: 14}
+        - {x: -15, y: 10}
+        - {x: -15, y: -2}
+        - {x: -12, y: -5}
+        - {x: -12, y: -7}
+        - {x: -9, y: -10}
+        - {x: -6, y: -10}
+        - {x: 0, y: -13}
+        - {x: 5, y: -13}
+        - {x: 8, y: -11}
+        - {x: 11, y: -10}
+        - {x: 13, y: -7}
+      tessellationDetail: 1
+      bones: []
+      spriteID: 6743883ace0b0f920800000000000000
+      internalID: 3022109880367985782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amethyst Stone Break
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 32
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 13, y: 9}
+        - {x: 13, y: 12}
+        - {x: 10, y: 15}
+        - {x: 8, y: 15}
+        - {x: 7, y: 14}
+        - {x: 5, y: 16}
+        - {x: -2, y: 16}
+        - {x: -3, y: 15}
+        - {x: -7, y: 15}
+        - {x: -8, y: 14}
+        - {x: -10, y: 14}
+        - {x: -15, y: 10}
+        - {x: -15, y: -2}
+        - {x: -11, y: -7}
+        - {x: -4, y: -11}
+        - {x: 4, y: -12}
+        - {x: 10, y: -10}
+        - {x: 15, y: -5}
+        - {x: 15, y: 7}
+      physicsShape:
+      - - {x: 13, y: -6}
+        - {x: 15, y: -5}
+        - {x: 15, y: 7}
+        - {x: 13, y: 9}
+        - {x: 13, y: 12}
+        - {x: 10, y: 15}
+        - {x: 8, y: 15}
+        - {x: 7, y: 14}
+        - {x: 5, y: 16}
+        - {x: -2, y: 16}
+        - {x: -3, y: 15}
+        - {x: -7, y: 15}
+        - {x: -8, y: 14}
+        - {x: -10, y: 14}
+        - {x: -15, y: 10}
+        - {x: -15, y: -2}
+        - {x: -12, y: -5}
+        - {x: -12, y: -7}
+        - {x: -9, y: -10}
+        - {x: -6, y: -10}
+        - {x: 0, y: -13}
+        - {x: 5, y: -13}
+        - {x: 8, y: -11}
+        - {x: 11, y: -10}
+        - {x: 13, y: -7}
+      tessellationDetail: 1
+      bones: []
+      spriteID: db2fb3e46ad6c64f0800000000000000
+      internalID: -834171269925834051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amethyst Stone Broken
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 0
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: 14, y: 7.5}
+        - {x: 13, y: 11.5}
+        - {x: 10, y: 14.5}
+        - {x: 8, y: 14.5}
+        - {x: 7, y: 13.5}
+        - {x: 6, y: 15.5}
+        - {x: -3, y: 15.5}
+        - {x: -5, y: 14.5}
+        - {x: -10, y: 14.5}
+        - {x: -15, y: 9.5}
+        - {x: -15, y: -2.5}
+        - {x: -11, y: -7.5}
+        - {x: -4, y: -10.5}
+        - {x: 4, y: -11.5}
+        - {x: 9, y: -7.5}
+        - {x: 15, y: -3.5}
+        - {x: 15, y: 6.5}
+      physicsShape:
+      - - {x: 15, y: -4.5}
+        - {x: 15, y: 6.5}
+        - {x: 14, y: 7.5}
+        - {x: 13, y: 11.5}
+        - {x: 10, y: 14.5}
+        - {x: 8, y: 14.5}
+        - {x: 7, y: 13.5}
+        - {x: 6, y: 15.5}
+        - {x: -3, y: 15.5}
+        - {x: -5, y: 14.5}
+        - {x: -10, y: 14.5}
+        - {x: -15, y: 9.5}
+        - {x: -15, y: -1.5}
+        - {x: -12, y: -4.5}
+        - {x: -12, y: -6.5}
+        - {x: -9, y: -9.5}
+        - {x: -5, y: -9.5}
+        - {x: -3, y: -11.5}
+        - {x: -1, y: -11.5}
+        - {x: 0, y: -12.5}
+        - {x: 5, y: -12.5}
+        - {x: 9, y: -8.5}
+        - {x: 9, y: -6.5}
+        - {x: 11, y: -6.5}
+      tessellationDetail: 1
+      bones: []
+      spriteID: afc0fcd1db8b53800800000000000000
+      internalID: 591582048457526522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Amethyst
+      rect:
+        serializedVersion: 2
+        x: 42
+        y: 9
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline:
+      - - {x: -4.5, y: 7}
+        - {x: -6.5, y: 5}
+        - {x: -6.5, y: -7}
+        - {x: 2.5, y: -7}
+        - {x: 6.5, y: -4}
+        - {x: 6.5, y: 5}
+        - {x: 4.5, y: 7}
+      physicsShape:
+      - - {x: -4.5, y: 7}
+        - {x: -6.5, y: 5}
+        - {x: -6.5, y: -7}
+        - {x: 2.5, y: -7}
+        - {x: 6.5, y: -4}
+        - {x: 6.5, y: 5}
+        - {x: 4.5, y: 7}
+      tessellationDetail: 1
+      bones: []
+      spriteID: 1df680dc43513a710800000000000000
+      internalID: 1703228400598544337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

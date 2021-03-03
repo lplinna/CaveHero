@@ -68,4 +68,16 @@ public class Health : MonoBehaviour
             Damage(0.5f);
         }
     }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("HealthPickUp"))
+        {
+            if (currHealth < 100)
+            {
+                currHealth += 20;
+                collision.gameObject.SetActive(false);
+            }
+        }
+    }
 }

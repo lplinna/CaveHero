@@ -10,6 +10,7 @@ TagManager:
   - Spider
   - Beetle
   - Pickaxe
+  - HealthPickUp
   layers:
   - Default
   - TransparentFX
