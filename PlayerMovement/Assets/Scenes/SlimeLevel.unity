@@ -217,9 +217,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 0
-  stoneSprite: {fileID: -8885299283256257243, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  breakingSprite: {fileID: -1132119105519978036, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  brokenSprite: {fileID: -5484616402971106345, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
+  stoneSprite: {fileID: 3022109880367985782, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  breakingSprite: {fileID: -834171269925834051, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  brokenSprite: {fileID: 591582048457526522, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
   stone: {fileID: 10916423}
 --- !u!212 &10916423
 SpriteRenderer:
@@ -1625,9 +1625,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 0
-  stoneSprite: {fileID: -8885299283256257243, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  breakingSprite: {fileID: -1132119105519978036, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  brokenSprite: {fileID: -5484616402971106345, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
+  stoneSprite: {fileID: 3022109880367985782, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  breakingSprite: {fileID: -834171269925834051, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  brokenSprite: {fileID: 591582048457526522, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
   stone: {fileID: 105095474}
 --- !u!212 &105095474
 SpriteRenderer:
@@ -1923,9 +1923,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 0
-  stoneSprite: {fileID: -8885299283256257243, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  breakingSprite: {fileID: -1132119105519978036, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  brokenSprite: {fileID: -5484616402971106345, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
+  stoneSprite: {fileID: 3022109880367985782, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  breakingSprite: {fileID: -834171269925834051, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  brokenSprite: {fileID: 591582048457526522, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
   stone: {fileID: 115769465}
 --- !u!212 &115769465
 SpriteRenderer:
@@ -14367,9 +14367,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 0
-  stoneSprite: {fileID: -8885299283256257243, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  breakingSprite: {fileID: -1132119105519978036, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  brokenSprite: {fileID: -5484616402971106345, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
+  stoneSprite: {fileID: 3022109880367985782, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  breakingSprite: {fileID: -834171269925834051, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  brokenSprite: {fileID: 591582048457526522, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
   stone: {fileID: 259226873}
 --- !u!212 &259226873
 SpriteRenderer:
@@ -14620,7 +14620,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 06b08d397e332d741bf93df1c784cf3b, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -37683,9 +37683,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 0
-  stoneSprite: {fileID: -8885299283256257243, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  breakingSprite: {fileID: -1132119105519978036, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  brokenSprite: {fileID: -5484616402971106345, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
+  stoneSprite: {fileID: 3022109880367985782, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  breakingSprite: {fileID: -834171269925834051, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  brokenSprite: {fileID: 591582048457526522, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
   stone: {fileID: 321904298}
 --- !u!212 &321904298
 SpriteRenderer:
@@ -38869,9 +38869,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 0
-  stoneSprite: {fileID: -8885299283256257243, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  breakingSprite: {fileID: -1132119105519978036, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  brokenSprite: {fileID: -5484616402971106345, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
+  stoneSprite: {fileID: 3022109880367985782, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  breakingSprite: {fileID: -834171269925834051, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  brokenSprite: {fileID: 591582048457526522, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
   stone: {fileID: 419681054}
 --- !u!212 &419681054
 SpriteRenderer:
@@ -39463,9 +39463,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 0
-  stoneSprite: {fileID: -8885299283256257243, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  breakingSprite: {fileID: -1132119105519978036, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  brokenSprite: {fileID: -5484616402971106345, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
+  stoneSprite: {fileID: 3022109880367985782, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  breakingSprite: {fileID: -834171269925834051, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  brokenSprite: {fileID: 591582048457526522, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
   stone: {fileID: 457896909}
 --- !u!212 &457896909
 SpriteRenderer:
@@ -48294,9 +48294,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 0
-  stoneSprite: {fileID: -8885299283256257243, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  breakingSprite: {fileID: -1132119105519978036, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  brokenSprite: {fileID: -5484616402971106345, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
+  stoneSprite: {fileID: 3022109880367985782, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  breakingSprite: {fileID: -834171269925834051, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  brokenSprite: {fileID: 591582048457526522, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
   stone: {fileID: 528487306}
 --- !u!212 &528487306
 SpriteRenderer:
@@ -75440,9 +75440,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 0
-  stoneSprite: {fileID: -8885299283256257243, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  breakingSprite: {fileID: -1132119105519978036, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  brokenSprite: {fileID: -5484616402971106345, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
+  stoneSprite: {fileID: 3022109880367985782, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  breakingSprite: {fileID: -834171269925834051, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  brokenSprite: {fileID: 591582048457526522, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
   stone: {fileID: 585756497}
 --- !u!212 &585756497
 SpriteRenderer:
@@ -75883,9 +75883,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 0
-  stoneSprite: {fileID: -8885299283256257243, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  breakingSprite: {fileID: -1132119105519978036, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  brokenSprite: {fileID: -5484616402971106345, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
+  stoneSprite: {fileID: 3022109880367985782, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  breakingSprite: {fileID: -834171269925834051, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  brokenSprite: {fileID: 591582048457526522, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
   stone: {fileID: 600995221}
 --- !u!212 &600995221
 SpriteRenderer:
@@ -76179,9 +76179,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 0
-  stoneSprite: {fileID: -8885299283256257243, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  breakingSprite: {fileID: -1132119105519978036, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  brokenSprite: {fileID: -5484616402971106345, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
+  stoneSprite: {fileID: 3022109880367985782, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  breakingSprite: {fileID: -834171269925834051, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  brokenSprite: {fileID: 591582048457526522, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
   stone: {fileID: 625572906}
 --- !u!212 &625572906
 SpriteRenderer:
@@ -76624,9 +76624,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 0
-  stoneSprite: {fileID: -8885299283256257243, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  breakingSprite: {fileID: -1132119105519978036, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  brokenSprite: {fileID: -5484616402971106345, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
+  stoneSprite: {fileID: 3022109880367985782, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  breakingSprite: {fileID: -834171269925834051, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  brokenSprite: {fileID: 591582048457526522, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
   stone: {fileID: 629791760}
 --- !u!212 &629791760
 SpriteRenderer:
@@ -76920,9 +76920,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 0
-  stoneSprite: {fileID: -8885299283256257243, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  breakingSprite: {fileID: -1132119105519978036, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  brokenSprite: {fileID: -5484616402971106345, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
+  stoneSprite: {fileID: 3022109880367985782, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  breakingSprite: {fileID: -834171269925834051, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  brokenSprite: {fileID: 591582048457526522, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
   stone: {fileID: 643478038}
 --- !u!212 &643478038
 SpriteRenderer:
@@ -76970,6 +76970,115 @@ SpriteRenderer:
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 0.96875, y: 0.96875}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!1 &646339283
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 646339284}
+  - component: {fileID: 646339285}
+  - component: {fileID: 646339286}
+  m_Layer: 10
+  m_Name: ChallengeRoomWall
+  m_TagString: Challenge
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &646339284
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646339283}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 173.01466, y: -18.512775, z: -31.660019}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 14
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &646339285
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646339283}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.49601746, y: -0.6613674}
+  m_SpriteTilingProperty:
+    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 5.1335144, y: 2.3227348}
+  m_EdgeRadius: 0
+--- !u!212 &646339286
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 646339283}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 813157877
+  m_SortingLayer: -1
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.16, y: 0.16}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -77069,9 +77178,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 0
-  stoneSprite: {fileID: -8885299283256257243, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  breakingSprite: {fileID: -1132119105519978036, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  brokenSprite: {fileID: -5484616402971106345, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
+  stoneSprite: {fileID: 3022109880367985782, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  breakingSprite: {fileID: -834171269925834051, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  brokenSprite: {fileID: 591582048457526522, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
   stone: {fileID: 646344816}
 --- !u!212 &646344816
 SpriteRenderer:
@@ -78104,9 +78213,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 0
-  stoneSprite: {fileID: -8885299283256257243, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  breakingSprite: {fileID: -1132119105519978036, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  brokenSprite: {fileID: -5484616402971106345, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
+  stoneSprite: {fileID: 3022109880367985782, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  breakingSprite: {fileID: -834171269925834051, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  brokenSprite: {fileID: 591582048457526522, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
   stone: {fileID: 703387087}
 --- !u!212 &703387087
 SpriteRenderer:
@@ -78634,7 +78743,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7be21699a63f54d499efbbbae91f2256, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  parentStone: {fileID: 0}
+  parentStone: {fileID: 1306020060}
   offset: {x: 0, y: 0, z: 0}
   stonePickup: {fileID: 0}
 --- !u!61 &740016445
@@ -79137,9 +79246,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 0
-  stoneSprite: {fileID: -8885299283256257243, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  breakingSprite: {fileID: -1132119105519978036, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  brokenSprite: {fileID: -5484616402971106345, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
+  stoneSprite: {fileID: 3022109880367985782, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  breakingSprite: {fileID: -834171269925834051, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  brokenSprite: {fileID: 591582048457526522, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
   stone: {fileID: 772411817}
 --- !u!212 &772411817
 SpriteRenderer:
@@ -79286,9 +79395,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 0
-  stoneSprite: {fileID: -8885299283256257243, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  breakingSprite: {fileID: -1132119105519978036, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  brokenSprite: {fileID: -5484616402971106345, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
+  stoneSprite: {fileID: 3022109880367985782, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  breakingSprite: {fileID: -834171269925834051, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  brokenSprite: {fileID: 591582048457526522, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
   stone: {fileID: 773015402}
 --- !u!212 &773015402
 SpriteRenderer:
@@ -82334,9 +82443,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 0
-  stoneSprite: {fileID: -8885299283256257243, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  breakingSprite: {fileID: -1132119105519978036, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  brokenSprite: {fileID: -5484616402971106345, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
+  stoneSprite: {fileID: 3022109880367985782, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  breakingSprite: {fileID: -834171269925834051, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  brokenSprite: {fileID: 591582048457526522, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
   stone: {fileID: 945341415}
 --- !u!212 &945341415
 SpriteRenderer:
@@ -83665,9 +83774,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 0
-  stoneSprite: {fileID: -8885299283256257243, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  breakingSprite: {fileID: -1132119105519978036, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  brokenSprite: {fileID: -5484616402971106345, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
+  stoneSprite: {fileID: 3022109880367985782, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  breakingSprite: {fileID: -834171269925834051, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  brokenSprite: {fileID: 591582048457526522, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
   stone: {fileID: 1012290707}
 --- !u!212 &1012290707
 SpriteRenderer:
@@ -84404,9 +84513,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 0
-  stoneSprite: {fileID: -8885299283256257243, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  breakingSprite: {fileID: -1132119105519978036, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  brokenSprite: {fileID: -5484616402971106345, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
+  stoneSprite: {fileID: 3022109880367985782, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  breakingSprite: {fileID: -834171269925834051, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  brokenSprite: {fileID: 591582048457526522, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
   stone: {fileID: 1056583826}
 --- !u!212 &1056583826
 SpriteRenderer:
@@ -84996,9 +85105,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 0
-  stoneSprite: {fileID: -8885299283256257243, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  breakingSprite: {fileID: -1132119105519978036, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  brokenSprite: {fileID: -5484616402971106345, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
+  stoneSprite: {fileID: 3022109880367985782, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  breakingSprite: {fileID: -834171269925834051, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  brokenSprite: {fileID: 591582048457526522, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
   stone: {fileID: 1077647110}
 --- !u!212 &1077647110
 SpriteRenderer:
@@ -85235,7 +85344,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6639678819298956164, guid: de2fdb5c074fcc04fa5d46246735c75b, type: 3}
       propertyPath: m_RootOrder
-      value: 8
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6639678819298956164, guid: de2fdb5c074fcc04fa5d46246735c75b, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -85580,6 +85689,8 @@ MonoBehaviour:
   playerAnim: {fileID: 1104956772}
   playerPhysics: {fileID: 1104956767}
   move: {x: 0, y: 0, z: 0}
+  checkpoint: {fileID: 1766301800}
+  challenge: {fileID: 2137046290}
 --- !u!50 &1104956767
 Rigidbody2D:
   serializedVersion: 4
@@ -85660,11 +85771,11 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1104956764}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.07, y: -1.81, z: 0}
+  m_LocalPosition: {x: 172.65, y: -4.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1104956770
 MonoBehaviour:
@@ -85681,6 +85792,7 @@ MonoBehaviour:
   currHealth: 0
   maxHealth: 100
   healthBar: {fileID: 1103877904}
+  checkpoint: {fileID: 1766301800}
 --- !u!114 &1104956771
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -85793,7 +85905,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1109179893
 GameObject:
@@ -85889,9 +86001,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 0
-  stoneSprite: {fileID: -8885299283256257243, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  breakingSprite: {fileID: -1132119105519978036, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  brokenSprite: {fileID: -5484616402971106345, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
+  stoneSprite: {fileID: 3022109880367985782, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  breakingSprite: {fileID: -834171269925834051, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  brokenSprite: {fileID: 591582048457526522, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
   stone: {fileID: 1109179898}
 --- !u!212 &1109179898
 SpriteRenderer:
@@ -86777,9 +86889,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 0
-  stoneSprite: {fileID: -8885299283256257243, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  breakingSprite: {fileID: -1132119105519978036, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  brokenSprite: {fileID: -5484616402971106345, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
+  stoneSprite: {fileID: 3022109880367985782, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  breakingSprite: {fileID: -834171269925834051, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  brokenSprite: {fileID: 591582048457526522, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
   stone: {fileID: 1151902949}
 --- !u!212 &1151902949
 SpriteRenderer:
@@ -87355,9 +87467,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 0
-  stoneSprite: {fileID: -8885299283256257243, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  breakingSprite: {fileID: -1132119105519978036, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  brokenSprite: {fileID: -5484616402971106345, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
+  stoneSprite: {fileID: 3022109880367985782, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  breakingSprite: {fileID: -834171269925834051, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  brokenSprite: {fileID: 591582048457526522, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
   stone: {fileID: 1179325364}
 --- !u!212 &1179325364
 SpriteRenderer:
@@ -88698,9 +88810,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 0
-  stoneSprite: {fileID: -8885299283256257243, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  breakingSprite: {fileID: -1132119105519978036, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  brokenSprite: {fileID: -5484616402971106345, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
+  stoneSprite: {fileID: 3022109880367985782, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  breakingSprite: {fileID: -834171269925834051, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  brokenSprite: {fileID: 591582048457526522, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
   stone: {fileID: 1335207571}
 --- !u!212 &1335207571
 SpriteRenderer:
@@ -88996,9 +89108,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 0
-  stoneSprite: {fileID: -8885299283256257243, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  breakingSprite: {fileID: -1132119105519978036, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  brokenSprite: {fileID: -5484616402971106345, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
+  stoneSprite: {fileID: 3022109880367985782, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  breakingSprite: {fileID: -834171269925834051, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  brokenSprite: {fileID: 591582048457526522, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
   stone: {fileID: 1344725776}
 --- !u!212 &1344725776
 SpriteRenderer:
@@ -90174,9 +90286,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 0
-  stoneSprite: {fileID: -8885299283256257243, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  breakingSprite: {fileID: -1132119105519978036, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  brokenSprite: {fileID: -5484616402971106345, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
+  stoneSprite: {fileID: 3022109880367985782, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  breakingSprite: {fileID: -834171269925834051, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  brokenSprite: {fileID: 591582048457526522, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
   stone: {fileID: 1450805770}
 --- !u!212 &1450805770
 SpriteRenderer:
@@ -91654,9 +91766,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 0
-  stoneSprite: {fileID: -8885299283256257243, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  breakingSprite: {fileID: -1132119105519978036, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  brokenSprite: {fileID: -5484616402971106345, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
+  stoneSprite: {fileID: 3022109880367985782, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  breakingSprite: {fileID: -834171269925834051, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  brokenSprite: {fileID: 591582048457526522, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
   stone: {fileID: 1538521252}
 --- !u!212 &1538521252
 SpriteRenderer:
@@ -93281,9 +93393,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 0
-  stoneSprite: {fileID: -8885299283256257243, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  breakingSprite: {fileID: -1132119105519978036, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  brokenSprite: {fileID: -5484616402971106345, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
+  stoneSprite: {fileID: 3022109880367985782, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  breakingSprite: {fileID: -834171269925834051, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  brokenSprite: {fileID: 591582048457526522, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
   stone: {fileID: 1593410806}
 --- !u!212 &1593410806
 SpriteRenderer:
@@ -94985,9 +95097,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 0
-  stoneSprite: {fileID: -8885299283256257243, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  breakingSprite: {fileID: -1132119105519978036, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  brokenSprite: {fileID: -5484616402971106345, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
+  stoneSprite: {fileID: 3022109880367985782, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  breakingSprite: {fileID: -834171269925834051, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  brokenSprite: {fileID: 591582048457526522, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
   stone: {fileID: 1720619078}
 --- !u!212 &1720619078
 SpriteRenderer:
@@ -95134,9 +95246,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 0
-  stoneSprite: {fileID: -8885299283256257243, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  breakingSprite: {fileID: -1132119105519978036, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  brokenSprite: {fileID: -5484616402971106345, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
+  stoneSprite: {fileID: 3022109880367985782, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  breakingSprite: {fileID: -834171269925834051, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  brokenSprite: {fileID: 591582048457526522, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
   stone: {fileID: 1724567770}
 --- !u!212 &1724567770
 SpriteRenderer:
@@ -95530,8 +95642,131 @@ Transform:
   - {fileID: 567499822}
   - {fileID: 273407151}
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1766301799
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1766301802}
+  - component: {fileID: 1766301801}
+  - component: {fileID: 1766301800}
+  - component: {fileID: 1766301803}
+  m_Layer: 8
+  m_Name: Checkpoint
+  m_TagString: Checkpoint
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1766301800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766301799}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7b094b7be6aef25449f648fe739575b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggered: 0
+--- !u!212 &1766301801
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766301799}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -1823539731
+  m_SortingLayer: 2
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 0.16, y: 0.16}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &1766301802
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766301799}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 172.5, y: -11.5, z: -27.916912}
+  m_LocalScale: {x: 24.849674, y: 5.110478, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &1766301803
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1766301799}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.00000010430813}
+  m_SpriteTilingProperty:
+    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.16, y: 0.16}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.2, y: 0.1752514}
+  m_EdgeRadius: 0
 --- !u!1 &1770014936
 GameObject:
   m_ObjectHideFlags: 0
@@ -98276,9 +98511,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 0
-  stoneSprite: {fileID: -8885299283256257243, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  breakingSprite: {fileID: -1132119105519978036, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  brokenSprite: {fileID: -5484616402971106345, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
+  stoneSprite: {fileID: 3022109880367985782, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  breakingSprite: {fileID: -834171269925834051, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  brokenSprite: {fileID: 591582048457526522, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
   stone: {fileID: 1911424862}
 --- !u!212 &1911424862
 SpriteRenderer:
@@ -99135,7 +99370,7 @@ RectTransform:
   m_Children:
   - {fileID: 1103877903}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -99828,9 +100063,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 0
-  stoneSprite: {fileID: -8885299283256257243, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  breakingSprite: {fileID: -1132119105519978036, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  brokenSprite: {fileID: -5484616402971106345, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
+  stoneSprite: {fileID: 3022109880367985782, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  breakingSprite: {fileID: -834171269925834051, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  brokenSprite: {fileID: 591582048457526522, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
   stone: {fileID: 1994308866}
 --- !u!212 &1994308866
 SpriteRenderer:
@@ -99977,9 +100212,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 0
-  stoneSprite: {fileID: -8885299283256257243, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  breakingSprite: {fileID: -1132119105519978036, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  brokenSprite: {fileID: -5484616402971106345, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
+  stoneSprite: {fileID: 3022109880367985782, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  breakingSprite: {fileID: -834171269925834051, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  brokenSprite: {fileID: 591582048457526522, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
   stone: {fileID: 1998197458}
 --- !u!212 &1998197458
 SpriteRenderer:
@@ -100126,9 +100361,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 0
-  stoneSprite: {fileID: -8885299283256257243, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  breakingSprite: {fileID: -1132119105519978036, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  brokenSprite: {fileID: -5484616402971106345, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
+  stoneSprite: {fileID: 3022109880367985782, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  breakingSprite: {fileID: -834171269925834051, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  brokenSprite: {fileID: 591582048457526522, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
   stone: {fileID: 2005815902}
 --- !u!212 &2005815902
 SpriteRenderer:
@@ -100275,9 +100510,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 0
-  stoneSprite: {fileID: -8885299283256257243, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  breakingSprite: {fileID: -1132119105519978036, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
-  brokenSprite: {fileID: -5484616402971106345, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
+  stoneSprite: {fileID: 3022109880367985782, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  breakingSprite: {fileID: -834171269925834051, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
+  brokenSprite: {fileID: 591582048457526522, guid: ed8163f8469de914792ed4fc7dad53dd, type: 3}
   stone: {fileID: 2013184757}
 --- !u!212 &2013184757
 SpriteRenderer:
@@ -100569,7 +100804,7 @@ RectTransform:
   m_Children:
   - {fileID: 2136265834}
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -101793,6 +102028,136 @@ MonoBehaviour:
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls: []
+--- !u!1 &2137046289
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2137046292}
+  - component: {fileID: 2137046291}
+  - component: {fileID: 2137046290}
+  - component: {fileID: 2137046293}
+  m_Layer: 8
+  m_Name: Challenge Room
+  m_TagString: Challenge
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2137046290
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137046289}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 570ababe4bb19a14d9960c40e484264c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tilemapWall: {fileID: 646339283}
+  triggered: 0
+  Bat: {fileID: 4487013982981650552, guid: 68b6ed4f34fd0414e840d6502eefbd21, type: 3}
+  Spider: {fileID: 8435070875905267798, guid: dee63f3827e2c1f44a59e8970a9ee29c, type: 3}
+  randX: 0
+  randY: 0
+  whereToSpawn: {x: 0, y: 0}
+  numDead: 0
+--- !u!212 &2137046291
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137046289}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: -1823539731
+  m_SortingLayer: 2
+  m_SortingOrder: 3
+  m_Sprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 2, y: 1}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
+--- !u!4 &2137046292
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137046289}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 172.44, y: -21.823, z: -38.146004}
+  m_LocalScale: {x: 50, y: 5, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!61 &2137046293
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2137046289}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0.049999997, y: 0.049999997, z: 0.049999997, w: 0.049999997}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.16, y: 0.16}
+    newSize: {x: 2, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.17, y: 0.2}
+  m_EdgeRadius: 0
 --- !u!1 &2140465511
 GameObject:
   m_ObjectHideFlags: 0
@@ -102277,7 +102642,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2775126230855140349, guid: 4e03aaee278105c4c95dd6865b203dc1, type: 3}
       propertyPath: m_RootOrder
-      value: 6
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2775126230855140349, guid: 4e03aaee278105c4c95dd6865b203dc1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -102330,7 +102695,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4940531537442786075, guid: a1a5e2f568c996e4091fea8ba904db0d, type: 3}
       propertyPath: m_RootOrder
-      value: 7
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4940531537442786075, guid: a1a5e2f568c996e4091fea8ba904db0d, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

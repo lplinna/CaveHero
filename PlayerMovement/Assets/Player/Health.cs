@@ -10,6 +10,8 @@ public class Health : MonoBehaviour
 
     public HealthBar healthBar;
 
+    public CheckpointSystem checkpoint;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -35,12 +37,15 @@ public class Health : MonoBehaviour
             this.gameObject.SetActive(false);
             Invoke("Death", 3f);
         }
-
     }
 
     public void Death()
     {
         SceneManager.LoadScene("SlimeLevel");
+        if(checkpoint.triggered)
+        {
+            this.gameObject.transform.position = checkpoint.transform.position;
+        }
     }
 
     public IEnumerator Regenerate()

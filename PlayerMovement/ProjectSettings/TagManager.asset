@@ -11,6 +11,8 @@ TagManager:
   - Beetle
   - Pickaxe
   - HealthPickUp
+  - Checkpoint
+  - Challenge
   layers:
   - Default
   - TransparentFX

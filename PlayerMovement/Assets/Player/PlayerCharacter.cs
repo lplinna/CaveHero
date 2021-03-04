@@ -15,12 +15,18 @@ public class PlayerCharacter : MonoBehaviour
     // To create the visual energy bar
     public EnergyBar energyBar;
 
+    // Player Sprites
     public SpriteRenderer playerSprite;
     public Sprite upSprite, sideSprite, downSprite, idle;
     public Animator playerAnim;
 
+    // Player Physics
     public Rigidbody2D playerPhysics;
     public Vector3 move = Vector3.zero;
+
+    // Challenge Room
+    public CheckpointSystem checkpoint;
+    public ChallengeRoom challenge;
 
     // Start is called before the first frame update
     void Start()
@@ -174,6 +180,15 @@ public class PlayerCharacter : MonoBehaviour
         if(collision.gameObject.CompareTag("Stone"))
         {
             collision.gameObject.SetActive(false);
+
+        }
+        if(collision.gameObject.CompareTag("Checkpoint"))
+        {
+            checkpoint.triggered = true;
+        }
+        if(collision.gameObject.CompareTag("Challenge"))
+        {
+            challenge.triggered = true;
         }
     }
 }
