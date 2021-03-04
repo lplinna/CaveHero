@@ -13,6 +13,7 @@ TagManager:
   - HealthPickUp
   - Checkpoint
   - Challenge
+  - ChallengeEnemies
   layers:
   - Default
   - TransparentFX

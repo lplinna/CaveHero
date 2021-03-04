@@ -67,7 +67,7 @@ public class Health : MonoBehaviour
 
     public void OnCollisionStay2D(Collision2D collision)
     {
-        bool isEnemy = collision.gameObject.CompareTag("Bat") || collision.gameObject.CompareTag("Beetle") || collision.gameObject.CompareTag("Spider");
+        bool isEnemy = collision.gameObject.CompareTag("Bat") || collision.gameObject.CompareTag("Beetle") || collision.gameObject.CompareTag("Spider") || collision.gameObject.CompareTag("ChallengeEnemies");
         if (isEnemy)
         {
             Damage(0.5f);

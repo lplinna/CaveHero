@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ChallengeEnemy : MonoBehaviour
 {
-    public ChallengeRoom challenge;
+    public GameObject challenge;
     // Start is called before the first frame update
     void Start()
     {
-        
+        challenge = GameObject.Find("ChallengeRoom");
     }
 
     // Update is called once per frame
@@ -21,7 +21,7 @@ public class ChallengeEnemy : MonoBehaviour
     {
         if(!this.gameObject.activeSelf)
         {
-            challenge.addDead(1);
+            challenge.SendMessage("addDead", 1);
         }
     }
 }

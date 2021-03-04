@@ -17,6 +17,11 @@ public class ChallengeRoom : MonoBehaviour
         tilemapWall.SetActive(false);
         triggered = false;
         numDead = 0;
+        Bat.AddComponent<ChallengeEnemy>();
+        Spider.AddComponent<ChallengeEnemy>();
+        Bat.GetComponent<ChallengeEnemy>().challenge = this.gameObject;
+        Spider.GetComponent<ChallengeEnemy>().challenge = this.gameObject;
+        this.gameObject.transform.position.Set(172.44f, -21.823f, -38.146f);
     }
 
     // Update is called once per frame
@@ -26,21 +31,18 @@ public class ChallengeRoom : MonoBehaviour
         {
             tilemapWall.SetActive(true);
             triggered = false;
-            this.gameObject.transform.position.Set(172.44f, -12.28f, 0);
+            this.gameObject.transform.position = Vector3.zero;
             Debug.Log("Active");
 
-            if(numDead == 0)
+            for (int i = 0; i < 5; i++)
             {
-                for (int i = 0; i < 5; i++)
-                {
-                    randX = Random.Range(156.32f, 188.16f);
-                    randY = Random.Range(-32.66f, -20.99f);
-                    whereToSpawn = new Vector2(randX, randY);
-                    Instantiate(Bat, whereToSpawn, Quaternion.identity);
-                }
-                
+                randX = Random.Range(156.32f, 188.16f);
+                randY = Random.Range(-30.66f, -20.99f);
+                whereToSpawn = new Vector2(randX, randY);
+                Instantiate(Bat, whereToSpawn, Quaternion.identity);
             }
-            else if (numDead == 5)
+            GameObject[] wave1 = GameObject.FindGameObjectsWithTag("ChallengeEnemies");
+            if (wave1.Length == 0)
             {
                 for (int i = 0; i < 3; i++)
                 {
@@ -49,29 +51,30 @@ public class ChallengeRoom : MonoBehaviour
                     whereToSpawn = new Vector2(randX, randY);
                     Instantiate(Spider, whereToSpawn, Quaternion.identity);
                 }
-            }
-            else if (numDead == 8)
-            {
-                for (int i = 0; i < 3; i++)
+                GameObject[] wave2 = GameObject.FindGameObjectsWithTag("ChallengeEnemies");
+                if (wave2.Length == 0)
                 {
-                    randX = Random.Range(156.32f, 188.16f);
-                    randY = Random.Range(-32.66f, -20.99f);
-                    whereToSpawn = new Vector2(randX, randY);
-                    Instantiate(Spider, whereToSpawn, Quaternion.identity);
-                }
-                for (int i = 0; i < 3; i++)
-                {
-                    randX = Random.Range(156.32f, 188.16f);
-                    randY = Random.Range(-32.66f, -20.99f);
-                    whereToSpawn = new Vector2(randX, randY);
-                    Instantiate(Bat, whereToSpawn, Quaternion.identity);
+                    for (int i = 0; i < 3; i++)
+                    {
+                        randX = Random.Range(156.32f, 188.16f);
+                        randY = Random.Range(-32.66f, -20.99f);
+                        whereToSpawn = new Vector2(randX, randY);
+                        Instantiate(Spider, whereToSpawn, Quaternion.identity);
+                    }
+                    for (int i = 0; i < 3; i++)
+                    {
+                        randX = Random.Range(156.32f, 188.16f);
+                        randY = Random.Range(-32.66f, -20.99f);
+                        whereToSpawn = new Vector2(randX, randY);
+                        Instantiate(Bat, whereToSpawn, Quaternion.identity);
+                    }
+                    GameObject[] wave3 = GameObject.FindGameObjectsWithTag("ChallengeEnemies");
+                    if (wave3.Length == 0)
+                    {
+                        Debug.Log("Finished!!");
+                    }
                 }
             }
         }
-    }
-
-    public void addDead(int num)
-    {
-        numDead += num;
     }
 }

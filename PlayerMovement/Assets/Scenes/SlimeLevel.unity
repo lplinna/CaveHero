@@ -102061,8 +102061,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tilemapWall: {fileID: 646339283}
   triggered: 0
-  Bat: {fileID: 4487013982981650552, guid: 68b6ed4f34fd0414e840d6502eefbd21, type: 3}
-  Spider: {fileID: 8435070875905267798, guid: dee63f3827e2c1f44a59e8970a9ee29c, type: 3}
+  Bat: {fileID: 1762133704041148128, guid: 7388fc0e2a418ef448a2c4ff2144e281, type: 3}
+  Spider: {fileID: 8321341929878798958, guid: 888a3c34c06281a4c936868662615613, type: 3}
   randX: 0
   randY: 0
   whereToSpawn: {x: 0, y: 0}
