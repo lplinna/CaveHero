@@ -14,6 +14,8 @@ public class PlayerCharacter : MonoBehaviour
     public Vector3 playerwayP;
     // To create the visual energy bar
     public EnergyBar energyBar;
+    int currMoney = 0;
+    public MoneyCounter MONEY;
 
     // Player Sprites
     public SpriteRenderer playerSprite;
@@ -77,8 +79,12 @@ public class PlayerCharacter : MonoBehaviour
 
     public void PlayerAnimation()
     {
+
+
+
         if (Input.GetKey("d"))
         {
+            playerAnim.speed = 1;
             playerAnim.SetBool("WalkSide", true);
             playerAnim.SetBool("Idle", false);
             playerSprite.flipX = false;
@@ -86,9 +92,11 @@ public class PlayerCharacter : MonoBehaviour
             playerAnim.SetBool("WalkUp", false);
             idle = sideSprite;
             playerSprite.sprite = idle;
+
         }
-        else if (Input.GetKey("a"))
+        if (Input.GetKey("a"))
         {
+            playerAnim.speed = 1;
             playerAnim.SetBool("WalkSide", true);
             playerAnim.SetBool("Idle", false);
             playerSprite.flipX = true;
@@ -96,18 +104,27 @@ public class PlayerCharacter : MonoBehaviour
             playerAnim.SetBool("WalkUp", false);
             idle = sideSprite;
             playerSprite.sprite = idle;
+
         }
-        else if (Input.GetKey("s"))
+
+
+
+        if (Input.GetKey("s"))
         {
+            playerAnim.speed = 1;
             playerAnim.SetBool("WalkDown", true);
             playerAnim.SetBool("Idle", false);
             playerAnim.SetBool("WalkSide", false);
             playerAnim.SetBool("WalkUp", false);
             idle = downSprite;
             playerSprite.sprite = idle;
+
         }
-        else if (Input.GetKey("w"))
+
+
+        if (Input.GetKey("w"))
         {
+            playerAnim.speed = 1;
             playerAnim.SetBool("WalkUp", true);
             playerAnim.SetBool("Idle", false);
             playerAnim.SetBool("WalkSide", false);
@@ -116,16 +133,33 @@ public class PlayerCharacter : MonoBehaviour
             playerSprite.sprite = idle;
 
         }
-        else
+
+        if (move == Vector3.zero)
         {
+            if (playerwayP.y != 0)
+            {
+                playerAnim.SetBool("WalkUp", false);
+                playerAnim.SetBool("Idle", false);
+                playerAnim.SetBool("WalkSide", false);
+                playerAnim.SetBool("WalkDown", false);
 
-            playerSprite.sprite = idle;
+                if (playerwayP.y > 0)
+                    playerAnim.Play("Base Layer.Walk Up", 0, 0f);
+                else
+                    playerAnim.Play("Base Layer.Walk Down", 0, 0f);
 
-            playerAnim.SetBool("Idle", true);
-            playerAnim.SetBool("WalkSide", false);
-            playerAnim.SetBool("WalkDown", false);
-            playerAnim.SetBool("WalkUp", false);
+            }
+
+            if (playerwayP.x != 0)
+            {
+                playerAnim.SetBool("WalkSide", false);
+                playerAnim.SetBool("Idle", true);
+                playerSprite.sprite = idle;
+            }
         }
+
+
+
     }
 
     public void PlayerSprint()
@@ -174,6 +208,20 @@ public class PlayerCharacter : MonoBehaviour
 
         energyBar.SetEnergy(currEnergy);
     }
+
+
+    public void AddMoney(int money)
+    {
+        currMoney += money;
+        MONEY.SetMoney(currMoney);
+    }
+
+    public void TakeMoney(int money)
+    {
+        currMoney -= money;
+        MONEY.SetMoney(currMoney);
+    }
+
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
