@@ -5,6 +5,7 @@ using UnityEngine;
 public class SpiderBehavior : MonoBehaviour
 {
     public GameObject target;
+    public GameObject pellet;
     Rigidbody2D body;
     float reftime;
     Vector2 zagway;
@@ -24,6 +25,21 @@ public class SpiderBehavior : MonoBehaviour
     }
 
 
+    void Update()
+    {
+        if (body.velocity.x > 0.2f)
+        {
+            spiderSprite.sprite = forward;
+            spiderSprite.flipX = true;
+        }
+        else if (body.velocity.x < -0.2f)
+        {
+            spiderSprite.sprite = forward;
+            spiderSprite.flipX = false;
+        }
+    }
+
+
     void RandomizeZigZag()
     {
         Vector3 oof = Random.insideUnitSphere;
@@ -32,19 +48,38 @@ public class SpiderBehavior : MonoBehaviour
         body.velocity = oof.normalized * 6f;
         zagway = body.velocity;
     }
-    
+
+
+    void FirePellet(Vector3 direction)
+    {
+        var t = Instantiate(pellet, transform.position, Quaternion.identity);
+        if (t == null) { return; }
+        t.transform.rotation = Quaternion.LookRotation(Vector3.forward, direction);
+        
+        t.GetComponent<Rigidbody2D>().velocity = direction * 5f;
+    }
+
+
     void FixedUpdate()
     {
         var enemytimer = (Time.time - reftime) * 30f;
         var towards = target.transform.position - body.transform.position;
+
         
+        if ((25%enemytimer)<2f)
+        {
+            FirePellet(towards.normalized);
+        }
 
         
         
+
+
 
         if(Mathf.Ceil(enemytimer%20) == 5)
         {
             RandomizeZigZag();
+            
         }
 
         if (Mathf.Ceil(enemytimer % 19) == 5)

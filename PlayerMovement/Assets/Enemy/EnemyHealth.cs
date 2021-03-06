@@ -21,6 +21,7 @@ public class EnemyHealth : MonoBehaviour
         else
         {
             this.gameObject.SetActive(false);
+            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCharacter>().AddMoney(3);
         }
     }
 
