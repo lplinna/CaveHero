@@ -17,20 +17,20 @@ public class PelletBehavior : MonoBehaviour
     }
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.name.Contains("Wall"))
         {
-            Destroy(this.gameObject, 0.2f);
+            Destroy(this.gameObject, 0.0f);
         }
 
         if (collision.gameObject.name.Contains("Player"))
         {
-            collision.gameObject.GetComponent<Health>().Damage(0f);
+            collision.gameObject.GetComponent<Health>().Damage(3f);
 
-            Destroy(this.gameObject, 0.02f);
+            Destroy(this.gameObject, 0.0f);
         }
-
 
     }
 
