@@ -117,7 +117,7 @@ public class Health : MonoBehaviour
         bool isEnemy = collision.gameObject.CompareTag("Bat") || collision.gameObject.CompareTag("Beetle") || collision.gameObject.CompareTag("Spider") || collision.gameObject.CompareTag("ChallengeEnemies");
         if (isEnemy)
         {
-            Damage(0.0f);
+            Damage(0.5f);
         }
     }
 

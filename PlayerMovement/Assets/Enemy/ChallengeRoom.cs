@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class ChallengeRoom : MonoBehaviour
 {
-    public GameObject tilemapWall, endChallengeWall;
+    public GameObject tilemapWall, endChallengeWall, border, top, middle, bottom, background;
     public bool triggered;
     public GameObject Bat, Spider;
     public float randX, randY;
@@ -16,6 +16,8 @@ public class ChallengeRoom : MonoBehaviour
     void Start()
     {
         tilemapWall.SetActive(false);
+
+
         triggered = false;
         Bat.GetComponent<ChallengeEnemy>().challenge = this.gameObject;
         Spider.GetComponent<ChallengeEnemy>().challenge = this.gameObject;
