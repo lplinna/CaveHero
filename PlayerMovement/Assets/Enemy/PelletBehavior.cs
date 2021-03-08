@@ -26,7 +26,7 @@ public class PelletBehavior : MonoBehaviour
 
         if (collision.gameObject.name.Contains("Player"))
         {
-            collision.gameObject.GetComponent<Health>().Damage(3f);
+            collision.gameObject.GetComponent<Health>().Damage(0f);
 
             Destroy(this.gameObject, 0.02f);
         }
