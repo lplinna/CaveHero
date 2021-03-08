@@ -7,16 +7,22 @@ public class Health : MonoBehaviour
 {
     public float currHealth = 0.0f;
     public float maxHealth = 100.0f;
+    
 
     public HealthBar healthBar;
 
     public CheckpointSystem checkpoint;
 
+    int poisonCounter = 0;
+
+
     // Start is called before the first frame update
     void Start()
     {
         currHealth = maxHealth;
+     
         StartCoroutine(Regenerate());
+        
     }
 
     // Update is called once per frame
@@ -38,6 +44,19 @@ public class Health : MonoBehaviour
             Invoke("Death", 3f);
         }
     }
+
+
+    public void Poison(float hits)
+    {
+        if (poisonCounter<3)
+        {
+            StartCoroutine(PoisonRoutine(hits));
+            poisonCounter++;
+        }
+    }
+
+
+
 
     public void Death()
     {
@@ -61,6 +80,34 @@ public class Health : MonoBehaviour
             else
             {
                 yield return null;
+            }
+        }
+    }
+
+
+    public Color sickened(Color c)
+    {
+        c = Color.Lerp(c, Color.green, 0.4f);
+        return c;
+    }
+
+    public IEnumerator PoisonRoutine(float hits,float damage=1.0f,float speed=0.2f)
+    {
+        healthBar.SetColor(sickened(healthBar.GetColor()));
+        int hcount = 0;
+        while (true)
+        {
+            if (currHealth > 0 && hcount <= hits)
+            {
+                Damage(damage);
+                hcount++;
+                yield return new WaitForSeconds(speed);
+            }
+            else
+            {
+                poisonCounter -= 1;
+                healthBar.SetColor(Color.red);
+                yield break;
             }
         }
     }

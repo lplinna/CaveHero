@@ -27,4 +27,16 @@ public class HealthBar : MonoBehaviour
     {
         healthBar.value = hp;
     }
+
+    public void SetColor(Color p)
+    {
+        Image barbox = healthBar.fillRect.gameObject.GetComponent<Image>();
+        barbox.color = p;
+    }
+
+    public Color GetColor()
+    {
+        Image barbox = healthBar.fillRect.gameObject.GetComponent<Image>();
+        return barbox.color;
+    }
 }
