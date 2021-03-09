@@ -48,9 +48,13 @@ public class PlayerCharacter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PlayerMovement();
         PlayerAnimation();
         PlayerSprint();
+    }
+
+    void FixedUpdate()
+    {
+        PlayerMovement();
     }
 
     //all player movement statements
