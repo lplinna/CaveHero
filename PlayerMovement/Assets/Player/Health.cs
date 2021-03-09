@@ -7,7 +7,6 @@ public class Health : MonoBehaviour
 {
     public float currHealth = 0.0f;
     public float maxHealth = 100.0f;
-    
 
     public HealthBar healthBar;
 
@@ -61,10 +60,6 @@ public class Health : MonoBehaviour
     public void Death()
     {
         SceneManager.LoadScene("SlimeLevel");
-        if(checkpoint.triggered)
-        {
-            this.gameObject.transform.position = checkpoint.transform.position;
-        }
     }
 
     public IEnumerator Regenerate()

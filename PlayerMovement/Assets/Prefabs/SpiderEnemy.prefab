@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  pellet: {fileID: 5613767429477842853, guid: 1310e463390f118479c273a7fab28954, type: 3}
   spiderSprite: {fileID: 6639678819298956165}
   forward: {fileID: -986924079635733974, guid: c40fd6bc9d1f04f4dafc026f95256f58, type: 3}
   backward: {fileID: -6556066355132681355, guid: c40fd6bc9d1f04f4dafc026f95256f58, type: 3}

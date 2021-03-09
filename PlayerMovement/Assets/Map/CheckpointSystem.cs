@@ -5,15 +5,19 @@ using UnityEngine;
 public class CheckpointSystem : MonoBehaviour
 {
     public bool triggered;
-    // Start is called before the first frame update
-    void Start()
-    {
-        triggered = false;
-    }
+    private static CheckpointSystem instance;
+    public Vector2 checkpointPos;
 
-    // Update is called once per frame
-    void Update()
+    void Awake()
     {
-        
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(instance);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -37,6 +37,12 @@ public class PlayerCharacter : MonoBehaviour
         currEnergy = maxEnergy;
         playerPhysics = GetComponent<Rigidbody2D>();
         playerAnim = GetComponent<Animator>();
+        checkpoint = GameObject.FindGameObjectWithTag("Checkpoint").GetComponent<CheckpointSystem>();
+        if (checkpoint.triggered)
+        {
+            transform.position = checkpoint.checkpointPos;
+        }
+        
     }
 
     // Update is called once per frame
@@ -232,6 +238,7 @@ public class PlayerCharacter : MonoBehaviour
         }
         if(collision.gameObject.CompareTag("Checkpoint"))
         {
+            checkpoint.checkpointPos = transform.position;
             checkpoint.triggered = true;
         }
         if(collision.gameObject.CompareTag("Challenge"))
