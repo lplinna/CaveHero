@@ -39,12 +39,12 @@ public class PlayerAttackMining : MonoBehaviour
             var pangle = GetPlayerRotation();
             sangle = -20f + pangle;
             eangle = 20f + pangle;
-            rotateDirection = 0.2f;
+            rotateDirection = 0.4f;
             if(Random.value > 0.5f)
             {
                 sangle = 20 + pangle;
                 eangle = -20f + pangle;
-                rotateDirection = -0.2f;
+                rotateDirection = -0.4f;
             }
 
             pickaxe.SetActive(true);

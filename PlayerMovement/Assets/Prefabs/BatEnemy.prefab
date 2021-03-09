@@ -160,6 +160,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 40
+  pickup: {fileID: 1381075947213038704, guid: 961ccec62179efa4f8d5de3000940b2c, type: 3}
 --- !u!95 &2775126230855140347
 Animator:
   serializedVersion: 3
