@@ -10,7 +10,7 @@ public class MoneyCounter : MonoBehaviour
    
     public void SetMoney(int muns)
     {
-        gameObject.GetComponent<UnityEngine.UI.Text>().text = "MONEY " + muns;
+        gameObject.GetComponent<UnityEngine.UI.Text>().text = "MONEY: " + muns;
     }
 
 

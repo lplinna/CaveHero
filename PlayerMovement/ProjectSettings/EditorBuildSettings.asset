@@ -11,4 +11,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/SlimeLevel.unity
     guid: 36439155ed5272144bfff7d2820dc33c
+  - enabled: 1
+    path: Assets/Scenes/Merchant.unity
+    guid: c6a39fb95e797b84e8244f4fa27db991
+  - enabled: 1
+    path: Assets/Scenes/LoadingNextLevel.unity
+    guid: fa97dc0959667504fbf389b0c94c7f7b
   m_configObjects: {}
