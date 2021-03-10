@@ -40,6 +40,7 @@ public class Health : MonoBehaviour
         if (currHealth <= 0)
         {
             this.gameObject.SetActive(false);
+            SoundManager.PlaySound("PlayerDeath");
             Invoke("Death", 3f);
         }
     }
@@ -122,6 +123,7 @@ public class Health : MonoBehaviour
         {
             if (currHealth < 100)
             {
+                SoundManager.PlaySound("HealthPotion");
                 currHealth += 20;
                 collision.gameObject.SetActive(false);
             }

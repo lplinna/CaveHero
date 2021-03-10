@@ -30,6 +30,10 @@ public class PlayerCharacter : MonoBehaviour
     public CheckpointSystem checkpoint;
     public ChallengeRoom challenge;
 
+    //Player Audio
+    public AudioSource audioSrc;
+    public bool isMoving;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -42,7 +46,8 @@ public class PlayerCharacter : MonoBehaviour
         {
             transform.position = checkpoint.checkpointPos;
         }
-        
+        audioSrc = GetComponent<AudioSource>();
+        isMoving = false;
     }
 
     // Update is called once per frame
@@ -91,7 +96,6 @@ public class PlayerCharacter : MonoBehaviour
     {
 
 
-
         if (Input.GetKey("d"))
         {
             playerAnim.speed = 1;
@@ -102,7 +106,7 @@ public class PlayerCharacter : MonoBehaviour
             playerAnim.SetBool("WalkUp", false);
             idle = sideSprite;
             playerSprite.sprite = idle;
-
+            isMoving = true;
         }
         if (Input.GetKey("a"))
         {
@@ -114,7 +118,7 @@ public class PlayerCharacter : MonoBehaviour
             playerAnim.SetBool("WalkUp", false);
             idle = sideSprite;
             playerSprite.sprite = idle;
-
+            isMoving = true;
         }
 
 
@@ -128,7 +132,7 @@ public class PlayerCharacter : MonoBehaviour
             playerAnim.SetBool("WalkUp", false);
             idle = downSprite;
             playerSprite.sprite = idle;
-
+            isMoving = true;
         }
 
 
@@ -141,7 +145,7 @@ public class PlayerCharacter : MonoBehaviour
             playerAnim.SetBool("WalkDown", false);
             idle = upSprite;
             playerSprite.sprite = idle;
-
+            isMoving = true;
         }
 
         if (move == Vector3.zero)
@@ -168,8 +172,20 @@ public class PlayerCharacter : MonoBehaviour
             }
         }
 
+        if(isMoving)
+        {
+            if(!audioSrc.isPlaying)
+            {
+                audioSrc.Play();
+                
+            } 
+        }
+        else
+        {
+            audioSrc.Stop();
+        }
 
-
+        isMoving = false;
     }
 
     public void PlayerSprint()

@@ -12,6 +12,7 @@ public class ChallengeRoom : MonoBehaviour
     public GameObject[] wave1, wave2, wave3;
     public bool wave1Trigger = false, wave2Trigger = false, wave3Trigger = false;
 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -96,6 +97,7 @@ public class ChallengeRoom : MonoBehaviour
         if (wave3.Length == 0 && wave3Trigger)
         {
             Debug.Log("Finished!!");
+            SoundManager.PlaySound("WinChallenge");
             tilemapWall.SetActive(false);
 
             endChallengeWall.SetActive(false);

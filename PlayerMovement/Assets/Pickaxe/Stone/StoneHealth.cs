@@ -18,8 +18,6 @@ public class StoneHealth : MonoBehaviour
     {
         currHealth = 20f;
         stone.sprite = stoneSprite;
-        
-        
     }
 
 

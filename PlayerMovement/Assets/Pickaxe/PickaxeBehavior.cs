@@ -8,13 +8,14 @@ public class PickaxeBehavior : MonoBehaviour
 
     // Start is called before the first frame update
 
-
+    public AudioSource audioSrc;
 
     public bool canHit;
     public bool PowerAttack;
     private void Start()
     {
         canHit = true;
+        audioSrc = GetComponent<AudioSource>();
     }
 
     public void OnCollisionStay2D(Collision2D collision)
@@ -44,6 +45,15 @@ public class PickaxeBehavior : MonoBehaviour
             Debug.Log("Stone hit!");
             var stone = collision.gameObject.GetComponent<StoneHealth>();
             stone.Damage(10f);
+            if (!audioSrc.isPlaying)
+            {
+                audioSrc.Play();
+            }
+            else
+            {
+                audioSrc.Stop();
+                audioSrc.Play();
+            }
             canHit = false;
         }
     }

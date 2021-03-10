@@ -16,6 +16,7 @@ public class Elevator : MonoBehaviour
 
     IEnumerator SceneChange()
     {
+        SoundManager.PlaySound("ElevatorOpening");
         player.transform.position.Set(this.transform.position.x, this.transform.position.y, this.transform.position.z);
         elevatorSprite.sprite = smidge;
         yield return new WaitForSeconds(1);
