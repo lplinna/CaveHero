@@ -74384,6 +74384,7 @@ MonoBehaviour:
   challenge: {fileID: 2137046290}
   audioSrc: {fileID: 0}
   isMoving: 0
+  muteAudio: 0
 --- !u!50 &1104956767
 Rigidbody2D:
   serializedVersion: 4
@@ -74464,7 +74465,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1104956764}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 172.7, y: -6.8, z: 0}
+  m_LocalPosition: {x: 0.01, y: -0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -78575,9 +78576,9 @@ Transform:
   - {fileID: 984175919}
   - {fileID: 1771913603}
   - {fileID: 1772578299}
-  - {fileID: 1193333073}
   - {fileID: 1728258450}
   - {fileID: 72396396}
+  - {fileID: 1193333073}
   - {fileID: 74447424}
   - {fileID: 1308387939}
   - {fileID: 853200338}

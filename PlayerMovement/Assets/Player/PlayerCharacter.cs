@@ -33,6 +33,7 @@ public class PlayerCharacter : MonoBehaviour
     //Player Audio
     public AudioSource audioSrc;
     public bool isMoving;
+    public bool muteAudio;
 
     // Start is called before the first frame update
     void Start()
@@ -48,6 +49,7 @@ public class PlayerCharacter : MonoBehaviour
         }
         audioSrc = GetComponent<AudioSource>();
         isMoving = false;
+        muteAudio = false;
     }
 
     // Update is called once per frame
@@ -55,6 +57,20 @@ public class PlayerCharacter : MonoBehaviour
     {
         PlayerAnimation();
         PlayerSprint();
+        if (Input.GetKeyDown("m"))
+        {
+            if (!muteAudio)
+            {
+                AudioListener.pause = true;
+                muteAudio = true;
+            }
+            else
+            {
+                AudioListener.pause = false;
+                muteAudio = false;
+            }
+            
+        }
     }
 
     void FixedUpdate()
