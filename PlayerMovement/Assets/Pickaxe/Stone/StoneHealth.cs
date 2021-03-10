@@ -5,6 +5,7 @@ using UnityEngine;
 public class StoneHealth : MonoBehaviour
 {
     public float currHealth;
+    public GameObject pickup;
     public void Damage(float amount)
     {
         currHealth -= amount;
@@ -13,9 +14,12 @@ public class StoneHealth : MonoBehaviour
     public Sprite stoneSprite, breakingSprite, brokenSprite;
     public SpriteRenderer stone;
 
+    public bool dead;
+
     // Start is called before the first frame update
     void Start()
     {
+        dead = false;
         currHealth = 20f;
         stone.sprite = stoneSprite;
     }
@@ -23,6 +27,18 @@ public class StoneHealth : MonoBehaviour
 
     void Perish()
     {
+        if (!dead)
+        {
+            Instantiate(pickup, this.gameObject.transform.position, Quaternion.identity);
+            float randomExtra = Random.Range(0.000f, 1.000f);
+            if (randomExtra <= 0.05)
+            {
+                Instantiate(pickup, this.gameObject.transform.position, Quaternion.identity);
+            }
+            Debug.Log("Pickup");
+            dead = true;
+        }
+        
         this.gameObject.SetActive(false);
     }
 

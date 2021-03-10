@@ -8,15 +8,22 @@ public class Elevator : MonoBehaviour
     public GameObject player;
     public SpriteRenderer elevatorSprite;
     public Sprite close, smidge, partial, open;
+    public bool triggered;
    
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        StartCoroutine(SceneChange());
+        if (!triggered)
+        {
+            StartCoroutine(SceneChange());
+            triggered = true;
+        }
     }
 
     IEnumerator SceneChange()
     {
+        MusicManager.stopPlaying();
         SoundManager.PlaySound("ElevatorOpening");
+        yield return new WaitForSeconds(1.5f);
         player.transform.position.Set(this.transform.position.x, this.transform.position.y, this.transform.position.z);
         elevatorSprite.sprite = smidge;
         yield return new WaitForSeconds(1);
@@ -25,6 +32,5 @@ public class Elevator : MonoBehaviour
         elevatorSprite.sprite = open;
         yield return new WaitForSeconds(2);
         SceneManager.LoadScene("LoadingNextLevel");
-
     }
 }

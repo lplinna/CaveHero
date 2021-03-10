@@ -172,13 +172,13 @@ public class PlayerCharacter : MonoBehaviour
             }
         }
 
-        if(isMoving)
+        if (isMoving)
         {
-            if(!audioSrc.isPlaying)
+            if (!audioSrc.isPlaying)
             {
                 audioSrc.Play();
-                
-            } 
+
+            }
         }
         else
         {
@@ -251,7 +251,7 @@ public class PlayerCharacter : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.CompareTag("Stone"))
+        if (collision.gameObject.CompareTag("StonePickup") || collision.gameObject.CompareTag("AmethystPickup"))
         {
             collision.gameObject.SetActive(false);
 

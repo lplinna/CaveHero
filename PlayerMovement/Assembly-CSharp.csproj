@@ -61,6 +61,7 @@
     <Compile Include="Assets\Enemy\ChallengeEnemy.cs" />
     <Compile Include="Assets\Enemy\BatBehavior.cs" />
     <Compile Include="Assets\Pickaxe\Stone\StoneHealth.cs" />
+    <Compile Include="Assets\Map\SoundManager.cs" />
     <Compile Include="Assets\Player\MoneyCounter.cs" />
     <Compile Include="Assets\Player\PlayerCharacter.cs" />
     <Compile Include="Assets\Player\EnergyBar.cs" />
@@ -76,7 +77,7 @@
     <Compile Include="Assets\Map\ChallengeRoom.cs" />
     <Compile Include="Assets\Enemy\BeetleBehavior.cs" />
     <Compile Include="Assets\Map\LoadingNextLevel.cs" />
-    <Compile Include="Assets\Map\SoundManager.cs" />
+    <Compile Include="Assets\Map\MusicManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

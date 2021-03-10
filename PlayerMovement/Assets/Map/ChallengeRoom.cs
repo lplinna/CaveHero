@@ -11,6 +11,7 @@ public class ChallengeRoom : MonoBehaviour
     public Vector2 whereToSpawn;
     public GameObject[] wave1, wave2, wave3;
     public bool wave1Trigger = false, wave2Trigger = false, wave3Trigger = false;
+    public bool debugMode;
 
 
     // Start is called before the first frame update
@@ -28,76 +29,89 @@ public class ChallengeRoom : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (triggered)
+        if (!debugMode)
         {
-            tilemapWall.SetActive(true);
-            triggered = false;
-            this.gameObject.transform.position = Vector3.zero;
-            Debug.Log("Active");
 
-            for (int i = 0; i < 3; i++)
+
+            if (triggered)
             {
-                randX = Random.Range(156.32f, 188.16f);
-                randY = Random.Range(-30.66f, -20.99f);
-                whereToSpawn = new Vector2(randX, randY);
-                Instantiate(Bat, whereToSpawn, Quaternion.identity);
+                tilemapWall.SetActive(true);
+                triggered = false;
+                this.gameObject.transform.position = Vector3.zero;
+                Debug.Log("Active");
+
+                for (int i = 0; i < 3; i++)
+                {
+                    randX = Random.Range(156.32f, 188.16f);
+                    randY = Random.Range(-30.66f, -20.99f);
+                    whereToSpawn = new Vector2(randX, randY);
+                    Instantiate(Bat, whereToSpawn, Quaternion.identity);
+                }
+                wave1Trigger = true;
             }
-            wave1Trigger = true;
-        }
 
-        wave1 = GameObject.FindGameObjectsWithTag("ChallengeEnemies");
-        //Debug.Log("wave 1:" + wave1.Length);
+            wave1 = GameObject.FindGameObjectsWithTag("ChallengeEnemies");
+            //Debug.Log("wave 1:" + wave1.Length);
 
-        if (wave1.Length == 0 && !wave2Trigger && wave1Trigger)
-        {
-            for (int i = 0; i < 3; i++)
+            if (wave1.Length == 0 && !wave2Trigger && wave1Trigger)
             {
-                randX = Random.Range(156.32f, 188.16f);
-                randY = Random.Range(-32.66f, -20.99f);
-                whereToSpawn = new Vector2(randX, randY);
-                Instantiate(Spider, whereToSpawn, Quaternion.identity);
+                for (int i = 0; i < 3; i++)
+                {
+                    randX = Random.Range(156.32f, 188.16f);
+                    randY = Random.Range(-32.66f, -20.99f);
+                    whereToSpawn = new Vector2(randX, randY);
+                    Instantiate(Spider, whereToSpawn, Quaternion.identity);
+                }
+                wave2Trigger = true;
             }
-            wave2Trigger = true;
-        }
 
-        if(wave2Trigger)
-        {
-            wave2 = GameObject.FindGameObjectsWithTag("ChallengeEnemies");
-            //Debug.Log("Wave 2: " + wave2.Length);
-        }
-        
-
-        if (wave2.Length == 0 && !wave3Trigger && wave2Trigger)
-        {
-            for (int i = 0; i < 2; i++)
+            if (wave2Trigger)
             {
-                randX = Random.Range(156.32f, 188.16f);
-                randY = Random.Range(-32.66f, -20.99f);
-                whereToSpawn = new Vector2(randX, randY);
-                Instantiate(Spider, whereToSpawn, Quaternion.identity);
+                wave2 = GameObject.FindGameObjectsWithTag("ChallengeEnemies");
+                //Debug.Log("Wave 2: " + wave2.Length);
             }
-            for (int i = 0; i < 4; i++)
+
+
+            if (wave2.Length == 0 && !wave3Trigger && wave2Trigger)
             {
-                randX = Random.Range(156.32f, 188.16f);
-                randY = Random.Range(-32.66f, -20.99f);
-                whereToSpawn = new Vector2(randX, randY);
-                Instantiate(Bat, whereToSpawn, Quaternion.identity);
+                for (int i = 0; i < 2; i++)
+                {
+                    randX = Random.Range(156.32f, 188.16f);
+                    randY = Random.Range(-32.66f, -20.99f);
+                    whereToSpawn = new Vector2(randX, randY);
+                    Instantiate(Spider, whereToSpawn, Quaternion.identity);
+                }
+                for (int i = 0; i < 4; i++)
+                {
+                    randX = Random.Range(156.32f, 188.16f);
+                    randY = Random.Range(-32.66f, -20.99f);
+                    whereToSpawn = new Vector2(randX, randY);
+                    Instantiate(Bat, whereToSpawn, Quaternion.identity);
+                }
+                wave3Trigger = true;
+
             }
-            wave3Trigger = true;
-            
-        }
 
-        if(wave3Trigger)
-        {
-            wave3 = GameObject.FindGameObjectsWithTag("ChallengeEnemies");
-            //Debug.Log("Wave 3: " + wave3.Length);
-        }
-        
+            if (wave3Trigger)
+            {
+                wave3 = GameObject.FindGameObjectsWithTag("ChallengeEnemies");
+                //Debug.Log("Wave 3: " + wave3.Length);
+            }
 
-        if (wave3.Length == 0 && wave3Trigger)
+
+            if (wave3.Length == 0 && wave3Trigger)
+            {
+                Debug.Log("Finished!!");
+                SoundManager.PlaySound("WinChallenge");
+                tilemapWall.SetActive(false);
+
+                endChallengeWall.SetActive(false);
+            }
+        }
+        else
         {
             Debug.Log("Finished!!");
-            SoundManager.PlaySound("WinChallenge");
+            //SoundManager.PlaySound("WinChallenge");
             tilemapWall.SetActive(false);
 
             endChallengeWall.SetActive(false);

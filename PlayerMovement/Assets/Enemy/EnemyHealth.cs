@@ -36,6 +36,7 @@ public class EnemyHealth : MonoBehaviour
         {
             this.gameObject.SetActive(false);
             GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCharacter>().AddMoney(3);
+
             if (!audioSrc.isPlaying)
             {
                 audioSrc.Play();
@@ -45,10 +46,17 @@ public class EnemyHealth : MonoBehaviour
                 audioSrc.Stop();
                 audioSrc.Play();
             }
-            if (name.Contains("SpiderEnemy"))
+
+            if (name.Contains("Spider"))
             {
                 SoundManager.PlaySound("SpiderDeath");
             }
+            if (name.Contains("Bat"))
+            {
+                SoundManager.PlaySound("BatDeath");
+            }
+
+
             doDrops();
         }
     }
