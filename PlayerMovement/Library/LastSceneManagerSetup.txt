@@ -1,5 +1,5 @@
 sceneSetups:
-- path: C:/Users/Logan/Desktop/Classwork/GDD/Sprint3/Assets/Scenes/SlimeLevel.unity
+- path: Assets/Scenes/IceLevel.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

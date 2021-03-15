@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7cfec195f0093934fb471fc7122bdfd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  energyBar: {fileID: 0}
+  energyBar: {fileID: 2418701300093404651}
   energy: {fileID: 0}
 --- !u!1 &2418701300097367757
 GameObject:
@@ -455,7 +455,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24d5eb309f55262478f8feef13bdc23b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  healthBar: {fileID: 0}
+  healthBar: {fileID: 2418701301124220566}
   health: {fileID: 0}
 --- !u!1 &2418701301688854334
 GameObject:

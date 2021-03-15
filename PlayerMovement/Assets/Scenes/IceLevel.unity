@@ -398,17 +398,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!114 &433820187 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2418701301124220566, guid: 0baf52075d60b324d80df9c7908b55b5, type: 3}
-  m_PrefabInstance: {fileID: 2138216207}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &958109363
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -794,17 +783,6 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
---- !u!114 &1402520763 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2418701300093404651, guid: 0baf52075d60b324d80df9c7908b55b5, type: 3}
-  m_PrefabInstance: {fileID: 2138216207}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 67db9e8f0e2ae9c40bc1e2b64352a6b4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1645084323
 GameObject:
   m_ObjectHideFlags: 0
@@ -1245,6 +1223,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3083748514255061108, guid: 4840fb6cc6256ab468748077440554d7, type: 3}
+      propertyPath: m_TagString
+      value: Pickaxe
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4840fb6cc6256ab468748077440554d7, type: 3}
 --- !u!1001 &2138216207
@@ -1254,14 +1236,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 2418701300093404652, guid: 0baf52075d60b324d80df9c7908b55b5, type: 3}
-      propertyPath: energyBar
-      value: 
-      objectReference: {fileID: 1402520763}
-    - target: {fileID: 2418701300093404652, guid: 0baf52075d60b324d80df9c7908b55b5, type: 3}
-      propertyPath: energy
-      value: 
-      objectReference: {fileID: 0}
     - target: {fileID: 2418701300097367756, guid: 0baf52075d60b324d80df9c7908b55b5, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -1361,14 +1335,6 @@ PrefabInstance:
     - target: {fileID: 2418701300523321471, guid: 0baf52075d60b324d80df9c7908b55b5, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2418701301124220567, guid: 0baf52075d60b324d80df9c7908b55b5, type: 3}
-      propertyPath: healthBar
-      value: 
-      objectReference: {fileID: 433820187}
-    - target: {fileID: 2418701301124220567, guid: 0baf52075d60b324d80df9c7908b55b5, type: 3}
-      propertyPath: health
-      value: 
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0baf52075d60b324d80df9c7908b55b5, type: 3}
