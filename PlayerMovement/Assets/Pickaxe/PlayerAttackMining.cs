@@ -21,7 +21,7 @@ public class PlayerAttackMining : MonoBehaviour
 
     float GetPlayerRotation() 
     {
-        return  Quaternion.LookRotation(player.playerwayP,Vector3.forward).eulerAngles.y - 90f;
+        return Quaternion.LookRotation(player.playerwayP, Vector3.forward).eulerAngles.y - 90f;
     }
 
 
@@ -73,7 +73,7 @@ public class PlayerAttackMining : MonoBehaviour
 
         if (swiping == 2) //If it's a power attack
         {
-            var b = Camera.main.ScreenToWorldPoint(Input.mousePosition) - player.transform.position;
+            Vector3 b = Camera.main.ScreenToWorldPoint(Input.mousePosition) - player.transform.position;
             b.Normalize();
             Quaternion q = Quaternion.LookRotation(b, Vector3.forward);
 

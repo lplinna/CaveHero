@@ -589,7 +589,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   progressBar: {fileID: 1077540340}
-  levelName: Merchant
+  levelName: IceLevel
 --- !u!114 &1077540340
 MonoBehaviour:
   m_ObjectHideFlags: 0

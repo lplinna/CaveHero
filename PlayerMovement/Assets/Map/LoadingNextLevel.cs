@@ -9,7 +9,7 @@ public class LoadingNextLevel : MonoBehaviour
 {
     
     public Slider progressBar;
-    public string levelName;
+    public static string levelName;
 
     void Start ()
     {
@@ -26,5 +26,10 @@ public class LoadingNextLevel : MonoBehaviour
             progressBar.value = loading;
             yield return null;
         }
+    }
+
+    public static void setLevelName(string nLevel)
+    {
+        levelName = nLevel;
     }
 }

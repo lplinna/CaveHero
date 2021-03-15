@@ -31,6 +31,7 @@ public class Elevator : MonoBehaviour
         yield return new WaitForSeconds(1);
         elevatorSprite.sprite = open;
         yield return new WaitForSeconds(2);
+        LoadingNextLevel.setLevelName("IceLevel");
         SceneManager.LoadScene("LoadingNextLevel");
     }
 }
