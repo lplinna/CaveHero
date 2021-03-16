@@ -7,13 +7,16 @@ TextureImporter:
     second: Ice Floor
   - first:
       213: 5675445975907073423
-    second: Cracked Ice
+    second: Cracked Ice Floor
   - first:
       213: -8889517495775429713
-    second: Ice Stone
+    second: Stone Ice Floor
   - first:
       213: -71629736681178986
-    second: Ice Stone1
+    second: Stones Ice Floor
+  - first:
+      213: -3848901441781467023
+    second: Slippery Ice Floor
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -105,7 +108,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 0
-        y: 32
+        y: 64
         width: 32
         height: 32
       alignment: 0
@@ -122,11 +125,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Cracked Ice
+      name: Cracked Ice Floor
       rect:
         serializedVersion: 2
         x: 32
-        y: 32
+        y: 64
         width: 32
         height: 32
       alignment: 0
@@ -143,11 +146,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ice Stone
+      name: Stone Ice Floor
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
+        y: 32
         width: 32
         height: 32
       alignment: 0
@@ -164,11 +167,11 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Ice Stone1
+      name: Stones Ice Floor
       rect:
         serializedVersion: 2
         x: 32
-        y: 0
+        y: 32
         width: 32
         height: 32
       alignment: 0
@@ -180,6 +183,27 @@ TextureImporter:
       bones: []
       spriteID: 69873cd4225810ff0800000000000000
       internalID: -71629736681178986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Slippery Ice Floor
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1787023f784f59ac0800000000000000
+      internalID: -3848901441781467023
       vertices: []
       indices: 
       edges: []
