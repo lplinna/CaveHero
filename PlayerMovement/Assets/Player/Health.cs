@@ -60,7 +60,7 @@ public class Health : MonoBehaviour
 
     public void Death()
     {
-        SceneManager.LoadScene("SlimeLevel");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
     public IEnumerator Regenerate()

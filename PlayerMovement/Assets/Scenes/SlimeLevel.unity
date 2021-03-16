@@ -79656,8 +79656,16 @@ MonoBehaviour:
   bottom: {fileID: 1119618571}
   background: {fileID: 1188024997}
   triggered: 0
-  Bat: {fileID: 1762133704041148128, guid: 7388fc0e2a418ef448a2c4ff2144e281, type: 3}
-  Spider: {fileID: 8321341929878798958, guid: 888a3c34c06281a4c936868662615613, type: 3}
+  Enemy1: {fileID: 1762133704041148128, guid: 7388fc0e2a418ef448a2c4ff2144e281, type: 3}
+  Enemy2: {fileID: 8321341929878798958, guid: 888a3c34c06281a4c936868662615613, type: 3}
+  wave1Enemy1: 3
+  wave3Enemy1: 4
+  wave2Enemy2: 3
+  wave3Enemy2: 2
+  rangeX1: 156.32
+  rangeX2: 188.16
+  rangeY1: -30.66
+  rangeY2: -20.99
   randX: 0
   randY: 0
   whereToSpawn: {x: 0, y: 0}
@@ -79668,6 +79676,9 @@ MonoBehaviour:
   wave2Trigger: 0
   wave3Trigger: 0
   debugMode: 0
+  changedPositionX: 172.44
+  changedPositionY: -21.823
+  changedPositionZ: -38.146
 --- !u!212 &2137046291
 SpriteRenderer:
   m_ObjectHideFlags: 0
