@@ -9,13 +9,23 @@ public class Elevator : MonoBehaviour
     public SpriteRenderer elevatorSprite;
     public Sprite close, smidge, partial, open;
     public bool triggered;
-   
+    public CheckpointSystem checkpoint;
+    public int currScene;
+
+    void Update()
+    {
+        currScene = SceneManager.GetActiveScene().buildIndex;
+        //Debug.Log(currScene);
+    }
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (!triggered)
         {
             StartCoroutine(SceneChange());
             triggered = true;
+            checkpoint.triggered = false;
+            StopCoroutine(SceneChange());
         }
     }
 
@@ -31,7 +41,26 @@ public class Elevator : MonoBehaviour
         yield return new WaitForSeconds(1);
         elevatorSprite.sprite = open;
         yield return new WaitForSeconds(2);
-        LoadingNextLevel.setLevelName("IceLevel");
+
+        switch (currScene) {
+            case 2: // Slime to Ice
+                Merchant.setNextScene("IceLevel");
+                checkpoint.checkpointPos.Set(142.5f, 1.65f);
+                break;
+
+            case 3: // Ice to Lava
+                Merchant.setNextScene("LavaLevel");
+                break;
+
+            case 4: // Lava to Throne
+                Merchant.setNextScene("ThroneRoom");
+                break;
+
+            case 5: // Throne to Slime
+                Merchant.setNextScene("SlimeLevel");
+                checkpoint.checkpointPos.Set(172.5f, -11.5f);
+                break;
+        }
         SceneManager.LoadScene("LoadingNextLevel");
     }
 }

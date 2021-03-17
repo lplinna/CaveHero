@@ -53,6 +53,7 @@ public class ChallengeRoom : MonoBehaviour
                     Instantiate(Enemy1, whereToSpawn, Quaternion.identity);
                 }
                 wave1Trigger = true;
+                Debug.Log("Wave1");
             }
 
             wave1 = GameObject.FindGameObjectsWithTag("ChallengeEnemies");
@@ -68,6 +69,7 @@ public class ChallengeRoom : MonoBehaviour
                     Instantiate(Enemy2, whereToSpawn, Quaternion.identity);
                 }
                 wave2Trigger = true;
+                Debug.Log("Wave2");
             }
 
             if (wave2Trigger)
@@ -94,7 +96,7 @@ public class ChallengeRoom : MonoBehaviour
                     Instantiate(Enemy1, whereToSpawn, Quaternion.identity);
                 }
                 wave3Trigger = true;
-
+                Debug.Log("Wave3");
             }
 
             if (wave3Trigger)

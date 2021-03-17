@@ -161,7 +161,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentHealth: 40
-  pickup: {fileID: 1381075947213038704, guid: 961ccec62179efa4f8d5de3000940b2c, type: 3}
+  pickup: {fileID: 1381075947213038704, guid: 3293a1575fbc1f641b95fcf903126a07, type: 3}
+  audioSrc: {fileID: 0}
 --- !u!95 &2775126230855140347
 Animator:
   serializedVersion: 3

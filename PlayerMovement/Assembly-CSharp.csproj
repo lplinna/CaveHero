@@ -78,6 +78,7 @@
     <Compile Include="Assets\Map\ChallengeRoom.cs" />
     <Compile Include="Assets\Enemy\BeetleBehavior.cs" />
     <Compile Include="Assets\Map\LoadingNextLevel.cs" />
+    <Compile Include="Assets\Map\Merchant.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

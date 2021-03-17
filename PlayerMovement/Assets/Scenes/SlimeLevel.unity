@@ -78793,6 +78793,8 @@ MonoBehaviour:
   partial: {fileID: -5351426994066200602, guid: 5b9591e15fa6dae45af05d968acfe817, type: 3}
   open: {fileID: 1112482287800844133, guid: 5b9591e15fa6dae45af05d968acfe817, type: 3}
   triggered: 0
+  checkpoint: {fileID: 1766301800}
+  currScene: 0
 --- !u!61 &1921792735
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -79646,7 +79648,7 @@ MonoBehaviour:
   wave1Trigger: 0
   wave2Trigger: 0
   wave3Trigger: 0
-  debugMode: 0
+  debugMode: 1
   changedPositionX: 172.44
   changedPositionY: -21.823
   changedPositionZ: -38.146
@@ -80306,11 +80308,11 @@ PrefabInstance:
       objectReference: {fileID: 2137046290}
     - target: {fileID: 6327391077458177464, guid: d15b3809d66832b4eaf7f58e16cc5385, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.01
+      value: 172.6
       objectReference: {fileID: 0}
     - target: {fileID: 6327391077458177464, guid: d15b3809d66832b4eaf7f58e16cc5385, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.5
+      value: -10.9
       objectReference: {fileID: 0}
     - target: {fileID: 6327391077458177464, guid: d15b3809d66832b4eaf7f58e16cc5385, type: 3}
       propertyPath: m_LocalPosition.z
