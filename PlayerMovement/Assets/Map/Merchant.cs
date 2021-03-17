@@ -5,12 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class Merchant : MonoBehaviour
 {
-    public static string nextScene;
     // Start is called before the first frame update
     void Start()
     {
         //REMOVE AFTER MERCHANT HAS BEEN CREATED
-        LoadingNextLevel.setLevelName(nextScene);
         SceneManager.LoadScene("LoadingNextLevel");
     }
 
@@ -22,7 +20,7 @@ public class Merchant : MonoBehaviour
 
     public static void setNextScene(string next)
     {
-        nextScene = next;
+        LoadingNextLevel.setLevelName(next);
     }
 
 }

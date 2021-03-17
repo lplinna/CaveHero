@@ -28,7 +28,6 @@ public class LoadingNextLevel : MonoBehaviour
             loadingOperation = SceneManager.LoadSceneAsync("Merchant");
         }
         
-
         while (!loadingOperation.isDone)
         {
             float loading = Mathf.Clamp01(loadingOperation.progress / 0.9f);
