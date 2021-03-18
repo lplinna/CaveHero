@@ -25,6 +25,8 @@ public class PlayerCharacter : MonoBehaviour
     // Player Physics
     public Rigidbody2D playerPhysics;
     public Vector3 move = Vector3.zero;
+    public bool onSlippery;
+    public float slippery;
 
     // Challenge Room
     public CheckpointSystem checkpoint;
@@ -50,6 +52,9 @@ public class PlayerCharacter : MonoBehaviour
         audioSrc = GetComponent<AudioSource>();
         isMoving = false;
         muteAudio = false;
+
+        slippery = 1f;
+        onSlippery = false;
     }
 
     // Update is called once per frame
@@ -69,8 +74,18 @@ public class PlayerCharacter : MonoBehaviour
                 AudioListener.pause = false;
                 muteAudio = false;
             }
-            
         }
+        if (onSlippery)
+        {
+            slippery = 3f;
+        }
+        else
+        {
+            slippery = 1f;
+        }
+
+        //Debug.Log(slippery);
+        Debug.Log(onSlippery);
     }
 
     void FixedUpdate()
@@ -81,17 +96,28 @@ public class PlayerCharacter : MonoBehaviour
     //all player movement statements
     public void PlayerMovement()
     {
+        
         float rawHorizontalAxis = Input.GetAxisRaw("Horizontal");
         float rawVerticalAxis = Input.GetAxisRaw("Vertical");
         move.x = rawHorizontalAxis;
         move.y = rawVerticalAxis;
 
+        Vector3 translation;
+
         if (move != Vector3.zero)
         {
-            Vector3 translation = move * speed * Time.fixedDeltaTime;
-            Vector3 newPosition = transform.position + translation;
-            playerPhysics.MovePosition(newPosition);
-            playerwayP = move;
+            if(onSlippery)
+            {
+                translation = move * speed * Time.fixedDeltaTime * slippery;
+            }
+            else
+            {
+                translation = move * speed * Time.fixedDeltaTime;
+                Vector3 newPosition = transform.position + translation;
+                playerPhysics.MovePosition(newPosition);
+                playerwayP = move;
+            }
+            
         }
 
         // moves the player
@@ -281,5 +307,19 @@ public class PlayerCharacter : MonoBehaviour
         {
             challenge.triggered = true;
         }
+        if (collision.gameObject.CompareTag("SlipperyIce"))
+        {
+            onSlippery = true;
+        }
     }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("SlipperyIce"))
+        {
+            onSlippery = false;
+        }
+    }
+
+
 }

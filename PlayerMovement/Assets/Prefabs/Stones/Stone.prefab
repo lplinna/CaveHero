@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 5721453049717027312}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -2.2493625, y: -2.227434, z: 0.61678016}
-  m_LocalScale: {x: 0.25, y: 0.25, z: 1}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -150,3 +150,4 @@ MonoBehaviour:
   breakingSprite: {fileID: -1132119105519978036, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
   brokenSprite: {fileID: -5484616402971106345, guid: 5a9dec88f3723574fb79dda2af5d01cc, type: 3}
   stone: {fileID: 5721453049717027315}
+  dead: 0

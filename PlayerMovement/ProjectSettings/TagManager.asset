@@ -16,6 +16,7 @@ TagManager:
   - ChallengeEnemies
   - StonePickup
   - AmethystPickup
+  - SlipperyIce
   layers:
   - Default
   - TransparentFX
