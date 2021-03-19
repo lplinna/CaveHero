@@ -141,25 +141,23 @@ public class PlayerCharacter : MonoBehaviour
         if (Input.GetKey("d"))
         {
             playerAnim.speed = 1;
-            playerAnim.SetBool("WalkSide", true);
+            playerAnim.SetBool("WalkRight", true);
+            playerAnim.SetBool("WalkLeft", false);
             playerAnim.SetBool("Idle", false);
-            playerSprite.flipX = false;
             playerAnim.SetBool("WalkDown", false);
             playerAnim.SetBool("WalkUp", false);
             idle = sideSprite;
-            playerSprite.sprite = idle;
             isMoving = true;
         }
         if (Input.GetKey("a"))
         {
             playerAnim.speed = 1;
-            playerAnim.SetBool("WalkSide", true);
+            playerAnim.SetBool("WalkRight", false);
+            playerAnim.SetBool("WalkLeft", true);
             playerAnim.SetBool("Idle", false);
-            playerSprite.flipX = true;
             playerAnim.SetBool("WalkDown", false);
             playerAnim.SetBool("WalkUp", false);
             idle = sideSprite;
-            playerSprite.sprite = idle;
             isMoving = true;
         }
 
@@ -170,10 +168,10 @@ public class PlayerCharacter : MonoBehaviour
             playerAnim.speed = 1;
             playerAnim.SetBool("WalkDown", true);
             playerAnim.SetBool("Idle", false);
-            playerAnim.SetBool("WalkSide", false);
+            playerAnim.SetBool("WalkLeft", false);
+            playerAnim.SetBool("WalkRight", false);
             playerAnim.SetBool("WalkUp", false);
             idle = downSprite;
-            playerSprite.sprite = idle;
             isMoving = true;
         }
 
@@ -183,10 +181,10 @@ public class PlayerCharacter : MonoBehaviour
             playerAnim.speed = 1;
             playerAnim.SetBool("WalkUp", true);
             playerAnim.SetBool("Idle", false);
-            playerAnim.SetBool("WalkSide", false);
+            playerAnim.SetBool("WalkLeft", false);
+            playerAnim.SetBool("WalkRight", false);
             playerAnim.SetBool("WalkDown", false);
             idle = upSprite;
-            playerSprite.sprite = idle;
             isMoving = true;
         }
 
@@ -196,7 +194,8 @@ public class PlayerCharacter : MonoBehaviour
             {
                 playerAnim.SetBool("WalkUp", false);
                 playerAnim.SetBool("Idle", false);
-                playerAnim.SetBool("WalkSide", false);
+                playerAnim.SetBool("WalkLeft", false);
+                playerAnim.SetBool("WalkRight", false);
                 playerAnim.SetBool("WalkDown", false);
 
                 if (playerwayP.y > 0)
@@ -208,9 +207,13 @@ public class PlayerCharacter : MonoBehaviour
 
             if (playerwayP.x != 0)
             {
-                playerAnim.SetBool("WalkSide", false);
-                playerAnim.SetBool("Idle", true);
-                playerSprite.sprite = idle;
+                playerAnim.SetBool("WalkLeft", false);
+                playerAnim.SetBool("WalkRight", false);
+                playerAnim.SetBool("Idle", false);
+                if (playerwayP.x < 0)
+                    playerAnim.Play("Base Layer.Special Idle", 0, 0f);
+                else
+                    playerAnim.Play("Base Layer.Special Idle", 0, 0.5f);
             }
         }
 
@@ -229,7 +232,6 @@ public class PlayerCharacter : MonoBehaviour
 
         isMoving = false;
     }
-
     public void PlayerSprint()
     {
         // prints current energy and speed of player to console
@@ -242,11 +244,13 @@ public class PlayerCharacter : MonoBehaviour
             {
                 // speed goes up to 14, energy gets drained at a rate of 0.12 per frame
                 speed = 9;
+                playerAnim.speed = 2;
                 Drain(0.12f);
             }
             // if energy is not enough for sprinting, speed changes to normal
             if (currEnergy < 20)
             {
+                playerAnim.speed = 1;
                 speed = 5;
             }
         }
