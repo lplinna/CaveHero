@@ -38,16 +38,34 @@ public class PlayerAttackMining : MonoBehaviour
             //Debug.DrawLine(b, transform.position, Color.blue);
             swiping = 1;
             var pangle = GetPlayerRotation();
-            sangle = -20f + pangle;
-            eangle = 20f + pangle;
-            rotateDirection = 0.4f;
-            if(Random.value > 0.5f)
+            
+            if (pangle == 0)
             {
-                sangle = 20 + pangle;
-                eangle = -20f + pangle;
-                rotateDirection = -0.4f;
+             sangle = 90f;
+             eangle = -30f;
+             
+            }
+            if(pangle==180)
+            {
+             sangle = 90f;
+             eangle = 230f;
+             
             }
 
+            if(pangle == 90 || pangle == -90)
+            {
+             sangle = pangle + 20f;
+             eangle = pangle - 20f;
+             
+
+            }
+
+
+
+            player.isAttackingAnim = true;
+           player.DoAttackAnimation();
+
+            pickaxe.GetComponent<SpriteRenderer>().enabled = false;
             pickaxe.SetActive(true);
             pickaxe.GetComponent<PickaxeBehavior>().canHit = true;
             
@@ -55,14 +73,20 @@ public class PlayerAttackMining : MonoBehaviour
 
         if (swiping == 1) //If it's a normal swing
         {
-            Quaternion q = Quaternion.AngleAxis(sangle, Vector3.forward);
+            var anim = player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0);
+            
+
+            
+            var tangle = Mathf.LerpAngle(sangle, eangle, anim.normalizedTime *2f);
+            Quaternion q = Quaternion.AngleAxis(tangle, Vector3.forward);
             Vector3 p = (q * Vector3.right) * 0.7f;
             Debug.DrawLine(transform.position, transform.position + p, Color.blue);
             pickaxe.transform.position = transform.position + p;
             pickaxe.transform.rotation = q;
 
-            sangle += rotateDirection;
-            if (Mathf.Abs(sangle - eangle) < 0.2f)
+
+            //sangle += rotateDirection;
+            if (!player.isAttackingAnim)
             {
                 swiping = 0;
                 pickaxe.SetActive(false);
@@ -104,6 +128,7 @@ public class PlayerAttackMining : MonoBehaviour
             var pangle = GetPlayerRotation();
             eangle = 8f;
             rotateDirection = 0.02f;
+            pickaxe.GetComponent<SpriteRenderer>().enabled = true;
             pickaxe.SetActive(true);
             pickaxe.GetComponent<PickaxeBehavior>().PowerAttack = true;
         }

@@ -35,6 +35,7 @@ public class PlayerCharacter : MonoBehaviour
     //Player Audio
     public AudioSource audioSrc;
     public bool isMoving;
+    public bool isAttackingAnim;
     public bool muteAudio;
 
     // Start is called before the first frame update
@@ -52,7 +53,7 @@ public class PlayerCharacter : MonoBehaviour
         audioSrc = GetComponent<AudioSource>();
         isMoving = false;
         muteAudio = false;
-
+        isAttackingAnim = false;
         slippery = 1f;
         onSlippery = false;
     }
@@ -60,7 +61,12 @@ public class PlayerCharacter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PlayerAnimation();
+        if (!isAttackingAnim)
+        {
+            PlayerAnimation();
+        }
+
+
         PlayerSprint();
         if (Input.GetKeyDown("m"))
         {
@@ -85,7 +91,7 @@ public class PlayerCharacter : MonoBehaviour
         }
 
         //Debug.Log(slippery);
-        Debug.Log(onSlippery);
+        //Debug.Log(onSlippery);
     }
 
     void FixedUpdate()
@@ -134,10 +140,50 @@ public class PlayerCharacter : MonoBehaviour
         //}
     }
 
+
+    public void DoAttackAnimation()
+    {
+        playerAnim.SetBool("WalkUp", false);
+        playerAnim.SetBool("Idle", false);
+        playerAnim.SetBool("WalkLeft", false);
+        playerAnim.SetBool("WalkRight", false);
+        playerAnim.SetBool("WalkDown", false);
+        playerAnim.speed = 1;   
+       
+        if (playerwayP.x < 0)
+        {
+            playerSprite.flipX = true;
+            playerAnim.Play("Base Layer.AttackSide", 0, 0f);
+        }
+        if (playerwayP.x > 0)
+        {
+            playerSprite.flipX = false;
+            playerAnim.Play("Base Layer.AttackSide", 0, 0f);
+        }
+
+        if (playerwayP.y < 0)
+        {
+            playerSprite.flipX = true;
+            playerAnim.Play("Base Layer.AttackDown", 0, 0f);
+        }
+        if (playerwayP.y > 0)
+        {
+            playerSprite.flipX = false;
+            playerAnim.Play("Base Layer.AttackUp", 0, 0f);
+        }
+
+    }
+
+
+
+
     public void PlayerAnimation()
     {
 
-
+       
+       playerSprite.flipX = false; 
+        
+    
         if (Input.GetKey("d"))
         {
             playerAnim.speed = 1;
@@ -192,6 +238,7 @@ public class PlayerCharacter : MonoBehaviour
         {
             if (playerwayP.y != 0)
             {
+                
                 playerAnim.SetBool("WalkUp", false);
                 playerAnim.SetBool("Idle", false);
                 playerAnim.SetBool("WalkLeft", false);
@@ -207,6 +254,7 @@ public class PlayerCharacter : MonoBehaviour
 
             if (playerwayP.x != 0)
             {
+                
                 playerAnim.SetBool("WalkLeft", false);
                 playerAnim.SetBool("WalkRight", false);
                 playerAnim.SetBool("Idle", false);
