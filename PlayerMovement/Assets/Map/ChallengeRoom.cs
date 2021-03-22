@@ -6,8 +6,8 @@ public class ChallengeRoom : MonoBehaviour
 {
     public GameObject tilemapWall, endChallengeWall;
     public bool triggered;
-    public GameObject Enemy1, Enemy2;
-    public int wave1Enemy1, wave3Enemy1, wave2Enemy2, wave3Enemy2;
+    public GameObject Enemy1, Enemy2, Enemy3;
+    public int wave1Enemy1, wave2Enemy1, wave3Enemy1, wave1Enemy2, wave2Enemy2, wave3Enemy2, wave1Enemy3, wave2Enemy3, wave3Enemy3;
     public float rangeX1, rangeX2, rangeY1, rangeY2;
     public float randX, randY;
     public Vector2 whereToSpawn;
@@ -52,6 +52,22 @@ public class ChallengeRoom : MonoBehaviour
                     whereToSpawn = new Vector2(randX, randY);
                     Instantiate(Enemy1, whereToSpawn, Quaternion.identity);
                 }
+
+                for (int i = 0; i < wave1Enemy2; i++)
+                {
+                    randX = Random.Range(rangeX1, rangeX2);
+                    randY = Random.Range(rangeY1, rangeY2);
+                    whereToSpawn = new Vector2(randX, randY);
+                    Instantiate(Enemy2, whereToSpawn, Quaternion.identity);
+                }
+
+                for (int i = 0; i < wave1Enemy3; i++)
+                {
+                    randX = Random.Range(rangeX1, rangeX2);
+                    randY = Random.Range(rangeY1, rangeY2);
+                    whereToSpawn = new Vector2(randX, randY);
+                    Instantiate(Enemy3, whereToSpawn, Quaternion.identity);
+                }
                 wave1Trigger = true;
                 Debug.Log("Wave1");
             }
@@ -61,12 +77,28 @@ public class ChallengeRoom : MonoBehaviour
 
             if (wave1.Length == 0 && !wave2Trigger && wave1Trigger)
             {
+                for (int i = 0; i < wave2Enemy1; i++)
+                {
+                    randX = Random.Range(rangeX1, rangeX2);
+                    randY = Random.Range(rangeY1, rangeY2);
+                    whereToSpawn = new Vector2(randX, randY);
+                    Instantiate(Enemy1, whereToSpawn, Quaternion.identity);
+                }
+
                 for (int i = 0; i < wave2Enemy2; i++)
                 {
                     randX = Random.Range(rangeX1, rangeX2);
                     randY = Random.Range(rangeY1, rangeY2);
                     whereToSpawn = new Vector2(randX, randY);
                     Instantiate(Enemy2, whereToSpawn, Quaternion.identity);
+                }
+
+                for (int i = 0; i < wave2Enemy3; i++)
+                {
+                    randX = Random.Range(rangeX1, rangeX2);
+                    randY = Random.Range(rangeY1, rangeY2);
+                    whereToSpawn = new Vector2(randX, randY);
+                    Instantiate(Enemy3, whereToSpawn, Quaternion.identity);
                 }
                 wave2Trigger = true;
                 Debug.Log("Wave2");
@@ -81,6 +113,14 @@ public class ChallengeRoom : MonoBehaviour
 
             if (wave2.Length == 0 && !wave3Trigger && wave2Trigger)
             {
+                for (int i = 0; i < wave3Enemy1; i++)
+                {
+                    randX = Random.Range(rangeX1, rangeX2);
+                    randY = Random.Range(rangeY1, rangeY2);
+                    whereToSpawn = new Vector2(randX, randY);
+                    Instantiate(Enemy1, whereToSpawn, Quaternion.identity);
+                }
+
                 for (int i = 0; i < wave3Enemy2; i++)
                 {
                     randX = Random.Range(rangeX1, rangeX2);
@@ -88,12 +128,13 @@ public class ChallengeRoom : MonoBehaviour
                     whereToSpawn = new Vector2(randX, randY);
                     Instantiate(Enemy2, whereToSpawn, Quaternion.identity);
                 }
-                for (int i = 0; i < wave3Enemy1; i++)
+
+                for (int i = 0; i < wave3Enemy3; i++)
                 {
                     randX = Random.Range(rangeX1, rangeX2);
                     randY = Random.Range(rangeY1, rangeY2);
                     whereToSpawn = new Vector2(randX, randY);
-                    Instantiate(Enemy1, whereToSpawn, Quaternion.identity);
+                    Instantiate(Enemy3, whereToSpawn, Quaternion.identity);
                 }
                 wave3Trigger = true;
                 Debug.Log("Wave3");

@@ -50,6 +50,7 @@ public class Elevator : MonoBehaviour
 
             case 3: // Ice to Lava
                 Merchant.setNextScene("LavaLevel");
+                checkpoint.checkpointPos.Set(159.5f, 26.7f);
                 break;
 
             case 4: // Lava to Throne
