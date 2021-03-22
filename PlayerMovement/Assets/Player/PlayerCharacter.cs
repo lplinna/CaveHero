@@ -119,11 +119,11 @@ public class PlayerCharacter : MonoBehaviour
             else
             {
                 translation = move * speed * Time.fixedDeltaTime;
-                Vector3 newPosition = transform.position + translation;
-                playerPhysics.MovePosition(newPosition);
-                playerwayP = move;
+                
             }
-            
+            Vector3 newPosition = transform.position + translation;
+            playerPhysics.MovePosition(newPosition);
+            playerwayP = move;
         }
 
         // moves the player
