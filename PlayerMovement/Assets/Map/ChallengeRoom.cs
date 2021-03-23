@@ -14,6 +14,7 @@ public class ChallengeRoom : MonoBehaviour
     public GameObject[] wave1, wave2, wave3;
     public bool wave1Trigger = false, wave2Trigger = false, wave3Trigger = false;
     public bool debugMode;
+    public bool triggeredFinish;
     public float changedPositionX, changedPositionY, changedPositionZ;
 
     
@@ -24,7 +25,7 @@ public class ChallengeRoom : MonoBehaviour
     {
         tilemapWall.SetActive(false);
 
-
+        triggeredFinish = false;
         triggered = false;
         Enemy1.GetComponent<ChallengeEnemy>().challenge = this.gameObject;
         Enemy2.GetComponent<ChallengeEnemy>().challenge = this.gameObject;
@@ -147,22 +148,26 @@ public class ChallengeRoom : MonoBehaviour
             }
 
 
-            if (wave3.Length == 0 && wave3Trigger)
+            if (wave3.Length == 0 && wave3Trigger && !triggeredFinish)
             {
                 Debug.Log("Finished!!");
-                //SoundManager.PlaySound("WinChallenge");
+                SoundManager.PlaySound("WinChallenge");
                 tilemapWall.SetActive(false);
-
                 endChallengeWall.SetActive(false);
+                triggeredFinish = true;
             }
         }
         else
         {
-            Debug.Log("Finished!!");
-            //SoundManager.PlaySound("WinChallenge");
-            tilemapWall.SetActive(false);
-
-            endChallengeWall.SetActive(false);
+            if (!triggeredFinish)
+            {
+                Debug.Log("Finished!!");
+                SoundManager.PlaySound("WinChallenge");
+                tilemapWall.SetActive(false);
+                endChallengeWall.SetActive(false);
+                triggeredFinish = true;
+            }
+            
         }
     }
 }

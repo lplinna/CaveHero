@@ -11651,11 +11651,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: e3225dc90cd564f4683fe66b2b54a1ef, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.3
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -13724,6 +13724,10 @@ PrefabInstance:
       propertyPath: checkpoint
       value: 
       objectReference: {fileID: 1460711489}
+    - target: {fileID: 6327391077458177471, guid: d15b3809d66832b4eaf7f58e16cc5385, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 1823b9dcde452d94492efc245aad06df, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d15b3809d66832b4eaf7f58e16cc5385, type: 3}
 --- !u!1 &958109364 stripped
