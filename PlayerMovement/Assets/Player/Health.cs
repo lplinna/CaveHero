@@ -6,7 +6,8 @@ using UnityEngine.SceneManagement;
 public class Health : MonoBehaviour
 {
     public float currHealth = 0.0f;
-    public float maxHealth = 100.0f;
+    public static float healthModifier = 1f;
+    public float maxHealth = 100.0f * healthModifier;
 
     public HealthBar healthBar;
 

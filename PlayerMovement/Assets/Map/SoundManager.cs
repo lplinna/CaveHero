@@ -5,7 +5,7 @@ using UnityEngine;
 public class SoundManager : MonoBehaviour
 {
     public static AudioClip spiderDeath, playerDeath, healthPotion;
-    public static AudioClip winChallenge, elevator, batDeath;
+    public static AudioClip winChallenge, elevator, batDeath, beetleDeath;
     static AudioSource audioSrc;
     // Start is called before the first frame update
     void Start()
@@ -13,6 +13,7 @@ public class SoundManager : MonoBehaviour
         spiderDeath = Resources.Load<AudioClip>("SpiderDeath");
         playerDeath = Resources.Load<AudioClip>("PlayerDeath");
         batDeath = Resources.Load<AudioClip>("BatDeath");
+        beetleDeath = Resources.Load<AudioClip>("BeetleDeath");
 
         healthPotion = Resources.Load<AudioClip>("HealthPotion");
         winChallenge = Resources.Load<AudioClip>("WinChallenge");
@@ -60,6 +61,11 @@ public class SoundManager : MonoBehaviour
             case "BatDeath":
                 audioSrc.volume = 1f;
                 audioSrc.PlayOneShot(batDeath);
+                break;
+
+            case "BeetleDeath":
+                audioSrc.volume = 1f;
+                audioSrc.PlayOneShot(beetleDeath);
                 break;
         }
     }

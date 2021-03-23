@@ -4,14 +4,14 @@ using UnityEngine;
 
 public class PickaxeBehavior : MonoBehaviour
 {
-
-
-    // Start is called before the first frame update
-
     public AudioSource audioSrc;
 
     public bool canHit;
     public bool PowerAttack;
+
+    public static float damageModifier = 1f;
+    public static float stoneDamageModifier = 1f;
+
     private void Start()
     {
         canHit = true;
@@ -29,13 +29,13 @@ public class PickaxeBehavior : MonoBehaviour
             var dm = collision.gameObject.GetComponent<EnemyHealth>();
             if (canHit)
             {
-                dm.Damage(30f);
+                dm.Damage(30f * damageModifier);
                 canHit = false;
             }
 
             if (PowerAttack)
             {
-                dm.Damage(5f);
+                dm.Damage(5f * damageModifier);
             }
 
         }
@@ -44,7 +44,7 @@ public class PickaxeBehavior : MonoBehaviour
         {
             Debug.Log("Stone hit!");
             var stone = collision.gameObject.GetComponent<StoneHealth>();
-            stone.Damage(10f);
+            stone.Damage(10f * stoneDamageModifier);
             if (!audioSrc.isPlaying)
             {
                 audioSrc.Play();

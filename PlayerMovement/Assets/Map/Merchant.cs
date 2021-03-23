@@ -9,7 +9,7 @@ public class Merchant : MonoBehaviour
     void Start()
     {
         //REMOVE AFTER MERCHANT HAS BEEN CREATED
-        SceneManager.LoadScene("LoadingNextLevel");
+        //SceneManager.LoadScene("LoadingNextLevel");
     }
 
     // Update is called once per frame
@@ -21,6 +21,24 @@ public class Merchant : MonoBehaviour
     public static void setNextScene(string next)
     {
         LoadingNextLevel.setLevelName(next);
+    }
+
+    private void setHealthModifier(float nHealth)
+    {
+        // max of 2f
+        Health.healthModifier = nHealth;
+    }
+
+    private void setDamageModifier(float nDamage)
+    {
+        // max of 2f
+        PickaxeBehavior.damageModifier = nDamage;
+    }
+
+    private void setStoneDamageModifier(float nDamage)
+    {
+        // max of 2f
+        PickaxeBehavior.stoneDamageModifier = nDamage;
     }
 
 }

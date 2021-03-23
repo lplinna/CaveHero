@@ -15,9 +15,9 @@ GameObject:
   - component: {fileID: 8321341929878798959}
   - component: {fileID: 8321341929878798944}
   - component: {fileID: 8321341929878798945}
-  - component: {fileID: 8321341929878798950}
   - component: {fileID: 8949349950362510984}
   - component: {fileID: 4948887240388487235}
+  - component: {fileID: -2792579888938881277}
   m_Layer: 8
   m_Name: Challenge Spider
   m_TagString: ChallengeEnemies
@@ -79,12 +79,12 @@ SpriteRenderer:
   m_SortingLayerID: -1823539731
   m_SortingLayer: 2
   m_SortingOrder: 0
-  m_Sprite: {fileID: -986924079635733974, guid: c40fd6bc9d1f04f4dafc026f95256f58, type: 3}
+  m_Sprite: {fileID: -986924079635733974, guid: 81d86782c76623f4ca47721e98664a30, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.16, y: 0.16}
+  m_Size: {x: 0.96875, y: 0.78125}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -108,7 +108,7 @@ BoxCollider2D:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
     oldSize: {x: 0.96875, y: 0.78125}
-    newSize: {x: 0.16, y: 0.16}
+    newSize: {x: 0.96875, y: 0.78125}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
@@ -152,8 +152,8 @@ MonoBehaviour:
   target: {fileID: 0}
   pellet: {fileID: 5613767429477842853, guid: 1310e463390f118479c273a7fab28954, type: 3}
   spiderSprite: {fileID: 8321341929878798946}
-  forward: {fileID: -986924079635733974, guid: c40fd6bc9d1f04f4dafc026f95256f58, type: 3}
-  backward: {fileID: -6556066355132681355, guid: c40fd6bc9d1f04f4dafc026f95256f58, type: 3}
+  forward: {fileID: -986924079635733974, guid: 81d86782c76623f4ca47721e98664a30, type: 3}
+  backward: {fileID: -6556066355132681355, guid: 81d86782c76623f4ca47721e98664a30, type: 3}
 --- !u!114 &8321341929878798944
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,21 +188,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!111 &8321341929878798950
-Animation:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8321341929878798958}
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Animation: {fileID: 7400000, guid: fd2dc3618937d0c4c9ffe40a5b533fdf, type: 2}
-  m_Animations: []
-  m_WrapMode: 0
-  m_PlayAutomatically: 1
-  m_AnimatePhysics: 0
-  m_CullingType: 0
 --- !u!114 &8949349950362510984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -312,3 +297,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!111 &-2792579888938881277
+Animation:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8321341929878798958}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Animation: {fileID: 7400000, guid: fd2dc3618937d0c4c9ffe40a5b533fdf, type: 2}
+  m_Animations: []
+  m_WrapMode: 0
+  m_PlayAutomatically: 1
+  m_AnimatePhysics: 0
+  m_CullingType: 0
