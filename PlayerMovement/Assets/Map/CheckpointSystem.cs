@@ -21,4 +21,28 @@ public class CheckpointSystem : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    void Start()
+    {
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("SlimeLevel"))
+        {
+            checkpointPos.Set(172.5f, -11.5f);
+        }
+        else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("IceLevel"))
+        {
+            checkpointPos.Set(142.5f, 1.65f);
+        } 
+        else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("LavaLevel"))
+        {
+            checkpointPos.Set(159.5f, 26.7f);
+        }
+        else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("ThroneRoom"))
+        {
+            checkpointPos.Set(0, 0);
+        }
+        else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Merchant"))
+        {
+            checkpointPos.Set(0, 0);
+        }
+    }
 }

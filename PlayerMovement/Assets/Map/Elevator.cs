@@ -20,12 +20,15 @@ public class Elevator : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (!triggered)
+        if (collision.gameObject.CompareTag("Player"))
         {
-            StartCoroutine(SceneChange());
-            triggered = true;
-            checkpoint.triggered = false;
-            StopCoroutine(SceneChange());
+            if (!triggered)
+            {
+                StartCoroutine(SceneChange());
+                triggered = true;
+                checkpoint.triggered = false;
+                StopCoroutine(SceneChange());
+            }
         }
     }
 
@@ -45,12 +48,10 @@ public class Elevator : MonoBehaviour
         switch (currScene) {
             case 2: // Slime to Ice
                 Merchant.setNextScene("IceLevel");
-                checkpoint.checkpointPos.Set(142.5f, 1.65f);
                 break;
 
             case 3: // Ice to Lava
                 Merchant.setNextScene("LavaLevel");
-                checkpoint.checkpointPos.Set(159.5f, 26.7f);
                 break;
 
             case 4: // Lava to Throne
@@ -59,7 +60,6 @@ public class Elevator : MonoBehaviour
 
             case 5: // Throne to Slime
                 Merchant.setNextScene("SlimeLevel");
-                checkpoint.checkpointPos.Set(172.5f, -11.5f);
                 break;
         }
         SceneManager.LoadScene("LoadingNextLevel");
