@@ -10,12 +10,15 @@ public class PlayerAttackMining : MonoBehaviour
     float eangle;
     float rotateDirection;
     public GameObject pickaxe;
+    public GameObject SLAM;
     public PlayerCharacter player;
+    bool placedAoE = false;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<PlayerCharacter>();
         pickaxe = GameObject.FindGameObjectWithTag("Pickaxe");
+        
     }
 
 
@@ -98,25 +101,52 @@ public class PlayerAttackMining : MonoBehaviour
 
         if (swiping == 2) //If it's a power attack
         {
-            Vector3 b = Camera.main.ScreenToWorldPoint(Input.mousePosition) - player.transform.position;
-            b.Normalize();
-            Quaternion q = Quaternion.LookRotation(b, Vector3.forward);
 
-            if(eangle > 0)
-            {
-                eangle -= rotateDirection;
-                q*= Quaternion.AngleAxis(Mathf.Sin(eangle)*60, Vector3.forward);
-                player.Drain(0.07f);
-            }
-            else
+            
+     
+            var anim = player.GetComponent<Animator>();
+            var mation = anim.GetCurrentAnimatorStateInfo(0);
+            
+
+
+
+            player.Drain(0.07f);
+                if (mation.normalizedTime < 0.2f)
+                {
+                   
+                    anim.speed = 0.2f;
+                }
+                if (mation.normalizedTime > 0.2f)
+                {
+                    anim.speed = 1f;
+                }
+
+                if (mation.normalizedTime > 0.8f)
+                {
+                    anim.speed = 0.2f;
+
+                    if(placedAoE == false)
+                {
+                    var q = Quaternion.AngleAxis(sangle, Vector3.forward);
+                    var p = Instantiate(SLAM);
+                    p.transform.position = player.transform.position + (q * Vector3.right);
+                    pickaxe.SetActive(false);
+                    placedAoE = true;
+                }
+                   
+                }
+
+
+           
+            
+
+            
+
+            if (!player.isAttackingAnim)
             {
                 swiping = 0;
-                pickaxe.SetActive(false);
-                pickaxe.GetComponent<PickaxeBehavior>().PowerAttack = false;
+                placedAoE = false;
             }
-
-            pickaxe.transform.position = player.transform.position + (q * Vector3.up);
-            pickaxe.transform.rotation = q  * Quaternion.AngleAxis(90, Vector3.forward);
 
         }
        
@@ -124,13 +154,15 @@ public class PlayerAttackMining : MonoBehaviour
 
         if(Input.GetMouseButtonDown(1) && swiping == 0)
         {
+           
+
             swiping = 2;
-            var pangle = GetPlayerRotation();
-            eangle = 8f;
-            rotateDirection = 0.02f;
-            pickaxe.GetComponent<SpriteRenderer>().enabled = true;
-            pickaxe.SetActive(true);
-            pickaxe.GetComponent<PickaxeBehavior>().PowerAttack = true;
+
+            sangle = GetPlayerRotation();
+
+            player.isAttackingAnim = true;
+            player.DoAttackAnimation();
+
         }
 
 
@@ -138,6 +170,13 @@ public class PlayerAttackMining : MonoBehaviour
         {
             pickaxe.SetActive(false);
             pickaxe.GetComponent<PickaxeBehavior>().PowerAttack = false;
+            swiping = 3;
+
+            player.LeaveAttack();
+        }
+
+        if(swiping==3 && player.currEnergy >= 30)
+        {
             swiping = 0;
         }
         

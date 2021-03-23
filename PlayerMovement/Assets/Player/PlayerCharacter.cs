@@ -176,6 +176,16 @@ public class PlayerCharacter : MonoBehaviour
 
 
 
+    public void LeaveAttack()
+    {
+        playerAnim.speed = 100f;
+        playerAnim.SetBool("WalkRight", false);
+        playerAnim.SetBool("WalkLeft", false);
+        playerAnim.SetBool("Idle", true);
+        playerAnim.SetBool("WalkDown", false);
+        playerAnim.SetBool("WalkUp", false);
+    }
+
 
     public void PlayerAnimation()
     {
