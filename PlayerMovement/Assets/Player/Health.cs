@@ -6,8 +6,7 @@ using UnityEngine.SceneManagement;
 public class Health : MonoBehaviour
 {
     public float currHealth = 0.0f;
-    public static float healthModifier = 1f;
-    public float maxHealth = 100.0f * healthModifier;
+    public float maxHealth;
 
     public HealthBar healthBar;
 
@@ -15,14 +14,15 @@ public class Health : MonoBehaviour
 
     int poisonCounter = 0;
 
-
+    void Awake()
+    {
+        maxHealth = 100.0f * PlayerModifiers.healthModifier;
+    }
     // Start is called before the first frame update
     void Start()
     {
         currHealth = maxHealth;
-     
         StartCoroutine(Regenerate());
-        
     }
 
     // Update is called once per frame

@@ -298,7 +298,7 @@ GameObject:
   - component: {fileID: 86231831}
   - component: {fileID: 86231833}
   m_Layer: 5
-  m_Name: Text
+  m_Name: Title
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -316,7 +316,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1577137725}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -490,7 +490,7 @@ GameObject:
   - component: {fileID: 216064228}
   - component: {fileID: 216064229}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: StoneSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -616,7 +616,7 @@ GameObject:
   - component: {fileID: 439282511}
   - component: {fileID: 439282510}
   m_Layer: 5
-  m_Name: Text
+  m_Name: StoneText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -695,8 +695,9 @@ GameObject:
   - component: {fileID: 524538629}
   - component: {fileID: 524538628}
   - component: {fileID: 524538627}
+  - component: {fileID: 524538630}
   m_Layer: 5
-  m_Name: Button
+  m_Name: DamageButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -764,7 +765,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 524538628}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 524538630}
+        m_TargetAssemblyTypeName: UpgradeDamage, Assembly-CSharp
+        m_MethodName: OnButtonPress
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &524538628
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -803,6 +816,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 524538625}
   m_CullTransparentMesh: 0
+--- !u!114 &524538630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 524538625}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eda4ceb4304ee8344a30b6ac72eae662, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 2084356271}
 --- !u!1 &559536032
 GameObject:
   m_ObjectHideFlags: 0
@@ -1337,7 +1363,7 @@ GameObject:
   - component: {fileID: 1038810944}
   - component: {fileID: 1038810943}
   m_Layer: 5
-  m_Name: Text
+  m_Name: DamageText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1495,7 +1521,7 @@ GameObject:
   - component: {fileID: 1290999709}
   - component: {fileID: 1290999708}
   m_Layer: 5
-  m_Name: Text
+  m_Name: HealthText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1781,7 +1807,7 @@ RectTransform:
   - {fileID: 1851559808}
   - {fileID: 1580921368}
   m_Father: {fileID: 1577137725}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1838,8 +1864,9 @@ GameObject:
   - component: {fileID: 1514699301}
   - component: {fileID: 1514699300}
   - component: {fileID: 1514699299}
+  - component: {fileID: 1514699302}
   m_Layer: 5
-  m_Name: Button
+  m_Name: StoneButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1946,6 +1973,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1514699297}
   m_CullTransparentMesh: 0
+--- !u!114 &1514699302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1514699297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1e4520cf828547d4eb87e56a724a8226, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 0}
 --- !u!1 &1577137721
 GameObject:
   m_ObjectHideFlags: 0
@@ -2037,8 +2077,8 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 689085594}
-  - {fileID: 1512756838}
   - {fileID: 86231830}
+  - {fileID: 1512756838}
   - {fileID: 1895084867}
   - {fileID: 2141380065}
   m_Father: {fileID: 0}
@@ -2060,7 +2100,7 @@ GameObject:
   - component: {fileID: 1580921368}
   - component: {fileID: 1580921369}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: HealthSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2415,8 +2455,9 @@ GameObject:
   - component: {fileID: 1851559811}
   - component: {fileID: 1851559810}
   - component: {fileID: 1851559809}
+  - component: {fileID: 1851559812}
   m_Layer: 5
-  m_Name: Button
+  m_Name: HealthButton
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2484,7 +2525,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1851559810}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1851559812}
+        m_TargetAssemblyTypeName: UpgradeHealth, Assembly-CSharp
+        m_MethodName: OnButtonPress
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1851559810
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2523,6 +2576,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1851559807}
   m_CullTransparentMesh: 0
+--- !u!114 &1851559812
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851559807}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2101941bfcf19a34e81b4d5e9a3bfc44, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  slider: {fileID: 1580921369}
 --- !u!1 &1895084866
 GameObject:
   m_ObjectHideFlags: 0
@@ -2612,7 +2678,7 @@ GameObject:
   - component: {fileID: 2084356270}
   - component: {fileID: 2084356271}
   m_Layer: 5
-  m_Name: Slider
+  m_Name: DamageSlider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

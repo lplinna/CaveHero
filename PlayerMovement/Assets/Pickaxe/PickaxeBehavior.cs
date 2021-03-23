@@ -9,8 +9,6 @@ public class PickaxeBehavior : MonoBehaviour
     public bool canHit;
     public bool PowerAttack;
 
-    public static float damageModifier = 1f;
-    public static float stoneDamageModifier = 1f;
 
     private void Start()
     {
@@ -29,13 +27,13 @@ public class PickaxeBehavior : MonoBehaviour
             var dm = collision.gameObject.GetComponent<EnemyHealth>();
             if (canHit)
             {
-                dm.Damage(30f * damageModifier);
+                dm.Damage(30f * PlayerModifiers.damageModifier);
                 canHit = false;
             }
 
             if (PowerAttack)
             {
-                dm.Damage(5f * damageModifier);
+                dm.Damage(5f * PlayerModifiers.damageModifier);
             }
 
         }
@@ -44,7 +42,7 @@ public class PickaxeBehavior : MonoBehaviour
         {
             Debug.Log("Stone hit!");
             var stone = collision.gameObject.GetComponent<StoneHealth>();
-            stone.Damage(10f * stoneDamageModifier);
+            stone.Damage(10f * PlayerModifiers.stoneDamageModifier);
             if (!audioSrc.isPlaying)
             {
                 audioSrc.Play();

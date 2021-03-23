@@ -81,6 +81,10 @@
     <Compile Include="Assets\Map\ChallengeRoom.cs" />
     <Compile Include="Assets\Enemy\BeetleBehavior.cs" />
     <Compile Include="Assets\Map\LoadingNextLevel.cs" />
+    <Compile Include="Assets\Player\UpgradeHealth.cs" />
+    <Compile Include="Assets\Player\UpgradeDamage.cs" />
+    <Compile Include="Assets\Player\UpgradeStoneDamage.cs" />
+    <Compile Include="Assets\Player\PlayerModifiers.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
