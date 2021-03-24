@@ -11,7 +11,10 @@ public class SpiderBehavior : MonoBehaviour
     Vector2 zagway;
     bool readyFire;
     public SpriteRenderer spiderSprite;
-    public Sprite forward, backward;
+    private Animator spiderAnim;
+    
+    public int spiderType = 0;
+    private string precedent = "SpiderAnimation";
 
     // Start is called before the first frame update
     void Start()
@@ -23,21 +26,51 @@ public class SpiderBehavior : MonoBehaviour
         reftime = Time.time + (Random.value * 4f);
         RandomizeZigZag();
         readyFire = true;
+
+        spiderAnim = GetComponent<Animator>();
+
+        if (spiderType == 2)
+        {
+            precedent = "SpiderAnimationLava";
+        }
     }
 
 
     void Update()
     {
-        if (body.velocity.x > 0.2f)
+       
+
+
+        if (body.velocity.y > 0)
         {
-            spiderSprite.sprite = forward;
-            spiderSprite.flipX = true;
+            spiderAnim.Play(precedent + "Up");
+            if (body.velocity.x > 0.2f)
+            {
+                spiderSprite.flipX = false;
+            }
+            else if (body.velocity.x < -0.2f)
+            {
+               
+                spiderSprite.flipX = true;
+            }
         }
-        else if (body.velocity.x < -0.2f)
+        else
         {
-            spiderSprite.sprite = forward;
-            spiderSprite.flipX = false;
+            spiderAnim.Play(precedent + "Down");
+
+            if (body.velocity.x > 0.2f)
+            {
+                //spiderSprite.sprite = forward;
+                spiderSprite.flipX = true;
+            }
+            else if (body.velocity.x < -0.2f)
+            {
+                // spiderSprite.sprite = forward;
+                spiderSprite.flipX = false;
+            }
         }
+
+
     }
 
 
@@ -48,6 +81,10 @@ public class SpiderBehavior : MonoBehaviour
         oof.y *= 0.2f;
         body.velocity = oof.normalized * 6f;
         zagway = body.velocity;
+
+        
+
+
     }
 
 

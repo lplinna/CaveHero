@@ -9,7 +9,7 @@ public class BeetleBehavior : MonoBehaviour
     float reftime;
     float orbitway;
     public SpriteRenderer beetleSprite;
-
+    public int beetleType=0;
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +19,14 @@ public class BeetleBehavior : MonoBehaviour
         body.velocity = Vector2.zero;
         reftime = Time.time + (Random.value * 4f);
         RandomizeOrbit();
-        beetleSprite = GetComponent<SpriteRenderer>();
+        beetleSprite = GetComponent<SpriteRenderer>(); 
+
+
+        var beetleAnim = GetComponent<Animator>();
+        if (beetleType == 2)
+        {
+            beetleAnim.Play("BeetleAnimationLava");
+        }
     }
 
 

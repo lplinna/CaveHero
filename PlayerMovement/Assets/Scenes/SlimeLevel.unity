@@ -74416,6 +74416,10 @@ PrefabInstance:
       propertyPath: pellet
       value: 
       objectReference: {fileID: 5613767429477842853, guid: 1310e463390f118479c273a7fab28954, type: 3}
+    - target: {fileID: 6639678819298956168, guid: de2fdb5c074fcc04fa5d46246735c75b, type: 3}
+      propertyPath: spiderType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6639678819298956169, guid: de2fdb5c074fcc04fa5d46246735c75b, type: 3}
       propertyPath: m_Name
       value: SpiderEnemy
@@ -80492,6 +80496,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BatEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2775126230855140321, guid: 4e03aaee278105c4c95dd6865b203dc1, type: 3}
+      propertyPath: batType
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2775126230855140349, guid: 4e03aaee278105c4c95dd6865b203dc1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 16.92
@@ -80678,9 +80686,13 @@ PrefabInstance:
       propertyPath: m_LocalScale.y
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4940531537442786076, guid: a1a5e2f568c996e4091fea8ba904db0d, type: 3}
+      propertyPath: beetleType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4940531537442786151, guid: a1a5e2f568c996e4091fea8ba904db0d, type: 3}
       propertyPath: m_Name
-      value: BeetleEnemy
+      value: BeetleEnemyLava
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a1a5e2f568c996e4091fea8ba904db0d, type: 3}

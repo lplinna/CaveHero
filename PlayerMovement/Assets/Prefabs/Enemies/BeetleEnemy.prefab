@@ -149,6 +149,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
+  beetleSprite: {fileID: 0}
 --- !u!114 &4940531537442786077
 MonoBehaviour:
   m_ObjectHideFlags: 0

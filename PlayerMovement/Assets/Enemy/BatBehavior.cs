@@ -8,6 +8,7 @@ public class BatBehavior: MonoBehaviour
     Rigidbody2D body;
     float reftime;
     bool gotclose;
+    public int batType = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -17,7 +18,12 @@ public class BatBehavior: MonoBehaviour
         body.freezeRotation = true;
         body.velocity = Vector3.zero;
         reftime = Time.time + (Random.value * 4f);
+        var batAnim = GetComponent<Animator>();
 
+        if (batType == 2)
+        {
+            batAnim.Play("BatAnimationLava");
+        }
     }
 
     
