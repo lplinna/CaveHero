@@ -16,11 +16,12 @@ public class Health : MonoBehaviour
 
     void Awake()
     {
-        maxHealth = 100.0f * PlayerModifiers.healthModifier;
+        //maxHealth = 100.0f * PlayerModifiers.healthModifier;
     }
     // Start is called before the first frame update
     void Start()
     {
+        maxHealth = 100.0f * PlayerModifiers.healthModifier;
         currHealth = maxHealth;
         StartCoroutine(Regenerate());
     }
@@ -28,7 +29,8 @@ public class Health : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Debug.Log(PlayerModifiers.healthModifier);
+        //Debug.Log(currHealth + " / " + maxHealth);
     }
 
     public void Damage (float damage) {

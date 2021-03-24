@@ -10,7 +10,7 @@ public class UpgradeStoneDamage : MonoBehaviour
     {
         if (PlayerModifiers.stoneDamageModifier < 2f)
         {
-            PlayerModifiers.stoneDamageModifier += 1f;
+            PlayerModifiers.stoneDamageModifier = 2.0f;
             slider.value = PlayerModifiers.stoneDamageModifier;
             Debug.Log(PlayerModifiers.stoneDamageModifier);
         }

@@ -18,16 +18,7 @@ public class LoadingNextLevel : MonoBehaviour
 
     IEnumerator LoadSceneAsync(string nLevelName)
     {
-        AsyncOperation loadingOperation;
-        if (levelName.Length != 0)
-        {
-            loadingOperation = SceneManager.LoadSceneAsync(nLevelName);
-        }
-        else
-        {
-            loadingOperation = SceneManager.LoadSceneAsync("Merchant");
-        }
-        
+        AsyncOperation loadingOperation = levelName.Length != 0 ? SceneManager.LoadSceneAsync(nLevelName) : SceneManager.LoadSceneAsync("Merchant");
         while (!loadingOperation.isDone)
         {
             float loading = Mathf.Clamp01(loadingOperation.progress / 0.9f);

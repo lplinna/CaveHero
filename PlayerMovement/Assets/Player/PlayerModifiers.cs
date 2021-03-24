@@ -5,18 +5,15 @@ using UnityEngine;
 public class PlayerModifiers : MonoBehaviour
 {
     private static PlayerModifiers instance;
-    public static float healthModifier;
-    public static float damageModifier;
-    public static float stoneDamageModifier;
+    public static float healthModifier = 1f;
+    public static float damageModifier = 1f;
+    public static float stoneDamageModifier = 1f;
     void Awake()
     {
         if (instance == null)
         {
             instance = this;
             DontDestroyOnLoad(instance);
-            healthModifier = 1f;
-            damageModifier = 1f;
-            stoneDamageModifier = 1f;
         }
         else
         {

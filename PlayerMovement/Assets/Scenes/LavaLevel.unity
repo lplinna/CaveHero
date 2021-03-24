@@ -1029,6 +1029,7 @@ MonoBehaviour:
   wave2Trigger: 0
   wave3Trigger: 0
   debugMode: 0
+  triggeredFinish: 0
   changedPositionX: 171
   changedPositionY: 26.7
   changedPositionZ: 0
@@ -22222,6 +22223,10 @@ PrefabInstance:
       propertyPath: checkpoint
       value: 
       objectReference: {fileID: 338234732}
+    - target: {fileID: 6327391077458177471, guid: d15b3809d66832b4eaf7f58e16cc5385, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 0b73bea40d21431408e37a9a3df85e6d, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d15b3809d66832b4eaf7f58e16cc5385, type: 3}
 --- !u!114 &975121133 stripped

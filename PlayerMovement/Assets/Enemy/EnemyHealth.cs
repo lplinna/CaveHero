@@ -55,6 +55,10 @@ public class EnemyHealth : MonoBehaviour
             {
                 SoundManager.PlaySound("BatDeath");
             }
+            if (name.Contains("Beetle"))
+            {
+                SoundManager.PlaySound("BeetleDeath");
+            }
 
 
             doDrops();
