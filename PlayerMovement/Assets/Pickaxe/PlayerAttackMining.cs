@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerAttackMining : MonoBehaviour
 {
 
-    int swiping = 0;
+    public int swiping = 0;
     float sangle;
     float eangle;
     float rotateDirection;
@@ -44,21 +44,21 @@ public class PlayerAttackMining : MonoBehaviour
             
             if (pangle == 0)
             {
-             sangle = 90f;
+             sangle = 30f;
              eangle = -30f;
              
             }
             if(pangle==180)
             {
-             sangle = 90f;
+             sangle = 30f;
              eangle = 230f;
              
             }
 
             if(pangle == 90 || pangle == -90)
             {
-             sangle = pangle + 20f;
-             eangle = pangle - 20f;
+             sangle = pangle + 2f;
+             eangle = pangle - 2f;
              
 
             }

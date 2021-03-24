@@ -8,6 +8,7 @@ public class BeetleBehavior : MonoBehaviour
     Rigidbody2D body;
     float reftime;
     float orbitway;
+    public SpriteRenderer beetleSprite;
 
     // Start is called before the first frame update
     void Start()
@@ -18,7 +19,7 @@ public class BeetleBehavior : MonoBehaviour
         body.velocity = Vector2.zero;
         reftime = Time.time + (Random.value * 4f);
         RandomizeOrbit();
-
+        beetleSprite = GetComponent<SpriteRenderer>();
     }
 
 
@@ -26,7 +27,27 @@ public class BeetleBehavior : MonoBehaviour
     {
         orbitway = Random.value < 0.5 ? -1f : 1f;
     }
-    
+
+
+
+    void Update()
+    {
+        if (body.velocity.x > 0.2f)
+        {
+
+            beetleSprite.flipX = true;
+        }
+        else if (body.velocity.x < -0.2f)
+        {
+            
+            beetleSprite.flipX = false;
+        }
+    }
+
+
+
+
+
     void FixedUpdate()
     {
         var enemytimer = (Time.time - reftime) * 30f;

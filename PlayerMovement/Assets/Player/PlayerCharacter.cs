@@ -294,7 +294,6 @@ public class PlayerCharacter : MonoBehaviour
     {
         // prints current energy and speed of player to console
         //Debug.Log(currEnergy + " " + speed);
-
         // Checks to see if user is holding a movement key and shift to enact sprinting
         if (Input.GetKey("left shift") && (Input.GetKey("a") || Input.GetKey("d") || Input.GetKey("s") || Input.GetKey("w")))
         {
@@ -315,7 +314,14 @@ public class PlayerCharacter : MonoBehaviour
         else
         {
             // keeps speed at 10, gains energy at a rate of 0.03 per frame
+            
+
             speed = 5;
+
+            if (isAttackingAnim && GetComponent<PlayerAttackMining>().swiping == 2)
+            {
+                speed = 2.5f;
+            }
             if (currEnergy < 100)
             {
                 Gain(0.03f);
