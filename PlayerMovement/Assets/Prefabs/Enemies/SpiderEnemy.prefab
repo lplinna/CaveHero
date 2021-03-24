@@ -151,8 +151,7 @@ MonoBehaviour:
   target: {fileID: 0}
   pellet: {fileID: 5613767429477842853, guid: 1310e463390f118479c273a7fab28954, type: 3}
   spiderSprite: {fileID: 6639678819298956165}
-  forward: {fileID: -986924079635733974, guid: 81d86782c76623f4ca47721e98664a30, type: 3}
-  backward: {fileID: -6556066355132681355, guid: 81d86782c76623f4ca47721e98664a30, type: 3}
+  spiderType: 0
 --- !u!114 &6639678819298956167
 MonoBehaviour:
   m_ObjectHideFlags: 0

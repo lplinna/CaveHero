@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class ChallengeRoom : MonoBehaviour
 {
@@ -18,8 +19,6 @@ public class ChallengeRoom : MonoBehaviour
     public float changedPositionX, changedPositionY, changedPositionZ;
 
     
-
-
     // Start is called before the first frame update
     void Start()
     {
@@ -29,6 +28,12 @@ public class ChallengeRoom : MonoBehaviour
         triggered = false;
         Enemy1.GetComponent<ChallengeEnemy>().challenge = this.gameObject;
         Enemy2.GetComponent<ChallengeEnemy>().challenge = this.gameObject;
+        Enemy3.GetComponent<ChallengeEnemy>().challenge = this.gameObject;
+
+        changeEnemySprites(Enemy1);
+        changeEnemySprites(Enemy2);
+        changeEnemySprites(Enemy3);
+
         this.gameObject.transform.position.Set(changedPositionX, changedPositionY, changedPositionZ);
     }
 
@@ -174,4 +179,48 @@ public class ChallengeRoom : MonoBehaviour
             }
         }
     }
+
+    public void changeEnemySprites(GameObject enemy) 
+    {
+        if (enemy.name.Contains("Bat"))
+        {
+            if (SceneManager.GetActiveScene().name == "SlimeLevel")
+            {
+                enemy.GetComponent<BatBehavior>().batType = 0;
+            }
+            else
+            {
+                enemy.GetComponent<BatBehavior>().batType = 2;
+            }
+        }
+
+        if (enemy.name.Contains("Beetle"))
+        {
+            if (SceneManager.GetActiveScene().name == "IceLevel")
+            {
+                enemy.GetComponent<BeetleBehavior>().beetleType = 1;
+            }
+            else
+            {
+                enemy.GetComponent<BeetleBehavior>().beetleType = 2;
+            }
+        }
+
+        if (enemy.name.Contains("Spider"))
+        {
+            if (SceneManager.GetActiveScene().name == "SlimeLevel")
+            {
+                enemy.GetComponent<SpiderBehavior>().spiderType = 0;
+            }
+            else if (SceneManager.GetActiveScene().name == "IceLevel")
+            {
+                enemy.GetComponent<SpiderBehavior>().spiderType = 1;
+            }
+            else
+            {
+                enemy.GetComponent<SpiderBehavior>().spiderType = 2;
+            }
+        }
+    }
+
 }

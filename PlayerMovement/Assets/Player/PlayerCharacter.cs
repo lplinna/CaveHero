@@ -125,19 +125,6 @@ public class PlayerCharacter : MonoBehaviour
             playerPhysics.MovePosition(newPosition);
             playerwayP = move;
         }
-
-        // moves the player
-        //if (move != Vector3.zero) { playerwayP = move; }
-        //var hit = Physics2D.Raycast(transform.position, move.normalized, move.magnitude * 80f);
-
-        //if (hit.collider)
-        //{
-        //    bool isEnemy = hit.collider.gameObject.CompareTag("Bat") || hit.collider.gameObject.CompareTag("Beetle") || hit.collider.gameObject.CompareTag("Spider");
-        //    if (!isEnemy)
-        //    {
-        //        move = transform.position;
-        //    }
-        //}
     }
 
 

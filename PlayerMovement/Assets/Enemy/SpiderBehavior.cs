@@ -29,6 +29,11 @@ public class SpiderBehavior : MonoBehaviour
 
         spiderAnim = GetComponent<Animator>();
 
+        if (spiderType == 1)
+        {
+            precedent = "SpiderAnimationIce";
+        }
+
         if (spiderType == 2)
         {
             precedent = "SpiderAnimationLava";
@@ -44,6 +49,7 @@ public class SpiderBehavior : MonoBehaviour
         if (body.velocity.y > 0)
         {
             spiderAnim.Play(precedent + "Up");
+            
             if (body.velocity.x > 0.2f)
             {
                 spiderSprite.flipX = false;
@@ -57,7 +63,7 @@ public class SpiderBehavior : MonoBehaviour
         else
         {
             spiderAnim.Play(precedent + "Down");
-
+            
             if (body.velocity.x > 0.2f)
             {
                 //spiderSprite.sprite = forward;
