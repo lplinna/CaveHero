@@ -35,6 +35,8 @@ public class Elevator : MonoBehaviour
     IEnumerator SceneChange()
     {
         MusicManager.stopPlaying();
+        MusicManager.setElevator(true);
+
         SoundManager.PlaySound("ElevatorOpening");
         yield return new WaitForSeconds(1.5f);
         player.transform.position.Set(this.transform.position.x, this.transform.position.y, this.transform.position.z);
@@ -46,22 +48,27 @@ public class Elevator : MonoBehaviour
         yield return new WaitForSeconds(2);
 
         switch (currScene) {
-            case 2: // Slime to Ice
-                Merchant.setNextScene("IceLevel");
-                break;
-
-            case 3: // Ice to Lava
-                Merchant.setNextScene("LavaLevel");
-                break;
-
-            case 4: // Lava to Throne
+            case 0: // Tutorial to Throne
                 Merchant.setNextScene("ThroneRoom");
                 break;
 
-            case 5: // Throne to Slime
+            case 1: // Slime to Ice
+                Merchant.setNextScene("IceLevel");
+                break;
+
+            case 2: // Ice to Lava
+                Merchant.setNextScene("LavaLevel");
+                break;
+
+            case 3: // Lava to Throne
+                Merchant.setNextScene("ThroneRoom");
+                break;
+
+            case 4: // Throne to Slime
                 Merchant.setNextScene("SlimeLevel");
                 break;
         }
+        LoadingNextLevel.setLevelName("Merchant");
         SceneManager.LoadScene("LoadingNextLevel");
     }
 }

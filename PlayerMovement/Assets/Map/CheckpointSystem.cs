@@ -20,9 +20,16 @@ public class CheckpointSystem : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        
     }
 
     void Start()
+    {
+        
+    }
+
+    void Update()
     {
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("SlimeLevel"))
         {
@@ -31,7 +38,7 @@ public class CheckpointSystem : MonoBehaviour
         else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("IceLevel"))
         {
             checkpointPos.Set(142.5f, 1.65f);
-        } 
+        }
         else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("LavaLevel"))
         {
             checkpointPos.Set(159.5f, 26.7f);

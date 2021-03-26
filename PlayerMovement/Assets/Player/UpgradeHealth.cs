@@ -16,4 +16,9 @@ public class UpgradeHealth : MonoBehaviour
             Debug.Log(PlayerModifiers.healthModifier);
         }
     }
+
+    void Awake()
+    {
+        slider.value = PlayerModifiers.healthModifier;
+    }
 }

@@ -9,7 +9,7 @@ public class LoadingNextLevel : MonoBehaviour
 {
     
     public Slider progressBar;
-    public static string levelName = "";
+    public static string levelName;
 
     void Start ()
     {
@@ -18,14 +18,16 @@ public class LoadingNextLevel : MonoBehaviour
 
     IEnumerator LoadSceneAsync(string nLevelName)
     {
-        AsyncOperation loadingOperation = levelName.Length != 0 ? SceneManager.LoadSceneAsync(nLevelName) : SceneManager.LoadSceneAsync("Merchant");
+        AsyncOperation loadingOperation;
+
+        loadingOperation = SceneManager.LoadSceneAsync(nLevelName);
+
         while (!loadingOperation.isDone)
         {
             float loading = Mathf.Clamp01(loadingOperation.progress / 0.9f);
             progressBar.value = loading;
             yield return null;
         }
-        levelName = "";
     }
 
     public static void setLevelName(string nLevel)

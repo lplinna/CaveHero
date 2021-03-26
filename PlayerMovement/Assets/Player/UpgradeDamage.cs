@@ -15,4 +15,9 @@ public class UpgradeDamage : MonoBehaviour
             Debug.Log(PlayerModifiers.damageModifier);
         }
     }
+
+    void Awake()
+    {
+        slider.value = PlayerModifiers.damageModifier;
+    }
 }
