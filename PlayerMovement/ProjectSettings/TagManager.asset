@@ -17,6 +17,7 @@ TagManager:
   - StonePickup
   - AmethystPickup
   - SlipperyIce
+  - EndTutorial
   layers:
   - Default
   - TransparentFX

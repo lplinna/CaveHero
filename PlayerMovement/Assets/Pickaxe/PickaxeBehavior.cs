@@ -42,7 +42,7 @@ public class PickaxeBehavior : MonoBehaviour
         {
             Debug.Log("Stone hit!");
             var stone = collision.gameObject.GetComponent<StoneHealth>();
-            stone.Damage(10f * PlayerModifiers.stoneDamageModifier);
+            stone.Damage(20f * PlayerModifiers.stoneDamageModifier);
             if (!audioSrc.isPlaying)
             {
                 audioSrc.Play();
@@ -53,6 +53,11 @@ public class PickaxeBehavior : MonoBehaviour
                 audioSrc.Play();
             }
             canHit = false;
+        }
+
+        if (collision.gameObject.CompareTag("EndTutorial") && canHit)
+        {
+            EndTutorial.endTutorialTriggered = true;
         }
     }
 }

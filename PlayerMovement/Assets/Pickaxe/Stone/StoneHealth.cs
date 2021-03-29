@@ -29,7 +29,16 @@ public class StoneHealth : MonoBehaviour
     {
         if (!dead)
         {
-            Instantiate(pickup, this.gameObject.transform.position, Quaternion.identity);
+            
+            Vector3 spawnObject;
+            for (int i = 0; i < 3; i++)
+            {
+                float randomY = Random.Range(-0.500f, 0.500f);
+                spawnObject.x = this.gameObject.transform.position.x;
+                spawnObject.y = this.gameObject.transform.position.y - randomY;
+                spawnObject.z = this.gameObject.transform.position.z;
+                Instantiate(pickup, spawnObject, Quaternion.identity);
+            }
             float randomExtra = Random.Range(0.000f, 1.000f);
             if (randomExtra <= 0.05)
             {
@@ -45,9 +54,15 @@ public class StoneHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        StartCoroutine(stoneMine());
+    }
+
+    IEnumerator stoneMine()
+    {
         if (currHealth <= 10)
         {
             stone.sprite = breakingSprite;
+            yield return new WaitForSeconds(0.2f);
             if (currHealth <= 0)
             {
                 stone.sprite = brokenSprite;
