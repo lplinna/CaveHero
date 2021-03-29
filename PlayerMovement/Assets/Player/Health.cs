@@ -13,6 +13,7 @@ public class Health : MonoBehaviour
     public CheckpointSystem checkpoint;
 
     int poisonCounter = 0;
+    bool hurting = false;
 
     void Awake()
     {
@@ -39,6 +40,9 @@ public class Health : MonoBehaviour
             currHealth -= damage;
 
             healthBar.SetHealth(currHealth);
+
+            DoHurting();
+
         }
         if (currHealth <= 0)
         {
@@ -58,6 +62,38 @@ public class Health : MonoBehaviour
         }
     }
 
+
+
+
+    public void DoHurting()
+    {
+        if (hurting == false)
+        {
+            StartCoroutine(OuchieFlashRoutine(300f));
+            hurting = true;
+        }
+    }
+
+
+    public IEnumerator OuchieFlashRoutine(float limit)
+    {
+        var p = GetComponent<SpriteRenderer>();
+        while (true)
+        {
+            if (limit >= 0)
+            { 
+                p.color = new Color(Mathf.Sin(Time.time*35f), 0f, 0f);
+                yield return null;
+                limit--;
+            }
+            else
+            {
+                p.color = new Color(1f, 1f, 1f);
+                hurting = false;
+                yield break;
+            }
+        }
+    }
 
 
 

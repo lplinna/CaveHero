@@ -8,6 +8,7 @@ public class PelletBehavior : MonoBehaviour
     void Start()
     {
 
+        GameObject.Destroy(this, 12f);
     }
 
     // Update is called once per frame
@@ -15,6 +16,7 @@ public class PelletBehavior : MonoBehaviour
     {
 
     }
+
 
 
 
