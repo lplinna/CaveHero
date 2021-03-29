@@ -10,11 +10,11 @@ public class Elevator : MonoBehaviour
     public Sprite close, smidge, partial, open;
     public bool triggered;
     public CheckpointSystem checkpoint;
-    public int currScene;
+    public string currScene;
 
     void Update()
     {
-        currScene = SceneManager.GetActiveScene().buildIndex;
+        currScene = SceneManager.GetActiveScene().name;
         //Debug.Log(currScene);
     }
 
@@ -48,23 +48,19 @@ public class Elevator : MonoBehaviour
         yield return new WaitForSeconds(2);
 
         switch (currScene) {
-            case 0: // Tutorial to Throne
-                Merchant.setNextScene("ThroneRoom");
-                break;
-
-            case 1: // Slime to Ice
+            case "SlimeLevel": // Slime to Ice
                 Merchant.setNextScene("IceLevel");
                 break;
 
-            case 2: // Ice to Lava
+            case "IceLevel": // Ice to Lava
                 Merchant.setNextScene("LavaLevel");
                 break;
 
-            case 3: // Lava to Throne
+            case "LavaLevel": // Lava to Throne
                 Merchant.setNextScene("ThroneRoom");
                 break;
 
-            case 4: // Throne to Slime
+            case "ThroneRoom": // Throne to Slime
                 Merchant.setNextScene("SlimeLevel");
                 break;
         }

@@ -33,8 +33,9 @@ public class StoneHealth : MonoBehaviour
             Vector3 spawnObject;
             for (int i = 0; i < 3; i++)
             {
-                float randomY = Random.Range(-0.500f, 0.500f);
-                spawnObject.x = this.gameObject.transform.position.x;
+                float randomY = Random.Range(-0.2500f, 0.2500f);
+                float randomX = Random.Range(-0.2500f, 0.2500f);
+                spawnObject.x = this.gameObject.transform.position.x - randomX;
                 spawnObject.y = this.gameObject.transform.position.y - randomY;
                 spawnObject.z = this.gameObject.transform.position.z;
                 Instantiate(pickup, spawnObject, Quaternion.identity);
