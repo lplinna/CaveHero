@@ -67,6 +67,7 @@
     <Compile Include="Assets\Player\UpgradeDamage.cs" />
     <Compile Include="Assets\Prefabs\AoEActorBehavior.cs" />
     <Compile Include="Assets\Player\PlayerCharacter.cs" />
+    <Compile Include="Assets\Map\EndTutorial.cs" />
     <Compile Include="Assets\Map\MusicManager.cs" />
     <Compile Include="Assets\Player\EnergyBar.cs" />
     <Compile Include="Assets\Enemy\EnemyHealth.cs" />
@@ -84,7 +85,6 @@
     <Compile Include="Assets\Map\ChallengeRoom.cs" />
     <Compile Include="Assets\Enemy\BeetleBehavior.cs" />
     <Compile Include="Assets\Map\LoadingNextLevel.cs" />
-    <Compile Include="Assets\Map\EndTutorial.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

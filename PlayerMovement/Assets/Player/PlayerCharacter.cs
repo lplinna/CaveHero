@@ -353,18 +353,26 @@ public class PlayerCharacter : MonoBehaviour
             collision.gameObject.SetActive(false);
 
         }
+
         if(collision.gameObject.CompareTag("Checkpoint"))
         {
             checkpoint.checkpointPos = transform.position;
             checkpoint.triggered = true;
         }
+
         if(collision.gameObject.CompareTag("Challenge"))
         {
             challenge.triggered = true;
         }
+
         if (collision.gameObject.CompareTag("SlipperyIce"))
         {
             onSlippery = true;
+        }
+
+        if (collision.gameObject.name.Contains("MerchantTrigger"))
+        {
+            Merchant.enterShop();
         }
     }
 
