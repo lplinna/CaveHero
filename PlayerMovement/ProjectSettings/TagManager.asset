@@ -18,6 +18,7 @@ TagManager:
   - AmethystPickup
   - SlipperyIce
   - EndTutorial
+  - Money
   layers:
   - Default
   - TransparentFX

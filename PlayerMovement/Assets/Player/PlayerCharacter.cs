@@ -14,8 +14,6 @@ public class PlayerCharacter : MonoBehaviour
     public Vector3 playerwayP;
     // To create the visual energy bar
     public EnergyBar energyBar;
-    int currMoney = 0;
-    public MoneyCounter MONEY;
 
     // Player Sprites
     public SpriteRenderer playerSprite;
@@ -336,19 +334,6 @@ public class PlayerCharacter : MonoBehaviour
         currEnergy += gainEnergy;
 
         energyBar.SetEnergy(currEnergy);
-    }
-
-
-    public void AddMoney(int money)
-    {
-        currMoney += money;
-        MONEY.SetMoney(currMoney);
-    }
-
-    public void TakeMoney(int money)
-    {
-        currMoney -= money;
-        MONEY.SetMoney(currMoney);
     }
 
 

@@ -35,7 +35,6 @@ public class EnemyHealth : MonoBehaviour
         else
         {
             this.gameObject.SetActive(false);
-            GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCharacter>().AddMoney(3);
 
             if (!audioSrc.isPlaying)
             {
@@ -50,16 +49,23 @@ public class EnemyHealth : MonoBehaviour
             if (name.Contains("Spider"))
             {
                 SoundManager.PlaySound("SpiderDeath");
+                int randomGain = (int)Random.Range(4, 8);
+                GameObject.FindGameObjectWithTag("Money").GetComponent<MoneyCounter>().AddMoney(randomGain);
             }
+
             if (name.Contains("Bat"))
             {
                 SoundManager.PlaySound("BatDeath");
+                int randomGain = (int)Random.Range(2, 6);
+                GameObject.FindGameObjectWithTag("Money").GetComponent<MoneyCounter>().AddMoney(randomGain);
             }
+
             if (name.Contains("Beetle"))
             {
                 SoundManager.PlaySound("BeetleDeath");
+                int randomGain = (int)Random.Range(6, 10);
+                GameObject.FindGameObjectWithTag("Money").GetComponent<MoneyCounter>().AddMoney(randomGain);
             }
-
 
             doDrops();
         }

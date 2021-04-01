@@ -99,6 +99,7 @@ public class Health : MonoBehaviour
 
     public void Death()
     {
+        MoneyCounter.Death();
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 
