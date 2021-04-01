@@ -10,7 +10,7 @@ public class PlayerCharacter : MonoBehaviour
     // current energy at the moment initialized at 0
     public float currEnergy = 0.0f;
     // max amount of energy
-    public float maxEnergy = 100.0f;
+    public float maxEnergy;
     public Vector3 playerwayP;
     // To create the visual energy bar
     public EnergyBar energyBar;
@@ -37,6 +37,12 @@ public class PlayerCharacter : MonoBehaviour
     public bool isMoving;
     public bool isAttackingAnim;
     public bool muteAudio;
+
+    void Awake()
+    {
+        maxEnergy = 100.0f * PlayerModifiers.energyModifier;
+        currEnergy = maxEnergy;
+    }
 
     // Start is called before the first frame update
     void Start()

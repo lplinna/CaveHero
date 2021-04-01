@@ -42,7 +42,7 @@ public class PickaxeBehavior : MonoBehaviour
         {
             Debug.Log("Stone hit!");
             var stone = collision.gameObject.GetComponent<StoneHealth>();
-            stone.Damage(20f * PlayerModifiers.stoneDamageModifier);
+            stone.Damage(20f);
             if (!audioSrc.isPlaying)
             {
                 audioSrc.Play();

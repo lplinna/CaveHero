@@ -7,7 +7,7 @@ public class PlayerModifiers : MonoBehaviour
     private static PlayerModifiers instance;
     public static float healthModifier = 1f;
     public static float damageModifier = 1f;
-    public static float stoneDamageModifier = 1f;
+    public static float energyModifier = 1f;
     void Awake()
     {
         if (instance == null)

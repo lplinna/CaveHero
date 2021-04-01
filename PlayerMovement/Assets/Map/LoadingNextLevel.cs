@@ -18,6 +18,8 @@ public class LoadingNextLevel : MonoBehaviour
 
     IEnumerator LoadSceneAsync(string nLevelName)
     {
+        yield return new WaitForSeconds(0.5f);
+
         AsyncOperation loadingOperation;
 
         loadingOperation = SceneManager.LoadSceneAsync(nLevelName);
