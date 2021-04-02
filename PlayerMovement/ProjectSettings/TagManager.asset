@@ -19,6 +19,7 @@ TagManager:
   - SlipperyIce
   - EndTutorial
   - Money
+  - Merchant
   layers:
   - Default
   - TransparentFX

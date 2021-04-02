@@ -363,7 +363,17 @@ public class PlayerCharacter : MonoBehaviour
 
         if (collision.gameObject.name.Contains("MerchantTrigger"))
         {
-            Merchant.enterShop();
+            GameObject.FindGameObjectWithTag("Merchant").GetComponent<Merchant>().enterShop();
+        }
+
+        if (collision.gameObject.name.Contains("GoBack"))
+        {
+            GameObject.FindGameObjectWithTag("Merchant").GetComponent<Merchant>().goBackConfirmationStart();
+        }
+
+        if (collision.gameObject.name.Contains("GoNext"))
+        {
+            GameObject.FindGameObjectWithTag("Merchant").GetComponent<Merchant>().goNextConfirmationStart();
         }
     }
 

@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 6327391077458177469}
   - component: {fileID: 6327391077458177468}
   - component: {fileID: 6327391077458177471}
+  - component: {fileID: 7761662446859198830}
   m_Layer: 2
   m_Name: Player
   m_TagString: Player
@@ -170,7 +171,6 @@ MonoBehaviour:
   maxEnergy: 100
   playerwayP: {x: 0, y: 0, z: 0}
   energyBar: {fileID: 0}
-  MONEY: {fileID: 0}
   playerSprite: {fileID: 6327391077458177465}
   upSprite: {fileID: 8660228816983995550, guid: fe2b9372f25f9b541895557756e72273, type: 3}
   sideSprite: {fileID: -7894228047608328003, guid: fe2b9372f25f9b541895557756e72273, type: 3}
@@ -199,6 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 89dd831770dda764697c2e7251e0b627, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  swiping: 0
   pickaxe: {fileID: 3083748514255061108, guid: 4840fb6cc6256ab468748077440554d7, type: 3}
   SLAM: {fileID: 9047117966208828268, guid: b30fd42fbcafb90499081001de9ce366, type: 3}
   player: {fileID: 6327391077458177415}
@@ -332,3 +333,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &7761662446859198830
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6327391077458177413}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d30e51453784a854496fc0c1d9957b9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iceKey: 0
+  lavaKey: 0
+  throneKey: 0
+  challengeRoomFinished: 0

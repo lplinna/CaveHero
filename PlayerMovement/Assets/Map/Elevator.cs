@@ -49,19 +49,19 @@ public class Elevator : MonoBehaviour
 
         switch (currScene) {
             case "SlimeLevel": // Slime to Ice
-                Merchant.setNextScene("IceLevel");
+                GameObject.FindGameObjectWithTag("Merchant").GetComponent<Merchant>().setNextScene("IceLevel");
                 break;
 
             case "IceLevel": // Ice to Lava
-                Merchant.setNextScene("LavaLevel");
+                GameObject.FindGameObjectWithTag("Merchant").GetComponent<Merchant>().setNextScene("LavaLevel");
                 break;
 
             case "LavaLevel": // Lava to Throne
-                Merchant.setNextScene("ThroneRoom");
+                GameObject.FindGameObjectWithTag("Merchant").GetComponent<Merchant>().setNextScene("ThroneRoom");
                 break;
 
             case "ThroneRoom": // Throne to Slime
-                Merchant.setNextScene("SlimeLevel");
+                GameObject.FindGameObjectWithTag("Merchant").GetComponent<Merchant>().setNextScene("SlimeLevel");
                 break;
         }
         LoadingNextLevel.setLevelName("Merchant");

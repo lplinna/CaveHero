@@ -7,9 +7,10 @@ using static UnityEngine.UI.Text;
 public class MoneyCounter : MonoBehaviour
 {
     public static int currMoney = 0;
-    private static MoneyCounter instance;
+    private MoneyCounter instance;
     public static GameObject moneyCounter;
     public static TextMeshProUGUI moneyText;
+    
 
     void Awake()
     {
@@ -28,6 +29,7 @@ public class MoneyCounter : MonoBehaviour
     {
         moneyCounter = this.gameObject;
         moneyText = this.gameObject.GetComponent<TextMeshProUGUI>();
+        
     }
 
     void FixedUpdate()
@@ -74,4 +76,6 @@ public class MoneyCounter : MonoBehaviour
         }
 
     }
+
+   
 }
