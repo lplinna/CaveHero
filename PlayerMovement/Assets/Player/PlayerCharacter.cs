@@ -10,10 +10,12 @@ public class PlayerCharacter : MonoBehaviour
     // current energy at the moment initialized at 0
     public float currEnergy = 0.0f;
     // max amount of energy
-    public float maxEnergy;
+    public float maxEnergy = 100.0f;
     public Vector3 playerwayP;
     // To create the visual energy bar
     public EnergyBar energyBar;
+    int currMoney = 0;
+    public MoneyCounter MONEY;
 
     // Player Sprites
     public SpriteRenderer playerSprite;
@@ -35,12 +37,7 @@ public class PlayerCharacter : MonoBehaviour
     public bool isMoving;
     public bool isAttackingAnim;
     public bool muteAudio;
-
-    void Awake()
-    {
-        maxEnergy = 100.0f * PlayerModifiers.energyModifier;
-        currEnergy = maxEnergy;
-    }
+    public bool isDialog;
 
     // Start is called before the first frame update
     void Start()
@@ -65,7 +62,7 @@ public class PlayerCharacter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!isAttackingAnim)
+        if (!isAttackingAnim && !isDialog)
         {
             PlayerAnimation();
         }
@@ -100,8 +97,37 @@ public class PlayerCharacter : MonoBehaviour
 
     void FixedUpdate()
     {
-        PlayerMovement();
+
+        if (!isDialog && !onSlippery)
+        {
+            PlayerMovement();
+        }
+
+        if (onSlippery)
+        {
+            SlippyMovement();
+        }
+
     }
+
+
+
+
+    public void SlippyMovement()
+    {
+        float rawHorizontalAxis = Input.GetAxisRaw("Horizontal");
+        float rawVerticalAxis = Input.GetAxisRaw("Vertical");
+
+        if(rawHorizontalAxis != 0) move.x = Mathf.Lerp(move.x, rawHorizontalAxis, 0.6f);
+        if(rawVerticalAxis!=0)  move.y = Mathf.Lerp(move.x, rawVerticalAxis, 0.6f);
+
+        Vector3 translation = move.normalized * 12f * Time.fixedDeltaTime;
+        Vector3 newPosition = transform.position + translation;
+        playerPhysics.MovePosition(newPosition);
+
+    }
+
+
 
     //all player movement statements
     public void PlayerMovement()
@@ -337,6 +363,19 @@ public class PlayerCharacter : MonoBehaviour
     }
 
 
+    public void AddMoney(int money)
+    {
+        currMoney += money;
+        MONEY.SetMoney(currMoney);
+    }
+
+    public void TakeMoney(int money)
+    {
+        currMoney -= money;
+        MONEY.SetMoney(currMoney);
+    }
+
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("StonePickup") || collision.gameObject.CompareTag("AmethystPickup"))
@@ -344,36 +383,18 @@ public class PlayerCharacter : MonoBehaviour
             collision.gameObject.SetActive(false);
 
         }
-
         if(collision.gameObject.CompareTag("Checkpoint"))
         {
             checkpoint.checkpointPos = transform.position;
             checkpoint.triggered = true;
         }
-
         if(collision.gameObject.CompareTag("Challenge"))
         {
             challenge.triggered = true;
         }
-
         if (collision.gameObject.CompareTag("SlipperyIce"))
         {
             onSlippery = true;
-        }
-
-        if (collision.gameObject.name.Contains("MerchantTrigger"))
-        {
-            GameObject.FindGameObjectWithTag("Merchant").GetComponent<Merchant>().enterShop();
-        }
-
-        if (collision.gameObject.name.Contains("GoBack"))
-        {
-            GameObject.FindGameObjectWithTag("Merchant").GetComponent<Merchant>().goBackConfirmationStart();
-        }
-
-        if (collision.gameObject.name.Contains("GoNext"))
-        {
-            GameObject.FindGameObjectWithTag("Merchant").GetComponent<Merchant>().goNextConfirmationStart();
         }
     }
 
