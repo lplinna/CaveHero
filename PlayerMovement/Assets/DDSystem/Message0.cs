@@ -14,9 +14,6 @@ public class Message0 : MonoBehaviour
     private void Awake()
     {
         DialogManager.gameObject.active = false;
-
-        
-       
         if (SceneManager.GetActiveScene().name == "SlimeLevel")
         {
             DoConvo1();
@@ -40,7 +37,13 @@ public class Message0 : MonoBehaviour
 
 
 
-    private void DoConvo1()
+public  void Advance()
+    {
+        DialogManager.Click_Window();
+    }
+
+
+    public void DoConvo1()
     {
 
         DialogManager.gameObject.active = true;
@@ -56,7 +59,7 @@ public class Message0 : MonoBehaviour
         StartCoroutine(AwaitDLOG());
     }
 
-    private void DoConvo2()
+    public void DoConvo2()
     {
         var dialogTexts = new List<DialogData>();
         //Add text here

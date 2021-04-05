@@ -108,6 +108,15 @@ public class PlayerCharacter : MonoBehaviour
             SlippyMovement();
         }
 
+        if (isDialog)
+        {
+            var dialogue = GetComponent<Message0>();
+            if (Input.GetMouseButton(0) && dialogue.DialogManager.state==Doublsb.Dialog.State.Wait)
+            {   
+                dialogue.Advance();
+            }
+        }
+
     }
 
 

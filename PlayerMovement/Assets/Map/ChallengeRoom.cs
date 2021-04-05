@@ -16,7 +16,7 @@ public class ChallengeRoom : MonoBehaviour
     public bool wave1Trigger = false, wave2Trigger = false, wave3Trigger = false;
     public bool debugMode;
     public float changedPositionX, changedPositionY, changedPositionZ;
-    public DoNotDestroy challengeRoomTrigger = GameObject.FindGameObjectWithTag("Player").GetComponent<DoNotDestroy>();
+    public DoNotDestroy challengeRoomTrigger;
 
 
     // Start is called before the first frame update
@@ -32,6 +32,7 @@ public class ChallengeRoom : MonoBehaviour
         changeEnemySprites(Enemy2);
         changeEnemySprites(Enemy3);
 
+        challengeRoomTrigger = GameObject.FindGameObjectWithTag("Player").GetComponent<DoNotDestroy>();
         this.gameObject.transform.position.Set(changedPositionX, changedPositionY, changedPositionZ);
     }
 
@@ -164,7 +165,7 @@ public class ChallengeRoom : MonoBehaviour
         }
         else
         {
-            if (!challengeRoomTrigger.getChallengeTrigger())
+            if (challengeRoomTrigger && !challengeRoomTrigger.getChallengeTrigger())
             {
                 Debug.Log("Finished!!");
                 SoundManager.PlaySound("WinChallenge");
