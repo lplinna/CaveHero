@@ -8,7 +8,7 @@ public class Merchant : MonoBehaviour
     public string nextLevelName;
     public bool enterShopTrigger;
     public GameObject shop, goBackConfirmation, goNextConfirmation, doNotHaveKey;
-    public DoNotDestroy keyTrigger;
+    public DoNotDestroy doNot;
     public GameObject player;
     public GameObject UI;
 
@@ -20,7 +20,7 @@ public class Merchant : MonoBehaviour
         goNextConfirmation.SetActive(false);
         doNotHaveKey.SetActive(false);
         player = GameObject.FindGameObjectWithTag("Player");
-        keyTrigger = player.GetComponent<DoNotDestroy>();
+        doNot = player.GetComponent<DoNotDestroy>();
         
     }
 
@@ -43,7 +43,7 @@ public class Merchant : MonoBehaviour
 
     public void loadNextScene()
     {
-        keyTrigger.setChallengeTrigger(false);
+        doNot.setChallengeTrigger(false);
         LoadingNextLevel.setLevelName(nextLevelName);
         SceneManager.LoadScene("LoadingNextLevel");
     }
@@ -92,6 +92,27 @@ public class Merchant : MonoBehaviour
         {
             PlayerModifiers.energyModifier += 0.5f;
             Debug.Log(PlayerModifiers.energyModifier);
+        }
+    }
+
+    public void buyIceKey()
+    {
+        doNot.setIceKey(true);
+    }
+
+    public void buyLavaKey()
+    {
+        if (doNot.getIceKey() && nextLevelName == "LavaLevel")
+        {
+            doNot.setLavaKey(true);
+        }
+    }
+
+    public void buyThroneKey()
+    {
+        if (doNot.getIceKey() && doNot.getLavaKey() && nextLevelName == "ThroneRoom")
+        {
+            doNot.setThroneKey(true);
         }
     }
 
@@ -148,7 +169,7 @@ public class Merchant : MonoBehaviour
         switch (nextLevelName)
         {
             case "IceLevel":
-                if (keyTrigger.getIceKey())
+                if (doNot.getIceKey())
                 {
                     loadNextScene();
                 }
@@ -160,7 +181,7 @@ public class Merchant : MonoBehaviour
                 break;
 
             case "LavaLevel":
-                if (keyTrigger.getLavaKey())
+                if (doNot.getLavaKey())
                 {
                     loadNextScene();
                 }
@@ -172,7 +193,7 @@ public class Merchant : MonoBehaviour
                 break;
 
             case "ThroneRoom":
-                if (keyTrigger.getThroneKey())
+                if (doNot.getThroneKey())
                 {
                     loadNextScene();
                 }

@@ -57,7 +57,7 @@ public class MerchantMessage : MonoBehaviour
 
     public void Introduction()
     {
-        doNot.setIntroduceMerchant(true);
+        
         DialogManager.gameObject.SetActive(true);
         
         var dialogTexts = new List<DialogData>();
@@ -72,14 +72,16 @@ public class MerchantMessage : MonoBehaviour
         //End of text
 
         DialogManager.Show(dialogTexts);
-        //StartCoroutine(AwaitDLOG());
+        StartCoroutine(AwaitDLOG());
+        doNot.setIntroduceMerchant(true);
     }
 
     public void UpgradeHealth()
     {
-        if (!doNot.getIntroduceMerchant())
+        if (doNot.getIntroduceMerchant())
         {
             DialogManager.gameObject.SetActive(true);
+            BlankSlate();
             var dialogTexts = new List<DialogData>();
             if (PlayerModifiers.healthModifier < 2f)
             {
@@ -97,9 +99,10 @@ public class MerchantMessage : MonoBehaviour
 
     public void UpgradeEnergy()
     {
-        if (!doNot.getIntroduceMerchant())
+        if (doNot.getIntroduceMerchant())
         {
             DialogManager.gameObject.SetActive(true);
+            BlankSlate();
             var dialogTexts = new List<DialogData>();
             if (PlayerModifiers.energyModifier < 2f)
             {
@@ -117,9 +120,10 @@ public class MerchantMessage : MonoBehaviour
 
     public void UpgradeDamage()
     {
-        if (!doNot.getIntroduceMerchant())
+        if (doNot.getIntroduceMerchant())
         {
             DialogManager.gameObject.SetActive(true);
+            BlankSlate();
             var dialogTexts = new List<DialogData>();
             if (PlayerModifiers.damageModifier < 2f)
             {
@@ -137,9 +141,10 @@ public class MerchantMessage : MonoBehaviour
 
     public void IceKey()
     {
-        if (!doNot.getIntroduceMerchant())
+        if (doNot.getIntroduceMerchant())
         {
             DialogManager.gameObject.SetActive(true);
+            BlankSlate();
             var dialogTexts = new List<DialogData>();
             if (!doNot.getIceKey())
             {
@@ -157,9 +162,10 @@ public class MerchantMessage : MonoBehaviour
 
     public void LavaKey()
     {
-        if (!doNot.getIntroduceMerchant())
+        if (doNot.getIntroduceMerchant())
         {
             DialogManager.gameObject.SetActive(true);
+            BlankSlate();
             var dialogTexts = new List<DialogData>();
             if (!doNot.getLavaKey() && doNot.getIceKey())
             {
@@ -181,9 +187,10 @@ public class MerchantMessage : MonoBehaviour
 
     public void ThroneKey()
     {
-        if (!doNot.getIntroduceMerchant())
+        if (doNot.getIntroduceMerchant())
         {
             DialogManager.gameObject.SetActive(true);
+            BlankSlate();
             var dialogTexts = new List<DialogData>();
             if (!doNot.getThroneKey() && doNot.getLavaKey() && doNot.getIceKey())
             {

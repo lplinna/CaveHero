@@ -11,12 +11,16 @@ public class Message0 : MonoBehaviour
 
     public GameObject[] Example;
 
-    private void Awake()
+    void Awake()
     {
         DialogManager.gameObject.SetActive(false);
         if (SceneManager.GetActiveScene().name == "SlimeLevel")
         {
             SlimeLevel1();
+        }
+        if (SceneManager.GetActiveScene().name == "Merchant")
+        {
+            Merchant1();
         }
     }
 
@@ -59,15 +63,18 @@ public  void Advance()
         StartCoroutine(AwaitDLOG());
     }
 
-    public void DoConvo2()
+    public void Merchant1()
     {
+        DialogManager.gameObject.SetActive(true);
+        this.GetComponent<PlayerCharacter>().isDialog = true;
         var dialogTexts = new List<DialogData>();
         //Add text here
-        dialogTexts.Add(new DialogData("Ahh, another day at the mine.", "Li"));
-        dialogTexts.Add(new DialogData("I can smack rocks with left click!", "Li"));
+        dialogTexts.Add(new DialogData("Maybe this can go over here..... hmmm. Nah that doesn't look good. Maybe here?", "Li"));
+        dialogTexts.Add(new DialogData("That looks good. I should... wait what was that? Hello? Anyone there?", "Li"));
         //End of text
 
         DialogManager.Show(dialogTexts);
+        StartCoroutine(AwaitDLOG());
     }
 
     
