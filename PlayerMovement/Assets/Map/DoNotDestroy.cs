@@ -6,6 +6,7 @@ public class DoNotDestroy : MonoBehaviour
 {
     private DoNotDestroy instance;
     public bool iceKey, lavaKey, throneKey;
+    public bool introduceMerchant;
     public bool challengeRoomFinished;
     void Awake()
     {
@@ -26,6 +27,7 @@ public class DoNotDestroy : MonoBehaviour
         iceKey = false;
         lavaKey = false;
         throneKey = false;
+        introduceMerchant = false;
     }
 
     public void setChallengeTrigger(bool trigger)
@@ -66,5 +68,15 @@ public class DoNotDestroy : MonoBehaviour
     public bool getThroneKey()
     {
         return throneKey;
+    }
+
+    public void setIntroduceMerchant(bool trigger)
+    {
+        introduceMerchant = trigger;
+    }
+
+    public bool getIntroduceMerchant()
+    {
+        return introduceMerchant;
     }
 }

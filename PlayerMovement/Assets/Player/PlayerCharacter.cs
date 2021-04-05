@@ -301,7 +301,7 @@ public class PlayerCharacter : MonoBehaviour
             }
         }
 
-        if (isMoving)
+        if (isMoving && !isDialog)
         {
             if (!audioSrc.isPlaying)
             {
@@ -404,6 +404,18 @@ public class PlayerCharacter : MonoBehaviour
         if (collision.gameObject.CompareTag("SlipperyIce"))
         {
             onSlippery = true;
+        }
+        if (collision.gameObject.name.Contains("MerchantTrigger"))
+        {
+            GameObject.FindGameObjectWithTag("Merchant").GetComponent<Merchant>().enterShop();
+        }
+        if(collision.gameObject.name.Contains("GoBack"))
+        {
+            GameObject.FindGameObjectWithTag("Merchant").GetComponent<Merchant>().goBackConfirmationStart();
+        }
+        if(collision.gameObject.name.Contains("GoNext"))
+        {
+            GameObject.FindGameObjectWithTag("Merchant").GetComponent<Merchant>().goNextConfirmationStart();
         }
     }
 

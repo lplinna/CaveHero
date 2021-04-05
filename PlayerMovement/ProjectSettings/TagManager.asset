@@ -20,6 +20,7 @@ TagManager:
   - EndTutorial
   - Money
   - Merchant
+  - Dialogue
   layers:
   - Default
   - TransparentFX

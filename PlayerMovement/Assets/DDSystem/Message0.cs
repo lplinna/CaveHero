@@ -13,10 +13,10 @@ public class Message0 : MonoBehaviour
 
     private void Awake()
     {
-        DialogManager.gameObject.active = false;
+        DialogManager.gameObject.SetActive(false);
         if (SceneManager.GetActiveScene().name == "SlimeLevel")
         {
-            DoConvo1();
+            SlimeLevel1();
         }
     }
 
@@ -43,10 +43,10 @@ public  void Advance()
     }
 
 
-    public void DoConvo1()
+    public void SlimeLevel1()
     {
 
-        DialogManager.gameObject.active = true;
+        DialogManager.gameObject.SetActive(true);
         this.GetComponent<PlayerCharacter>().isDialog = true;
         var dialogTexts = new List<DialogData>();
 

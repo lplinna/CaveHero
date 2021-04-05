@@ -165,7 +165,7 @@ public class ChallengeRoom : MonoBehaviour
         }
         else
         {
-            if (challengeRoomTrigger && !challengeRoomTrigger.getChallengeTrigger())
+            if (!challengeRoomTrigger.getChallengeTrigger())
             {
                 Debug.Log("Finished!!");
                 SoundManager.PlaySound("WinChallenge");
