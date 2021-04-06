@@ -6,6 +6,7 @@ public class ThroneKeyDialogue : MonoBehaviour
 {
     public bool displayOnce;
     public MerchantMessage dialogue;
+
     void Start()
     {
         displayOnce = false;
