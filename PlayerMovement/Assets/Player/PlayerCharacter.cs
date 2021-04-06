@@ -14,7 +14,6 @@ public class PlayerCharacter : MonoBehaviour
     public Vector3 playerwayP;
     // To create the visual energy bar
     public EnergyBar energyBar;
-    int currMoney = 0;
     public MoneyCounter MONEY;
 
     // Player Sprites
@@ -51,6 +50,7 @@ public class PlayerCharacter : MonoBehaviour
         {
             transform.position = checkpoint.checkpointPos;
         }
+        MONEY = GameObject.FindGameObjectWithTag("Money").GetComponent<MoneyCounter>();
         audioSrc = GetComponent<AudioSource>();
         isMoving = false;
         muteAudio = false;
@@ -97,6 +97,17 @@ public class PlayerCharacter : MonoBehaviour
 
     void FixedUpdate()
     {
+        if(isDialog)
+        {
+            playerAnim.SetBool("Idle", true);
+            playerAnim.SetBool("WalkUp", false);
+            playerAnim.SetBool("WalkLeft", false);
+            playerAnim.SetBool("WalkRight", false);
+            playerAnim.SetBool("WalkDown", false);
+
+
+        }
+
 
         if (!isDialog && !onSlippery)
         {
@@ -169,33 +180,37 @@ public class PlayerCharacter : MonoBehaviour
 
     public void DoAttackAnimation()
     {
-        playerAnim.SetBool("WalkUp", false);
-        playerAnim.SetBool("Idle", false);
-        playerAnim.SetBool("WalkLeft", false);
-        playerAnim.SetBool("WalkRight", false);
-        playerAnim.SetBool("WalkDown", false);
-        playerAnim.speed = 1;   
-       
-        if (playerwayP.x < 0)
+        if(!isDialog)
         {
-            playerSprite.flipX = true;
-            playerAnim.Play("Base Layer.AttackSide", 0, 0f);
-        }
-        if (playerwayP.x > 0)
-        {
-            playerSprite.flipX = false;
-            playerAnim.Play("Base Layer.AttackSide", 0, 0f);
-        }
+            playerAnim.SetBool("WalkUp", false);
+            playerAnim.SetBool("Idle", false);
+            playerAnim.SetBool("WalkLeft", false);
+            playerAnim.SetBool("WalkRight", false);
+            playerAnim.SetBool("WalkDown", false);
+            playerAnim.speed = 1;
 
-        if (playerwayP.y < 0)
-        {
-            playerSprite.flipX = true;
-            playerAnim.Play("Base Layer.AttackDown", 0, 0f);
-        }
-        if (playerwayP.y > 0)
-        {
-            playerSprite.flipX = false;
-            playerAnim.Play("Base Layer.AttackUp", 0, 0f);
+            if (playerwayP.x < 0)
+            {
+                playerSprite.flipX = true;
+                playerAnim.Play("Base Layer.AttackSide", 0, 0f);
+            }
+            if (playerwayP.x > 0)
+            {
+                playerSprite.flipX = false;
+                playerAnim.Play("Base Layer.AttackSide", 0, 0f);
+            }
+
+            if (playerwayP.y < 0)
+            {
+                playerSprite.flipX = true;
+                playerAnim.Play("Base Layer.AttackDown", 0, 0f);
+            }
+            if (playerwayP.y > 0)
+            {
+                playerSprite.flipX = false;
+                playerAnim.Play("Base Layer.AttackUp", 0, 0f);
+            }
+
         }
 
     }
@@ -215,10 +230,8 @@ public class PlayerCharacter : MonoBehaviour
 
     public void PlayerAnimation()
     {
-
        
-       playerSprite.flipX = false; 
-        
+        playerSprite.flipX = false; 
     
         if (Input.GetKey("d"))
         {
@@ -372,25 +385,15 @@ public class PlayerCharacter : MonoBehaviour
     }
 
 
-    public void AddMoney(int money)
-    {
-        currMoney += money;
-        MONEY.SetMoney(currMoney);
-    }
-
-    public void TakeMoney(int money)
-    {
-        currMoney -= money;
-        MONEY.SetMoney(currMoney);
-    }
-
-
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("StonePickup") || collision.gameObject.CompareTag("AmethystPickup"))
         {
+            if (collision.gameObject.name.Contains("Gold"))
+            {
+                MONEY.AddMoney(1);
+            }
             collision.gameObject.SetActive(false);
-
         }
         if(collision.gameObject.CompareTag("Checkpoint"))
         {

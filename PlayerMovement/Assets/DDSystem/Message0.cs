@@ -58,7 +58,7 @@ public  void Advance()
         var dialogTexts = new List<DialogData>();
 
         //Add text here
-        dialogTexts.Add(new DialogData("\"Just another day of mining, gotta meet quota.\"", "Li"));
+        dialogTexts.Add(new DialogData("\"/speed:up/Just another day of mining, gotta meet quota.\"", "Li"));
         dialogTexts.Add(new DialogData("You can move around by using the W, A, S, D keys.", "Li"));
         //End of text
 
@@ -92,7 +92,7 @@ public  void Advance()
 
         //Add text here
         dialogTexts.Add(new DialogData("You can use the Left Shift key to sprint, but be wary, you only have a limited amount of energy.", "Li"));
-        dialogTexts.Add(new DialogData("Your energy bar is located in the top left of your screen, symbolized by the green bolt.", "Li"));
+        dialogTexts.Add(new DialogData("Your energy bar is located in the top right of your screen, symbolized by the green bolt.", "Li"));
         //End of text
 
         DialogManager.Show(dialogTexts);
@@ -108,7 +108,9 @@ public  void Advance()
 
         //Add text here
         dialogTexts.Add(new DialogData("You can use Left Mouse Click to attack enemies. If you are in a tight spot, you can use Right Mouse Click to do a ground slam attack.", "Li"));
-        dialogTexts.Add(new DialogData("Be wary though, the ground slam attack takes away some of your energy. Your energy bar is located in the top left of your screen, symbolized by the green bolt.", "Li"));
+        dialogTexts.Add(new DialogData("Be wary though, the ground slam attack takes away some of your energy.", "Li"));
+        dialogTexts.Add(new DialogData("Remember to keep your health above 0 or else you will perish! Your health bar is located above your energy bar symbolized by the heart.", "Li"));
+
         //End of text
 
         DialogManager.Show(dialogTexts);

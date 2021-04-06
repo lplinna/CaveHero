@@ -57,52 +57,52 @@ public class BeetleBehavior : MonoBehaviour
 
     void FixedUpdate()
     {
-        var enemytimer = (Time.time - reftime) * 30f;
-        var towards = target.transform.position - body.transform.position;
-       
-
-        if(enemytimer < 40)  //Orbit player
+        if(GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCharacter>().isDialog == true)
         {
-            Vector3 ooftacular = Vector3.Cross(towards, Vector3.forward);
-            body.velocity = Vector3.Lerp(body.velocity, ooftacular.normalized*4f * orbitway, 0.18f);
-            if(towards.magnitude > 2f)
+            var enemytimer = (Time.time - reftime) * 30f;
+            var towards = target.transform.position - body.transform.position;
+
+
+            if (enemytimer < 40)  //Orbit player
             {
-                body.velocity = Vector3.Lerp(body.velocity, towards.normalized * 4f * orbitway, 0.2f);
+                Vector3 ooftacular = Vector3.Cross(towards, Vector3.forward);
+                body.velocity = Vector3.Lerp(body.velocity, ooftacular.normalized * 4f * orbitway, 0.18f);
+                if (towards.magnitude > 2f)
+                {
+                    body.velocity = Vector3.Lerp(body.velocity, towards.normalized * 4f * orbitway, 0.2f);
+                }
             }
+
+            if (enemytimer > 40 && enemytimer < 60)  // Charge player
+            {
+                body.velocity = Vector3.Lerp(body.velocity, towards.normalized * 8f, 0.18f);
+            }
+
+
+            if (towards.magnitude < 0.25f && Vector3.Dot(body.velocity, towards) > 0.5f) //Bonk, reverse direction after ramming
+            {
+                body.velocity = -body.velocity * 0.2f;
+            }
+
+            if (towards.magnitude < 0.5f && enemytimer > 70) //Move backwards
+            {
+                body.velocity = -towards.normalized * 2f;
+            }
+
+            if (towards.magnitude > 4f)
+            {
+                body.velocity = Vector3.Lerp(body.velocity, towards.normalized * body.velocity.magnitude, 0.08f);
+            }
+
+
+            if (enemytimer > 120)  //Repeat
+            {
+                reftime = Time.time;
+                RandomizeOrbit();
+            }
+
         }
 
-        if(enemytimer > 40 && enemytimer < 60)  // Charge player
-        {
-            body.velocity = Vector3.Lerp(body.velocity, towards.normalized*8f, 0.18f);
-        }
-
-
-        if(towards.magnitude < 0.25f && Vector3.Dot(body.velocity,towards) > 0.5f) //Bonk, reverse direction after ramming
-        {
-            body.velocity = -body.velocity * 0.2f;
-        }
-
-        if(towards.magnitude < 0.5f && enemytimer > 70) //Move backwards
-        {
-            body.velocity = -towards.normalized * 2f;
-        }
-
-        if(towards.magnitude > 4f)
-        {
-            body.velocity = Vector3.Lerp(body.velocity, towards.normalized * body.velocity.magnitude, 0.08f);
-        }
-
-
-        if (enemytimer > 120)  //Repeat
-        {
-            reftime = Time.time;
-            RandomizeOrbit();
-        }
-        
-      
-
-
-        
     }
 
 
