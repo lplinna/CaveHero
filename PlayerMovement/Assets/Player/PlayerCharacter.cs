@@ -417,6 +417,21 @@ public class PlayerCharacter : MonoBehaviour
         {
             GameObject.FindGameObjectWithTag("Merchant").GetComponent<Merchant>().goNextConfirmationStart();
         }
+        if(collision.gameObject.name.Contains("LeftClick"))
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Message0>().LeftClickTutorial();
+            collision.gameObject.SetActive(false);
+        }
+        if(collision.gameObject.name.Contains("ShiftSprint"))
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Message0>().ShiftSprintTutorial();
+            collision.gameObject.SetActive(false);
+        }
+        if(collision.gameObject.name.Contains("Combat"))
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Message0>().CombatTutorial();
+            collision.gameObject.SetActive(false);
+        }
     }
 
     public void OnTriggerExit2D(Collider2D collision)

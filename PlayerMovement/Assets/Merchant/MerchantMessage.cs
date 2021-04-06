@@ -63,12 +63,12 @@ public class MerchantMessage : MonoBehaviour
         var dialogTexts = new List<DialogData>();
 
         //Add text here
-        dialogTexts.Add(new DialogData("I've never seen you before. You new here or something?", "Li"));
-        dialogTexts.Add(new DialogData("You aren't exactly what I normally see in these mineshafts.", "Li"));
-        dialogTexts.Add(new DialogData("Well, nonetheless, the name's Axol! And welcome to my traveling shop", "Li"));
-        dialogTexts.Add(new DialogData("I've got the best prices in all of the mineshafts!", "Li"));
-        dialogTexts.Add(new DialogData("Probably because I'm the only one in these mineshafts", "Li"));
-        dialogTexts.Add(new DialogData("If you see anything you might want, just let me know!", "Li"));
+        dialogTexts.Add(new DialogData("\"I've never seen you before. You new here or something?\"", "Li"));
+        dialogTexts.Add(new DialogData("\"You aren't exactly what I normally see in these mineshafts.\"", "Li"));
+        dialogTexts.Add(new DialogData("\"Well, nonetheless, the name's Axol! And welcome to my traveling shop\"", "Li"));
+        dialogTexts.Add(new DialogData("\"I've got the best prices in all of the mineshafts!\"", "Li"));
+        dialogTexts.Add(new DialogData("\"Probably because I'm the only one in these mineshafts\"", "Li"));
+        dialogTexts.Add(new DialogData("\"If you see anything you might want, just let me know!\"", "Li"));
         //End of text
 
         DialogManager.Show(dialogTexts);
@@ -86,12 +86,12 @@ public class MerchantMessage : MonoBehaviour
             if (PlayerModifiers.healthModifier < 2f)
             {
                 //Add text here
-                dialogTexts.Add(new DialogData("That will upgrade your health by 50%! Just click if you wish to buy!", "Li"));
+                dialogTexts.Add(new DialogData("\"That will upgrade your health by 50%! Just click if you wish to buy!\"", "Li"));
                 //End of text
             }
             else
             {
-                dialogTexts.Add(new DialogData("Sorry I've run out of those upgrades!", "Li"));
+                dialogTexts.Add(new DialogData("\"Sorry I've run out of those upgrades!\"", "Li"));
             }
             DialogManager.Show(dialogTexts);
         }
@@ -107,12 +107,12 @@ public class MerchantMessage : MonoBehaviour
             if (PlayerModifiers.energyModifier < 2f)
             {
                 //Add text here
-                dialogTexts.Add(new DialogData("That will upgrade your energy by 50%! Just click if you wish to buy!", "Li"));
+                dialogTexts.Add(new DialogData("\"That will upgrade your energy by 50%! Just click if you wish to buy!\"", "Li"));
                 //End of text
             }
             else
             {
-                dialogTexts.Add(new DialogData("Sorry I've run out of those upgrades!", "Li"));
+                dialogTexts.Add(new DialogData("\"Sorry I've run out of those upgrades!\"", "Li"));
             }
             DialogManager.Show(dialogTexts);
         }
@@ -128,12 +128,12 @@ public class MerchantMessage : MonoBehaviour
             if (PlayerModifiers.damageModifier < 2f)
             {
                 //Add text here
-                dialogTexts.Add(new DialogData("That will upgrade your damage by 50%! Just click if you wish to buy!", "Li"));
+                dialogTexts.Add(new DialogData("\"That will upgrade your damage by 50%! Just click if you wish to buy!\"", "Li"));
                 //End of text
             }
             else
             {
-                dialogTexts.Add(new DialogData("Sorry I've run out of those upgrades!", "Li"));
+                dialogTexts.Add(new DialogData("\"Sorry I've run out of those upgrades!\"", "Li"));
             }
             DialogManager.Show(dialogTexts);
         }
@@ -149,12 +149,12 @@ public class MerchantMessage : MonoBehaviour
             if (!doNot.getIceKey())
             {
                 //Add text here
-                dialogTexts.Add(new DialogData("That is the key to the elevator for the next mineshaft! Be sure you are ready!", "Li"));
+                dialogTexts.Add(new DialogData("\"That is the key to the elevator for the next mineshaft! Be sure you are ready!\"", "Li"));
                 //End of text
             }
             else
             {
-                dialogTexts.Add(new DialogData("Seems you already own this one, pal", "Li"));
+                dialogTexts.Add(new DialogData("\"Seems you already own this one, pal\"", "Li"));
             }
             DialogManager.Show(dialogTexts);
         }
@@ -170,16 +170,16 @@ public class MerchantMessage : MonoBehaviour
             if (!doNot.getLavaKey() && doNot.getIceKey())
             {
                 //Add text here
-                dialogTexts.Add(new DialogData("That is the key to the elevator for the next mineshaft! Be sure you are ready!", "Li"));
+                dialogTexts.Add(new DialogData("\"That is the key to the elevator for the next mineshaft! Be sure you are ready!\"", "Li"));
                 //End of text
             }
             else if (!doNot.getIceKey())
             {
-                dialogTexts.Add(new DialogData("You have to buy the ice key first pal, sorry!", "Li"));
+                dialogTexts.Add(new DialogData("\"You have to buy the ice key first pal, sorry!\"", "Li"));
             }
             else
             {
-                dialogTexts.Add(new DialogData("Seems you already own this one, pal", "Li"));
+                dialogTexts.Add(new DialogData("\"Seems you already own this one, pal\"", "Li"));
             }
             DialogManager.Show(dialogTexts);
         }
@@ -195,20 +195,20 @@ public class MerchantMessage : MonoBehaviour
             if (!doNot.getThroneKey() && doNot.getLavaKey() && doNot.getIceKey())
             {
                 //Add text here
-                dialogTexts.Add(new DialogData("That is the key to the final elevator for the next mineshaft! Good luck!", "Li"));
+                dialogTexts.Add(new DialogData("\"That is the key to the final elevator for the next mineshaft! Good luck!\"", "Li"));
                 //End of text
             }
             else if (!doNot.getIceKey())
             {
-                dialogTexts.Add(new DialogData("You have to buy the ice key first pal, sorry!", "Li"));
+                dialogTexts.Add(new DialogData("\"You have to buy the ice key first pal, sorry!\"", "Li"));
             }
             else if (!doNot.getLavaKey() && doNot.getIceKey())
             {
-                dialogTexts.Add(new DialogData("You have to buy the lava key first pal, sorry!", "Li"));
+                dialogTexts.Add(new DialogData("\"You have to buy the lava key first pal, sorry!\"", "Li"));
             }
             else
             {
-                dialogTexts.Add(new DialogData("Seems you already own this one, pal", "Li"));
+                dialogTexts.Add(new DialogData("\"Seems you already own this one, pal\"", "Li"));
             }
             DialogManager.Show(dialogTexts);
         }
