@@ -13,7 +13,7 @@ public class LavaKeyDialogue : MonoBehaviour
 
     public void OnMouseOver()
     {
-        if (!displayOnce)
+        if (!displayOnce && dialogue.await==2)
         {
             dialogue.LavaKey();
             displayOnce = true;
@@ -22,7 +22,10 @@ public class LavaKeyDialogue : MonoBehaviour
 
     public void OnMouseExit()
     {
-        dialogue.BlankSlate();
-        displayOnce = false;
+        if (dialogue.await == 2)
+        {
+            dialogue.BlankSlate();
+            displayOnce = false;
+        }
     }
 }

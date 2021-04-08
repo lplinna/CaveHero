@@ -13,7 +13,7 @@ public class IceKeyDialogue : MonoBehaviour
 
     public void OnMouseOver()
     {
-        if (!displayOnce)
+        if (!displayOnce && dialogue.await==2)
         {
             dialogue.IceKey();
             displayOnce = true;
@@ -22,7 +22,10 @@ public class IceKeyDialogue : MonoBehaviour
 
     public void OnMouseExit()
     {
-        dialogue.BlankSlate();
-        displayOnce = false;
+        if (dialogue.await == 2)
+        {
+            dialogue.BlankSlate();
+            displayOnce = false;
+        }
     }
 }

@@ -11,11 +11,15 @@ public class MerchantMessage : MonoBehaviour
     public GameObject[] Example;
 
     public DoNotDestroy doNot;
+    public int await = 0;
+    public string sizeString;
+
 
     private void Awake()
     {
         DialogManager.gameObject.SetActive(false);
         doNot = GameObject.FindGameObjectWithTag("DoNotDestroy").GetComponent<DoNotDestroy>();
+       
     }
 
     void Update()
@@ -36,10 +40,17 @@ public class MerchantMessage : MonoBehaviour
             if (DialogManager.state == State.Deactivate)
             {
                 GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCharacter>().isDialog = false;
+
+                if (await == 1) await = 2;
+
                 yield break;
             }
         }
     }
+
+
+   
+
 
     public void Advance()
     {
@@ -57,23 +68,28 @@ public class MerchantMessage : MonoBehaviour
 
     public void Introduction()
     {
+
         
+
         DialogManager.gameObject.SetActive(true);
         
         var dialogTexts = new List<DialogData>();
 
         //Add text here
-        dialogTexts.Add(new DialogData("\"I've never seen you before. You new here or something?\"", "Li"));
-        dialogTexts.Add(new DialogData("\"You aren't exactly what I normally see in these mineshafts.\"", "Li"));
-        dialogTexts.Add(new DialogData("\"Well, nonetheless, the name's Axol! And welcome to my traveling shop\"", "Li"));
-        dialogTexts.Add(new DialogData("\"I've got the best prices in all of the mineshafts!\"", "Li"));
-        dialogTexts.Add(new DialogData("\"Probably because I'm the only one in these mineshafts\"", "Li"));
-        dialogTexts.Add(new DialogData("\"If you see anything you might want, just let me know!\"", "Li"));
+        dialogTexts.Add(new DialogData("\"/speed:0.03/I've never seen you before. You new here or something?\"","Li"));
+        dialogTexts.Add(new DialogData("\"/speed:0.03/You aren't exactly what I normally see in these mineshafts.\"", "Li"));
+        dialogTexts.Add(new DialogData("\"/speed:0.03/Well, nonetheless, the name's Axol! And welcome to my traveling shop\"", "Li"));
+        dialogTexts.Add(new DialogData("\"/speed:0.03/I've been here many years,/wait:0.3/and I know and have many things.\"", "Li"));
+        dialogTexts.Add(new DialogData("\"/speed:0.03/I heard the cave collapse./wait:0.6/Here, take this key.\"", "Li"));
+        dialogTexts.Add(new DialogData("\"/speed:0.03/If you're running errands for the king, go through that door to the right. Get mining!\"", "Li"));
         //End of text
+
+
 
         DialogManager.Show(dialogTexts);
         StartCoroutine(AwaitDLOG());
         doNot.setIntroduceMerchant(true);
+        await = 1;
     }
 
     public void UpgradeHealth()

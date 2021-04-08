@@ -20,7 +20,7 @@ public class Elevator : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.name == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
             if (!triggered)
             {
@@ -36,11 +36,6 @@ public class Elevator : MonoBehaviour
     {
         MusicManager.stopPlaying();
         MusicManager.setElevator(true);
-        if (currScene == "ThroneRoom")
-        {
-            Message0 message = GameObject.FindGameObjectWithTag("Player").GetComponent<Message0>();
-            message.Throne2();
-        }
 
         SoundManager.PlaySound("ElevatorOpening");
         yield return new WaitForSeconds(1.5f);
@@ -54,19 +49,19 @@ public class Elevator : MonoBehaviour
 
         switch (currScene) {
             case "SlimeLevel": // Slime to Ice
-                Merchant.setNextScene("IceLevel");
+                GameObject.FindGameObjectWithTag("Merchant").GetComponent<Merchant>().setNextScene("IceLevel");
                 break;
 
             case "IceLevel": // Ice to Lava
-                Merchant.setNextScene("LavaLevel");
+                GameObject.FindGameObjectWithTag("Merchant").GetComponent<Merchant>().setNextScene("LavaLevel");
                 break;
 
             case "LavaLevel": // Lava to Throne
-                Merchant.setNextScene("ThroneRoom");
+                GameObject.FindGameObjectWithTag("Merchant").GetComponent<Merchant>().setNextScene("ThroneRoom");
                 break;
 
             case "ThroneRoom": // Throne to Slime
-                Merchant.setNextScene("SlimeLevel");
+                GameObject.FindGameObjectWithTag("Merchant").GetComponent<Merchant>().setNextScene("SlimeLevel");
                 break;
         }
         LoadingNextLevel.setLevelName("Merchant");
