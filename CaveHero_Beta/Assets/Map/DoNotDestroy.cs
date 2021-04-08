@@ -5,9 +5,10 @@ using UnityEngine;
 public class DoNotDestroy : MonoBehaviour
 {
     private DoNotDestroy instance;
-    public bool iceKey, lavaKey, throneKey;
+    public bool slimeKey, iceKey, lavaKey, throneKey;
     public bool introduceMerchant;
     public bool challengeRoomFinished;
+    public bool beenToThrone;
     void Awake()
     {
         if (instance == null)
@@ -78,5 +79,15 @@ public class DoNotDestroy : MonoBehaviour
     public bool getIntroduceMerchant()
     {
         return introduceMerchant;
+    }
+
+    public void setBeenToThrone(bool trigger)
+    {
+        beenToThrone = trigger;
+    }
+
+    public bool getBeenToThrone()
+    {
+        return beenToThrone;
     }
 }

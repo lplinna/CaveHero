@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class Merchant : MonoBehaviour
 {
-    public string nextLevelName;
+    public static string nextLevelName;
     public bool enterShopTrigger;
     public GameObject shop, goBackConfirmation, goNextConfirmation, doNotHaveKey;
     public DoNotDestroy doNot;
@@ -20,7 +20,7 @@ public class Merchant : MonoBehaviour
         goNextConfirmation.SetActive(false);
         doNotHaveKey.SetActive(false);
         player = GameObject.FindGameObjectWithTag("Player");
-        doNot = player.GetComponent<DoNotDestroy>();
+        doNot = GameObject.FindGameObjectWithTag("DoNotDestroy").GetComponent<DoNotDestroy>();
         
     }
 
@@ -36,7 +36,7 @@ public class Merchant : MonoBehaviour
        
     }
 
-    public void setNextScene(string next)
+    public static void setNextScene(string next)
     {
         nextLevelName = next;
     }

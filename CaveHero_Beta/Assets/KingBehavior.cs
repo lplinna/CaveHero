@@ -9,32 +9,40 @@ public class KingBehavior : MonoBehaviour
     Rigidbody2D body;
     float reftime;
     int bossState = 0;
+    public DoNotDestroy doNot;
 
     // Start is called before the first frame update
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");
+        doNot = GameObject.FindGameObjectWithTag("DoNotDestroy").GetComponent<DoNotDestroy>();
         body = GetComponent<Rigidbody2D>();
         reftime = Time.time;
+        this.gameObject.SetActive(false);
 
-        StartCoroutine(BOSSMIND());
+        if(doNot.getBeenToThrone() == true)
+        {
+            this.gameObject.SetActive(true);
+            StartCoroutine(BOSSMIND());
+        }
+        
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
-      
-        if(bossState == 0)
+        if(doNot.getBeenToThrone() == true)
         {
-            TailAndCharge();
+            if (bossState == 0)
+            {
+                TailAndCharge();
+            }
+            if (bossState == 1)
+            {
+                FloatAndShoot();
+            }
         }
-        if(bossState == 1)
-        {
-            FloatAndShoot();
-        }
-    
-
-     }
+    }
 
 
     private IEnumerator BOSSMIND()
@@ -102,7 +110,6 @@ public class KingBehavior : MonoBehaviour
         }
 
     }
-
 
 }
 

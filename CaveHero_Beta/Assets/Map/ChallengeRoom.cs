@@ -32,7 +32,7 @@ public class ChallengeRoom : MonoBehaviour
         changeEnemySprites(Enemy2);
         changeEnemySprites(Enemy3);
 
-        challengeRoomTrigger = GameObject.FindGameObjectWithTag("Player").GetComponent<DoNotDestroy>();
+        challengeRoomTrigger = GameObject.FindGameObjectWithTag("DoNotDestroy").GetComponent<DoNotDestroy>();
         this.gameObject.transform.position.Set(changedPositionX, changedPositionY, changedPositionZ);
     }
 
@@ -41,6 +41,7 @@ public class ChallengeRoom : MonoBehaviour
     {
         if (!debugMode)
         {
+            challengeRoomTrigger = GameObject.FindGameObjectWithTag("DoNotDestroy").GetComponent<DoNotDestroy>();
             if (triggered && !challengeRoomTrigger.getChallengeTrigger())
             {
                 tilemapWall.SetActive(true);
@@ -165,6 +166,7 @@ public class ChallengeRoom : MonoBehaviour
         }
         else
         {
+            challengeRoomTrigger = GameObject.FindGameObjectWithTag("DoNotDestroy").GetComponent<DoNotDestroy>();
             if (!challengeRoomTrigger.getChallengeTrigger())
             {
                 Debug.Log("Finished!!");

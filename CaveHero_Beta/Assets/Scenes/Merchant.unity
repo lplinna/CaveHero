@@ -355,6 +355,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1337622264}
   offset: {x: 0, y: 0, z: 0}
+  stop: 0
 --- !u!1 &67039524
 GameObject:
   m_ObjectHideFlags: 0
@@ -2815,14 +2816,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80b190a8d76484448b6a12dd48d204b1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextLevelName: 
   enterShopTrigger: 0
   shop: {fileID: 1787421195}
   goBackConfirmation: {fileID: 743323980}
   goNextConfirmation: {fileID: 648304943}
   doNotHaveKey: {fileID: 208763457}
   doNot: {fileID: 0}
-  player: {fileID: 0}
+  player: {fileID: 1337622265}
   UI: {fileID: 745578662}
 --- !u!212 &438946801
 SpriteRenderer:
@@ -14044,6 +14044,11 @@ PrefabInstance:
 --- !u!4 &1337622264 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6327391077458177464, guid: d15b3809d66832b4eaf7f58e16cc5385, type: 3}
+  m_PrefabInstance: {fileID: 1337622263}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1337622265 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6327391077458177413, guid: d15b3809d66832b4eaf7f58e16cc5385, type: 3}
   m_PrefabInstance: {fileID: 1337622263}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1356677717

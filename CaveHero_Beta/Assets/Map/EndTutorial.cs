@@ -5,11 +5,13 @@ using UnityEngine.SceneManagement;
 
 public class EndTutorial : MonoBehaviour
 {
+    ShakeBehavior shake;
     public static bool endTutorialTriggered;
     // Start is called before the first frame update
     void Start()
     {
         endTutorialTriggered = false;
+        shake = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ShakeBehavior>();
     }
 
     // Update is called once per frame
@@ -22,8 +24,10 @@ public class EndTutorial : MonoBehaviour
     {
         if (endTutorialTriggered)
         {
+            shake.TriggerShake();
             yield return new WaitForSeconds(1f);
-            LoadingNextLevel.setLevelName("SlimeLevel");
+            //LoadingNextLevel.setLevelName("SlimeLevel");
+            LoadingNextLevel.setLevelName("ThroneRoom");
             SceneManager.LoadScene("LoadingNextLevel");
         }
     }

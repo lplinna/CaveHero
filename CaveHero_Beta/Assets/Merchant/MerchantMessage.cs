@@ -15,7 +15,7 @@ public class MerchantMessage : MonoBehaviour
     private void Awake()
     {
         DialogManager.gameObject.SetActive(false);
-        doNot = GameObject.FindGameObjectWithTag("Player").GetComponent<DoNotDestroy>();
+        doNot = GameObject.FindGameObjectWithTag("DoNotDestroy").GetComponent<DoNotDestroy>();
     }
 
     void Update()

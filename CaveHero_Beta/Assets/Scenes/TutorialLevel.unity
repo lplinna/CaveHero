@@ -3749,6 +3749,7 @@ GameObject:
   - component: {fileID: 461179178}
   - component: {fileID: 461179177}
   - component: {fileID: 461179180}
+  - component: {fileID: 461179181}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -3835,6 +3836,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 318602479}
   offset: {x: 0, y: 0, z: 0}
+  stop: 0
+--- !u!114 &461179181
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 461179176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dcdda6967ab30a4eb1c30fc17ffc329, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 318602479}
 --- !u!1001 &533147544
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27781,7 +27796,7 @@ GameObject:
   - component: {fileID: 1982486996}
   m_Layer: 0
   m_Name: DoNotDestroy
-  m_TagString: Untagged
+  m_TagString: DoNotDestroy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -27803,6 +27818,7 @@ MonoBehaviour:
   throneKey: 0
   introduceMerchant: 0
   challengeRoomFinished: 0
+  firstThroneRoom: 0
 --- !u!4 &1982486997
 Transform:
   m_ObjectHideFlags: 0
