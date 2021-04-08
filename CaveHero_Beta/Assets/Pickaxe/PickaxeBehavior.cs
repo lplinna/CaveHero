@@ -8,6 +8,10 @@ public class PickaxeBehavior : MonoBehaviour
 
     public bool canHit;
     public bool PowerAttack;
+    public GameObject FIRE;
+    public GameObject POISON;
+    public GameObject ICE;
+    public int elemental = 0;
 
 
     private void Start()
@@ -25,15 +29,31 @@ public class PickaxeBehavior : MonoBehaviour
         {
             Debug.Log("Enemy hit!");
             var dm = collision.gameObject.GetComponent<EnemyHealth>();
-            if (canHit)
+            
+            if (canHit && elemental==0)
             {
                 dm.Damage(30f * PlayerModifiers.damageModifier);
                 canHit = false;
             }
 
-            if (PowerAttack)
+            if (PowerAttack && elemental==0)
             {
                 dm.Damage(5f * PlayerModifiers.damageModifier);
+            }
+
+
+            if (elemental!=0)
+            {
+                if (elemental == 1)
+                {
+                    var p = Instantiate(POISON);
+                    p.GetComponent<SlimeActorBehavior>().actee = collision.gameObject;
+                }
+                if (elemental == 2)
+                {
+                    var p = Instantiate(FIRE);
+                    p.GetComponent<FireActorBehavior>().actee = collision.gameObject;
+                }
             }
 
         }

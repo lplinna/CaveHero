@@ -6,6 +6,7 @@ public class FireActorBehavior : MonoBehaviour
 {
     public GameObject actee;
     private int longevity = 0;
+    int panicType = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -17,11 +18,66 @@ public class FireActorBehavior : MonoBehaviour
 
     }
 
+
+
+
+
+    void doFieryAgony()
+    {
+        if (panicType==0)
+        {
+            if (actee.tag == "Spider")
+            {
+                actee.GetComponent<SpiderBehavior>().onFire = true;
+         
+            }
+            if(actee.tag == "Beetle")
+            {
+                actee.GetComponent<BeetleBehavior>().onFire = true;
+            }
+
+            if (actee.tag == "Bat")
+            {
+                actee.GetComponent<BatBehavior>().onFire = true;
+            }
+
+            panicType = 1;
+        }
+    }
+
+
+
+    void endFieryAgony()
+    {
+        panicType = 0;
+
+        if (actee.tag == "Spider")
+        {
+            actee.GetComponent<SpiderBehavior>().onFire = false;
+
+        }
+        if (actee.tag == "Beetle")
+        {
+            actee.GetComponent<BeetleBehavior>().onFire = false;
+            actee.transform.rotation = Quaternion.AngleAxis(0, Vector3.forward);
+        }
+
+
+    }
+
+
+
+
+
     // Update is called once per frame
     void Update()
     {
         Debug.Log(longevity);
         longevity -= 1;
+
+
+        doFieryAgony();
+
 
         if (longevity%80 == 0)
         {
@@ -29,9 +85,11 @@ public class FireActorBehavior : MonoBehaviour
             else actee.GetComponent<EnemyHealth>().Damage(Random.Range(0, 3));
         }
 
+
         if (longevity <= 0)
         {
             this.gameObject.GetComponent<ParticleSystem>().Stop();
+            endFieryAgony();
             Object.Destroy(this);
         }
         

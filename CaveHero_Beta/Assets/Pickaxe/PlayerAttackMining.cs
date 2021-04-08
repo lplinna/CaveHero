@@ -30,48 +30,69 @@ public class PlayerAttackMining : MonoBehaviour
 
 
 
+    void BasicSwipe()
+    {
+        swiping = 1;
+        var pangle = GetPlayerRotation();
+
+        if (pangle == 0)
+        {
+            sangle = 30f;
+            eangle = -30f;
+
+        }
+        if (pangle == 180)
+        {
+            sangle = 30f;
+            eangle = 230f;
+
+        }
+
+        if (pangle == 90 || pangle == -90)
+        {
+            sangle = pangle + 2f;
+            eangle = pangle - 2f;
+
+
+        }
+
+
+
+        player.isAttackingAnim = true;
+        player.DoAttackAnimation();
+
+        pickaxe.GetComponent<SpriteRenderer>().enabled = false;
+        pickaxe.SetActive(true);
+        pickaxe.GetComponent<PickaxeBehavior>().canHit = true;
+    }
+
+
+
 
     // Update is called once per frame
     void Update()
     {
-        
-        if(Input.GetMouseButtonDown(0) && swiping==0)
+
+
+        if (Input.GetKeyDown(KeyCode.E) && swiping == 0)
         {
-            // var b = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            //Debug.DrawLine(b, transform.position, Color.blue);
-            swiping = 1;
-            var pangle = GetPlayerRotation();
-            
-            if (pangle == 0)
-            {
-             sangle = 30f;
-             eangle = -30f;
-             
-            }
-            if(pangle==180)
-            {
-             sangle = 30f;
-             eangle = 230f;
-             
-            }
+            pickaxe.GetComponent<PickaxeBehavior>().elemental = 1;
+        }
 
-            if(pangle == 90 || pangle == -90)
-            {
-             sangle = pangle + 2f;
-             eangle = pangle - 2f;
-             
+        if (Input.GetKeyDown(KeyCode.F) && swiping == 0)
+        {
+            pickaxe.GetComponent<PickaxeBehavior>().elemental = 2;
+        }
 
-            }
+        if (Input.GetKeyDown(KeyCode.R) && swiping == 0)
+        {
+            pickaxe.GetComponent<PickaxeBehavior>().elemental = 3;
+        }
 
 
-
-            player.isAttackingAnim = true;
-           player.DoAttackAnimation();
-
-            pickaxe.GetComponent<SpriteRenderer>().enabled = false;
-            pickaxe.SetActive(true);
-            pickaxe.GetComponent<PickaxeBehavior>().canHit = true;
-            
+        if (Input.GetMouseButtonDown(0) && swiping==0)
+        {
+            BasicSwipe();
         }
 
         if (swiping == 1) //If it's a normal swing

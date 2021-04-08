@@ -10,6 +10,7 @@ public class SpiderBehavior : MonoBehaviour
     float reftime;
     Vector2 zagway;
     bool readyFire;
+    public bool onFire;
     public SpriteRenderer spiderSprite;
     private Animator spiderAnim;
     
@@ -43,6 +44,8 @@ public class SpiderBehavior : MonoBehaviour
 
     void Update()
     {
+       
+
 
         if (body.velocity.y > 0)
         {
@@ -110,54 +113,76 @@ public class SpiderBehavior : MonoBehaviour
 
     void FixedUpdate()
     {
-        if (GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCharacter>().isDialog == true)
+        if (onFire)
         {
-            var enemytimer = (Time.time - reftime) * 30f;
-            var towards = target.transform.position - body.transform.position;
-
-
-            if (readyFire)
+            spider_on_fire();
+        }
+        else
+        {
+            if (!target.GetComponent<PlayerCharacter>().isDialog)
             {
-                FirePellet(towards.normalized);
-                Invoke("ReadyToShoot", 1.2f);
-                readyFire = false;
+                spider_acting();
             }
-
-
-            if (Mathf.Ceil(enemytimer % 20) == 5)
-            {
-                RandomizeZigZag();
-
-            }
-
-            if (Mathf.Ceil(enemytimer % 19) == 5)
+            else
             {
                 body.velocity = Vector3.zero;
             }
+        }
+      
+    }
 
 
-            if (towards.magnitude > 5f)
-            {
-                body.velocity = Vector3.Lerp(towards.normalized * 3f, zagway, 0.2f);
-            }
-
-            if (towards.magnitude < 0.2f)
-            {
-                body.velocity = Vector3.Lerp(body.velocity, -towards.normalized, 0.05f);
-            }
-
-
-
-            if (enemytimer > 90)  //Repeat
-            {
-                reftime = Time.time;
-            }
+    void spider_on_fire()
+    {
+        var enemytimer = (Time.time - reftime) * 30f;
+        if (Mathf.Ceil(enemytimer % 3) == 2)
+        {
+            RandomizeZigZag();
+        }
+        body.velocity = zagway * 3f;
+    }
 
 
+    void spider_acting()
+    {
+        var enemytimer = (Time.time - reftime) * 30f;
+        var towards = target.transform.position - body.transform.position;
+
+        if (readyFire)
+        {
+            FirePellet(towards.normalized);
+            Invoke("ReadyToShoot", 1.2f);
+            readyFire = false;
+        }
+
+        if (Mathf.Ceil(enemytimer % 20) == 5)
+        {
+            RandomizeZigZag();
+        }
+
+        if (Mathf.Ceil(enemytimer % 19) == 5)
+        {
+            body.velocity = Vector3.zero;
+        }
+
+
+        if (towards.magnitude > 5f)
+        {
+            body.velocity = Vector3.Lerp(towards.normalized * 3f, zagway, 0.2f);
+        }
+
+        if (towards.magnitude < 0.2f)
+        {
+            body.velocity = Vector3.Lerp(body.velocity, -towards.normalized, 0.05f);
+        }
+
+
+
+        if (enemytimer > 90)  //Repeat
+        {
+            reftime = Time.time;
         }
     }
-        
-
 
     
 
