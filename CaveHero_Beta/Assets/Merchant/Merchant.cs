@@ -2,41 +2,55 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class Merchant : MonoBehaviour
 {
-    public string nextLevelName;
+    public static string nextLevelName;
     public bool enterShopTrigger;
-    public GameObject shop, goBackConfirmation, goNextConfirmation, doNotHaveKey;
+    public GameObject shop;
+    public Canvas goNextCanvas, goBackCanvas, doNotHaveKey;
     public DoNotDestroy doNot;
     public GameObject player;
     public GameObject UI;
+    public TextMeshProUGUI healthCost, damageCost, energyCost;
+    public float healthCostFloat, damageCostFloat, energyCostFloat;
+    public MerchantMessage message;
+    public MoneyCounter moneyCounter;
 
     void Awake()
     {
         enterShopTrigger = false;
-        goBackConfirmation.SetActive(false);
+        goBackCanvas.gameObject.SetActive(false);
         shop.SetActive(false);
-        goNextConfirmation.SetActive(false);
-        doNotHaveKey.SetActive(false);
+        goNextCanvas.gameObject.SetActive(false);
+        doNotHaveKey.gameObject.SetActive(false);
+
         player = GameObject.FindGameObjectWithTag("Player");
-        doNot = player.GetComponent<DoNotDestroy>();
+        doNot = GameObject.FindGameObjectWithTag("DoNotDestroy").GetComponent<DoNotDestroy>();
+
         
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        setNextScene("IceLevel");
+        setNextScene("SlimeLevel");
+        MoneyCounter.currMoney = 1000;
     }
 
     // Update is called once per frame
     void Update()
     {
-       
+        healthCostFloat = 200 * PlayerModifiers.healthModifier;
+        energyCostFloat = 250 * PlayerModifiers.energyModifier;
+        damageCostFloat = 300 * PlayerModifiers.damageModifier;
+        healthCost.text = "$" + healthCostFloat;
+        energyCost.text = "$" + energyCostFloat;
+        damageCost.text = "$" + damageCostFloat;
     }
 
-    public void setNextScene(string next)
+    public static void setNextScene(string next)
     {
         nextLevelName = next;
     }
@@ -70,34 +84,62 @@ public class Merchant : MonoBehaviour
 
     public void upgradeDamage()
     {
-        if (PlayerModifiers.damageModifier < 2f)
+        if(moneyCounter.getMoney() >= damageCostFloat)
         {
-            PlayerModifiers.damageModifier += 0.5f;
-            Debug.Log(PlayerModifiers.damageModifier);
+            if (PlayerModifiers.damageModifier < 2f)
+            {
+                PlayerModifiers.damageModifier += 0.5f;
+                moneyCounter.TakeMoney(damageCostFloat);
+                Debug.Log(PlayerModifiers.damageModifier);
+            }
         }
+        else
+        {
+            message.NotEnough();
+        }
+        
     }
 
     public void upgradeHealth()
     {
-        if (PlayerModifiers.healthModifier < 2f)
+        if(moneyCounter.getMoney() >= healthCostFloat)
         {
-            PlayerModifiers.healthModifier += 0.5f;
-            Debug.Log(PlayerModifiers.healthModifier);
+            if (PlayerModifiers.healthModifier < 2f)
+            {
+                PlayerModifiers.healthModifier += 0.5f;
+                moneyCounter.TakeMoney(healthCostFloat);
+                Debug.Log(PlayerModifiers.healthModifier);
+            }
+        }
+        else
+        {
+            message.NotEnough();
         }
     }
 
     public void upgradeEnergy()
     {
-        if (PlayerModifiers.energyModifier < 2f)
+        if(moneyCounter.getMoney() >= energyCostFloat)
         {
-            PlayerModifiers.energyModifier += 0.5f;
-            Debug.Log(PlayerModifiers.energyModifier);
+            if (PlayerModifiers.energyModifier < 2f)
+            {
+                PlayerModifiers.energyModifier += 0.5f;
+                moneyCounter.TakeMoney(energyCostFloat);
+                Debug.Log(PlayerModifiers.energyModifier);
+            }
+        }
+        else
+        {
+            message.NotEnough();
         }
     }
 
     public void buyIceKey()
     {
-        doNot.setIceKey(true);
+        if (nextLevelName == "SlimeLevel")
+        {
+            doNot.setIceKey(true);
+        }
     }
 
     public void buyLavaKey()
@@ -140,26 +182,27 @@ public class Merchant : MonoBehaviour
 
     public void goBackConfirmationStart()
     {
-        goBackConfirmation.SetActive(true);
+        goBackCanvas.gameObject.SetActive(true);
         player.GetComponent<PlayerCharacter>().isDialog = true;
         player.GetComponent<AudioSource>().Stop();
     }
     public void goBackConfirmationEnd()
     {
-        goBackConfirmation.SetActive(false);
+        goBackCanvas.gameObject.SetActive(false);
         player.GetComponent<PlayerCharacter>().isDialog = false;
     }
 
     public void goNextConfirmationStart()
     {
-        goNextConfirmation.SetActive(true);
+        goNextCanvas.gameObject.SetActive(true);
         player.GetComponent<PlayerCharacter>().isDialog = true;
         player.GetComponent<AudioSource>().Stop();
     }
 
     public void goNextConfirmationEnd()
     {
-        goNextConfirmation.SetActive(false);
+        goNextCanvas.gameObject.SetActive(false);
+        doNotHaveKey.gameObject.SetActive(false);
         player.GetComponent<PlayerCharacter>().isDialog = false;
     }
 
@@ -168,6 +211,19 @@ public class Merchant : MonoBehaviour
         Debug.Log("Button Clicked");
         switch (nextLevelName)
         {
+            case "SlimeLevel":
+                if (doNot.getIntroduceMerchant())
+                {
+                    loadNextScene();
+                }
+                else
+                {
+                    goNextCanvas.gameObject.SetActive(false);
+                    doNotHaveKey.gameObject.SetActive(true);
+                }
+                
+                break;
+
             case "IceLevel":
                 if (doNot.getIceKey())
                 {
@@ -175,8 +231,8 @@ public class Merchant : MonoBehaviour
                 }
                 else
                 {
-                    goNextConfirmation.SetActive(false);
-                    doNotHaveKey.SetActive(true);
+                    goNextCanvas.gameObject.SetActive(false);
+                    doNotHaveKey.gameObject.SetActive(true);
                 }
                 break;
 
@@ -187,8 +243,8 @@ public class Merchant : MonoBehaviour
                 }
                 else
                 {
-                    goNextConfirmation.SetActive(false);
-                    doNotHaveKey.SetActive(true);
+                    goNextCanvas.gameObject.SetActive(false);
+                    doNotHaveKey.gameObject.SetActive(true);
                 }
                 break;
 
@@ -199,8 +255,8 @@ public class Merchant : MonoBehaviour
                 }
                 else
                 {
-                    goNextConfirmation.SetActive(false);
-                    doNotHaveKey.SetActive(true);
+                    goNextCanvas.gameObject.SetActive(false);
+                    doNotHaveKey.gameObject.SetActive(true);
                 }
                 break;
         }

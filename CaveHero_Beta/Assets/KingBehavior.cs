@@ -6,6 +6,7 @@ public class KingBehavior : MonoBehaviour
 {
 
     public GameObject target;
+    public GameObject rocks;
     Rigidbody2D body;
     float reftime;
     int bossState = 0;
@@ -20,9 +21,10 @@ public class KingBehavior : MonoBehaviour
         reftime = Time.time;
         this.gameObject.SetActive(false);
 
-        if(doNot.getBeenToThrone() == true)
+        if(doNot.getBeenToThrone())
         {
             this.gameObject.SetActive(true);
+            rocks.SetActive(false);
             StartCoroutine(BOSSMIND());
         }
         
@@ -31,7 +33,7 @@ public class KingBehavior : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(doNot.getBeenToThrone() == true)
+        if(doNot.getBeenToThrone())
         {
             if (bossState == 0)
             {

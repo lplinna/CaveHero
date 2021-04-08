@@ -14119,7 +14119,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &857176258
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -23775,7 +23775,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &1760628396
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -27813,12 +27813,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d30e51453784a854496fc0c1d9957b9b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  slimeKey: 0
   iceKey: 0
   lavaKey: 0
   throneKey: 0
   introduceMerchant: 0
   challengeRoomFinished: 0
-  firstThroneRoom: 0
+  beenToThrone: 0
 --- !u!4 &1982486997
 Transform:
   m_ObjectHideFlags: 0
@@ -27912,7 +27913,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &2121770172
 SpriteRenderer:
   m_ObjectHideFlags: 0

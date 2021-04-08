@@ -6,7 +6,7 @@ using static UnityEngine.UI.Text;
 
 public class MoneyCounter : MonoBehaviour
 {
-    public static int currMoney = 0;
+    public static float currMoney = 0;
     private MoneyCounter instance;
     public static GameObject moneyCounter;
     public static TextMeshProUGUI moneyText;
@@ -42,7 +42,7 @@ public class MoneyCounter : MonoBehaviour
         moneyText.text = "$" + currMoney;
     }
 
-    public void SetMoney(int muns)
+    public void SetMoney(float muns)
     {
         moneyText.text = "$" + muns;
     }
@@ -53,13 +53,18 @@ public class MoneyCounter : MonoBehaviour
        SetMoney(currMoney);
     }
 
-    public void TakeMoney(int money)
+    public void TakeMoney(float money)
     {
         if (currMoney >= money)
         {
             currMoney -= money;
         }
         SetMoney(currMoney);
+    }
+
+    public float getMoney()
+    {
+        return currMoney;
     }
 
     public static void Death()

@@ -21,7 +21,7 @@ public class Message0 : MonoBehaviour
         }
         if (SceneManager.GetActiveScene().name == "SlimeLevel")
         {
-            //SlimeLevel1();
+            SlimeLevel1();
         }
         if (SceneManager.GetActiveScene().name == "Merchant")
         {
@@ -50,7 +50,7 @@ public class Message0 : MonoBehaviour
 
 
 
-public  void Advance()
+    public void Advance()
     {
         DialogManager.Click_Window();
     }
