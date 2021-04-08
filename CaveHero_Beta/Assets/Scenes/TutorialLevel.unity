@@ -14104,7 +14104,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &857176258
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -23760,7 +23760,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &1760628396
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -27769,6 +27769,54 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5385943424085567440, guid: f2ccfe502107bde48ae60f0064664c91, type: 3}
   m_PrefabInstance: {fileID: 1943912626}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1982486995
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1982486997}
+  - component: {fileID: 1982486996}
+  m_Layer: 0
+  m_Name: DoNotDestroy
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1982486996
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982486995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d30e51453784a854496fc0c1d9957b9b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  iceKey: 0
+  lavaKey: 0
+  throneKey: 0
+  introduceMerchant: 0
+  challengeRoomFinished: 0
+--- !u!4 &1982486997
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1982486995}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 2.0427086, y: -6.1085134, z: -68.289154}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 12
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &2103600401
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -27848,7 +27896,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!212 &2121770172
 SpriteRenderer:
   m_ObjectHideFlags: 0
