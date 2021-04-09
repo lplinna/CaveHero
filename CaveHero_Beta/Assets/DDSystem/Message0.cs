@@ -21,15 +21,21 @@ public class Message0 : MonoBehaviour
         }
         if (SceneManager.GetActiveScene().name == "SlimeLevel")
         {
-            SlimeLevel1();
+            //SlimeLevel1();
         }
         if (SceneManager.GetActiveScene().name == "Merchant")
         {
             Merchant1();
         }
+        /*
         if(SceneManager.GetActiveScene().name == "ThroneRoom" && doNot.getBeenToThrone() == false)
         {
             Throne1();
+        }*/
+
+        if (SceneManager.GetActiveScene().name == "ThroneRoom")
+        {
+            Throne3();
         }
     }
 
@@ -50,7 +56,14 @@ public class Message0 : MonoBehaviour
 
 
 
-    public void Advance()
+public void Teardown()
+    {
+        DialogManager.gameObject.SetActive(false);
+        this.GetComponent<PlayerCharacter>().isDialog = false;
+    }
+
+
+public  void Advance()
     {
         DialogManager.Click_Window();
     }
@@ -184,10 +197,41 @@ public class Message0 : MonoBehaviour
         var dialogTexts = new List<DialogData>();
 
         //Add text here
-        dialogTexts.Add(new DialogData("\"Now can someone please clean up these rocks? They are a dreadful sight.\"", "Li"));
+        dialogTexts.Add(new DialogData("/size:140//speed:0.02/\"SERVANTS!!\"", "Li"));
+        dialogTexts.Add(new DialogData("\"/speed:0.06/Why are these rocks still on my floor?!?\"", "Li"));
+        dialogTexts.Add(new DialogData("\"I told you to-/wait:0.5/-/wait:0.5/-\"", "Li"));
+        dialogTexts.Add(new DialogData("\"Oh.\"", "Li"));
+        dialogTexts.Add(new DialogData("\"The Gem? You have it?? \"", "Li"));
+        dialogTexts.Add(new DialogData("\"Excellent. Now the drill will work!\"", "Li"));
+        dialogTexts.Add(new DialogData("\"But there is one problem...\"", "Li"));
+        dialogTexts.Add(new DialogData("\"The drill is a relic, a tool with a mind. It will only let one of us return to the surface.\"", "Li"));
+        dialogTexts.Add(new DialogData("\"And I have been banished from there for far, far too long.\"", "Li"));
+        dialogTexts.Add(new DialogData("\"Your service to me has been splendid, miner...\"", "Li"));
+        dialogTexts.Add(new DialogData("\"But your time ends here!\"", "Li"));
         //End of text
 
         DialogManager.Show(dialogTexts);
         StartCoroutine(AwaitDLOG());
     }
+
+
+    public void Throne3()
+    {
+        DialogManager.gameObject.SetActive(true);
+        this.GetComponent<PlayerCharacter>().isDialog = true;
+        this.GetComponent<AudioSource>().Stop();
+        var dialogTexts = new List<DialogData>();
+
+        //Add text here
+        dialogTexts.Add(new DialogData("/speed:0.02/\"N-/wait:0.5/noo! /wait:1/Impossible!\"", "Li"));
+        dialogTexts.Add(new DialogData("/speed:0.02/\"The.../wait:1/ The drill is mine...\"", "Li"));
+        dialogTexts.Add(new DialogData("/speed:0.02/\"IT ALWAYS HAS BEEN!\"", "Li"));
+        dialogTexts.Add(new DialogData("/speed:0.02/\"U-ughghhh..\"", "Li"));
+        //End of text
+
+        DialogManager.Show(dialogTexts);
+        StartCoroutine(AwaitDLOG());
+    }
+
 }
+

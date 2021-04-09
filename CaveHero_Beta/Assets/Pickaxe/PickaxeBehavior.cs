@@ -24,11 +24,12 @@ public class PickaxeBehavior : MonoBehaviour
     {
 
         Debug.Log(collision.collider.gameObject.name);
-        bool isEnemy = collision.gameObject.CompareTag("Bat") || collision.gameObject.CompareTag("Beetle") || collision.gameObject.CompareTag("Spider") || collision.gameObject.CompareTag("ChallengeEnemies");
+        bool isEnemy = collision.gameObject.CompareTag("Bat") || collision.gameObject.CompareTag("Beetle") || collision.gameObject.CompareTag("Spider") || collision.gameObject.CompareTag("ChallengeEnemies") || collision.gameObject.CompareTag("King");
         if (isEnemy)
         {
             Debug.Log("Enemy hit!");
             var dm = collision.gameObject.GetComponent<EnemyHealth>();
+           
             
             if (canHit && elemental==0)
             {
@@ -48,11 +49,13 @@ public class PickaxeBehavior : MonoBehaviour
                 {
                     var p = Instantiate(POISON);
                     p.GetComponent<SlimeActorBehavior>().actee = collision.gameObject;
+                    elemental = 0;
                 }
                 if (elemental == 2)
                 {
                     var p = Instantiate(FIRE);
                     p.GetComponent<FireActorBehavior>().actee = collision.gameObject;
+                    elemental = 0;
                 }
             }
 

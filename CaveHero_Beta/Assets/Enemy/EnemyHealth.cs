@@ -17,7 +17,7 @@ public class EnemyHealth : MonoBehaviour
         audioSrc = GetComponent<AudioSource>();
     }
 
-    public void Damage(float amount)
+    public virtual void Damage(float amount)
     {
         if (currentHealth > 0)
         {

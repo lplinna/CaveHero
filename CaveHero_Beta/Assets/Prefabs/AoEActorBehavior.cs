@@ -32,7 +32,7 @@ public class AoEActorBehavior : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        bool isEnemy = collision.gameObject.CompareTag("Bat") || collision.gameObject.CompareTag("Beetle") || collision.gameObject.CompareTag("Spider") || collision.gameObject.CompareTag("ChallengeEnemies");
+        bool isEnemy = collision.gameObject.CompareTag("Bat") || collision.gameObject.CompareTag("Beetle") || collision.gameObject.CompareTag("Spider") || collision.gameObject.CompareTag("ChallengeEnemies") || collision.gameObject.CompareTag("King");
         if (isEnemy)
         {
             if ((Time.time - hurtTime) > 0.02f)
