@@ -155,7 +155,7 @@ MonoBehaviour:
   PowerAttack: 0
   FIRE: {fileID: 1138400709827791902, guid: f8a612ca997212b46b7f32ee039b2d4f, type: 3}
   POISON: {fileID: 5265098036968242781, guid: 0d06b1eed6f584c43beca48eedfdd4e9, type: 3}
-  ICE: {fileID: 0}
+  ICE: {fileID: 4755054423968768927, guid: d3c1f6f06f403fb4ea879bf9479d9933, type: 3}
   elemental: 0
 --- !u!82 &3083748514255061071
 AudioSource:

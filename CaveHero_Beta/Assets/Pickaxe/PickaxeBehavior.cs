@@ -20,6 +20,23 @@ public class PickaxeBehavior : MonoBehaviour
         audioSrc = GetComponent<AudioSource>();
     }
 
+
+    public void EnergyPenalty(float b)
+    {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCharacter>().currEnergy -= b;
+    }
+
+    public void HealthPenalty(float b)
+    {
+        GameObject.FindGameObjectWithTag("Player").GetComponent<Health>().currHealth -= b;
+    }
+
+
+
+
+
+
+
     public void OnCollisionStay2D(Collision2D collision)
     {
 
@@ -55,6 +72,14 @@ public class PickaxeBehavior : MonoBehaviour
                 {
                     var p = Instantiate(FIRE);
                     p.GetComponent<FireActorBehavior>().actee = collision.gameObject;
+                    elemental = 0;
+                    HealthPenalty(5f);
+                    EnergyPenalty(30f);
+                }
+                if (elemental == 3)
+                {
+                    var p = Instantiate(ICE);
+                    p.GetComponent<IceActorBehavior>().actee = collision.gameObject;
                     elemental = 0;
                 }
             }

@@ -387,17 +387,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 6265423230219891651, guid: 60d174a5f5c739d41ab1c154ad81f685, type: 3}
   m_PrefabInstance: {fileID: 28167362}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &53897698 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2418701302171531365, guid: 0baf52075d60b324d80df9c7908b55b5, type: 3}
-  m_PrefabInstance: {fileID: 2418701302185005447}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b11903b44c652164dbaefe441f0cd5e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1001 &71718405
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -80445,6 +80434,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1104956769}
   offset: {x: 0, y: 0, z: 0}
+  stop: 0
 --- !u!1001 &1870192328
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -81993,10 +81983,10 @@ MonoBehaviour:
   wave2Trigger: 0
   wave3Trigger: 0
   debugMode: 1
-  triggeredFinish: 0
   changedPositionX: 172.44
   changedPositionY: -21.823
   changedPositionZ: -38.146
+  challengeRoomTrigger: {fileID: 0}
 --- !u!212 &2137046291
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -82502,7 +82492,7 @@ PrefabInstance:
     - target: {fileID: 6327391077458177415, guid: d15b3809d66832b4eaf7f58e16cc5385, type: 3}
       propertyPath: MONEY
       value: 
-      objectReference: {fileID: 53897698}
+      objectReference: {fileID: 0}
     - target: {fileID: 6327391077458177415, guid: d15b3809d66832b4eaf7f58e16cc5385, type: 3}
       propertyPath: checkpoint
       value: 

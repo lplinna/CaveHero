@@ -90,6 +90,8 @@ public class PlayerAttackMining : MonoBehaviour
         }
 
 
+
+
         if (Input.GetMouseButtonDown(0) && swiping==0)
         {
             BasicSwipe();
