@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class PelletBehavior : MonoBehaviour
 {
+
+    public float potency = 20.0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -11,13 +13,7 @@ public class PelletBehavior : MonoBehaviour
         GameObject.Destroy(this, 12f);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-
+   
 
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -29,7 +25,7 @@ public class PelletBehavior : MonoBehaviour
 
         if (collision.gameObject.name.Contains("Player"))
         {
-            collision.gameObject.GetComponent<Health>().Poison(20.0f);
+            collision.gameObject.GetComponent<Health>().Poison(potency);
 
             Destroy(this.gameObject, 0.0f);
         }

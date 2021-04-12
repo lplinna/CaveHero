@@ -12,6 +12,8 @@ public class KingBehavior : MonoBehaviour
     float DamageModifier = 0.2f;
     public DoNotDestroy doNot;
     public bool DebugFight;
+    public Animator appearance;
+    public GameObject spit;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +23,7 @@ public class KingBehavior : MonoBehaviour
         body = GetComponent<Rigidbody2D>();
         reftime = Time.time;
         this.gameObject.SetActive(false);
+        appearance = GetComponent<Animator>();
 
         if(doNot.getBeenToThrone() == true || DebugFight)
         {
@@ -40,6 +43,25 @@ public class KingBehavior : MonoBehaviour
         
     }
 
+
+    void LookThisWay(Vector3 way)
+    {
+        if(way.y > 0)
+        {
+            appearance.Play("KingRunUp");
+        }
+        if(way.y < 0)
+        {
+            appearance.Play("KingRunDown");
+        }
+    }
+
+
+
+
+
+    
+   
     // Update is called once per frame
     void FixedUpdate()
     {
@@ -50,11 +72,21 @@ public class KingBehavior : MonoBehaviour
                 TailAndCharge();
             }
             if (bossState == 1)
-            {
+            { 
                 FloatAndShoot();
             }
         }
     }
+
+
+    /*
+    private void FixedUpdate()
+    {
+        FloatAndShoot();
+    }*/
+
+
+
 
 
     private IEnumerator BOSSMIND()
@@ -76,10 +108,16 @@ public class KingBehavior : MonoBehaviour
 
 
 
-    private void TailAndCharge()
+
+
+
+
+     void TailAndCharge()
     {
         var enemytimer = (Time.time - reftime) * 30f;
         var towards = target.transform.position - transform.position;
+        
+        LookThisWay(towards);
         if (enemytimer < 90)
         {
             body.velocity = towards.normalized * 6f;
@@ -90,6 +128,7 @@ public class KingBehavior : MonoBehaviour
         {
             body.velocity = towards.normalized * 20f;
             DamageModifier = 2f;
+            LookThisWay(body.velocity);
         }
 
         if (enemytimer > 150)
@@ -100,23 +139,61 @@ public class KingBehavior : MonoBehaviour
     }
 
 
-    private void FloatAndShoot()
+   
+    void FirePellets()
+    {
+
+        for(int i =0; i < 360f; i += 30)
+        {
+            var q = Instantiate(spit);
+            q.GetComponent<PelletBehavior>().potency = 5f;
+            q.transform.position = transform.position;
+            q.transform.Translate(new Vector3(0f, 0f, 3f));
+            Quaternion z = Quaternion.AngleAxis(i, Vector3.forward);
+            q.transform.rotation = z;
+            q.GetComponent<Rigidbody2D>().velocity = (z * Vector3.up) * 3f;
+            GameObject.Destroy(q, 1.2f);
+        }
+        
+        
+    }
+
+
+    
+
+
+    private void undo()
+    {
+        shootlatch = 0f;
+    }
+
+
+    private float shootlatch = 0f;
+    void FloatAndShoot()
     {
         var enemytimer = (Time.time - reftime) * 30f;
-        var towards  = target.transform.position - transform.position;
-        if (enemytimer < 90 )
+        var towards = target.transform.position - transform.position;
+
+        appearance.Play("KingJumpFront");
+
+
+
+
+        if (enemytimer < 90)
         {
             Vector3 ooftacular = Vector3.Cross(towards, Vector3.forward);
             body.velocity = ooftacular.normalized * 5f;
-            
         }
 
-        if (towards.magnitude < 8f)
+
+        if (shootlatch == 0f)
         {
-            body.velocity = -5f * towards.normalized;
+            FirePellets();
+            Invoke("undo", appearance.GetCurrentAnimatorStateInfo(0).length);
+            shootlatch = 6f;
         }
 
-
+            
 
         if (enemytimer > 150)
         {

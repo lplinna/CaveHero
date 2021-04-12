@@ -24,27 +24,25 @@ public class IceActorBehavior : MonoBehaviour
     void freezeEnemy()
     {
         bool done = false;
-        bool animator = true;
         if (!done && actee.CompareTag("Bat")) { actee.GetComponent<BatBehavior>().enabled = false; done = true; }
         if (!done && actee.CompareTag("Beetle")) { actee.GetComponent<BeetleBehavior>().enabled = false; done = true; }
         if (!done && actee.CompareTag("Spider")) { actee.GetComponent<SpiderBehavior>().enabled = false; done = true; }
-        if (!done && actee.CompareTag("King")) { actee.GetComponent<KingBehavior>().enabled = false; done = true; animator = false; }
+        if (!done && actee.CompareTag("King")) { actee.GetComponent<KingBehavior>().enabled = false; done = true; }
         actee.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Kinematic;
         actee.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
-        if (animator) { actee.GetComponent<Animator>().speed = 0f; }
+        actee.GetComponent<Animator>().speed = 0f;
         actee.GetComponent<SpriteRenderer>().color = new Color(0.5f, 0.5f, 1f);
     }
 
     void unfreezeEnemy()
     {
         bool done = false;
-        bool animator = false;
         if (!done && actee.CompareTag("Bat")) { actee.GetComponent<BatBehavior>().enabled = true; done = true; }
         if (!done && actee.CompareTag("Beetle")) { actee.GetComponent<BeetleBehavior>().enabled = true; done = true; }
         if (!done && actee.CompareTag("Spider")) { actee.GetComponent<SpiderBehavior>().enabled = true; done = true; }
-        if (!done && actee.CompareTag("King")) { actee.GetComponent<KingBehavior>().enabled = true; done = true; animator = false; }
+        if (!done && actee.CompareTag("King")) { actee.GetComponent<KingBehavior>().enabled = true; done = true;}
         actee.GetComponent<Rigidbody2D>().bodyType = RigidbodyType2D.Dynamic;
-        if (animator) {actee.GetComponent<Animator>().speed = 1f; }
+        actee.GetComponent<Animator>().speed = 1f; 
         actee.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f);
     }
 

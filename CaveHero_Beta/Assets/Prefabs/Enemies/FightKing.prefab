@@ -89,6 +89,7 @@ GameObject:
   - component: {fileID: 2783347775371076836}
   - component: {fileID: 2783347775371076835}
   - component: {fileID: 2783347775371076839}
+  - component: {fileID: 442278697838228153}
   m_Layer: 0
   m_Name: FightKing
   m_TagString: King
@@ -177,6 +178,8 @@ MonoBehaviour:
   target: {fileID: 0}
   doNot: {fileID: 0}
   DebugFight: 0
+  appearance: {fileID: 0}
+  spit: {fileID: 5613767429477842853, guid: 1310e463390f118479c273a7fab28954, type: 3}
 --- !u!50 &2783347775371076836
 Rigidbody2D:
   serializedVersion: 4
@@ -241,6 +244,25 @@ MonoBehaviour:
   audioSrc: {fileID: 0}
   maxHealth: 1000
   healthBar: {fileID: 2783347776638665494}
+--- !u!95 &442278697838228153
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2783347775371076833}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3b984034ad1300b4c9e579f378652b74, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &2783347776638665493
 GameObject:
   m_ObjectHideFlags: 0
