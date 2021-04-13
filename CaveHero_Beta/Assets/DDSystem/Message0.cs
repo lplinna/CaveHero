@@ -14,8 +14,16 @@ public class Message0 : MonoBehaviour
     void Awake()
     {
         doNot = GameObject.FindGameObjectWithTag("DoNotDestroy").GetComponent<DoNotDestroy>();
-        dialogueKing = GameObject.FindGameObjectWithTag("DialogueKing").GetComponent<DialogueKing>();
+        try
+        {
+            dialogueKing = GameObject.FindGameObjectWithTag("DialogueKing").GetComponent<DialogueKing>();
+        }
+        catch { }
+       
+        DialogManager = GameObject.Find("Player").GetComponentInChildren<DialogManager>();
         DialogManager.gameObject.SetActive(false);
+
+        
         if (SceneManager.GetActiveScene().name == "TutorialLevel")
         {
             StartTutorial();
@@ -24,8 +32,9 @@ public class Message0 : MonoBehaviour
         {
             //SlimeLevel1();
         }
-        if (SceneManager.GetActiveScene().name == "Merchant")
+        if (SceneManager.GetActiveScene().name == "Merchant" && !doNot.getIntroduceMerchant())
         {
+            
             Merchant1();
         }
         

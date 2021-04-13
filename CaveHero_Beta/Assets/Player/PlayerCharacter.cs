@@ -1,7 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class PlayerCharacter : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class PlayerCharacter : MonoBehaviour
     // To create the visual energy bar
     public EnergyBar energyBar;
     public MoneyCounter MONEY;
+
+    
 
     // Player Sprites
     public SpriteRenderer playerSprite;
@@ -38,6 +41,9 @@ public class PlayerCharacter : MonoBehaviour
     public bool muteAudio;
     public bool isDialog;
 
+
+    public DoNotDestroy doNot;
+    public GameObject tempDoNot;
     // Start is called before the first frame update
     void Start()
     {
@@ -57,11 +63,41 @@ public class PlayerCharacter : MonoBehaviour
         isAttackingAnim = false;
         slippery = 1f;
         onSlippery = false;
+        isPaused = false;
+
+
+
+        try
+        {
+            doNot = GameObject.FindGameObjectWithTag("DoNotDestroy").GetComponent<DoNotDestroy>();
+        }
+        catch
+        {
+            doNot = GameObject.Instantiate(tempDoNot).GetComponent<DoNotDestroy>();
+        }
+
+
+        if (doNot.hasReset)
+        {
+            MONEY.ForceMoney(doNot.lastingMoney);
+            doNot.hasReset = false;
+        }
+        else
+        {
+            doNot.lastingMoney = MONEY.getMoney();
+        }
+
+
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
+
+        if (isPaused) return; 
+
         if (!isAttackingAnim && !isDialog)
         {
             PlayerAnimation();
@@ -97,7 +133,16 @@ public class PlayerCharacter : MonoBehaviour
 
     void FixedUpdate()
     {
-        if(isDialog)
+
+
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            PauseEverything();
+        }
+
+        if (isPaused) return;
+
+        if (isDialog)
         {
             playerAnim.SetBool("Idle", true);
             playerAnim.SetBool("WalkUp", false);
@@ -231,7 +276,9 @@ public class PlayerCharacter : MonoBehaviour
     public void PlayerAnimation()
     {
        
-        playerSprite.flipX = false; 
+        playerSprite.flipX = false;
+
+       
     
         if (Input.GetKey("d"))
         {
@@ -443,6 +490,62 @@ public class PlayerCharacter : MonoBehaviour
         {
             onSlippery = false;
         }
+    }
+
+
+
+
+    private bool isPaused;
+    public GameObject PauseMenuPrefab;
+    private GameObject MenuInstance;
+    public void PauseEverything()
+    {
+        Time.timeScale = 0;
+        isPaused = true;
+        MenuInstance = Instantiate(PauseMenuPrefab);
+        var buttons = MenuInstance.GetComponentsInChildren<UnityEngine.UI.Button>();
+        buttons[0].onClick.AddListener(CloseGame1);
+        buttons[1].onClick.AddListener(RestartLevel);
+        buttons[2].onClick.AddListener(ResumeEverything);
+    }
+
+
+
+
+    public void CloseGame1()
+    {
+        var buttons = MenuInstance.GetComponentsInChildren<UnityEngine.UI.Button>();
+        var text = MenuInstance.GetComponentsInChildren<Text>();
+        buttons[0].onClick.RemoveAllListeners();
+        text[0].text = "Are you sure you want to quit?";
+        buttons[1].onClick.RemoveAllListeners();
+        buttons[1].onClick.AddListener(CloseGame);
+        text[1].text = "Yes";
+        text[2].text = "No";
+    }
+
+
+    public void CloseGame()
+    {
+        Application.Quit();
+    }
+
+  
+
+    public void RestartLevel()
+    {
+        ResumeEverything();
+        var p = SceneManager.GetActiveScene();
+        SceneManager.LoadScene(p.name);
+        doNot.hasReset = true;
+        
+
+    }
+    public void ResumeEverything()
+    {
+        Time.timeScale = 1f;
+        isPaused = false;
+        Destroy(MenuInstance);
     }
 
 

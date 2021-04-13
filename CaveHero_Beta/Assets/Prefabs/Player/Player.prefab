@@ -190,6 +190,9 @@ MonoBehaviour:
   isAttackingAnim: 0
   muteAudio: 0
   isDialog: 0
+  doNot: {fileID: 0}
+  tempDoNot: {fileID: 8223919525519690165, guid: e9c20d553b351a849b4db452f98cc456, type: 3}
+  PauseMenuPrefab: {fileID: 1981777973103741051, guid: cf485877abd3d214a9518db8339158df, type: 3}
 --- !u!114 &6327391077458177466
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,7 +352,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DialogManager: {fileID: 2481900995847409524}
-  Example: []
+  doNot: {fileID: 0}
+  slimeToGrandpa: 0
+  dialogueKing: {fileID: 0}
 --- !u!1001 &1918993179050167301
 PrefabInstance:
   m_ObjectHideFlags: 0

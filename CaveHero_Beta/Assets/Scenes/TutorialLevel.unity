@@ -3425,7 +3425,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2481900995847409421, guid: d15b3809d66832b4eaf7f58e16cc5385, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6327391077458177413, guid: d15b3809d66832b4eaf7f58e16cc5385, type: 3}
       propertyPath: m_Name
@@ -27824,6 +27824,8 @@ MonoBehaviour:
   introduceMerchant: 0
   challengeRoomFinished: 0
   beenToThrone: 0
+  lastingMoney: 0
+  hasReset: 0
 --- !u!4 &1982486997
 Transform:
   m_ObjectHideFlags: 0

@@ -9,8 +9,11 @@ public class DoNotDestroy : MonoBehaviour
     public bool introduceMerchant;
     public bool challengeRoomFinished;
     public bool beenToThrone;
+    public float lastingMoney = 0f;
+    public bool hasReset;
     void Awake()
     {
+        gameObject.tag = "DoNotDestroy";
         if (instance == null)
         {
             instance = this;
@@ -89,5 +92,9 @@ public class DoNotDestroy : MonoBehaviour
     public bool getBeenToThrone()
     {
         return beenToThrone;
+    }
+    public bool getHasReset()
+    {
+        return hasReset;
     }
 }

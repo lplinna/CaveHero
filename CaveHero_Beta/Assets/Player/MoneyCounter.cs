@@ -62,6 +62,11 @@ public class MoneyCounter : MonoBehaviour
         SetMoney(currMoney);
     }
 
+    public void ForceMoney(float g)
+    {
+        currMoney = g;
+    }
+
     public float getMoney()
     {
         return currMoney;
