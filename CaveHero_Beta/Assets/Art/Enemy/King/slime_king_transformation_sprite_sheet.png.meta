@@ -32,6 +32,36 @@ TextureImporter:
   - first:
       213: -3806321842642571618
     second: slime_king_transformation_sprite_sheet_9
+  - first:
+      213: -9189441166268439994
+    second: slime_king_transformation_sprite_sheet_0
+  - first:
+      213: 237624500130295440
+    second: slime_king_transformation_sprite_sheet_1
+  - first:
+      213: 4540118511767730297
+    second: slime_king_transformation_sprite_sheet_2
+  - first:
+      213: 8962148962975829695
+    second: slime_king_transformation_sprite_sheet_3
+  - first:
+      213: 4415336266242461773
+    second: slime_king_transformation_sprite_sheet_4
+  - first:
+      213: -8715773067488625398
+    second: slime_king_transformation_sprite_sheet_5
+  - first:
+      213: -2431423484362785417
+    second: slime_king_transformation_sprite_sheet_6
+  - first:
+      213: -7935156413857533402
+    second: slime_king_transformation_sprite_sheet_7
+  - first:
+      213: -2142994139657739354
+    second: slime_king_transformation_sprite_sheet_8
+  - first:
+      213: -5405076178670374449
+    second: slime_king_transformation_sprite_sheet_9
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -122,19 +152,19 @@ TextureImporter:
       name: slime_king_transformation_sprite_sheet_0
       rect:
         serializedVersion: 2
-        x: 16
-        y: 97
-        width: 65
-        height: 62
+        x: 0
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: f040617db6cd4f930800000000000000
-      internalID: 4176205110207448079
+      spriteID: 642e73072fb887080800000000000000
+      internalID: -9189441166268439994
       vertices: []
       indices: 
       edges: []
@@ -143,19 +173,19 @@ TextureImporter:
       name: slime_king_transformation_sprite_sheet_1
       rect:
         serializedVersion: 2
-        x: 112
-        y: 97
-        width: 65
-        height: 67
+        x: 96
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2e3a3094df46cc3c0800000000000000
-      internalID: -4337981302050151454
+      spriteID: 09e223059363c4300800000000000000
+      internalID: 237624500130295440
       vertices: []
       indices: 
       edges: []
@@ -164,19 +194,19 @@ TextureImporter:
       name: slime_king_transformation_sprite_sheet_2
       rect:
         serializedVersion: 2
-        x: 208
-        y: 97
-        width: 65
-        height: 76
+        x: 192
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6846e948bb9be7510800000000000000
-      internalID: 1548879536897025158
+      spriteID: 978371c5bbdb10f30800000000000000
+      internalID: 4540118511767730297
       vertices: []
       indices: 
       edges: []
@@ -185,19 +215,19 @@ TextureImporter:
       name: slime_king_transformation_sprite_sheet_3
       rect:
         serializedVersion: 2
-        x: 303
-        y: 97
-        width: 66
-        height: 76
+        x: 288
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6ccdaa74d5cd42c40800000000000000
-      internalID: 5486752539236555974
+      spriteID: fbe4f429ff2ff5c70800000000000000
+      internalID: 8962148962975829695
       vertices: []
       indices: 
       edges: []
@@ -206,19 +236,19 @@ TextureImporter:
       name: slime_king_transformation_sprite_sheet_4
       rect:
         serializedVersion: 2
-        x: 400
-        y: 97
-        width: 65
-        height: 76
+        x: 384
+        y: 96
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 8db55f58cc8fd85b0800000000000000
-      internalID: -5364358023823926312
+      spriteID: d401841d0fc664d30800000000000000
+      internalID: 4415336266242461773
       vertices: []
       indices: 
       edges: []
@@ -227,19 +257,19 @@ TextureImporter:
       name: slime_king_transformation_sprite_sheet_5
       rect:
         serializedVersion: 2
-        x: 8
-        y: 1
-        width: 79
-        height: 81
+        x: 0
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: b2e61bc7b08165000800000000000000
-      internalID: 24233285612826155
+      spriteID: a0d7c61c29a5b0780800000000000000
+      internalID: -8715773067488625398
       vertices: []
       indices: 
       edges: []
@@ -248,19 +278,19 @@ TextureImporter:
       name: slime_king_transformation_sprite_sheet_6
       rect:
         serializedVersion: 2
-        x: 105
-        y: 1
-        width: 78
-        height: 83
+        x: 96
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 92e512f5948b80ab0800000000000000
-      internalID: -5041577157573124567
+      spriteID: 77d73042939d14ed0800000000000000
+      internalID: -2431423484362785417
       vertices: []
       indices: 
       edges: []
@@ -269,19 +299,19 @@ TextureImporter:
       name: slime_king_transformation_sprite_sheet_7
       rect:
         serializedVersion: 2
-        x: 201
-        y: 1
-        width: 78
-        height: 83
+        x: 192
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6a32eb85a637027f0800000000000000
-      internalID: -639384246494026842
+      spriteID: 622fbdaa849a0e190800000000000000
+      internalID: -7935156413857533402
       vertices: []
       indices: 
       edges: []
@@ -290,19 +320,19 @@ TextureImporter:
       name: slime_king_transformation_sprite_sheet_8
       rect:
         serializedVersion: 2
-        x: 297
-        y: 1
-        width: 78
-        height: 83
+        x: 288
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 32345880f48947150800000000000000
-      internalID: 5869483679583388451
+      spriteID: 6a3e4fd1f2e8242e0800000000000000
+      internalID: -2142994139657739354
       vertices: []
       indices: 
       edges: []
@@ -311,19 +341,19 @@ TextureImporter:
       name: slime_king_transformation_sprite_sheet_9
       rect:
         serializedVersion: 2
-        x: 401
-        y: 1
-        width: 64
-        height: 83
+        x: 384
+        y: 0
+        width: 96
+        height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e9eaa7c637a3d2bc0800000000000000
-      internalID: -3806321842642571618
+      spriteID: fc13d625adf4df4b0800000000000000
+      internalID: -5405076178670374449
       vertices: []
       indices: 
       edges: []

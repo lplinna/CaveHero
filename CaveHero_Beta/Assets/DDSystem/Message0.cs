@@ -41,7 +41,7 @@ public class Message0 : MonoBehaviour
         if(SceneManager.GetActiveScene().name == "ThroneRoom" && !doNot.getBeenToThrone())
         {
             Throne1();
-            dialogueKing.walkForward();
+            
         }
 
         if (SceneManager.GetActiveScene().name == "ThroneRoom" && doNot.getBeenToThrone())
@@ -195,7 +195,7 @@ public  void Advance()
         dialogTexts.Add(new DialogData("\"WHAT HAVE YOU DONE TO MY THRONE ROOM YOU PEASANT?!\"", "Li"));
         dialogTexts.Add(new DialogData("\"THIS WILL COST SO MUCH TO FIX! YOU WILL PAY FOR IT ALL! THIS IS YOUR FAULT!\"", "Li"));
         dialogTexts.Add(new DialogData("\"Wait... are you a... human? I haven't seen one of you in a long while...\"", "Li"));
-        dialogTexts.Add(new DialogData("\"How did you... /click//speed:init/well obviously you fell or something, hence all the rocks in my throne room.\"", "Li"));
+        dialogTexts.Add(new DialogData("\"How did you... /click//speed:init/well obviously you fell or something, hence all the rocks in my throne room.\"", "action1"));
         dialogTexts.Add(new DialogData("\"Are you a miner, by any chance? /click//speed:init/I noticed your pickaxe and hard hat.\"", "Li"));
         dialogTexts.Add(new DialogData("\"How about we make a deal? You get something from the mines for me, and I'll help you get back home.\"", "Li"));
         dialogTexts.Add(new DialogData("\"/click//speed:init/Not much of a talker, huh? I'm going to take your silence as a form of agreement.\"", "Li"));
@@ -212,13 +212,15 @@ public  void Advance()
     {
         DialogManager.gameObject.SetActive(true);
         this.GetComponent<PlayerCharacter>().isDialog = true;
+
+        transform.Translate(new Vector3(0f, 3f));
         this.GetComponent<AudioSource>().Stop();
         var dialogTexts = new List<DialogData>();
 
         //Add text here
         dialogTexts.Add(new DialogData("/size:140//speed:0.02/\"SERVANTS!!\"", "Li"));
-        dialogTexts.Add(new DialogData("\"/speed:0.06/Why are these rocks still on my floor?!?\"", "Li"));
-        dialogTexts.Add(new DialogData("\"I told you to-/wait:0.5/-/wait:0.5/-\"", "Li"));
+        dialogTexts.Add(new DialogData("\"/speed:0.06/Why are these rocks still on my floor?!?\"", "slimeWalkDown"));
+        dialogTexts.Add(new DialogData("\"I told you to-/wait:0.5/-/wait:0.5/-\"", "slimeWalkDown"));
         dialogTexts.Add(new DialogData("\"Oh.\"", "Li"));
         dialogTexts.Add(new DialogData("\"The Gem? You have it?? \"", "Li"));
         dialogTexts.Add(new DialogData("\"Excellent. Now the drill will work!\"", "Li"));
@@ -226,7 +228,9 @@ public  void Advance()
         dialogTexts.Add(new DialogData("\"The drill is a relic, a tool with a mind. It will only let one of us return to the surface.\"", "Li"));
         dialogTexts.Add(new DialogData("\"And I have been banished from there for far, far too long.\"", "Li"));
         dialogTexts.Add(new DialogData("\"Your service to me has been splendid, miner...\"", "Li"));
+        dialogTexts.Add(new DialogData("*shuffling*", "transformTime"));
         dialogTexts.Add(new DialogData("\"But your time ends here!\"", "Li"));
+        dialogTexts.Add(new DialogData("/close/", "goKING"));
         //End of text
 
         DialogManager.Show(dialogTexts);

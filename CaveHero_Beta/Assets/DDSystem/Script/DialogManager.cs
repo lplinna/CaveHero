@@ -65,9 +65,9 @@ namespace Doublsb.Dialog
         //Private Method
         //================================================
         private Character _current_Character;
-        private DialogData _current_Data;
+        public DialogData _current_Data;
 
-        private float _currentDelay;
+        public float _currentDelay;
         private float _lastDelay;
         private Coroutine _textingRoutine;
         private Coroutine _printingRoutine;

@@ -41,7 +41,7 @@ public class SlimeActorBehavior : MonoBehaviour
             if (actee.name.Contains("Player")) actee.GetComponent<Health>().Damage(1f);
             else actee.GetComponent<EnemyHealth>().Damage(1f);
         }
-        p.color = new Color(0.5f, Mathf.Sin(Time.time * 60), 0.5f);
+        p.color = new Color(0.5f, Mathf.Sin(Time.time * 15), 0.5f);
         
         
         if (longevity <= 0)
