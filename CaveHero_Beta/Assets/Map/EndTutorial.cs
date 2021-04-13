@@ -24,9 +24,10 @@ public class EndTutorial : MonoBehaviour
     {
         if (endTutorialTriggered)
         {
+            MusicManager.stopPlaying();
+            SoundManager.PlaySound("Cave");
             shake.TriggerShake();
             yield return new WaitForSeconds(1f);
-            //LoadingNextLevel.setLevelName("SlimeLevel");
             LoadingNextLevel.setLevelName("ThroneRoom");
             SceneManager.LoadScene("LoadingNextLevel");
         }

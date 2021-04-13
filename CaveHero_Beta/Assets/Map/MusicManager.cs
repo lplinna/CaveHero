@@ -6,9 +6,10 @@ using UnityEngine.SceneManagement;
 public class MusicManager : MonoBehaviour
 {
     static AudioSource audioSrc;
-    static AudioClip slime, ice, lava, throne, tutorial, merchant;
+    static AudioClip slime, ice, lava, throne, tutorial, merchant, boss;
     private static MusicManager instance;
     static bool elevator;
+    static bool bossTrigger;
 
     void Awake()
     {
@@ -30,10 +31,19 @@ public class MusicManager : MonoBehaviour
         slime = Resources.Load<AudioClip>("CrystalCaves");
         ice = Resources.Load<AudioClip>("IceMusic");
         lava = Resources.Load<AudioClip>("LavaMusic");
+        throne = Resources.Load<AudioClip>("ThroneRoom Music");
+        merchant = Resources.Load<AudioClip>("MerchantMusic");
+        tutorial = Resources.Load<AudioClip>("TutorialMusic");
+        boss = Resources.Load<AudioClip>("BossMusic");
+
 
         elevator = false;
 
-        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("SlimeLevel"))
+        if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("TutorialLevel"))
+        {
+            PlayMusic("Tutorial");
+        }
+        else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("SlimeLevel"))
         {
             PlayMusic("SlimeMusic");
         }
@@ -45,32 +55,50 @@ public class MusicManager : MonoBehaviour
         {
             PlayMusic("LavaMusic");
         }
-        else if(SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Merchant"))
+        else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("ThroneRoom"))
         {
-            stopPlaying();
+            if (boss)
+            {
+                PlayMusic("Boss");
+            }
+            else
+            {
+                PlayMusic("ThroneRoom");
+            }
+        }
+        else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Merchant"))
+        {
+            PlayMusic("Merchant");
         }
     }
 
     void Update()
     {
-        if(!isPlayingNow())
+        if(!isPlayingNow() && !elevator)
         {
-            if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("SlimeLevel") && !elevator)
+            if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("TutorialLevel"))
+            {
+                PlayMusic("Tutorial");
+            }
+            else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("SlimeLevel"))
             {
                 PlayMusic("SlimeMusic");
             }
-            else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("IceLevel") && !elevator)
+            else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("IceLevel"))
             {
                 PlayMusic("IceMusic");
             }
-            else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("LavaLevel") && !elevator)
+            else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("LavaLevel"))
             {
                 PlayMusic("LavaMusic");
             }
+            else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("ThroneRoom"))
+            {
+                PlayMusic("ThroneRoom");
+            }
             else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Merchant"))
             {
-                stopPlaying();
-                elevator = false;
+                PlayMusic("Merchant");
             }
         }
     }
@@ -90,6 +118,11 @@ public class MusicManager : MonoBehaviour
         elevator = nElevator;
     }
 
+    public static void setBoss(bool nBoss)
+    {
+        bossTrigger = nBoss;
+    }
+
     public static void PlayMusic(string clip)
     {
         switch (clip)
@@ -104,6 +137,22 @@ public class MusicManager : MonoBehaviour
 
             case "LavaMusic":
                 audioSrc.PlayOneShot(lava);
+                break;
+
+            case "ThroneRoom":
+                audioSrc.PlayOneShot(throne);
+                break;
+
+            case "Merchant":
+                audioSrc.PlayOneShot(merchant);
+                break;
+
+            case "Tutorial":
+                audioSrc.PlayOneShot(tutorial);
+                break;
+
+            case "Boss":
+                audioSrc.PlayOneShot(boss);
                 break;
         }
     }

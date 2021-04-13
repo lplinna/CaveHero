@@ -35,8 +35,7 @@ public class Merchant : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        setNextScene("SlimeLevel");
-        MoneyCounter.currMoney = 1000;
+        
     }
 
     // Update is called once per frame

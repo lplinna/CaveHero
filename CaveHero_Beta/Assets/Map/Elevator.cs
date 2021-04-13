@@ -12,6 +12,11 @@ public class Elevator : MonoBehaviour
     public CheckpointSystem checkpoint;
     public string currScene;
 
+    void Awake()
+    {
+        MusicManager.setElevator(false);
+    }
+
     void Update()
     {
         currScene = SceneManager.GetActiveScene().name;

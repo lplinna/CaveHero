@@ -10,14 +10,13 @@ public class TitleHandler : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("TutorialLevel");
-
+        LoadingNextLevel.setLevelName("TutorialLevel");
+        SceneManager.LoadScene("LoadingNextLevel");
     }
 
 
     public void ExitGame()
     {
         Application.Quit();
-
     }
 }

@@ -49,8 +49,9 @@ public class MoneyCounter : MonoBehaviour
 
     public void AddMoney(int money)
     {
-       currMoney += money;
-       SetMoney(currMoney);
+        currMoney += money;
+        SetMoney(currMoney);
+        SoundManager.PlaySound("Coin");
     }
 
     public void TakeMoney(float money)

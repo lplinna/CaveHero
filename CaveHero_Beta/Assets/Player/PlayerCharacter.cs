@@ -502,6 +502,7 @@ public class PlayerCharacter : MonoBehaviour
     {
         Time.timeScale = 0;
         isPaused = true;
+        MusicManager.stopPlaying();
         MenuInstance = Instantiate(PauseMenuPrefab);
         var buttons = MenuInstance.GetComponentsInChildren<UnityEngine.UI.Button>();
         buttons[0].onClick.AddListener(CloseGame1);
@@ -518,6 +519,17 @@ public class PlayerCharacter : MonoBehaviour
         var text = MenuInstance.GetComponentsInChildren<Text>();
         buttons[0].onClick.RemoveAllListeners();
         text[0].text = "Are you sure you want to quit?";
+
+        ColorBlock color = new ColorBlock();
+        color.pressedColor = (new Color(245, 245, 245));
+        color.normalColor = (new Color(245, 245, 245));
+        color.highlightedColor = (new Color(245, 245, 245));
+        color.selectedColor = (new Color(245, 245, 245));
+        color.disabledColor = (new Color(245, 245, 245));
+        color.colorMultiplier = 1f;
+        color.fadeDuration = 0.1f;
+
+        buttons[0].colors = color;
         buttons[1].onClick.RemoveAllListeners();
         buttons[1].onClick.AddListener(CloseGame);
         text[1].text = "Yes";
@@ -538,13 +550,13 @@ public class PlayerCharacter : MonoBehaviour
         var p = SceneManager.GetActiveScene();
         SceneManager.LoadScene(p.name);
         doNot.hasReset = true;
-        
-
     }
+
     public void ResumeEverything()
     {
         Time.timeScale = 1f;
         isPaused = false;
+        MusicManager.setElevator(false);
         Destroy(MenuInstance);
     }
 
