@@ -14476,6 +14476,10 @@ PrefabInstance:
       propertyPath: checkpoint
       value: 
       objectReference: {fileID: 701480532}
+    - target: {fileID: 6327391077458177471, guid: d15b3809d66832b4eaf7f58e16cc5385, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 8a74832b2f7c90041ac4387689e45d3e, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d15b3809d66832b4eaf7f58e16cc5385, type: 3}
 --- !u!4 &1337622264 stripped

@@ -22,6 +22,8 @@ TagManager:
   - Merchant
   - Dialogue
   - DoNotDestroy
+  - King
+  - DialogueKing
   layers:
   - Default
   - TransparentFX

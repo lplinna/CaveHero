@@ -50,6 +50,6 @@ public class ShakeBehavior : MonoBehaviour
     public void TriggerShake()
     {
         this.GetComponent<FollowPlayer>().StopFollow();
-        shakeDuration = 2.0f;
+        shakeDuration = 1.0f;
     }
 }

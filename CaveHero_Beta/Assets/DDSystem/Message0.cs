@@ -9,11 +9,12 @@ public class Message0 : MonoBehaviour
 {
     public DialogManager DialogManager;
     public DoNotDestroy doNot;
-    public GameObject[] Example;
-
+    public bool slimeToGrandpa;
+    public DialogueKing dialogueKing;
     void Awake()
     {
         doNot = GameObject.FindGameObjectWithTag("DoNotDestroy").GetComponent<DoNotDestroy>();
+        dialogueKing = GameObject.FindGameObjectWithTag("DialogueKing").GetComponent<DialogueKing>();
         DialogManager.gameObject.SetActive(false);
         if (SceneManager.GetActiveScene().name == "TutorialLevel")
         {
@@ -27,15 +28,24 @@ public class Message0 : MonoBehaviour
         {
             Merchant1();
         }
-        /*
-        if(SceneManager.GetActiveScene().name == "ThroneRoom" && doNot.getBeenToThrone() == false)
+        
+        if(SceneManager.GetActiveScene().name == "ThroneRoom" && !doNot.getBeenToThrone())
         {
             Throne1();
-        }*/
+            dialogueKing.walkForward();
+        }
 
-        if (SceneManager.GetActiveScene().name == "ThroneRoom")
+        if (SceneManager.GetActiveScene().name == "ThroneRoom" && doNot.getBeenToThrone())
         {
-            Throne3();
+            Throne2();
+        }
+    }
+
+    void Update()
+    {
+        if (!DialogManager.gameObject.activeInHierarchy && slimeToGrandpa)
+        {
+            dialogueKing.slimeTransition();
         }
     }
 
@@ -212,6 +222,7 @@ public  void Advance()
 
         DialogManager.Show(dialogTexts);
         StartCoroutine(AwaitDLOG());
+        slimeToGrandpa = true;
     }
 
 
