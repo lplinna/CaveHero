@@ -10,13 +10,27 @@ public class DialogueKing : MonoBehaviour
     public GameObject fightKing;
     public SpriteRenderer drill;
     public Sprite drillWithGem;
-    
+
+    DialogManager b;
+
+    private void Start()
+    {
+        try
+        {
+            b = GameObject.Find("Player").GetComponentInChildren<DialogManager>();
+        }
+        catch
+        {
+            Invoke("Start", 0.2f);
+        }
+    }
 
 
-    
+
+
+
     private void Update()
     {
-        DialogManager b = GameObject.Find("Player").GetComponentsInChildren<DialogManager>()[0];
         var z = GameObject.Find("Player");
         Animator playerAnim = z.GetComponent<Animator>();
         if (b._current_Data.Character == "action1")

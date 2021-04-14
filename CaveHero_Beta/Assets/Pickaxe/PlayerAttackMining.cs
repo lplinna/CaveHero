@@ -20,7 +20,14 @@ public class PlayerAttackMining : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<PlayerCharacter>();
         pickaxe = GameObject.FindGameObjectWithTag("Pickaxe");
-        doNot = GameObject.FindGameObjectWithTag("DoNotDestroy").GetComponent<DoNotDestroy>();
+        try
+        {
+            doNot = GameObject.FindGameObjectWithTag("DoNotDestroy").GetComponent<DoNotDestroy>();
+        }
+        catch
+        {
+            Invoke("Start", 0.2f);
+        }
     }
 
 

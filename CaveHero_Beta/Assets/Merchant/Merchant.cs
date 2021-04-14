@@ -32,8 +32,32 @@ public class Merchant : MonoBehaviour
 
         MusicManager.setElevator(false);
         player = GameObject.FindGameObjectWithTag("Player");
-        doNot = GameObject.FindGameObjectWithTag("DoNotDestroy").GetComponent<DoNotDestroy>();
+
+
+
+        try
+        {
+            doNot = GameObject.FindGameObjectWithTag("DoNotDestroy").GetComponent<DoNotDestroy>();
+        }
+        catch
+        {
+           Invoke("Awake",0.2f);
+        }
+
+        try
+        {
+            inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<InventoryCounter>();
+        }
+        catch
+        {
+            Invoke("Awake", 0.2f);
+        }
+
     }
+
+
+    
+
 
     // Start is called before the first frame update
     void Start()
@@ -48,12 +72,15 @@ public class Merchant : MonoBehaviour
         throneEmeraldCost.text = "60";
 
         //REMOVE
-        inventory.forceDiamond(10);
+        
+        
     }
+
 
     // Update is called once per frame
     void Update()
     {
+       
         healthCostFloat = 200 * PlayerModifiers.healthModifier;
         energyCostFloat = 250 * PlayerModifiers.energyModifier;
         damageCostFloat = 300 * PlayerModifiers.damageModifier;
@@ -76,6 +103,9 @@ public class Merchant : MonoBehaviour
         {
             player.GetComponent<PlayerCharacter>().isDialog = true;
         }
+
+
+        
     }
 
     public static void setNextScene(string next)
@@ -254,6 +284,7 @@ public class Merchant : MonoBehaviour
 
     public void sellDiamond()
     {
+        inventory = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCharacter>().inventoryCounter;
         moneyCounter.AddMoney(diamondSell);
         inventory.forceDiamond(0);
     }

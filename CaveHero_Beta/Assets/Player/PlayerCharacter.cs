@@ -19,7 +19,7 @@ public class PlayerCharacter : MonoBehaviour
     public MoneyCounter MONEY;
     public InventoryCounter inventoryCounter;
     public GameObject inventoryMenu;
-    
+
 
     // Player Sprites
     public SpriteRenderer playerSprite;
@@ -46,6 +46,7 @@ public class PlayerCharacter : MonoBehaviour
 
     public DoNotDestroy doNot;
     public GameObject tempDoNot;
+    public GameObject tempInv;
     // Start is called before the first frame update
     void Start()
     {
@@ -68,7 +69,7 @@ public class PlayerCharacter : MonoBehaviour
         onSlippery = false;
         isPaused = false;
 
-        inventoryMenu.SetActive(false);
+       
 
         try
         {
@@ -77,6 +78,19 @@ public class PlayerCharacter : MonoBehaviour
         catch
         {
             doNot = GameObject.Instantiate(tempDoNot).GetComponent<DoNotDestroy>();
+        }
+
+        try
+        {
+            inventoryMenu = GameObject.FindGameObjectWithTag("Inventory").transform.GetChild(0).gameObject;
+            inventoryCounter = GameObject.FindGameObjectWithTag("Inventory").GetComponent<InventoryCounter>();
+            inventoryMenu.SetActive(false);
+        }
+        catch
+        {
+            GameObject.Instantiate(tempInv);
+
+            Start();
         }
 
 
@@ -110,21 +124,21 @@ public class PlayerCharacter : MonoBehaviour
 
         if (Input.GetKeyDown("i"))
         {
-            if (!isPaused)
+            if (!isPaused && inventoryMenu!=null)
             {
                 Time.timeScale = 0;
                 inventoryMenu.SetActive(true);
             }
-            else if (isPaused)
+            else if (isPaused && inventoryMenu!=null)
             {
                 Time.timeScale = 1;
                 inventoryMenu.SetActive(false);
             }
             else { Time.timeScale = 1; }
-            isPaused = !isPaused;
+            if (inventoryMenu != null) { isPaused = !isPaused; }
         }
 
-        if (isPaused) return; 
+        if (isPaused) return;
 
         if (!isAttackingAnim && !isDialog)
         {
@@ -132,7 +146,7 @@ public class PlayerCharacter : MonoBehaviour
         }
 
 
-        PlayerSprint();
+        
         if (Input.GetKeyDown("m"))
         {
             if (!muteAudio)
@@ -178,9 +192,12 @@ public class PlayerCharacter : MonoBehaviour
         }
 
 
+        
+
         if (!isDialog && !onSlippery)
         {
             PlayerMovement();
+            PlayerSprint();
         }
 
         if (onSlippery)
@@ -191,8 +208,8 @@ public class PlayerCharacter : MonoBehaviour
         if (isDialog)
         {
             var dialogue = GetComponent<Message0>();
-            if (Input.GetMouseButton(0) && dialogue.DialogManager.state==Doublsb.Dialog.State.Wait)
-            {   
+            if (Input.GetMouseButton(0) && dialogue.DialogManager.state == Doublsb.Dialog.State.Wait)
+            {
                 dialogue.Advance();
             }
         }
@@ -207,8 +224,8 @@ public class PlayerCharacter : MonoBehaviour
         float rawHorizontalAxis = Input.GetAxisRaw("Horizontal");
         float rawVerticalAxis = Input.GetAxisRaw("Vertical");
 
-        if(rawHorizontalAxis != 0) move.x = Mathf.Lerp(move.x, rawHorizontalAxis, 0.6f);
-        if(rawVerticalAxis!=0)  move.y = Mathf.Lerp(move.x, rawVerticalAxis, 0.6f);
+        if (rawHorizontalAxis != 0) move.x = Mathf.Lerp(move.x, rawHorizontalAxis, 0.6f);
+        if (rawVerticalAxis != 0) move.y = Mathf.Lerp(move.x, rawVerticalAxis, 0.6f);
 
         Vector3 translation = move.normalized * 12f * Time.fixedDeltaTime;
         Vector3 newPosition = transform.position + translation;
@@ -221,7 +238,7 @@ public class PlayerCharacter : MonoBehaviour
     //all player movement statements
     public void PlayerMovement()
     {
-        
+
         float rawHorizontalAxis = Input.GetAxisRaw("Horizontal");
         float rawVerticalAxis = Input.GetAxisRaw("Vertical");
         move.x = rawHorizontalAxis;
@@ -231,14 +248,14 @@ public class PlayerCharacter : MonoBehaviour
 
         if (move != Vector3.zero)
         {
-            if(onSlippery)
+            if (onSlippery)
             {
                 translation = move * speed * Time.fixedDeltaTime * slippery;
             }
             else
             {
                 translation = move * speed * Time.fixedDeltaTime;
-                
+
             }
             Vector3 newPosition = transform.position + translation;
             playerPhysics.MovePosition(newPosition);
@@ -249,7 +266,7 @@ public class PlayerCharacter : MonoBehaviour
 
     public void DoAttackAnimation()
     {
-        if(!isDialog)
+        if (!isDialog)
         {
             playerAnim.SetBool("WalkUp", false);
             playerAnim.SetBool("Idle", false);
@@ -299,11 +316,11 @@ public class PlayerCharacter : MonoBehaviour
 
     public void PlayerAnimation()
     {
-       
+
         playerSprite.flipX = false;
 
-       
-    
+
+
         if (Input.GetKey("d"))
         {
             playerAnim.speed = 1;
@@ -358,7 +375,7 @@ public class PlayerCharacter : MonoBehaviour
         {
             if (playerwayP.y != 0)
             {
-                
+
                 playerAnim.SetBool("WalkUp", false);
                 playerAnim.SetBool("Idle", false);
                 playerAnim.SetBool("WalkLeft", false);
@@ -374,7 +391,7 @@ public class PlayerCharacter : MonoBehaviour
 
             if (playerwayP.x != 0)
             {
-                
+
                 playerAnim.SetBool("WalkLeft", false);
                 playerAnim.SetBool("WalkRight", false);
                 playerAnim.SetBool("Idle", false);
@@ -412,7 +429,7 @@ public class PlayerCharacter : MonoBehaviour
                 // speed goes up to 14, energy gets drained at a rate of 0.12 per frame
                 speed = 9;
                 playerAnim.speed = 2;
-                Drain(0.12f);
+                Drain(0.12f * 8f);
             }
             // if energy is not enough for sprinting, speed changes to normal
             if (currEnergy < 20)
@@ -424,7 +441,7 @@ public class PlayerCharacter : MonoBehaviour
         else
         {
             // keeps speed at 10, gains energy at a rate of 0.03 per frame
-            
+
 
             speed = 5;
 
@@ -434,7 +451,7 @@ public class PlayerCharacter : MonoBehaviour
             }
             if (currEnergy < 100)
             {
-                Gain(0.03f);
+                Gain(0.03f* 8f);
             }
         }
     }
@@ -476,12 +493,12 @@ public class PlayerCharacter : MonoBehaviour
             addToInventory(collision);
             collision.gameObject.SetActive(false);
         }
-        if(collision.gameObject.CompareTag("Checkpoint"))
+        if (collision.gameObject.CompareTag("Checkpoint"))
         {
             checkpoint.checkpointPos = transform.position;
             checkpoint.triggered = true;
         }
-        if(collision.gameObject.CompareTag("Challenge"))
+        if (collision.gameObject.CompareTag("Challenge"))
         {
             challenge.triggered = true;
         }
@@ -493,35 +510,35 @@ public class PlayerCharacter : MonoBehaviour
         {
             GameObject.FindGameObjectWithTag("Merchant").GetComponent<Merchant>().enterShop();
         }
-        if(collision.gameObject.name.Contains("GoBack"))
+        if (collision.gameObject.name.Contains("GoBack"))
         {
             GameObject.FindGameObjectWithTag("Merchant").GetComponent<Merchant>().goBackConfirmationStart();
         }
-        if(collision.gameObject.name.Contains("GoNext"))
+        if (collision.gameObject.name.Contains("GoNext"))
         {
             GameObject.FindGameObjectWithTag("Merchant").GetComponent<Merchant>().goNextConfirmationStart();
         }
-        if(collision.gameObject.name.Contains("LeftClick"))
+        if (collision.gameObject.name.Contains("LeftClick"))
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<Message0>().LeftClickTutorial();
             collision.gameObject.SetActive(false);
         }
-        if(collision.gameObject.name.Contains("ShiftSprint"))
+        if (collision.gameObject.name.Contains("ShiftSprint"))
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<Message0>().ShiftSprintTutorial();
             collision.gameObject.SetActive(false);
         }
-        if(collision.gameObject.name.Contains("Combat"))
+        if (collision.gameObject.name.Contains("Combat"))
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<Message0>().CombatTutorial();
             collision.gameObject.SetActive(false);
         }
-        if(collision.gameObject.name.Contains("Chest"))
+        if (collision.gameObject.name.Contains("Chest"))
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<Message0>().ChestTutorial();
             collision.gameObject.SetActive(false);
         }
-        if(collision.gameObject.name.Contains("EndGame"))
+        if (collision.gameObject.name.Contains("EndGame") && doNot.getKingDead())
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<Message0>().EndGame();
             collision.gameObject.SetActive(false);
@@ -538,7 +555,7 @@ public class PlayerCharacter : MonoBehaviour
 
     public void addToInventory(Collider2D collision)
     {
-        
+
         if (collision.gameObject.name.Contains("Stone"))
         {
             inventoryCounter.addStone(1);
@@ -601,7 +618,7 @@ public class PlayerCharacter : MonoBehaviour
         Application.Quit();
     }
 
-  
+
 
     public void RestartLevel()
     {
@@ -609,7 +626,7 @@ public class PlayerCharacter : MonoBehaviour
         var p = SceneManager.GetActiveScene();
         SceneManager.LoadScene(p.name);
         doNot.hasReset = true;
-        
+
 
     }
     public void ResumeEverything()

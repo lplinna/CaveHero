@@ -79,7 +79,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1823539731
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 3
   m_Sprite: {fileID: 7894516346480191614, guid: fe2b9372f25f9b541895557756e72273, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -173,6 +173,8 @@ MonoBehaviour:
   playerwayP: {x: 0, y: 0, z: 0}
   energyBar: {fileID: 0}
   MONEY: {fileID: 0}
+  inventoryCounter: {fileID: 0}
+  inventoryMenu: {fileID: 0}
   playerSprite: {fileID: 6327391077458177465}
   upSprite: {fileID: 8660228816983995550, guid: fe2b9372f25f9b541895557756e72273, type: 3}
   sideSprite: {fileID: -7894228047608328003, guid: fe2b9372f25f9b541895557756e72273, type: 3}
@@ -192,6 +194,7 @@ MonoBehaviour:
   isDialog: 0
   doNot: {fileID: 0}
   tempDoNot: {fileID: 8223919525519690165, guid: e9c20d553b351a849b4db452f98cc456, type: 3}
+  tempInv: {fileID: 8551592812475088389, guid: 4ca2f69de5dde5a49bf52478b11c2260, type: 3}
   PauseMenuPrefab: {fileID: 1981777973103741051, guid: cf485877abd3d214a9518db8339158df, type: 3}
 --- !u!114 &6327391077458177466
 MonoBehaviour:
@@ -209,6 +212,7 @@ MonoBehaviour:
   pickaxe: {fileID: 3083748514255061108, guid: 4840fb6cc6256ab468748077440554d7, type: 3}
   SLAM: {fileID: 9047117966208828268, guid: b30fd42fbcafb90499081001de9ce366, type: 3}
   player: {fileID: 6327391077458177415}
+  doNot: {fileID: 0}
 --- !u!95 &6327391077458177469
 Animator:
   serializedVersion: 3
@@ -354,6 +358,7 @@ MonoBehaviour:
   DialogManager: {fileID: 2481900995847409524}
   doNot: {fileID: 0}
   slimeToGrandpa: 0
+  endGame: 0
   dialogueKing: {fileID: 0}
 --- !u!1001 &1918993179050167301
 PrefabInstance:

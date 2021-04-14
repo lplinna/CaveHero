@@ -14,17 +14,44 @@ public class Message0 : MonoBehaviour
     public DialogueKing dialogueKing;
     void Awake()
     {
-        doNot = GameObject.FindGameObjectWithTag("DoNotDestroy").GetComponent<DoNotDestroy>();
+        Invoke("GetDoNot", 0f);
         try
         {
             dialogueKing = GameObject.FindGameObjectWithTag("DialogueKing").GetComponent<DialogueKing>();
         }
         catch { }
+
        
-        DialogManager = GameObject.Find("Player").GetComponentInChildren<DialogManager>();
-        DialogManager.gameObject.SetActive(false);
+
+        try
+        {
+            doNot = GameObject.FindGameObjectWithTag("DoNotDestroy").GetComponent<DoNotDestroy>();
+        }
+        catch
+        {
+            Invoke("Awake", 0.001f);
+        }
+
+        try
+        {
+            DialogManager = GameObject.Find("Player").GetComponentInChildren<DialogManager>();
+            DialogManager.gameObject.SetActive(false);
+        }
+        catch
+        {
+            Invoke("Awake", 0.001f);
+        }
 
         
+
+        MessageChoices();
+
+    }
+
+    
+
+    void MessageChoices()
+    {
         if (SceneManager.GetActiveScene().name == "TutorialLevel")
         {
             StartTutorial();
@@ -35,14 +62,14 @@ public class Message0 : MonoBehaviour
         }
         if (SceneManager.GetActiveScene().name == "Merchant" && !doNot.getIntroduceMerchant())
         {
-            
+
             Merchant1();
         }
-        
-        if(SceneManager.GetActiveScene().name == "ThroneRoom" && !doNot.getBeenToThrone())
+
+        if (SceneManager.GetActiveScene().name == "ThroneRoom" && !doNot.getBeenToThrone())
         {
             Throne1();
-            
+
         }
 
         if (SceneManager.GetActiveScene().name == "ThroneRoom" && doNot.getBeenToThrone())
@@ -70,7 +97,7 @@ public class Message0 : MonoBehaviour
     {
         while (true)
         {
-            if(DialogManager.state!=State.Deactivate) yield return null;
+            if (DialogManager.state != State.Deactivate) yield return null;
             if (DialogManager.state == State.Deactivate)
             {
                 this.GetComponent<PlayerCharacter>().isDialog = false;
@@ -81,14 +108,14 @@ public class Message0 : MonoBehaviour
 
 
 
-public void Teardown()
+    public void Teardown()
     {
         DialogManager.gameObject.SetActive(false);
         this.GetComponent<PlayerCharacter>().isDialog = false;
     }
 
 
-public  void Advance()
+    public void Advance()
     {
         DialogManager.Click_Window();
     }
@@ -363,4 +390,3 @@ public  void Advance()
     }
 
 }
-

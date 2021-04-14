@@ -9,15 +9,34 @@ public class EndGame : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        doNot = GameObject.FindGameObjectWithTag("DoNotDestroy").GetComponent<DoNotDestroy>();
+
+
+        try
+        {
+            doNot = GameObject.FindGameObjectWithTag("DoNotDestroy").GetComponent<DoNotDestroy>();
+        }
+        catch
+        {
+            Invoke("Start", 0.2f);
+        }
+        
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(doNot.getKingDead())
+        if (!doNot)
         {
-            endGame.SetActive(true);
+            doNot = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerCharacter>().doNot;
+        }
+
+        else
+        {
+            if (doNot.getKingDead())
+            {
+                endGame.SetActive(true);
+            }
         }
     }
 }

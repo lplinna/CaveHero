@@ -33,6 +33,7 @@ public class ChestBehavior : MonoBehaviour
 
     public void Opened()
     {
+        doNot = GameObject.Find("Player").GetComponent<PlayerCharacter>().doNot;
         if (!dead)
         {
             if (gameObject.name.Contains("Poison"))

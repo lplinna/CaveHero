@@ -14,6 +14,7 @@ public class DoNotDestroy : MonoBehaviour
     public bool sapphire;
     public bool poisonAttack, iceAttack, fireAttack;
     public bool kingDead;
+    public GameObject invRef;
 
     public int stoneCount, amethystCount, emeraldCount, rubyCount, diamondCount;
     void Awake()
