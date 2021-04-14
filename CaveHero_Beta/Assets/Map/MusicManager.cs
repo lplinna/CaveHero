@@ -80,23 +80,23 @@ public class MusicManager : MonoBehaviour
             {
                 PlayMusic("Tutorial");
             }
-            else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("SlimeLevel"))
+            if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("SlimeLevel"))
             {
                 PlayMusic("SlimeMusic");
             }
-            else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("IceLevel"))
+            if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("IceLevel"))
             {
                 PlayMusic("IceMusic");
             }
-            else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("LavaLevel"))
+            if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("LavaLevel"))
             {
                 PlayMusic("LavaMusic");
             }
-            else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("ThroneRoom"))
+            if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("ThroneRoom"))
             {
                 PlayMusic("ThroneRoom");
             }
-            else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Merchant"))
+            if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Merchant"))
             {
                 PlayMusic("Merchant");
             }

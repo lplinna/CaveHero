@@ -6,7 +6,7 @@ public class SoundManager : MonoBehaviour
 {
     public static AudioClip spiderDeath, playerDeath, healthPotion;
     public static AudioClip winChallenge, elevator, batDeath, beetleDeath;
-    public static AudioClip coinClink, caveCollapse;
+    public static AudioClip coinClink, caveCollapse, stonePickup;
     static AudioSource audioSrc;
     // Start is called before the first frame update
     void Start()
@@ -22,6 +22,7 @@ public class SoundManager : MonoBehaviour
 
         coinClink = Resources.Load<AudioClip>("coinClink");
         caveCollapse = Resources.Load<AudioClip>("CaveCollapse");
+        stonePickup = Resources.Load<AudioClip>("StonePickup");
 
         audioSrc = GetComponent<AudioSource>();
         audioSrc.volume = 1f;
@@ -38,7 +39,7 @@ public class SoundManager : MonoBehaviour
         switch (clip)
         {
             case "SpiderDeath":
-                audioSrc.volume = 1f;
+                audioSrc.volume = 0.8f;
                 audioSrc.PlayOneShot(spiderDeath);
                 break;
 
@@ -48,7 +49,7 @@ public class SoundManager : MonoBehaviour
                 break;
 
             case "HealthPotion":
-                audioSrc.volume = 1f;
+                audioSrc.volume = 0.5f;
                 audioSrc.PlayOneShot(healthPotion);
                 break;
 
@@ -63,12 +64,12 @@ public class SoundManager : MonoBehaviour
                 break;
 
             case "BatDeath":
-                audioSrc.volume = 1f;
+                audioSrc.volume = 0.8f;
                 audioSrc.PlayOneShot(batDeath);
                 break;
 
             case "BeetleDeath":
-                audioSrc.volume = 1f;
+                audioSrc.volume = 0.8f;
                 audioSrc.PlayOneShot(beetleDeath);
                 break;
 
@@ -80,6 +81,11 @@ public class SoundManager : MonoBehaviour
             case "Coin":
                 audioSrc.volume = 1f;
                 audioSrc.PlayOneShot(coinClink);
+                break;
+
+            case "Pickup":
+                audioSrc.volume = 1f;
+                audioSrc.PlayOneShot(stonePickup);
                 break;
         }
     }

@@ -24,6 +24,7 @@ TagManager:
   - DoNotDestroy
   - King
   - DialogueKing
+  - Inventory
   layers:
   - Default
   - TransparentFX

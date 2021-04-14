@@ -17,7 +17,8 @@ public class PlayerCharacter : MonoBehaviour
     // To create the visual energy bar
     public EnergyBar energyBar;
     public MoneyCounter MONEY;
-
+    public InventoryCounter inventoryCounter;
+    public GameObject inventoryMenu;
     
 
     // Player Sprites
@@ -58,6 +59,7 @@ public class PlayerCharacter : MonoBehaviour
             transform.position = checkpoint.checkpointPos;
         }
         MONEY = GameObject.FindGameObjectWithTag("Money").GetComponent<MoneyCounter>();
+
         audioSrc = GetComponent<AudioSource>();
         isMoving = false;
         muteAudio = false;
@@ -66,7 +68,7 @@ public class PlayerCharacter : MonoBehaviour
         onSlippery = false;
         isPaused = false;
 
-
+        inventoryMenu.SetActive(false);
 
         try
         {
@@ -81,11 +83,21 @@ public class PlayerCharacter : MonoBehaviour
         if (doNot.hasReset)
         {
             MONEY.ForceMoney(doNot.lastingMoney);
+            inventoryCounter.forceStone(doNot.stoneCount);
+            inventoryCounter.forceAmethyst(doNot.amethystCount);
+            inventoryCounter.forceEmerald(doNot.emeraldCount);
+            inventoryCounter.forceRuby(doNot.rubyCount);
+            inventoryCounter.forceDiamond(doNot.diamondCount);
             doNot.hasReset = false;
         }
         else
         {
             doNot.lastingMoney = MONEY.getMoney();
+            doNot.stoneCount = inventoryCounter.getStone();
+            doNot.amethystCount = inventoryCounter.getAmethyst();
+            doNot.emeraldCount = inventoryCounter.getEmerald();
+            doNot.diamondCount = inventoryCounter.getDiamond();
+            doNot.rubyCount = inventoryCounter.getRuby();
         }
 
 
@@ -96,6 +108,21 @@ public class PlayerCharacter : MonoBehaviour
     void Update()
     {
 
+        if (Input.GetKeyDown("i"))
+        {
+            if (!isPaused)
+            {
+                Time.timeScale = 0;
+                inventoryMenu.SetActive(true);
+            }
+            else if (isPaused)
+            {
+                Time.timeScale = 1;
+                inventoryMenu.SetActive(false);
+            }
+            else { Time.timeScale = 1; }
+            isPaused = !isPaused;
+        }
 
         if (isPaused) return; 
 
@@ -119,6 +146,7 @@ public class PlayerCharacter : MonoBehaviour
                 muteAudio = false;
             }
         }
+
         if (onSlippery)
         {
             slippery = 3f;
@@ -127,15 +155,10 @@ public class PlayerCharacter : MonoBehaviour
         {
             slippery = 1f;
         }
-
-        //Debug.Log(slippery);
-        //Debug.Log(onSlippery);
     }
 
     void FixedUpdate()
     {
-
-
         if (Input.GetKey(KeyCode.Escape))
         {
             PauseEverything();
@@ -362,7 +385,7 @@ public class PlayerCharacter : MonoBehaviour
             }
         }
 
-        if (isMoving && !isDialog)
+        if (isMoving && !isDialog && !isPaused)
         {
             if (!audioSrc.isPlaying)
             {
@@ -435,12 +458,18 @@ public class PlayerCharacter : MonoBehaviour
 
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("StonePickup") || collision.gameObject.CompareTag("AmethystPickup"))
+        if (collision.gameObject.CompareTag("StonePickup"))
         {
             if (collision.gameObject.name.Contains("Gold"))
             {
                 MONEY.AddMoney(1);
             }
+            else
+            {
+                SoundManager.PlaySound("Pickup");
+            }
+            // adds the stones to the inventory
+            addToInventory(collision);
             collision.gameObject.SetActive(false);
         }
         if(collision.gameObject.CompareTag("Checkpoint"))
@@ -490,6 +519,31 @@ public class PlayerCharacter : MonoBehaviour
         if (collision.gameObject.CompareTag("SlipperyIce"))
         {
             onSlippery = false;
+        }
+    }
+
+    public void addToInventory(Collider2D collision)
+    {
+        
+        if (collision.gameObject.name.Contains("Stone"))
+        {
+            inventoryCounter.addStone(1);
+        }
+        if (collision.gameObject.name.Contains("Amethyst"))
+        {
+            inventoryCounter.addAmethyst(1);
+        }
+        if (collision.gameObject.name.Contains("Emerald"))
+        {
+            inventoryCounter.addEmerald(1);
+        }
+        if (collision.gameObject.name.Contains("Ruby"))
+        {
+            inventoryCounter.addRuby(1);
+        }
+        if (collision.gameObject.name.Contains("Diamond"))
+        {
+            inventoryCounter.addDiamond(1);
         }
     }
 

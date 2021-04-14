@@ -11,6 +11,8 @@ public class DoNotDestroy : MonoBehaviour
     public bool beenToThrone;
     public float lastingMoney = 0f;
     public bool hasReset;
+
+    public int stoneCount, amethystCount, emeraldCount, rubyCount, diamondCount;
     void Awake()
     {
         gameObject.tag = "DoNotDestroy";
@@ -32,6 +34,12 @@ public class DoNotDestroy : MonoBehaviour
         lavaKey = false;
         throneKey = false;
         introduceMerchant = false;
+
+        stoneCount = 0;
+        amethystCount = 0;
+        emeraldCount = 0;
+        rubyCount = 0;
+        diamondCount = 0;
     }
 
     public void setChallengeTrigger(bool trigger)

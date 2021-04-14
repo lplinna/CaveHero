@@ -56,6 +56,8 @@ public class DialogueKing : MonoBehaviour
         {
             var g = GetComponent<Animator>();
             g.Play("SlimeTransition");
+            MusicManager.stopPlaying();
+            MusicManager.setBoss(true);
         }
 
         if(b._current_Data.Character == "goKING")

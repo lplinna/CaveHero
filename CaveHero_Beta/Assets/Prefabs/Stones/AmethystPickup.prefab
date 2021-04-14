@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 7628665899641229588}
   m_Layer: 8
   m_Name: AmethystPickup
-  m_TagString: AmethystPickup
+  m_TagString: StonePickup
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

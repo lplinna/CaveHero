@@ -26,10 +26,9 @@ public class Merchant : MonoBehaviour
         goNextCanvas.gameObject.SetActive(false);
         doNotHaveKey.gameObject.SetActive(false);
 
+        MusicManager.setElevator(false);
         player = GameObject.FindGameObjectWithTag("Player");
         doNot = GameObject.FindGameObjectWithTag("DoNotDestroy").GetComponent<DoNotDestroy>();
-
-        
     }
 
     // Start is called before the first frame update
@@ -56,6 +55,8 @@ public class Merchant : MonoBehaviour
 
     public void loadNextScene()
     {
+        MusicManager.setElevator(true);
+        MusicManager.stopPlaying();
         doNot.setChallengeTrigger(false);
         LoadingNextLevel.setLevelName(nextLevelName);
         SceneManager.LoadScene("LoadingNextLevel");
