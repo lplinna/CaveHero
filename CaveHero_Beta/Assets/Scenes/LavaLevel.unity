@@ -15592,6 +15592,10 @@ PrefabInstance:
       propertyPath: doNot
       value: 
       objectReference: {fileID: 1918632231}
+    - target: {fileID: 819107498326554320, guid: 291c8021093a6894d97aac9a21cae7c2, type: 3}
+      propertyPath: elementalChest
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 819107498326554321, guid: 291c8021093a6894d97aac9a21cae7c2, type: 3}
       propertyPath: m_LocalPosition.x
       value: 198.09439
@@ -15638,7 +15642,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 819107498326554332, guid: 291c8021093a6894d97aac9a21cae7c2, type: 3}
       propertyPath: m_Name
-      value: Chest
+      value: Ending Chest
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 291c8021093a6894d97aac9a21cae7c2, type: 3}
@@ -20017,7 +20021,7 @@ PrefabInstance:
     - target: {fileID: 6327391077458177415, guid: d15b3809d66832b4eaf7f58e16cc5385, type: 3}
       propertyPath: MONEY
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1011388389}
     - target: {fileID: 6327391077458177415, guid: d15b3809d66832b4eaf7f58e16cc5385, type: 3}
       propertyPath: checkpoint
       value: 
@@ -20026,6 +20030,14 @@ PrefabInstance:
       propertyPath: challenge
       value: 
       objectReference: {fileID: 100332441}
+    - target: {fileID: 6327391077458177415, guid: d15b3809d66832b4eaf7f58e16cc5385, type: 3}
+      propertyPath: inventoryCounter
+      value: 
+      objectReference: {fileID: 2068189988}
+    - target: {fileID: 6327391077458177415, guid: d15b3809d66832b4eaf7f58e16cc5385, type: 3}
+      propertyPath: inventoryMenu
+      value: 
+      objectReference: {fileID: 2068189987}
     - target: {fileID: 6327391077458177464, guid: d15b3809d66832b4eaf7f58e16cc5385, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -22297,7 +22309,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: 0f605751cbd1fee4c95b208e3d6f0410, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -108756,6 +108768,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ca2f69de5dde5a49bf52478b11c2260, type: 3}
+--- !u!1 &2068189987 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8551592811453142793, guid: 4ca2f69de5dde5a49bf52478b11c2260, type: 3}
+  m_PrefabInstance: {fileID: 2068189986}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2068189988 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8551592812475088411, guid: 4ca2f69de5dde5a49bf52478b11c2260, type: 3}
+  m_PrefabInstance: {fileID: 2068189986}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 58ec592e09166004fbacfba8af726a90, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &2073469062
 PrefabInstance:
   m_ObjectHideFlags: 0

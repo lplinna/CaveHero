@@ -5,7 +5,7 @@ using UnityEngine;
 public class ChestBehavior : MonoBehaviour
 {
     public float currHealth;
-    public GameObject healthPotion, stone, amethyst, emerald, ruby, diamond;
+    public GameObject healthPotion, stone, amethyst, emerald, ruby, diamond, sapphire;
 
     public Sprite closed, broken, smidge, partial, open;
     public SpriteRenderer chest;
@@ -49,6 +49,17 @@ public class ChestBehavior : MonoBehaviour
             {
                 doNot.setFireAttack(true);
                 message.FireAttackGained();
+            }
+            else if (gameObject.name.Contains("Ending") && !doNot.getSapphire())
+            {
+                Vector3 spawnObject;
+                float randomY = Random.Range(0f, 0.5f);
+                float randomX = Random.Range(0f, 0.5f);
+                spawnObject.x = this.gameObject.transform.position.x - randomX;
+                spawnObject.y = this.gameObject.transform.position.y - randomY;
+                spawnObject.z = this.gameObject.transform.position.z;
+                Instantiate(sapphire, spawnObject, Quaternion.identity);
+                doNot.setSapphire(true);
             }
             else
             {

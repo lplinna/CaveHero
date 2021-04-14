@@ -464,6 +464,10 @@ public class PlayerCharacter : MonoBehaviour
             {
                 MONEY.AddMoney(1);
             }
+            else if (collision.gameObject.name.Contains("Sapphire"))
+            {
+                GameObject.FindGameObjectWithTag("Player").GetComponent<Message0>().Sapphire();
+            }
             else
             {
                 SoundManager.PlaySound("Pickup");
@@ -515,6 +519,11 @@ public class PlayerCharacter : MonoBehaviour
         if(collision.gameObject.name.Contains("Chest"))
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<Message0>().ChestTutorial();
+            collision.gameObject.SetActive(false);
+        }
+        if(collision.gameObject.name.Contains("EndGame"))
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Message0>().EndGame();
             collision.gameObject.SetActive(false);
         }
     }

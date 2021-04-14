@@ -8,6 +8,8 @@ public class DialogueKing : MonoBehaviour
     public Animator king;
     public GameObject kingObject;
     public GameObject fightKing;
+    public SpriteRenderer drill;
+    public Sprite drillWithGem;
     
 
 
@@ -58,6 +60,7 @@ public class DialogueKing : MonoBehaviour
             g.Play("SlimeTransition");
             MusicManager.stopPlaying();
             MusicManager.setBoss(true);
+            drill.sprite = drillWithGem;
         }
 
         if(b._current_Data.Character == "goKING")
@@ -70,8 +73,8 @@ public class DialogueKing : MonoBehaviour
 
         }
 
-
-        }
+        
+    }
 
 
 

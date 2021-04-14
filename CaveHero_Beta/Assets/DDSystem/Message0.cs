@@ -10,6 +10,7 @@ public class Message0 : MonoBehaviour
     public DialogManager DialogManager;
     public DoNotDestroy doNot;
     public bool slimeToGrandpa;
+    public bool endGame;
     public DialogueKing dialogueKing;
     void Awake()
     {
@@ -55,6 +56,11 @@ public class Message0 : MonoBehaviour
         if (!DialogManager.gameObject.activeInHierarchy && slimeToGrandpa)
         {
             dialogueKing.slimeTransition();
+        }
+        if (!DialogManager.gameObject.activeInHierarchy && endGame)
+        {
+            LoadingNextLevel.setLevelName("TitleScreen");
+            SceneManager.LoadScene("LoadingNextLevel");
         }
     }
 
@@ -269,7 +275,7 @@ public  void Advance()
         dialogTexts.Add(new DialogData("/speed:0.02/\"IT ALWAYS HAS BEEN!\"", "Li"));
         dialogTexts.Add(new DialogData("/speed:0.02/\"U-ughghhh..\"", "Li"));
         //End of text
-
+        doNot.setKingDead(true);
         DialogManager.Show(dialogTexts);
         StartCoroutine(AwaitDLOG());
     }
@@ -319,6 +325,39 @@ public  void Advance()
         dialogTexts.Add(new DialogData("/speed:0.04/You will lose some energy and health each time you attempt to burn an enemy.", "Li"));
         //End of text
 
+        DialogManager.Show(dialogTexts);
+        StartCoroutine(AwaitDLOG());
+    }
+
+    public void Sapphire()
+    {
+        DialogManager.gameObject.SetActive(true);
+        this.GetComponent<PlayerCharacter>().isDialog = true;
+        this.GetComponent<AudioSource>().Stop();
+        var dialogTexts = new List<DialogData>();
+
+        //Add text here
+        dialogTexts.Add(new DialogData("/size:140//speed:0.04/You have found the sapphire that the king needs!", "Li"));
+        dialogTexts.Add(new DialogData("/speed:0.04/Time to go forth and bring him the sapphire!", "Li"));
+        //End of text
+
+        DialogManager.Show(dialogTexts);
+        StartCoroutine(AwaitDLOG());
+    }
+
+    public void EndGame()
+    {
+        DialogManager.gameObject.SetActive(true);
+        this.GetComponent<PlayerCharacter>().isDialog = true;
+        this.GetComponent<AudioSource>().Stop();
+        var dialogTexts = new List<DialogData>();
+
+        //Add text here
+        dialogTexts.Add(new DialogData("/size:140//speed:0.04/You have defeated the King!", "Li"));
+        dialogTexts.Add(new DialogData("/speed:0.04/Time to go back to the surface. Back to your home.", "Li"));
+        dialogTexts.Add(new DialogData("/speed:0.04/Thank you for playing.", "Li"));
+        //End of text
+        endGame = true;
         DialogManager.Show(dialogTexts);
         StartCoroutine(AwaitDLOG());
     }

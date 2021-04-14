@@ -11,8 +11,9 @@ public class DoNotDestroy : MonoBehaviour
     public bool beenToThrone;
     public float lastingMoney = 0f;
     public bool hasReset;
-
+    public bool sapphire;
     public bool poisonAttack, iceAttack, fireAttack;
+    public bool kingDead;
 
     public int stoneCount, amethystCount, emeraldCount, rubyCount, diamondCount;
     void Awake()
@@ -136,5 +137,25 @@ public class DoNotDestroy : MonoBehaviour
     public void setFireAttack(bool trigger)
     {
         fireAttack = trigger;
+    }
+
+    public bool getSapphire()
+    {
+        return sapphire;
+    }
+
+    public void setSapphire(bool trigger)
+    {
+        sapphire = trigger;
+    }
+
+    public bool getKingDead()
+    {
+        return kingDead;
+    }
+
+    public void setKingDead(bool trigger)
+    {
+        kingDead = trigger;
     }
 }
