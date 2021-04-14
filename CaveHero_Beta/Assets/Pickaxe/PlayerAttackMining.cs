@@ -13,12 +13,14 @@ public class PlayerAttackMining : MonoBehaviour
     public GameObject SLAM;
     public PlayerCharacter player;
     bool placedAoE = false;
+
+    public DoNotDestroy doNot;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<PlayerCharacter>();
         pickaxe = GameObject.FindGameObjectWithTag("Pickaxe");
-        
+        doNot = GameObject.FindGameObjectWithTag("DoNotDestroy").GetComponent<DoNotDestroy>();
     }
 
 
@@ -74,17 +76,17 @@ public class PlayerAttackMining : MonoBehaviour
     {
 
 
-        if (Input.GetKeyDown(KeyCode.E) && swiping == 0)
+        if (Input.GetKeyDown(KeyCode.E) && swiping == 0 && doNot.getPoisonAttack())
         {
             pickaxe.GetComponent<PickaxeBehavior>().elemental = 1;
         }
 
-        if (Input.GetKeyDown(KeyCode.F) && swiping == 0)
+        if (Input.GetKeyDown(KeyCode.F) && swiping == 0 && doNot.getFireAttack())
         {
             pickaxe.GetComponent<PickaxeBehavior>().elemental = 2;
         }
 
-        if (Input.GetKeyDown(KeyCode.R) && swiping == 0)
+        if (Input.GetKeyDown(KeyCode.R) && swiping == 0 && doNot.getIceAttack())
         {
             pickaxe.GetComponent<PickaxeBehavior>().elemental = 3;
         }

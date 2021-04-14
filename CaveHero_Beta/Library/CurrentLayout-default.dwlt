@@ -19,9 +19,9 @@ MonoBehaviour:
     width: 1360
     height: 695
   m_ShowMode: 4
-  m_Title: Project
+  m_Title: Scene
   m_RootView: {fileID: 2}
-  m_MinSize: {x: 875, y: 300}
+  m_MinSize: {x: 875, y: 542}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -119,10 +119,10 @@ MonoBehaviour:
     y: 30
     width: 1360
     height: 645
-  m_MinSize: {x: 677, y: 492}
-  m_MaxSize: {x: 14001, y: 14042}
+  m_MinSize: {x: 679, y: 492}
+  m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 61455
+  controlID: 125
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -144,10 +144,10 @@ MonoBehaviour:
     y: 0
     width: 1084
     height: 645
-  m_MinSize: {x: 402, y: 492}
+  m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 61456
+  controlID: 126
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -169,10 +169,10 @@ MonoBehaviour:
     y: 0
     width: 1084
     height: 374
-  m_MinSize: {x: 402, y: 221}
-  m_MaxSize: {x: 8002, y: 4021}
+  m_MinSize: {x: 403, y: 221}
+  m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 61457
+  controlID: 127
 --- !u!114 &8
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -192,8 +192,8 @@ MonoBehaviour:
     y: 0
     width: 253
     height: 374
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -273,8 +273,8 @@ MonoBehaviour:
     y: 0
     width: 276
     height: 645
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 276, y: 71}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 18}
   m_Panes:
   - {fileID: 18}
@@ -300,8 +300,8 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 254
-    y: 19
+    x: 253
+    y: 73
     width: 829
     height: 353
   m_ViewDataDictionary: {fileID: 0}
@@ -315,7 +315,7 @@ MonoBehaviour:
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
-  m_MaximizeOnPlay: 1
+  m_MaximizeOnPlay: 0
   m_UseMipMap: 0
   m_VSyncEnabled: 0
   m_Gizmos: 0
@@ -396,10 +396,10 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 84}
-      m_SelectedIDs: 50730100
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 54480000
       m_LastClickedID: 0
-      m_ExpandedIDs: da9efeff46f1feffa2f1feffa4f1feff5413ffffca28ffff1629ffff5a29ffffec29ffffa82cffff4040ffffe241ffffec48ffff0049ffff9a4affff904cffff0a52ffff3257ffff2e88ffff7497ffff309fffffe4a0fffffaa0ffffb2a9ffffa8afffff10b6ffff28b6ffff3ab8ffff1cb9ffff88bfffffd8c1ffff24c4ffff92d7ffff58e3ffffd8e4ffffdeeaffff3aecfffffeedffffe8efffff28f4fffff0f5fffff4ffffffb2710000e87100007a730000b6ce0000ccce0000d0cf0000d8cf000040d000002e5c0100
+      m_ExpandedIDs: b84effff6a50ffff5253ffff0255ffff2e55ffff5658ffffb05cffffb25effffba5effff1c60ffffac68ffff906fffffc86fffffb87bffffa07dffff2485ffff4887ffff5c87ffff5a8effff9e98ffffd49fffffd2a9ffffe8abffff56b3ffff46b5ffff98b8ffffbcb9ffff0ebbffff3ac1ffff46d1ffffd0d3ffff24dcffff56fbffff4e5e00006e630000e0650000feac0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -459,9 +459,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 13.449761, y: -3.529212, z: 75.96416}
+    m_Target: {x: 3.9299765, y: -2.09059, z: -42.461662}
     speed: 2
-    m_Value: {x: 13.449761, y: -3.529212, z: 75.96416}
+    m_Value: {x: 3.9299765, y: -2.09059, z: -42.461662}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -512,9 +512,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 2.218792
+    m_Target: 7.2074604
     speed: 2
-    m_Value: 2.218792
+    m_Value: 7.2074604
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -689,21 +689,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Map
+    - Assets/Scenes
     m_Globs: []
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Map
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Logan\Documents\GitHub\CaveHero\CaveHero_Beta
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 79}
-    m_SelectedIDs: 92460000
-    m_LastClickedID: 18066
-    m_ExpandedIDs: 000000006a4600006c4600006e46000000ca9a3b
+    scrollPos: {x: 0, y: 170}
+    m_SelectedIDs: 48480000
+    m_LastClickedID: 18504
+    m_ExpandedIDs: 0000000012480000144800001648000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -731,7 +731,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000006a4600006c4600006e46000000ca9a3b
+    m_ExpandedIDs: 00000000124800001448000016480000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

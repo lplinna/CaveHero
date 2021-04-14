@@ -12,6 +12,8 @@ public class DoNotDestroy : MonoBehaviour
     public float lastingMoney = 0f;
     public bool hasReset;
 
+    public bool poisonAttack, iceAttack, fireAttack;
+
     public int stoneCount, amethystCount, emeraldCount, rubyCount, diamondCount;
     void Awake()
     {
@@ -104,5 +106,35 @@ public class DoNotDestroy : MonoBehaviour
     public bool getHasReset()
     {
         return hasReset;
+    }
+
+    public bool getPoisonAttack()
+    {
+        return poisonAttack;
+    }
+
+    public void setPoisonAttack(bool trigger)
+    {
+        poisonAttack = trigger;
+    }
+
+    public bool getIceAttack()
+    {
+        return iceAttack;
+    }
+
+    public void setIceAttack(bool trigger)
+    {
+        iceAttack = trigger;
+    }
+
+    public bool getFireAttack()
+    {
+        return fireAttack;
+    }
+
+    public void setFireAttack(bool trigger)
+    {
+        fireAttack = trigger;
     }
 }

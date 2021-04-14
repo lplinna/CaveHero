@@ -107,5 +107,22 @@ public class PickaxeBehavior : MonoBehaviour
         {
             EndTutorial.endTutorialTriggered = true;
         }
+
+        if (collision.gameObject.CompareTag("Chest") && canHit)
+        {
+            Debug.Log("chest hit!");
+            var chest = collision.gameObject.GetComponent<ChestBehavior>();
+            chest.Damage(1f);
+            if (!audioSrc.isPlaying)
+            {
+                audioSrc.Play();
+            }
+            else
+            {
+                audioSrc.Stop();
+                audioSrc.Play();
+            }
+            canHit = false;
+        }
     }
 }

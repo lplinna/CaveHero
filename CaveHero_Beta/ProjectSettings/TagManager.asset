@@ -25,6 +25,7 @@ TagManager:
   - King
   - DialogueKing
   - Inventory
+  - Chest
   layers:
   - Default
   - TransparentFX
@@ -62,11 +63,11 @@ TagManager:
   - name: Map
     uniqueID: 813157877
     locked: 0
-  - name: Default
-    uniqueID: 0
-    locked: 0
   - name: Stone
     uniqueID: 1815011601
+    locked: 0
+  - name: Default
+    uniqueID: 0
     locked: 0
   - name: Enemy-Player
     uniqueID: 2471427565

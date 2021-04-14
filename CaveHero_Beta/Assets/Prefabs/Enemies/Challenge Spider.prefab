@@ -77,7 +77,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1823539731
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -986924079635733974, guid: 81d86782c76623f4ca47721e98664a30, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -103,7 +103,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.01370382, y: 0.02114892}
+  m_Offset: {x: 0.013710022, y: 0.02114892}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -114,7 +114,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.5437489, y: 0.4391685}
+  m_Size: {x: 0.6016083, y: 0.4391685}
   m_EdgeRadius: 0
 --- !u!50 &8321341929878798956
 Rigidbody2D:
@@ -151,9 +151,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   pellet: {fileID: 5613767429477842853, guid: 1310e463390f118479c273a7fab28954, type: 3}
+  onFire: 0
   spiderSprite: {fileID: 8321341929878798946}
-  forward: {fileID: -986924079635733974, guid: 81d86782c76623f4ca47721e98664a30, type: 3}
-  backward: {fileID: -6556066355132681355, guid: 81d86782c76623f4ca47721e98664a30, type: 3}
+  spiderType: 0
 --- !u!114 &8321341929878798944
 MonoBehaviour:
   m_ObjectHideFlags: 0

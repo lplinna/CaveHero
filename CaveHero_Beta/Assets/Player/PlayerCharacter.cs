@@ -512,6 +512,11 @@ public class PlayerCharacter : MonoBehaviour
             GameObject.FindGameObjectWithTag("Player").GetComponent<Message0>().CombatTutorial();
             collision.gameObject.SetActive(false);
         }
+        if(collision.gameObject.name.Contains("Chest"))
+        {
+            GameObject.FindGameObjectWithTag("Player").GetComponent<Message0>().ChestTutorial();
+            collision.gameObject.SetActive(false);
+        }
     }
 
     public void OnTriggerExit2D(Collider2D collision)

@@ -30,7 +30,7 @@ public class Message0 : MonoBehaviour
         }
         if (SceneManager.GetActiveScene().name == "SlimeLevel")
         {
-            //SlimeLevel1();
+            SlimeLevel1();
         }
         if (SceneManager.GetActiveScene().name == "Merchant" && !doNot.getIntroduceMerchant())
         {
@@ -95,8 +95,8 @@ public  void Advance()
         var dialogTexts = new List<DialogData>();
 
         //Add text here
-        dialogTexts.Add(new DialogData("\"Just another day of mining, gotta meet quota.\"", "Li"));
-        dialogTexts.Add(new DialogData("You can move around by using the W, A, S, D keys.", "Li"));
+        dialogTexts.Add(new DialogData("/speed:0.04/\"Just another day of mining, gotta meet quota.\"", "Li"));
+        dialogTexts.Add(new DialogData("/speed:0.04/You can move around by using the W, A, S, D keys.", "Li"));
         //End of text
 
         DialogManager.Show(dialogTexts);
@@ -111,9 +111,9 @@ public  void Advance()
         var dialogTexts = new List<DialogData>();
 
         //Add text here
-        dialogTexts.Add(new DialogData("You can use the Left Mouse Click to mine rocks.", "Li"));
-        dialogTexts.Add(new DialogData("Rocks will drop some pickups upon being mined. These pickups are important and will get you money.", "Li"));
-        dialogTexts.Add(new DialogData("You can see how much money you have by the box with the '$' in it.", "Li"));
+        dialogTexts.Add(new DialogData("/speed:0.04/You can use the Left Mouse Click to mine rocks.", "Li"));
+        dialogTexts.Add(new DialogData("/speed:0.04/Rocks will drop some pickups upon being mined. These pickups are important and will get you money.", "Li"));
+        dialogTexts.Add(new DialogData("/speed:0.04/You can see how much money you have by the box with the '$' in it.", "Li"));
         //End of text
 
         DialogManager.Show(dialogTexts);
@@ -128,8 +128,8 @@ public  void Advance()
         var dialogTexts = new List<DialogData>();
 
         //Add text here
-        dialogTexts.Add(new DialogData("You can use the Left Shift key to sprint, but be wary, you only have a limited amount of energy.", "Li"));
-        dialogTexts.Add(new DialogData("Your energy bar is located in the top right of your screen, symbolized by the green bolt.", "Li"));
+        dialogTexts.Add(new DialogData("/speed:0.04/You can use the Left Shift key to sprint, but be wary, you only have a limited amount of energy.", "Li"));
+        dialogTexts.Add(new DialogData("/speed:0.04/Your energy bar is located in the top right of your screen, symbolized by the green bolt.", "Li"));
         //End of text
 
         DialogManager.Show(dialogTexts);
@@ -144,10 +144,26 @@ public  void Advance()
         var dialogTexts = new List<DialogData>();
 
         //Add text here
-        dialogTexts.Add(new DialogData("You can use Left Mouse Click to attack enemies. If you are in a tight spot, you can use Right Mouse Click to do a ground slam attack.", "Li"));
-        dialogTexts.Add(new DialogData("Be wary though, the ground slam attack takes away some of your energy.", "Li"));
-        dialogTexts.Add(new DialogData("Remember to keep your health above 0 or else you will perish! Your health bar is located above your energy bar symbolized by the heart.", "Li"));
+        dialogTexts.Add(new DialogData("/speed:0.04/You can use Left Mouse Click to attack enemies. If you are in a tight spot, you can use Right Mouse Click to do a ground slam attack.", "Li"));
+        dialogTexts.Add(new DialogData("/speed:0.04/Be wary though, the ground slam attack takes away some of your energy.", "Li"));
+        dialogTexts.Add(new DialogData("/speed:0.04/Remember to keep your health above 0 or else you will perish! Your health bar is located above your energy bar symbolized by the heart.", "Li"));
 
+        //End of text
+
+        DialogManager.Show(dialogTexts);
+        StartCoroutine(AwaitDLOG());
+    }
+
+    public void ChestTutorial()
+    {
+        DialogManager.gameObject.SetActive(true);
+        this.GetComponent<PlayerCharacter>().isDialog = true;
+        this.GetComponent<AudioSource>().Stop();
+        var dialogTexts = new List<DialogData>();
+
+        //Add text here
+        dialogTexts.Add(new DialogData("/speed:0.04/Seems you have found yourself a chest! You can hit it with your pickaxe to open it up!", "Li"));
+        dialogTexts.Add(new DialogData("/speed:0.04/There are many possible treasures inside so be sure to keep a look out for them!", "Li"));
         //End of text
 
         DialogManager.Show(dialogTexts);
@@ -162,7 +178,8 @@ public  void Advance()
         var dialogTexts = new List<DialogData>();
 
         //Add text here
-        dialogTexts.Add(new DialogData("\"Just another day of mining I guess, just a new boss\"", "Li"));
+        dialogTexts.Add(new DialogData("/speed:0.04/\"Just another day of mining I guess, just a new boss\"", "Li"));
+        dialogTexts.Add(new DialogData("/speed:0.04/You can open up your inventory to see what kind of rocks you have collected with the I key.", "Li"));
         //End of text
 
         DialogManager.Show(dialogTexts);
@@ -251,6 +268,55 @@ public  void Advance()
         dialogTexts.Add(new DialogData("/speed:0.02/\"The.../wait:1/ The drill is mine...\"", "Li"));
         dialogTexts.Add(new DialogData("/speed:0.02/\"IT ALWAYS HAS BEEN!\"", "Li"));
         dialogTexts.Add(new DialogData("/speed:0.02/\"U-ughghhh..\"", "Li"));
+        //End of text
+
+        DialogManager.Show(dialogTexts);
+        StartCoroutine(AwaitDLOG());
+    }
+
+    public void PoisonAttackGained()
+    {
+        DialogManager.gameObject.SetActive(true);
+        this.GetComponent<PlayerCharacter>().isDialog = true;
+        this.GetComponent<AudioSource>().Stop();
+        var dialogTexts = new List<DialogData>();
+
+        //Add text here
+        dialogTexts.Add(new DialogData("/size:140//speed:0.04/You have gained the Poison Attack!", "Li"));
+        dialogTexts.Add(new DialogData("/speed:0.04/By clicking the E key, you can now poison your enemies!", "Li"));
+        //End of text
+
+        DialogManager.Show(dialogTexts);
+        StartCoroutine(AwaitDLOG());
+    }
+
+    public void IceAttackGained()
+    {
+        DialogManager.gameObject.SetActive(true);
+        this.GetComponent<PlayerCharacter>().isDialog = true;
+        this.GetComponent<AudioSource>().Stop();
+        var dialogTexts = new List<DialogData>();
+
+        //Add text here
+        dialogTexts.Add(new DialogData("/size:140//speed:0.04/You have gained the Ice Attack!", "Li"));
+        dialogTexts.Add(new DialogData("/speed:0.04/By clicking the R key, you can now freeze your enemies!", "Li"));
+        //End of text
+
+        DialogManager.Show(dialogTexts);
+        StartCoroutine(AwaitDLOG());
+    }
+
+    public void FireAttackGained()
+    {
+        DialogManager.gameObject.SetActive(true);
+        this.GetComponent<PlayerCharacter>().isDialog = true;
+        this.GetComponent<AudioSource>().Stop();
+        var dialogTexts = new List<DialogData>();
+
+        //Add text here
+        dialogTexts.Add(new DialogData("/size:140//speed:0.04/You have gained the Fire Attack!", "Li"));
+        dialogTexts.Add(new DialogData("/speed:0.04/By clicking the F key, you can now burn your enemies! But be wary! It comes at a cost!", "Li"));
+        dialogTexts.Add(new DialogData("/speed:0.04/You will lose some energy and health each time you attempt to burn an enemy.", "Li"));
         //End of text
 
         DialogManager.Show(dialogTexts);
