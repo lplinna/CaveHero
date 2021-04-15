@@ -7715,7 +7715,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &822095280
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17958,7 +17958,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6327391077458177413, guid: d15b3809d66832b4eaf7f58e16cc5385, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6327391077458177415, guid: d15b3809d66832b4eaf7f58e16cc5385, type: 3}
       propertyPath: energyBar
@@ -19379,7 +19379,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -1188, y: 114.23238}
+  m_AnchoredPosition: {x: -1188.0001, y: 114.23238}
   m_SizeDelta: {x: -2266.3232, y: -924.4684}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!111 &1637450501
@@ -20256,7 +20256,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1787421196
 MonoBehaviour:
   m_ObjectHideFlags: 0

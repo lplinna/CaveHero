@@ -429,7 +429,7 @@ public class PlayerCharacter : MonoBehaviour
                 // speed goes up to 14, energy gets drained at a rate of 0.12 per frame
                 speed = 9;
                 playerAnim.speed = 2;
-                Drain(0.12f * 8f);
+                Drain(0.12f);
             }
             // if energy is not enough for sprinting, speed changes to normal
             if (currEnergy < 20)
@@ -451,7 +451,7 @@ public class PlayerCharacter : MonoBehaviour
             }
             if (currEnergy < 100)
             {
-                Gain(0.03f* 8f);
+                Gain(0.03f);
             }
         }
     }
