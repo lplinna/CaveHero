@@ -62,41 +62,88 @@ public class Merchant : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        iceGoldCost.text = "$" + 250;
-        iceAmethystCost.text = "20";
-
-        lavaGoldCost.text = "$" + 500;
-        lavaRubyCost.text = "40";
-
-        throneGoldCost.text = "$" + 750;
-        throneEmeraldCost.text = "60";
-
         //REMOVE
-        
-        
+        moneyCounter.AddMoney(100000);
+        setNextScene("IceLevel");
+        inventory.addAmethyst(60);
     }
 
 
     // Update is called once per frame
     void Update()
     {
-       
-        healthCostFloat = 200 * PlayerModifiers.healthModifier;
-        energyCostFloat = 250 * PlayerModifiers.energyModifier;
-        damageCostFloat = 300 * PlayerModifiers.damageModifier;
-        healthCost.text = "$" + healthCostFloat;
-        energyCost.text = "$" + energyCostFloat;
-        damageCost.text = "$" + damageCostFloat;
+        if (!doNot.getIceKey())
+        {
+            iceGoldCost.text = "$" + 350;
+            iceAmethystCost.text = "50";
+        }
+        else
+        {
+            iceGoldCost.text = "---";
+            iceAmethystCost.text = "--";
+        }
 
-        stoneSell = inventory.getStone();
+        if (!doNot.getLavaKey())
+        {
+            lavaGoldCost.text = "$" + 700;
+            lavaRubyCost.text = "70";
+        }
+        else
+        {
+            lavaGoldCost.text = "---";
+            lavaRubyCost.text = "--";
+        }
+
+        if (!doNot.getThroneKey())
+        {
+            throneGoldCost.text = "$" + 1000;
+            throneEmeraldCost.text = "90";
+        }
+        else
+        {
+            throneGoldCost.text = "---";
+            throneEmeraldCost.text = "--";
+        }
+
+        if (PlayerModifiers.healthModifier < 5f)
+        {
+            healthCostFloat = 150 * PlayerModifiers.healthModifier;
+            healthCost.text = "$" + healthCostFloat;
+        }
+        else
+        {
+            healthCost.text = "-----";
+        }
+
+        if (PlayerModifiers.energyModifier < 5f)
+        {
+            energyCostFloat = 200 * PlayerModifiers.energyModifier;
+            energyCost.text = "$" + energyCostFloat;
+        }
+        else
+        {
+            energyCost.text = "-----";
+        }
+        
+        if (PlayerModifiers.damageModifier < 5f)
+        {
+            damageCostFloat = 250 * PlayerModifiers.damageModifier;
+            damageCost.text = "$" + damageCostFloat;
+        }
+        else
+        {
+            damageCost.text = "-----";
+        }
+
+        stoneSell = inventory.getStone() * 1;
         stoneText.text = "$" + stoneSell;
-        amethystSell = inventory.getAmethyst() * 2;
+        amethystSell = (int)(inventory.getAmethyst() * 2);
         amethystText.text = "$" + amethystSell;
-        rubySell = inventory.getRuby() * 3;
+        rubySell = (int)(inventory.getRuby() * 2.5);
         rubyText.text = "$" + rubySell;
-        emeraldSell = inventory.getEmerald() * 4;
+        emeraldSell = (int)(inventory.getEmerald() * 3);
         emeraldText.text = "$" + emeraldSell;
-        diamondSell = inventory.getDiamond() * 5;
+        diamondSell = (int)(inventory.getDiamond() * 4);
         diamondText.text = "$" + diamondSell;
 
         if (sellShop.activeInHierarchy || buyShop.activeInHierarchy)
@@ -159,7 +206,7 @@ public class Merchant : MonoBehaviour
     {
         if(moneyCounter.getMoney() >= damageCostFloat)
         {
-            if (PlayerModifiers.damageModifier < 2f)
+            if (PlayerModifiers.damageModifier < 5f)
             {
                 PlayerModifiers.damageModifier += 0.5f;
                 moneyCounter.TakeMoney(damageCostFloat);
@@ -177,7 +224,7 @@ public class Merchant : MonoBehaviour
     {
         if(moneyCounter.getMoney() >= healthCostFloat)
         {
-            if (PlayerModifiers.healthModifier < 2f)
+            if (PlayerModifiers.healthModifier < 5f)
             {
                 PlayerModifiers.healthModifier += 0.5f;
                 moneyCounter.TakeMoney(healthCostFloat);
@@ -194,7 +241,7 @@ public class Merchant : MonoBehaviour
     {
         if(moneyCounter.getMoney() >= energyCostFloat)
         {
-            if (PlayerModifiers.energyModifier < 2f)
+            if (PlayerModifiers.energyModifier < 5f)
             {
                 PlayerModifiers.energyModifier += 0.5f;
                 moneyCounter.TakeMoney(energyCostFloat);
@@ -209,52 +256,44 @@ public class Merchant : MonoBehaviour
 
     public void buyIceKey()
     {
-        if (nextLevelName == "SlimeLevel")
+        if(moneyCounter.getMoney() >= 350 && inventory.getAmethyst() >= 50)
         {
-            if(moneyCounter.getMoney() >= 250 && inventory.getAmethyst() >= 20)
-            {
-                moneyCounter.TakeMoney(250);
-                inventory.removeAmethyst(20);
-                doNot.setIceKey(true);
-            }
-            else
-            {
-                message.NotEnough();
-            }
+            Debug.Log("ICE KEY HAS BEEN BOUGHT");
+            moneyCounter.TakeMoney(350);
+            inventory.removeAmethyst(50);
+            doNot.setIceKey(true);
+        }
+        else
+        {
+            message.NotEnough();
         }
     }
 
     public void buyLavaKey()
     {
-        if (doNot.getIceKey() && nextLevelName == "LavaLevel")
+        if (moneyCounter.getMoney() >= 700 && inventory.getRuby() >= 70)
         {
-            if (moneyCounter.getMoney() >= 500 && inventory.getRuby() >= 40)
-            {
-                moneyCounter.TakeMoney(500);
-                inventory.removeRuby(40);
-                doNot.setLavaKey(true);
-            }
-            else
-            {
-                message.NotEnough();
-            }
+            moneyCounter.TakeMoney(700);
+            inventory.removeRuby(70);
+            doNot.setLavaKey(true);
+        }
+        else
+        {
+            message.NotEnough();
         }
     }
 
     public void buyThroneKey()
     {
-        if (doNot.getIceKey() && doNot.getLavaKey() && nextLevelName == "ThroneRoom")
+        if (moneyCounter.getMoney() >= 1000 && inventory.getEmerald() >= 90)
         {
-            if (moneyCounter.getMoney() >= 750 && inventory.getEmerald() >= 60)
-            {
-                moneyCounter.TakeMoney(750);
-                inventory.removeEmerald(60);
-                doNot.setThroneKey(true);
-            }
-            else
-            {
-                message.NotEnough();
-            }
+            moneyCounter.TakeMoney(1000);
+            inventory.removeEmerald(90);
+            doNot.setThroneKey(true);
+        }
+        else
+        {
+            message.NotEnough();
         }
     }
 

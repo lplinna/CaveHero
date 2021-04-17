@@ -71,9 +71,9 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingLayerID: 813157877
+  m_SortingLayer: -2
+  m_SortingOrder: 4
   m_Sprite: {fileID: 4061617432807807955, guid: c04741d0584330e4fa519b47dbe4e4d0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -98,7 +98,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.23532653}
+  m_Offset: {x: -0.007423401, y: 0.2613082}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -109,7 +109,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1, y: 0.52934694}
+  m_Size: {x: 1.1484661, y: 0.64811945}
   m_EdgeRadius: 0
 --- !u!114 &819107498326554320
 MonoBehaviour:
@@ -124,15 +124,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currHealth: 0
-  fireElemental: {fileID: 0}
-  iceElemental: {fileID: 0}
-  poisonElemental: {fileID: 0}
   healthPotion: {fileID: 1381075947213038704, guid: 3293a1575fbc1f641b95fcf903126a07, type: 3}
   stone: {fileID: 1823160128441284354, guid: 79db3987d26ba2b4085201a51535103f, type: 3}
   amethyst: {fileID: 7628665899641229594, guid: d102af34360983841b326eb4831e1bcc, type: 3}
   emerald: {fileID: 1014937616318301606, guid: e8c3736c9f59d1b41be49e409128e305, type: 3}
   ruby: {fileID: 1909790653865126526, guid: d0104dd2eaf406a489070f58d01ca65b, type: 3}
   diamond: {fileID: 5188921473392777641, guid: 04ef31446a2f6c343b5c1e8625812bed, type: 3}
+  sapphire: {fileID: 0}
   closed: {fileID: 4061617432807807955, guid: c04741d0584330e4fa519b47dbe4e4d0, type: 3}
   broken: {fileID: -3695632875296075607, guid: c04741d0584330e4fa519b47dbe4e4d0, type: 3}
   smidge: {fileID: 3415855908799870861, guid: c04741d0584330e4fa519b47dbe4e4d0, type: 3}
@@ -143,6 +141,8 @@ MonoBehaviour:
   alreadyOpened: 0
   elementalChest: 0
   money: {fileID: 0}
+  doNot: {fileID: 0}
+  message: {fileID: 0}
 --- !u!50 &819107498326554323
 Rigidbody2D:
   serializedVersion: 4

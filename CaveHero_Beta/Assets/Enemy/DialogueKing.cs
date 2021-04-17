@@ -35,8 +35,8 @@ public class DialogueKing : MonoBehaviour
         Animator playerAnim = z.GetComponent<Animator>();
         if (b._current_Data.Character == "action1")
         {
-            Vector3 place1 = new Vector3(-0.00999999978f, 4.6500001f, 0);      
-            walkForward();
+            Vector3 place1 = new Vector3(-0.00999999978f, 4.6500001f, 0);
+            Idle();
             if (Vector3.Distance(z.transform.position,place1) > 0.2f)
             {
                 z.transform.position = Vector3.Lerp(z.transform.position, place1, 0.002f);

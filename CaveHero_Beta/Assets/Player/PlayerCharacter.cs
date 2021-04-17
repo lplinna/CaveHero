@@ -54,11 +54,21 @@ public class PlayerCharacter : MonoBehaviour
         currEnergy = maxEnergy;
         playerPhysics = GetComponent<Rigidbody2D>();
         playerAnim = GetComponent<Animator>();
-        checkpoint = GameObject.FindGameObjectWithTag("Checkpoint").GetComponent<CheckpointSystem>();
-        if (checkpoint.triggered)
+
+        if (SceneManager.GetActiveScene().name == "ThroneRoom" || SceneManager.GetActiveScene().name == "Merchant" || SceneManager.GetActiveScene().name == "TutorialLevel")
         {
-            transform.position = checkpoint.checkpointPos;
+
         }
+        else
+        {
+            checkpoint = GameObject.FindGameObjectWithTag("Checkpoint").GetComponent<CheckpointSystem>();
+            if (checkpoint.triggered)
+            {
+                transform.position = checkpoint.checkpointPos;
+            }
+        }
+
+        
         MONEY = GameObject.FindGameObjectWithTag("Money").GetComponent<MoneyCounter>();
 
         audioSrc = GetComponent<AudioSource>();
@@ -121,6 +131,18 @@ public class PlayerCharacter : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // Used to set checkpoint if one was not found in Awake
+        if (SceneManager.GetActiveScene().name == "ThroneRoom" || SceneManager.GetActiveScene().name == "Merchant" || SceneManager.GetActiveScene().name == "TutorialLevel")
+        {
+            
+        }
+        else
+        {
+            if (checkpoint.name == string.Empty)
+            {
+                checkpoint = GameObject.FindGameObjectWithTag("Checkpoint").GetComponent<CheckpointSystem>();
+            }
+        }
 
         if (Input.GetKeyDown("i"))
         {
@@ -429,7 +451,7 @@ public class PlayerCharacter : MonoBehaviour
                 // speed goes up to 14, energy gets drained at a rate of 0.12 per frame
                 speed = 9;
                 playerAnim.speed = 2;
-                Drain(0.12f);
+                Drain(0.12f * 8f);
             }
             // if energy is not enough for sprinting, speed changes to normal
             if (currEnergy < 20)
@@ -451,7 +473,7 @@ public class PlayerCharacter : MonoBehaviour
             }
             if (currEnergy < 100)
             {
-                Gain(0.03f);
+                Gain(0.03f * 8f);
             }
         }
     }
@@ -594,6 +616,7 @@ public class PlayerCharacter : MonoBehaviour
         buttons[1].onClick.AddListener(RestartLevel);
         buttons[2].onClick.AddListener(ResumeEverything);
 
+        inventoryMenu.SetActive(false);
         GetComponentInChildren<DialogManager>().Hide();
     }
 
@@ -626,7 +649,7 @@ public class PlayerCharacter : MonoBehaviour
         var p = SceneManager.GetActiveScene();
         SceneManager.LoadScene(p.name);
         doNot.hasReset = true;
-
+        inventoryMenu.SetActive(false);
 
     }
     public void ResumeEverything()

@@ -6,7 +6,7 @@ public class SoundManager : MonoBehaviour
 {
     public static AudioClip spiderDeath, playerDeath, healthPotion;
     public static AudioClip winChallenge, elevator, batDeath, beetleDeath;
-    public static AudioClip coinClink, caveCollapse, stonePickup;
+    public static AudioClip coinClink, caveCollapse, pickup, chestOpening;
     static AudioSource audioSrc;
     // Start is called before the first frame update
     void Start()
@@ -22,7 +22,9 @@ public class SoundManager : MonoBehaviour
 
         coinClink = Resources.Load<AudioClip>("coinClink");
         caveCollapse = Resources.Load<AudioClip>("CaveCollapse");
-        stonePickup = Resources.Load<AudioClip>("StonePickup");
+        pickup = Resources.Load<AudioClip>("itemPickup");
+        chestOpening = Resources.Load<AudioClip>("ChestOpening");
+
 
         audioSrc = GetComponent<AudioSource>();
         audioSrc.volume = 1f;
@@ -84,8 +86,13 @@ public class SoundManager : MonoBehaviour
                 break;
 
             case "Pickup":
-                audioSrc.volume = 1f;
-                audioSrc.PlayOneShot(stonePickup);
+                audioSrc.volume = 0.5f;
+                audioSrc.PlayOneShot(pickup);
+                break;
+
+            case "Chest":
+                audioSrc.volume = 0.2f;
+                audioSrc.PlayOneShot(chestOpening);
                 break;
         }
     }

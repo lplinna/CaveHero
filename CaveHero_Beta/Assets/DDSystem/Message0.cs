@@ -14,7 +14,7 @@ public class Message0 : MonoBehaviour
     public DialogueKing dialogueKing;
     void Awake()
     {
-        Invoke("GetDoNot", 0f);
+        //Invoke("GetDoNot", 0f);
         try
         {
             dialogueKing = GameObject.FindGameObjectWithTag("DialogueKing").GetComponent<DialogueKing>();
