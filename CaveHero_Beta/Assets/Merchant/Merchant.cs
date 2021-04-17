@@ -63,9 +63,7 @@ public class Merchant : MonoBehaviour
     void Start()
     {
         //REMOVE
-        moneyCounter.AddMoney(100000);
-        setNextScene("IceLevel");
-        inventory.addAmethyst(60);
+        
     }
 
 
