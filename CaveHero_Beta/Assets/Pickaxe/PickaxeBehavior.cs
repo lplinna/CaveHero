@@ -105,7 +105,7 @@ public class PickaxeBehavior : MonoBehaviour
 
         if (collision.gameObject.CompareTag("EndTutorial") && canHit)
         {
-            EndTutorial.endTutorialTriggered = true;
+            collision.gameObject.GetComponent<EndTutorial>().doEnd();
         }
 
         if (collision.gameObject.CompareTag("Chest") && canHit)

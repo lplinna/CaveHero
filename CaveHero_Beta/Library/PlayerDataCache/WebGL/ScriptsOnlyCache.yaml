@@ -37,6 +37,7 @@ ScriptsOnlyBuild:
     - PickaxeBehavior
     - PlayerAttackMining
     - PlayerCharacter
+    - PlayerModifiers
     - ShakeBehavior
     - ShopMoney
     - SlimeActorBehavior
@@ -160,8 +161,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 13054}
     - Class: 114
       Script: {instanceID: 13062}
-    - Class: 114
-      Script: {instanceID: 13114}
     - Class: 114
       Script: {instanceID: 13192}
     - Class: 114
@@ -309,8 +308,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 13054}
     - Class: 114
       Script: {instanceID: 13062}
-    - Class: 114
-      Script: {instanceID: 13114}
     - Class: 114
       Script: {instanceID: 13192}
     - Class: 114
@@ -510,8 +507,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13078}
     - Class: 114
-      Script: {instanceID: 13114}
-    - Class: 114
       Script: {instanceID: 13192}
     - Class: 114
       Script: {instanceID: 13202}
@@ -661,8 +656,6 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 13062}
     - Class: 114
-      Script: {instanceID: 13114}
-    - Class: 114
       Script: {instanceID: 13192}
     - Class: 114
       Script: {instanceID: 13202}
@@ -811,8 +804,6 @@ ScriptsOnlyBuild:
       Script: {instanceID: 13054}
     - Class: 114
       Script: {instanceID: 13062}
-    - Class: 114
-      Script: {instanceID: 13114}
     - Class: 114
       Script: {instanceID: 13192}
     - Class: 114
@@ -1041,6 +1032,8 @@ ScriptsOnlyBuild:
       Script: {instanceID: 14096}
     - Class: 114
       Script: {instanceID: 14326}
+    - Class: 114
+      Script: {instanceID: 14376}
     - Class: 114
       Script: {instanceID: 14478}
     - Class: 114
@@ -1520,7 +1513,7 @@ ScriptsOnlyBuild:
     className: LavaKeyDialogue
   - hash:
       serializedVersion: 2
-      Hash: 8d140dcd5ab4e501640124ccc64ef449
+      Hash: ff3507a1af6f670afeb30658613925a4
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ChestBehavior

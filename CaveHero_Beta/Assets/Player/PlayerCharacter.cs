@@ -319,6 +319,11 @@ public class PlayerCharacter : MonoBehaviour
                 playerAnim.Play("Base Layer.AttackUp", 0, 0f);
             }
 
+            if (GetComponent<PlayerAttackMining>().swiping == 2)
+            {
+                StartCoroutine(DrainSwipe(1f / 30f, 1.5f));
+            }
+
         }
 
     }
@@ -439,6 +444,9 @@ public class PlayerCharacter : MonoBehaviour
 
         isMoving = false;
     }
+
+
+    private bool isSprint = false;
     public void PlayerSprint()
     {
         // prints current energy and speed of player to console
@@ -451,7 +459,14 @@ public class PlayerCharacter : MonoBehaviour
                 // speed goes up to 14, energy gets drained at a rate of 0.12 per frame
                 speed = 9;
                 playerAnim.speed = 2;
-                Drain(0.12f * 8f);
+
+                if (isSprint == false)
+                {
+                    isSprint = true;
+                    StartCoroutine(doSprint(1f / 30f, 3f));
+                }
+                 
+                //Drain(0.12f * q);
             }
             // if energy is not enough for sprinting, speed changes to normal
             if (currEnergy < 20)
@@ -466,16 +481,68 @@ public class PlayerCharacter : MonoBehaviour
 
 
             speed = 5;
+            if (isSprint == true)
+            {
+                isSprint = false;
+                doRecover();
+            }
 
+            
             if (isAttackingAnim && GetComponent<PlayerAttackMining>().swiping == 2)
             {
                 speed = 2.5f;
             }
-            if (currEnergy < 100)
-            {
-                Gain(0.03f * 8f);
-            }
+
+            
+            
         }
+    }
+
+    public IEnumerator doSprint(float speed,float drain)
+    {
+        
+        while (true)
+        {
+            if(isSprint==false)
+            {
+                yield break;
+            }
+            if(currEnergy < 20)
+            {
+                yield break;
+            }
+            Drain(drain);
+            yield return new WaitForSeconds(speed);
+        }
+    }
+
+    public IEnumerator doGain(float speed, float gain)
+    {
+        while (true)
+        {
+            if(isSprint==true || currEnergy > 100)
+            {
+                yield break;
+            }
+            Gain(gain);
+            yield return new WaitForSeconds(speed);
+        }
+    }
+
+
+    public IEnumerator DrainSwipe(float speed, float drain)
+    {
+        while (isAttackingAnim)
+        {
+            Drain(drain);
+            yield return new WaitForSeconds(speed);
+        }
+        doRecover();
+    }
+    
+    public void doRecover()
+    {
+        StartCoroutine(doGain(1f / 30f, 0.4f));
     }
 
     // drains energy

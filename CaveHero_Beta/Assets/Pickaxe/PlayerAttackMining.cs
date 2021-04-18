@@ -142,7 +142,7 @@ public class PlayerAttackMining : MonoBehaviour
 
 
 
-            player.Drain(0.07f);
+           
                 if (mation.normalizedTime < 0.2f)
                 {
                    
@@ -194,6 +194,7 @@ public class PlayerAttackMining : MonoBehaviour
 
             player.isAttackingAnim = true;
             player.DoAttackAnimation();
+
 
         }
 

@@ -14,11 +14,18 @@ public class EndTutorial : MonoBehaviour
         shake = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<ShakeBehavior>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void doEnd()
     {
-        StartCoroutine(endTutorial());
+        if (!endTutorialTriggered)
+        {
+            endTutorialTriggered = true;
+            StartCoroutine(endTutorial());
+        }
     }
+
+
+  
+
 
     IEnumerator endTutorial()
     {

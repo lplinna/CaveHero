@@ -9,6 +9,7 @@ public class StoneHealth : MonoBehaviour
     public void Damage(float amount)
     {
         currHealth -= amount;
+        StartCoroutine(stoneMine());
     }
 
     public Sprite stoneSprite, breakingSprite, brokenSprite;
@@ -53,10 +54,7 @@ public class StoneHealth : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
-    {
-        StartCoroutine(stoneMine());
-    }
+    
 
     IEnumerator stoneMine()
     {
