@@ -212,6 +212,9 @@ MonoBehaviour:
   pickaxe: {fileID: 3083748514255061108, guid: 4840fb6cc6256ab468748077440554d7, type: 3}
   SLAM: {fileID: 9047117966208828268, guid: b30fd42fbcafb90499081001de9ce366, type: 3}
   player: {fileID: 6327391077458177415}
+  poisonIndicator: {fileID: 666653234238213081, guid: 3bdd919eb0aa03248a3627c6346e07f4, type: 3}
+  iceIndicator: {fileID: 8039801648739997715, guid: 2f9caf849c6608f4f9a10a57dc241b51, type: 3}
+  fireIndicator: {fileID: 7210527186735586430, guid: 56a7aa923db8fcc4e8fc93a2408b094d, type: 3}
   doNot: {fileID: 0}
 --- !u!95 &6327391077458177469
 Animator:

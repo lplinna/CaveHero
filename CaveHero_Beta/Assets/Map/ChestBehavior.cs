@@ -30,6 +30,7 @@ public class ChestBehavior : MonoBehaviour
     public void Damage(float amount)
     {
         currHealth -= amount;
+        StartCoroutine("breakOpen");
     }
 
     public void Opened()
@@ -137,15 +138,7 @@ public class ChestBehavior : MonoBehaviour
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (currHealth <= 0)
-        {
-            StartCoroutine("breakOpen");
-        }
-    }
-
+   
     IEnumerator breakOpen()
     {
         if (!alreadyOpened)

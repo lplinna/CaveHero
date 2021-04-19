@@ -13,6 +13,8 @@ public class PlayerAttackMining : MonoBehaviour
     public GameObject SLAM;
     public PlayerCharacter player;
     bool placedAoE = false;
+    public GameObject poisonIndicator, iceIndicator, fireIndicator;
+    public static bool poisonAttack, iceAttack, fireAttack;
 
     public DoNotDestroy doNot;
     // Start is called before the first frame update
@@ -28,6 +30,9 @@ public class PlayerAttackMining : MonoBehaviour
         {
             Invoke("Start", 0.2f);
         }
+        poisonAttack = false;
+        iceAttack = false;
+        fireAttack = false;
     }
 
 
@@ -81,71 +86,80 @@ public class PlayerAttackMining : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
-        if (Input.GetKeyDown(KeyCode.E) && swiping == 0 && doNot.getPoisonAttack())
+       if (player.isDialog == false)
         {
-            pickaxe.GetComponent<PickaxeBehavior>().elemental = 1;
-        }
-
-        if (Input.GetKeyDown(KeyCode.F) && swiping == 0 && doNot.getFireAttack())
-        {
-            pickaxe.GetComponent<PickaxeBehavior>().elemental = 2;
-        }
-
-        if (Input.GetKeyDown(KeyCode.R) && swiping == 0 && doNot.getIceAttack())
-        {
-            pickaxe.GetComponent<PickaxeBehavior>().elemental = 3;
-        }
-
-
-
-
-        if (Input.GetMouseButtonDown(0) && swiping==0)
-        {
-            BasicSwipe();
-        }
-
-        if (swiping == 1) //If it's a normal swing
-        {
-            var anim = player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0);
-            
-
-            
-            var tangle = Mathf.LerpAngle(sangle, eangle, anim.normalizedTime *2f);
-            Quaternion q = Quaternion.AngleAxis(tangle, Vector3.forward);
-            Vector3 p = (q * Vector3.right) * 0.7f;
-            Debug.DrawLine(transform.position, transform.position + p, Color.blue);
-            pickaxe.transform.position = transform.position + p;
-            pickaxe.transform.rotation = q;
-
-
-            //sangle += rotateDirection;
-            if (!player.isAttackingAnim)
+            if (Input.GetKeyDown(KeyCode.E) && swiping == 0 && doNot.getPoisonAttack())
             {
-                swiping = 0;
-                pickaxe.SetActive(false);
+                pickaxe.GetComponent<PickaxeBehavior>().elemental = 1;
+                poisonAttack = true;
+                StartCoroutine(poisonIndicatorFlash());
+            }
+
+            if (Input.GetKeyDown(KeyCode.F) && swiping == 0 && doNot.getFireAttack())
+            {
+                pickaxe.GetComponent<PickaxeBehavior>().elemental = 2;
+                fireAttack = true;
+                StartCoroutine(fireIndicatorFlash());
+            }
+
+            if (Input.GetKeyDown(KeyCode.R) && swiping == 0 && doNot.getIceAttack())
+            {
+                pickaxe.GetComponent<PickaxeBehavior>().elemental = 3;
+                iceAttack = true;
+                StartCoroutine(iceIndicatorFlash());
             }
 
 
-        }
 
 
-        if (swiping == 2) //If it's a power attack
-        {
+            if (Input.GetMouseButtonDown(0) && swiping == 0)
+            {
+                BasicSwipe();
+                poisonAttack = false;
+                iceAttack = false;
+                fireAttack = false;
+            }
 
-            
-     
-            var anim = player.GetComponent<Animator>();
-            var mation = anim.GetCurrentAnimatorStateInfo(0);
-            
+            if (swiping == 1) //If it's a normal swing
+            {
+                var anim = player.GetComponent<Animator>().GetCurrentAnimatorStateInfo(0);
 
 
 
-           
+                var tangle = Mathf.LerpAngle(sangle, eangle, anim.normalizedTime * 2f);
+                Quaternion q = Quaternion.AngleAxis(tangle, Vector3.forward);
+                Vector3 p = (q * Vector3.right) * 0.7f;
+                Debug.DrawLine(transform.position, transform.position + p, Color.blue);
+                pickaxe.transform.position = transform.position + p;
+                pickaxe.transform.rotation = q;
+
+
+                //sangle += rotateDirection;
+                if (!player.isAttackingAnim)
+                {
+                    swiping = 0;
+                    pickaxe.SetActive(false);
+                }
+
+
+            }
+
+
+            if (swiping == 2) //If it's a power attack
+            {
+
+
+
+                var anim = player.GetComponent<Animator>();
+                var mation = anim.GetCurrentAnimatorStateInfo(0);
+
+
+
+
+
                 if (mation.normalizedTime < 0.2f)
                 {
-                   
+
                     anim.speed = 0.2f;
                 }
                 if (mation.normalizedTime > 0.2f)
@@ -157,65 +171,97 @@ public class PlayerAttackMining : MonoBehaviour
                 {
                     anim.speed = 0.2f;
 
-                    if(placedAoE == false)
+                    if (placedAoE == false)
+                    {
+                        var q = Quaternion.AngleAxis(sangle, Vector3.forward);
+                        var p = Instantiate(SLAM);
+                        p.transform.position = player.transform.position + (q * Vector3.right);
+                        pickaxe.SetActive(false);
+                        placedAoE = true;
+                    }
+
+                }
+
+
+
+
+
+
+
+                if (!player.isAttackingAnim)
                 {
-                    var q = Quaternion.AngleAxis(sangle, Vector3.forward);
-                    var p = Instantiate(SLAM);
-                    p.transform.position = player.transform.position + (q * Vector3.right);
-                    pickaxe.SetActive(false);
-                    placedAoE = true;
-                }
-                   
+                    swiping = 0;
+                    placedAoE = false;
                 }
 
-
-           
-            
-
-            
-
-            if (!player.isAttackingAnim)
-            {
-                swiping = 0;
-                placedAoE = false;
             }
 
+
+
+            if (Input.GetMouseButtonDown(1) && swiping == 0)
+            {
+
+
+                swiping = 2;
+
+                sangle = GetPlayerRotation();
+
+                player.isAttackingAnim = true;
+                player.DoAttackAnimation();
+
+
+            }
+
+
+            if (swiping == 2 && player.currEnergy < 0)
+            {
+                pickaxe.SetActive(false);
+                pickaxe.GetComponent<PickaxeBehavior>().PowerAttack = false;
+                swiping = 3;
+
+                player.LeaveAttack();
+            }
+
+            if (swiping == 3 && player.currEnergy >= 30)
+            {
+                swiping = 0;
+            }
         }
-       
+    }
 
-
-        if(Input.GetMouseButtonDown(1) && swiping == 0)
+    IEnumerator poisonIndicatorFlash()
+    {
+        poisonIndicator.SetActive(true);
+        while (poisonAttack)
         {
-           
-
-            swiping = 2;
-
-            sangle = GetPlayerRotation();
-
-            player.isAttackingAnim = true;
-            player.DoAttackAnimation();
-
-
+            poisonIndicator.GetComponent<SpriteRenderer>().enabled = false;
+            yield return new WaitForSeconds(1f);
+            poisonIndicator.GetComponent<SpriteRenderer>().enabled = true;
+            yield return new WaitForSeconds(1f);
         }
+    }
 
-
-        if(swiping==2 && player.currEnergy < 0)
+    IEnumerator iceIndicatorFlash()
+    {
+        iceIndicator.SetActive(true);
+        while (iceAttack)
         {
-            pickaxe.SetActive(false);
-            pickaxe.GetComponent<PickaxeBehavior>().PowerAttack = false;
-            swiping = 3;
-
-            player.LeaveAttack();
+            iceIndicator.GetComponent<SpriteRenderer>().enabled = false;
+            yield return new WaitForSeconds(1f);
+            iceIndicator.GetComponent<SpriteRenderer>().enabled = true;
+            yield return new WaitForSeconds(1f);
         }
+    }
 
-        if(swiping==3 && player.currEnergy >= 30)
+    IEnumerator fireIndicatorFlash()
+    {
+        fireIndicator.SetActive(true);
+        while (fireAttack)
         {
-            swiping = 0;
+            fireIndicator.GetComponent<SpriteRenderer>().enabled = false;
+            yield return new WaitForSeconds(1f);
+            fireIndicator.GetComponent<SpriteRenderer>().enabled = true;
+            yield return new WaitForSeconds(1f);
         }
-        
-
-
-
-
     }
 }

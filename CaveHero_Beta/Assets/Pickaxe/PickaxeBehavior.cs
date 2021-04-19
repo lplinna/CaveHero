@@ -64,12 +64,14 @@ public class PickaxeBehavior : MonoBehaviour
             {
                 if (elemental == 1)
                 {
+                    PlayerAttackMining.poisonAttack = false;
                     var p = Instantiate(POISON);
                     p.GetComponent<SlimeActorBehavior>().actee = collision.gameObject;
                     elemental = 0;
                 }
                 if (elemental == 2)
                 {
+                    PlayerAttackMining.fireAttack = false;
                     var p = Instantiate(FIRE);
                     p.GetComponent<FireActorBehavior>().actee = collision.gameObject;
                     elemental = 0;
@@ -78,6 +80,7 @@ public class PickaxeBehavior : MonoBehaviour
                 }
                 if (elemental == 3)
                 {
+                    PlayerAttackMining.iceAttack = false;
                     var p = Instantiate(ICE);
                     p.GetComponent<IceActorBehavior>().actee = collision.gameObject;
                     elemental = 0;
