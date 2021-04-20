@@ -63,7 +63,8 @@ public class Merchant : MonoBehaviour
     void Start()
     {
         //REMOVE
-        
+        setNextScene("SlimeLevel");
+        moneyCounter.AddMoney(10000000);
     }
 
 

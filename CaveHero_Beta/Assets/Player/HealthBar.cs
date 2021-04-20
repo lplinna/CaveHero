@@ -13,14 +13,18 @@ public class HealthBar : MonoBehaviour
     {
         health = GameObject.FindGameObjectWithTag("Player").GetComponent<Health>();
         healthBar = GetComponent<Slider>();
-        healthBar.maxValue = health.maxHealth;
+        
         healthBar.value = health.maxHealth;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (health.maxHealth > healthBar.maxValue)
+        {
+            healthBar.maxValue = health.maxHealth;
+            healthBar.value = health.maxHealth;
+        }
     }
 
     public void SetHealth(float hp)

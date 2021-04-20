@@ -128,7 +128,7 @@ public class Message0 : MonoBehaviour
         var dialogTexts = new List<DialogData>();
 
         //Add text here
-        dialogTexts.Add(new DialogData("/speed:0.04/\"Just another day of mining, gotta meet quota.\"", "Li"));
+        dialogTexts.Add(new DialogData("/speed:0.04/\"Just another day of mining, gotta meet my quota.\"", "Li"));
         dialogTexts.Add(new DialogData("/speed:0.04/You can move around by using the W, A, S, D keys.", "Li"));
         //End of text
 

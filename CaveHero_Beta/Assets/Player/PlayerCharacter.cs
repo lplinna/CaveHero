@@ -19,6 +19,9 @@ public class PlayerCharacter : MonoBehaviour
     public MoneyCounter MONEY;
     public InventoryCounter inventoryCounter;
     public GameObject inventoryMenu;
+    public GameObject escMenu;
+    public GameObject optionsMenu;
+    public GameObject confirmationMenu;
 
 
     // Player Sprites
@@ -78,8 +81,9 @@ public class PlayerCharacter : MonoBehaviour
         slippery = 1f;
         onSlippery = false;
         isPaused = false;
+        escMenu.SetActive(false);
 
-       
+
 
         try
         {
@@ -197,7 +201,14 @@ public class PlayerCharacter : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Escape))
         {
-            PauseEverything();
+            if (escMenu.activeInHierarchy)
+            {
+                escMenu.SetActive(false);
+            }
+            else
+            {
+                PauseEverything();
+            }
         }
 
         if (isPaused) return;
@@ -671,18 +682,13 @@ public class PlayerCharacter : MonoBehaviour
 
 
     private bool isPaused;
-    public GameObject PauseMenuPrefab;
-    private GameObject MenuInstance;
     public void PauseEverything()
     {
+        escMenu.SetActive(true);
+        optionsMenu.SetActive(true);
+        confirmationMenu.SetActive(false);
         Time.timeScale = 0;
         isPaused = true;
-        MenuInstance = Instantiate(PauseMenuPrefab);
-        var buttons = MenuInstance.GetComponentsInChildren<UnityEngine.UI.Button>();
-        buttons[0].onClick.AddListener(CloseGame1);
-        buttons[1].onClick.AddListener(RestartLevel);
-        buttons[2].onClick.AddListener(ResumeEverything);
-
         inventoryMenu.SetActive(false);
         GetComponentInChildren<DialogManager>().Hide();
     }
@@ -690,25 +696,16 @@ public class PlayerCharacter : MonoBehaviour
 
 
 
-    public void CloseGame1()
+    public void CloseGameConfirmation()
     {
-        var buttons = MenuInstance.GetComponentsInChildren<UnityEngine.UI.Button>();
-        var text = MenuInstance.GetComponentsInChildren<Text>();
-        buttons[0].onClick.RemoveAllListeners();
-        text[0].text = "Are you sure you want to quit?";
-        buttons[1].onClick.RemoveAllListeners();
-        buttons[1].onClick.AddListener(CloseGame);
-        text[1].text = "Yes";
-        text[2].text = "No";
+        confirmationMenu.SetActive(true);
+        optionsMenu.SetActive(false);
     }
-
 
     public void CloseGame()
     {
         Application.Quit();
     }
-
-
 
     public void RestartLevel()
     {
@@ -723,7 +720,7 @@ public class PlayerCharacter : MonoBehaviour
     {
         Time.timeScale = 1f;
         isPaused = false;
-        Destroy(MenuInstance);
+        escMenu.SetActive(false);
     }
 
 

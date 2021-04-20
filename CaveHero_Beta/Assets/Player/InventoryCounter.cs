@@ -8,6 +8,7 @@ public class InventoryCounter : MonoBehaviour
     public int stoneCount, amethystCount, emeraldCount, rubyCount, diamondCount;
     public TextMeshProUGUI stoneText, amethystText, emeraldText, rubyText, diamondText;
     private InventoryCounter instance;
+    public static InventoryCounter inventory;
     void Awake()
     {
         if (instance == null)
@@ -25,6 +26,66 @@ public class InventoryCounter : MonoBehaviour
         emeraldCount = 0;
         rubyCount = 0;
         diamondCount = 0;
+    }
+
+    public static void Death()
+    {
+        int stoneLoss = (int)Random.Range(20, 60);
+        int amethystLoss = (int)Random.Range(10, 50);
+        int rubyLoss = (int)Random.Range(10, 50);
+        int emeraldLoss = (int)Random.Range(10, 50);
+        int diamondLoss = (int)Random.Range(0, 20);
+
+        // STONE LOSS
+        if (inventory.getStone() >= stoneLoss)
+        {
+            inventory.GetComponent<MoneyCounter>().TakeMoney(stoneLoss);
+        }
+        else
+        {
+            inventory.GetComponent<MoneyCounter>().TakeMoney(inventory.getStone());
+        }
+
+        // AMETHYST LOSS
+        if (inventory.getAmethyst() >= amethystLoss)
+        {
+            inventory.GetComponent<MoneyCounter>().TakeMoney(amethystLoss);
+        }
+        else
+        {
+            inventory.GetComponent<MoneyCounter>().TakeMoney(inventory.getAmethyst());
+        }
+
+        // RUBY LOSS
+        if (inventory.getRuby() >= rubyLoss)
+        {
+            inventory.GetComponent<MoneyCounter>().TakeMoney(rubyLoss);
+        }
+        else
+        {
+            inventory.GetComponent<MoneyCounter>().TakeMoney(inventory.getRuby());
+        }
+
+        // EMERALD LOSS
+        if (inventory.getEmerald() >= emeraldLoss)
+        {
+            inventory.GetComponent<MoneyCounter>().TakeMoney(emeraldLoss);
+        }
+        else
+        {
+            inventory.GetComponent<MoneyCounter>().TakeMoney(inventory.getEmerald());
+        }
+
+        // DIAMOND LOSS
+        if (inventory.getDiamond() >= diamondLoss)
+        {
+            inventory.GetComponent<MoneyCounter>().TakeMoney(diamondLoss);
+        }
+        else
+        {
+            inventory.GetComponent<MoneyCounter>().TakeMoney(inventory.getDiamond());
+        }
+
     }
 
     void Update()

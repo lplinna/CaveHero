@@ -8,7 +8,7 @@ public class Health : MonoBehaviour
     public float currHealth = 0.0f;
     public float maxHealth;
 
-    public HealthBar healthBar;
+    public static HealthBar healthBar;
 
     public CheckpointSystem checkpoint;
 
@@ -22,7 +22,6 @@ public class Health : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        maxHealth = 100.0f * PlayerModifiers.healthModifier;
         currHealth = maxHealth;
         StartCoroutine(Regenerate());
     }
@@ -31,8 +30,15 @@ public class Health : MonoBehaviour
     void Update()
     {
         //Debug.Log(PlayerModifiers.healthModifier);
-        //Debug.Log(currHealth + " / " + maxHealth);
+        Debug.Log(currHealth + " / " + maxHealth);
+        if (maxHealth < maxHealth * PlayerModifiers.healthModifier)
+        {
+            maxHealth = 100.0f * PlayerModifiers.healthModifier;
+            currHealth = maxHealth; 
+        }
     }
+
+
 
     public void Damage (float damage) {
         if (currHealth > 0)
@@ -107,15 +113,31 @@ public class Health : MonoBehaviour
     {
         while (true)
         {
-            if (currHealth < 100)
+            if (SceneManager.GetActiveScene().name == "Merchant")
             {
-                currHealth += 1;
-                healthBar.SetHealth(currHealth);
-                yield return new WaitForSeconds(1);
-            } 
+                if (currHealth < 100 * PlayerModifiers.healthModifier)
+                {
+                    currHealth += 10;
+                    healthBar.SetHealth(currHealth);
+                    yield return new WaitForSeconds(1);
+                }
+                else
+                {
+                    yield return null;
+                }
+            }
             else
             {
-                yield return null;
+                if (currHealth < 100 * PlayerModifiers.healthModifier)
+                {
+                    currHealth += 1;
+                    healthBar.SetHealth(currHealth);
+                    yield return new WaitForSeconds(1);
+                }
+                else
+                {
+                    yield return null;
+                }
             }
         }
     }
@@ -161,7 +183,7 @@ public class Health : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("HealthPickUp"))
         {
-            if (currHealth < 100)
+            if (currHealth < 100 * PlayerModifiers.healthModifier)
             {
                 SoundManager.PlaySound("HealthPotion");
                 currHealth += 20;

@@ -77,8 +77,9 @@ public class MerchantMessage : MonoBehaviour
         dialogTexts.Add(new DialogData("\"/speed:0.03/You aren't exactly what I normally see in these mineshafts.\"", "Li"));
         dialogTexts.Add(new DialogData("\"/speed:0.03/Well, nonetheless, the name's Axol! And welcome to my traveling shop.\"", "Li"));
         dialogTexts.Add(new DialogData("\"/speed:0.03/I've been here many years,/wait:0.3/ and know many things.\"", "Li"));
-        dialogTexts.Add(new DialogData("\"/speed:0.03/I heard the cave collapse./wait:0.6/ Here, take this key.\"", "Li"));
-        dialogTexts.Add(new DialogData("\"/speed:0.03/If you're running errands for the king, go through that door to the right. Get mining!\"", "Li"));
+        dialogTexts.Add(new DialogData("\"/speed:0.03/I heard the cave collapse./wait:0.6/Was that you? I hope you are okay.", "Li"));
+        dialogTexts.Add(new DialogData("\"/speed:0.03/If you're running errands for the king, take this key. Go through that door to the right. Get mining!\"", "Li"));
+        dialogTexts.Add(new DialogData("\"/speed:0.03/If you finish a level and want to go back, just head back to the left door!\"", "Li"));
         //End of text
 
         DialogManager.Show(dialogTexts);

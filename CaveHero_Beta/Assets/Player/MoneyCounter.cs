@@ -75,7 +75,7 @@ public class MoneyCounter : MonoBehaviour
 
     public static void Death()
     {
-        int randomLoss = (int)Random.Range(0, 10);
+        int randomLoss = (int)Random.Range(10, 50);
         
         if (currMoney >= randomLoss)
         {
