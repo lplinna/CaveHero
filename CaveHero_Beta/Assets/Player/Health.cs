@@ -24,17 +24,26 @@ public class Health : MonoBehaviour
     {
         currHealth = maxHealth;
         StartCoroutine(Regenerate());
+        try
+        {
+            healthBar = GameObject.FindObjectOfType<HealthBar>();
+        }
+        catch
+        {
+            Invoke("Start", 0.5f);
+        }
     }
 
     // Update is called once per frame
     void Update()
     {
         //Debug.Log(PlayerModifiers.healthModifier);
-        Debug.Log(currHealth + " / " + maxHealth);
+        //Debug.Log(currHealth + " / " + maxHealth);
         if (maxHealth < maxHealth * PlayerModifiers.healthModifier)
         {
             maxHealth = 100.0f * PlayerModifiers.healthModifier;
-            currHealth = maxHealth; 
+            currHealth = maxHealth;
+            Debug.Log("oof");
         }
     }
 

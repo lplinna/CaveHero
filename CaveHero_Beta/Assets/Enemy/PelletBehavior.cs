@@ -5,7 +5,7 @@ using UnityEngine;
 public class PelletBehavior : MonoBehaviour
 {
 
-    public float potency = 20.0f;
+    public float potency = 1.0f;
     // Start is called before the first frame update
     void Start()
     {

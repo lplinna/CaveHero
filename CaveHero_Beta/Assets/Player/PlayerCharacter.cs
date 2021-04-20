@@ -241,12 +241,31 @@ public class PlayerCharacter : MonoBehaviour
         if (isDialog)
         {
             var dialogue = GetComponent<Message0>();
-            if (Input.GetMouseButton(0) && dialogue.DialogManager.state == Doublsb.Dialog.State.Wait)
+            if (Input.GetMouseButton(0) && forward == 0)
             {
                 dialogue.Advance();
+                forward = 1;
+
+                if (SceneManager.GetActiveScene().name == "Merchant")
+                {
+                    MerchantAdvance();
+                }
+
+            }
+
+            if (!Input.GetMouseButton(0))
+            {
+                forward = 0;
             }
         }
 
+    }
+
+    public int forward = 0;
+    public GameObject shop;
+    private void MerchantAdvance()
+    {
+        shop.GetComponent<MerchantMessage>().Advance();
     }
 
 

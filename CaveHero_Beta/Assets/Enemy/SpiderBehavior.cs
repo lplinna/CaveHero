@@ -101,7 +101,7 @@ public class SpiderBehavior : MonoBehaviour
         var t = Instantiate(pellet, transform.position+smalloffset, Quaternion.identity);
         if (t == null) { return; }
         t.transform.rotation = Quaternion.LookRotation(Vector3.forward, direction);
-        
+        t.GetComponent<PelletBehavior>().potency = 6f;
         t.GetComponent<Rigidbody2D>().velocity = direction * 5f;
     }
 

@@ -173,6 +173,7 @@ public class Merchant : MonoBehaviour
         buyShop.SetActive(true);
         enterShopTrigger = true;
         player.GetComponent<PlayerCharacter>().isDialog = true;
+        player.GetComponent<PlayerCharacter>().shop = buyShop;
         player.GetComponent<AudioSource>().Stop();
         UI.SetActive(false);
 
