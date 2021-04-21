@@ -555,7 +555,8 @@ public class PlayerCharacter : MonoBehaviour
     {
         while (true)
         {
-            if(isSprint==true || currEnergy > maxEnergy)
+            bool isSlam = GetComponent<PlayerAttackMining>().swiping == 2;
+            if (isSprint==true || currEnergy > maxEnergy ||isSlam)
             {
                 yield break;
             }
@@ -577,7 +578,7 @@ public class PlayerCharacter : MonoBehaviour
     
     public void doRecover()
     {
-        StartCoroutine(doGain(1f / 30f, 0.4f));
+        StartCoroutine(doGain(1f / 30f, 0.8f));
     }
 
     // drains energy

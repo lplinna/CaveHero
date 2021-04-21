@@ -3783,6 +3783,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: BatEnemy
       objectReference: {fileID: 0}
+    - target: {fileID: 2775126230855140321, guid: 4e03aaee278105c4c95dd6865b203dc1, type: 3}
+      propertyPath: batType
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 2775126230855140349, guid: 4e03aaee278105c4c95dd6865b203dc1, type: 3}
       propertyPath: m_LocalPosition.x
       value: 24.46
@@ -24262,6 +24266,10 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2418701300097367756, guid: 0baf52075d60b324d80df9c7908b55b5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 24.910004
+      objectReference: {fileID: 0}
     - target: {fileID: 2418701300281961552, guid: 0baf52075d60b324d80df9c7908b55b5, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -24357,6 +24365,10 @@ PrefabInstance:
     - target: {fileID: 2418701300523321471, guid: 0baf52075d60b324d80df9c7908b55b5, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2418701300523321471, guid: 0baf52075d60b324d80df9c7908b55b5, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 27.080002
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0baf52075d60b324d80df9c7908b55b5, type: 3}

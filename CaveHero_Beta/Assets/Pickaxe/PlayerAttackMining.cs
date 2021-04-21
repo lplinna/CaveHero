@@ -33,6 +33,15 @@ public class PlayerAttackMining : MonoBehaviour
         poisonAttack = false;
         iceAttack = false;
         fireAttack = false;
+
+
+        try
+        {
+            poisonIndicator = GameObject.Find("UI").transform.GetChild(3).gameObject;
+            iceIndicator = GameObject.Find("UI").transform.GetChild(4).gameObject;
+            fireIndicator = GameObject.Find("UI").transform.GetChild(5).gameObject;
+        }
+        catch { Invoke("Start", 0.5f); }
     }
 
 
@@ -92,6 +101,8 @@ public class PlayerAttackMining : MonoBehaviour
             {
                 pickaxe.GetComponent<PickaxeBehavior>().elemental = 1;
                 poisonAttack = true;
+
+                arrestAll();
                 StartCoroutine(poisonIndicatorFlash());
             }
 
@@ -99,6 +110,8 @@ public class PlayerAttackMining : MonoBehaviour
             {
                 pickaxe.GetComponent<PickaxeBehavior>().elemental = 2;
                 fireAttack = true;
+
+                arrestAll();
                 StartCoroutine(fireIndicatorFlash());
             }
 
@@ -106,6 +119,8 @@ public class PlayerAttackMining : MonoBehaviour
             {
                 pickaxe.GetComponent<PickaxeBehavior>().elemental = 3;
                 iceAttack = true;
+
+                arrestAll();
                 StartCoroutine(iceIndicatorFlash());
             }
 
@@ -118,6 +133,7 @@ public class PlayerAttackMining : MonoBehaviour
                 poisonAttack = false;
                 iceAttack = false;
                 fireAttack = false;
+                arrestAll();
             }
 
             if (swiping == 1) //If it's a normal swing
@@ -229,6 +245,9 @@ public class PlayerAttackMining : MonoBehaviour
         }
     }
 
+
+
+
     IEnumerator poisonIndicatorFlash()
     {
         poisonIndicator.SetActive(true);
@@ -239,6 +258,7 @@ public class PlayerAttackMining : MonoBehaviour
             poisonIndicator.GetComponent<SpriteRenderer>().enabled = true;
             yield return new WaitForSeconds(1f);
         }
+        yield break;
     }
 
     IEnumerator iceIndicatorFlash()
@@ -251,6 +271,7 @@ public class PlayerAttackMining : MonoBehaviour
             iceIndicator.GetComponent<SpriteRenderer>().enabled = true;
             yield return new WaitForSeconds(1f);
         }
+        yield break;
     }
 
     IEnumerator fireIndicatorFlash()
@@ -263,5 +284,16 @@ public class PlayerAttackMining : MonoBehaviour
             fireIndicator.GetComponent<SpriteRenderer>().enabled = true;
             yield return new WaitForSeconds(1f);
         }
+        yield break;
     }
+
+    public void arrestAll()
+    {
+        fireIndicator.SetActive(false);
+        poisonIndicator.SetActive(false);
+        iceIndicator.SetActive(false);
+    }
+
+
+ 
 }
