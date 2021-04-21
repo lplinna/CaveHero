@@ -8,7 +8,7 @@ public class Health : MonoBehaviour
     public float currHealth = 0.0f;
     public float maxHealth;
 
-    public static HealthBar healthBar;
+    public HealthBar healthBar;
 
     public CheckpointSystem checkpoint;
 
