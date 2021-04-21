@@ -41,22 +41,22 @@ public class SoundManager : MonoBehaviour
         switch (clip)
         {
             case "SpiderDeath":
-                audioSrc.volume = 0.6f;
+                audioSrc.volume = 0.4f;
                 audioSrc.PlayOneShot(spiderDeath);
                 break;
 
             case "PlayerDeath":
-                audioSrc.volume = 0.8f;
+                audioSrc.volume = 0.6f;
                 audioSrc.PlayOneShot(playerDeath);
                 break;
 
             case "HealthPotion":
-                audioSrc.volume = 0.5f;
+                audioSrc.volume = 0.4f;
                 audioSrc.PlayOneShot(healthPotion);
                 break;
 
             case "WinChallenge":
-                audioSrc.volume = 0.5f;
+                audioSrc.volume = 0.4f;
                 audioSrc.PlayOneShot(winChallenge);
                 break;
 
@@ -66,12 +66,12 @@ public class SoundManager : MonoBehaviour
                 break;
 
             case "BatDeath":
-                audioSrc.volume = 0.8f;
+                audioSrc.volume = 0.5f;
                 audioSrc.PlayOneShot(batDeath);
                 break;
 
             case "BeetleDeath":
-                audioSrc.volume = 0.8f;
+                audioSrc.volume = 0.5f;
                 audioSrc.PlayOneShot(beetleDeath);
                 break;
 
@@ -86,7 +86,7 @@ public class SoundManager : MonoBehaviour
                 break;
 
             case "Pickup":
-                audioSrc.volume = 0.5f;
+                audioSrc.volume = 0.3f;
                 audioSrc.PlayOneShot(pickup);
                 break;
 

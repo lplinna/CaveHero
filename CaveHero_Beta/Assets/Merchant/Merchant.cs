@@ -62,9 +62,7 @@ public class Merchant : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        //REMOVE
-        setNextScene("SlimeLevel");
-        moneyCounter.AddMoney(10000000);
+
     }
 
 

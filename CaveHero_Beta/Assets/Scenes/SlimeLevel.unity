@@ -82326,6 +82326,7 @@ MonoBehaviour:
   Enemy1: {fileID: 1762133704041148128, guid: 7388fc0e2a418ef448a2c4ff2144e281, type: 3}
   Enemy2: {fileID: 8321341929878798958, guid: 888a3c34c06281a4c936868662615613, type: 3}
   Enemy3: {fileID: 0}
+  healthPot: {fileID: 1381075947213038704, guid: 3293a1575fbc1f641b95fcf903126a07, type: 3}
   wave1Enemy1: 3
   wave2Enemy1: 0
   wave3Enemy1: 4

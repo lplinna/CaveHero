@@ -15,6 +15,8 @@ public class Health : MonoBehaviour
     int poisonCounter = 0;
     bool hurting = false;
 
+    public int minHealth;
+
     void Awake()
     {
         //maxHealth = 100.0f * PlayerModifiers.healthModifier;
@@ -32,6 +34,8 @@ public class Health : MonoBehaviour
         {
             Invoke("Start", 0.5f);
         }
+
+        minHealth = (int)(15 * PlayerModifiers.healthModifier);
     }
 
     // Update is called once per frame
@@ -39,18 +43,18 @@ public class Health : MonoBehaviour
     {
         //Debug.Log(PlayerModifiers.healthModifier);
         //Debug.Log(currHealth + " / " + maxHealth);
-        if (maxHealth < maxHealth * PlayerModifiers.healthModifier)
+        
+        if (maxHealth < 100.0f * PlayerModifiers.healthModifier)
         {
             maxHealth = 100.0f * PlayerModifiers.healthModifier;
             currHealth = maxHealth;
-            Debug.Log("oof");
         }
     }
 
 
 
     public void Damage (float damage) {
-        if (currHealth > 0)
+        if (currHealth > minHealth)
         {
             currHealth -= damage;
 
@@ -59,7 +63,7 @@ public class Health : MonoBehaviour
             DoHurting();
 
         }
-        if (currHealth <= 0)
+        if (currHealth <= minHealth)
         {
             this.gameObject.SetActive(false);
             SoundManager.PlaySound("PlayerDeath");
@@ -122,31 +126,15 @@ public class Health : MonoBehaviour
     {
         while (true)
         {
-            if (SceneManager.GetActiveScene().name == "Merchant")
+            if (currHealth < 100 * PlayerModifiers.healthModifier)
             {
-                if (currHealth < 100 * PlayerModifiers.healthModifier)
-                {
-                    currHealth += 10;
-                    healthBar.SetHealth(currHealth);
-                    yield return new WaitForSeconds(1);
-                }
-                else
-                {
-                    yield return null;
-                }
+                currHealth += 1;
+                healthBar.SetHealth(currHealth);
+                yield return new WaitForSeconds(1);
             }
             else
             {
-                if (currHealth < 100 * PlayerModifiers.healthModifier)
-                {
-                    currHealth += 1;
-                    healthBar.SetHealth(currHealth);
-                    yield return new WaitForSeconds(1);
-                }
-                else
-                {
-                    yield return null;
-                }
+                yield return null;
             }
         }
     }
@@ -164,7 +152,7 @@ public class Health : MonoBehaviour
         int hcount = 0;
         while (true)
         {
-            if (currHealth > 0 && hcount <= hits)
+            if (currHealth > minHealth && hcount <= hits)
             {
                 Damage(damage);
                 hcount++;

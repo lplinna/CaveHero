@@ -11,10 +11,12 @@ public class Elevator : MonoBehaviour
     public bool triggered;
     public CheckpointSystem checkpoint;
     public string currScene;
+    public DoNotDestroy doNot;
 
     void Awake()
     {
         MusicManager.setElevator(false);
+        doNot = GameObject.FindGameObjectWithTag("DoNotDestroy").GetComponent<DoNotDestroy>();
     }
 
     void Update()
@@ -67,6 +69,7 @@ public class Elevator : MonoBehaviour
 
             case "ThroneRoom": // Throne to Slime
                 Merchant.setNextScene("SlimeLevel");
+                doNot.setBeenToThrone(true);
                 break;
         }
         LoadingNextLevel.setLevelName("Merchant");

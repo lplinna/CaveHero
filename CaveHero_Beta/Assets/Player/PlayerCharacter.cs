@@ -12,7 +12,7 @@ public class PlayerCharacter : MonoBehaviour
     // current energy at the moment initialized at 0
     public float currEnergy = 0.0f;
     // max amount of energy
-    public float maxEnergy = 100.0f;
+    public float maxEnergy;
     public Vector3 playerwayP;
     // To create the visual energy bar
     public EnergyBar energyBar;
@@ -54,6 +54,7 @@ public class PlayerCharacter : MonoBehaviour
     void Start()
     {
         // sets current energy to max energy at start of scene
+        maxEnergy = 100.0f * PlayerModifiers.energyModifier;
         currEnergy = maxEnergy;
         playerPhysics = GetComponent<Rigidbody2D>();
         playerAnim = GetComponent<Animator>();
@@ -224,7 +225,11 @@ public class PlayerCharacter : MonoBehaviour
 
         }
 
-
+        if(maxEnergy < 100.0f * PlayerModifiers.energyModifier)
+        {
+            maxEnergy = 100.0f * PlayerModifiers.energyModifier;
+            currEnergy = maxEnergy;
+        }
         
 
         if (!isDialog && !onSlippery)
@@ -550,7 +555,7 @@ public class PlayerCharacter : MonoBehaviour
     {
         while (true)
         {
-            if(isSprint==true || currEnergy > 100)
+            if(isSprint==true || currEnergy > maxEnergy)
             {
                 yield break;
             }

@@ -20,7 +20,11 @@ public class EnergyBar : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (energy.maxEnergy > energyBar.maxValue)
+        {
+            energyBar.maxValue = energy.maxEnergy;
+            energyBar.value = energy.maxEnergy;
+        }
     }
 
     public void SetEnergy(float energy)

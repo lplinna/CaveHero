@@ -25,6 +25,31 @@ public class ChestBehavior : MonoBehaviour
         currHealth = 1f;
         chest.sprite = closed;
         alreadyOpened = false;
+        doNot = GameObject.FindGameObjectWithTag("DoNotDestroy").GetComponent<DoNotDestroy>();
+        if (doNot.getPoisonAttack() && this.gameObject.name.Contains("Poison"))
+        {
+            this.gameObject.SetActive(false);
+        }
+
+        if (doNot.getFireAttack() && this.gameObject.name.Contains("Fire"))
+        {
+            this.gameObject.SetActive(false);
+        }
+
+        if (doNot.getIceAttack() && this.gameObject.name.Contains("Ice"))
+        {
+            this.gameObject.SetActive(false);
+        }
+
+        if (doNot.getSapphire() && this.gameObject.name.Contains("Ending"))
+        {
+            this.gameObject.SetActive(false);
+        }
+    }
+
+    void Update()
+    {
+        
     }
 
     public void Damage(float amount)
@@ -35,7 +60,7 @@ public class ChestBehavior : MonoBehaviour
 
     public void Opened()
     {
-        doNot = GameObject.Find("Player").GetComponent<PlayerCharacter>().doNot;
+        //doNot = GameObject.Find("Player").GetComponent<PlayerCharacter>().doNot;
         if (!dead)
         {
             randomizeXY();
@@ -54,11 +79,12 @@ public class ChestBehavior : MonoBehaviour
                 doNot.setFireAttack(true);
                 message.FireAttackGained();
             }
-            else if (gameObject.name.Contains("Ending") && !doNot.getSapphire())
+            else if (gameObject.name.Contains("Ending"))
             {
                 randomizeXY();
                 Instantiate(sapphire, spawnObject, Quaternion.identity);
                 doNot.setSapphire(true);
+                message.Sapphire();
             }
             else
             {

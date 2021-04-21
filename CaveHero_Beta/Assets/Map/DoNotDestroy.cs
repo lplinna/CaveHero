@@ -44,6 +44,11 @@ public class DoNotDestroy : MonoBehaviour
         emeraldCount = 0;
         rubyCount = 0;
         diamondCount = 0;
+
+        //Remove
+        PlayerModifiers.healthModifier = 4;
+        PlayerModifiers.energyModifier = 3;
+        PlayerModifiers.damageModifier = 2;
     }
 
     public void setChallengeTrigger(bool trigger)
