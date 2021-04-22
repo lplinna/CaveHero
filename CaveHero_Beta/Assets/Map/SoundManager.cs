@@ -86,7 +86,7 @@ public class SoundManager : MonoBehaviour
                 break;
 
             case "Pickup":
-                audioSrc.volume = 0.3f;
+                audioSrc.volume = 0.5f;
                 audioSrc.PlayOneShot(pickup);
                 break;
 
