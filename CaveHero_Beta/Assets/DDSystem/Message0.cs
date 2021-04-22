@@ -315,7 +315,7 @@ public class Message0 : MonoBehaviour
         var dialogTexts = new List<DialogData>();
 
         //Add text here
-        dialogTexts.Add(new DialogData("/size:140//speed:0.04/You have gained the Poison Attack!", "Li"));
+        dialogTexts.Add(new DialogData("/speed:0.04/You have gained the Poison Attack!", "Li"));
         dialogTexts.Add(new DialogData("/speed:0.04/By clicking the E key, you can now poison your enemies!", "Li"));
         //End of text
 
@@ -331,7 +331,7 @@ public class Message0 : MonoBehaviour
         var dialogTexts = new List<DialogData>();
 
         //Add text here
-        dialogTexts.Add(new DialogData("/size:140//speed:0.04/You have gained the Ice Attack!", "Li"));
+        dialogTexts.Add(new DialogData("/speed:0.04/You have gained the Ice Attack!", "Li"));
         dialogTexts.Add(new DialogData("/speed:0.04/By clicking the R key, you can now freeze your enemies!", "Li"));
         //End of text
 
@@ -347,7 +347,7 @@ public class Message0 : MonoBehaviour
         var dialogTexts = new List<DialogData>();
 
         //Add text here
-        dialogTexts.Add(new DialogData("/size:100//speed:0.04/You have gained the Fire Attack!", "Li"));
+        dialogTexts.Add(new DialogData("/speed:0.04/You have gained the Fire Attack!", "Li"));
         dialogTexts.Add(new DialogData("/speed:0.04/By clicking the F key, you can now burn your enemies! But be wary! It comes at a cost!", "Li"));
         dialogTexts.Add(new DialogData("/speed:0.04/You will lose some energy and health each time you attempt to burn an enemy.", "Li"));
         //End of text
@@ -364,7 +364,7 @@ public class Message0 : MonoBehaviour
         var dialogTexts = new List<DialogData>();
 
         //Add text here
-        dialogTexts.Add(new DialogData("/size:100//speed:0.04/You have found the sapphire that the king needs!", "Li"));
+        dialogTexts.Add(new DialogData("/speed:0.04/You have found the sapphire that the king needs!", "Li"));
         dialogTexts.Add(new DialogData("/speed:0.04/Time to go forth and bring him the sapphire!", "Li"));
         //End of text
 
@@ -380,7 +380,7 @@ public class Message0 : MonoBehaviour
         var dialogTexts = new List<DialogData>();
 
         //Add text here
-        dialogTexts.Add(new DialogData("/size:100//speed:0.04/You have defeated the King!", "Li"));
+        dialogTexts.Add(new DialogData("/speed:0.04/You have defeated the King!", "Li"));
         dialogTexts.Add(new DialogData("/speed:0.04/Time to go back to the surface. Back to your home.", "Li"));
         dialogTexts.Add(new DialogData("/speed:0.04/Thank you for playing.", "Li"));
         //End of text

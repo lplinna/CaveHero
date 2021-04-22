@@ -20,8 +20,6 @@ public class PlayerCharacter : MonoBehaviour
     public InventoryCounter inventoryCounter;
     public GameObject inventoryMenu;
     public GameObject escMenu;
-    public GameObject optionsMenu;
-    public GameObject confirmationMenu;
 
 
     // Player Sprites
@@ -202,9 +200,9 @@ public class PlayerCharacter : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Escape))
         {
-            if (escMenu.activeInHierarchy)
+            if (escMenu.active)
             {
-                escMenu.SetActive(false);
+                ResumeEverything();
             }
             else
             {
@@ -578,7 +576,7 @@ public class PlayerCharacter : MonoBehaviour
     
     public void doRecover()
     {
-        StartCoroutine(doGain(1f / 30f, 0.8f));
+        StartCoroutine(doGain(1f / 30f, 0.4f));
     }
 
     // drains energy
@@ -618,51 +616,62 @@ public class PlayerCharacter : MonoBehaviour
             addToInventory(collision);
             collision.gameObject.SetActive(false);
         }
+
         if (collision.gameObject.CompareTag("Checkpoint"))
         {
             checkpoint.checkpointPos = transform.position;
             checkpoint.triggered = true;
         }
+
         if (collision.gameObject.CompareTag("Challenge"))
         {
             challenge.triggered = true;
         }
+
         if (collision.gameObject.CompareTag("SlipperyIce"))
         {
             onSlippery = true;
         }
+
         if (collision.gameObject.name.Contains("MerchantTrigger"))
         {
             GameObject.FindGameObjectWithTag("Merchant").GetComponent<Merchant>().enterShop();
         }
+
         if (collision.gameObject.name.Contains("GoBack"))
         {
             GameObject.FindGameObjectWithTag("Merchant").GetComponent<Merchant>().goBackConfirmationStart();
         }
+
         if (collision.gameObject.name.Contains("GoNext"))
         {
             GameObject.FindGameObjectWithTag("Merchant").GetComponent<Merchant>().goNextConfirmationStart();
         }
+
         if (collision.gameObject.name.Contains("LeftClick"))
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<Message0>().LeftClickTutorial();
             collision.gameObject.SetActive(false);
         }
+
         if (collision.gameObject.name.Contains("ShiftSprint"))
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<Message0>().ShiftSprintTutorial();
             collision.gameObject.SetActive(false);
         }
+
         if (collision.gameObject.name.Contains("Combat"))
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<Message0>().CombatTutorial();
             collision.gameObject.SetActive(false);
         }
+
         if (collision.gameObject.name.Contains("Chest"))
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<Message0>().ChestTutorial();
             collision.gameObject.SetActive(false);
         }
+
         if (collision.gameObject.name.Contains("EndGame") && doNot.getKingDead())
         {
             GameObject.FindGameObjectWithTag("Player").GetComponent<Message0>().EndGame();
@@ -703,28 +712,14 @@ public class PlayerCharacter : MonoBehaviour
         }
     }
 
-
-
-
     private bool isPaused;
     public void PauseEverything()
     {
         escMenu.SetActive(true);
-        optionsMenu.SetActive(true);
-        confirmationMenu.SetActive(false);
         Time.timeScale = 0;
         isPaused = true;
         inventoryMenu.SetActive(false);
         GetComponentInChildren<DialogManager>().Hide();
-    }
-
-
-
-
-    public void CloseGameConfirmation()
-    {
-        confirmationMenu.SetActive(true);
-        optionsMenu.SetActive(false);
     }
 
     public void CloseGame()

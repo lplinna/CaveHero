@@ -14,6 +14,8 @@ public class KingBehavior : MonoBehaviour
     public bool DebugFight;
     public Animator appearance;
     public GameObject spit;
+    public KingHealth kingHealth;
+    public Message0 message;
 
     // Start is called before the first frame update
     void Start()
@@ -74,6 +76,21 @@ public class KingBehavior : MonoBehaviour
             { 
                 FloatAndShoot();
             }
+        }
+
+        if (kingHealth.currentHealth <= 0)
+        {
+            Death();
+        }
+    }
+
+    private void Death()
+    {
+        doNot.setKingDead(true);
+        message.Throne3();
+        if(!message.gameObject.activeInHierarchy)
+        {
+            this.gameObject.SetActive(false);
         }
     }
 

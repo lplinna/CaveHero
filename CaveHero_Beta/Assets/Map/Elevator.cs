@@ -31,10 +31,13 @@ public class Elevator : MonoBehaviour
         {
             if (!triggered)
             {
-                StartCoroutine(SceneChange());
-                triggered = true;
-                checkpoint.triggered = false;
-                StopCoroutine(SceneChange());
+                if (!doNot.getBeenToThrone())
+                {
+                    StartCoroutine(SceneChange());
+                    triggered = true;
+                    checkpoint.triggered = false;
+                    StopCoroutine(SceneChange());
+                }
             }
         }
     }
@@ -70,6 +73,7 @@ public class Elevator : MonoBehaviour
             case "ThroneRoom": // Throne to Slime
                 Merchant.setNextScene("SlimeLevel");
                 doNot.setBeenToThrone(true);
+                
                 break;
         }
         LoadingNextLevel.setLevelName("Merchant");
