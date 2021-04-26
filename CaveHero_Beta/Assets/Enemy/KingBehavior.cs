@@ -15,6 +15,7 @@ public class KingBehavior : MonoBehaviour
     public Animator appearance;
     public GameObject spit;
     public KingHealth kingHealth;
+    public Sprite deathSprite;
     public Message0 message;
     public bool dieOnce;
 
@@ -91,6 +92,18 @@ public class KingBehavior : MonoBehaviour
             { 
                 FloatAndShoot();
             }
+            if(bossState == 2)
+            {
+                appearance.enabled = false;
+                var g = GetComponent<SpriteRenderer>().sprite;
+                g = deathSprite;
+                if(transform.localScale.y >  0)
+                {
+                    transform.localScale -= new Vector3(0f, 0.2f);
+                }
+                
+            }
+
         }
 
         if (kingHealth.currentHealth <= 0)
@@ -108,6 +121,7 @@ public class KingBehavior : MonoBehaviour
     {
         doNot.setKingDead(true);
         message.Throne3();
+        bossState = 2;
         if(!message.gameObject.activeInHierarchy)
         {
             this.gameObject.SetActive(false);
@@ -129,12 +143,15 @@ public class KingBehavior : MonoBehaviour
     {
         while (true)
         {
+            if (bossState == 2) { yield break; }
             bossState = 0;
             reftime = Time.time;
             yield return new WaitForSeconds(12f);
+            if (bossState == 2) { yield break; }
             reftime = Time.time;
             bossState = 1;
             yield return new WaitForSeconds(6f);
+            if (bossState == 2) { yield break; }
         }
 
 
@@ -242,6 +259,10 @@ public class KingBehavior : MonoBehaviour
 
     private void OnCollisionStay2D(Collision2D collision)
     {
+        if (dieOnce)
+        {
+            return;
+        }
         var reactor = collision.collider.gameObject;
         if (reactor.CompareTag("Player"))
         {
