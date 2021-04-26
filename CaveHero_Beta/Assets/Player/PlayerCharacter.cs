@@ -41,7 +41,6 @@ public class PlayerCharacter : MonoBehaviour
     public AudioSource audioSrc;
     public bool isMoving;
     public bool isAttackingAnim;
-    public bool muteAudio;
     public bool isDialog;
 
 
@@ -75,7 +74,6 @@ public class PlayerCharacter : MonoBehaviour
 
         audioSrc = GetComponent<AudioSource>();
         isMoving = false;
-        muteAudio = false;
         isAttackingAnim = false;
         slippery = 1f;
         onSlippery = false;
@@ -166,22 +164,6 @@ public class PlayerCharacter : MonoBehaviour
         if (!isAttackingAnim && !isDialog)
         {
             PlayerAnimation();
-        }
-
-
-        
-        if (Input.GetKeyDown("m"))
-        {
-            if (!muteAudio)
-            {
-                AudioListener.pause = true;
-                muteAudio = true;
-            }
-            else
-            {
-                AudioListener.pause = false;
-                muteAudio = false;
-            }
         }
 
         if (onSlippery)

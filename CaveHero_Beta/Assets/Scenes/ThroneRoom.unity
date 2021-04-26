@@ -11429,6 +11429,10 @@ PrefabInstance:
       propertyPath: slimeToGrandpa
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5416929873131880421, guid: d15b3809d66832b4eaf7f58e16cc5385, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 6327391077458177413, guid: d15b3809d66832b4eaf7f58e16cc5385, type: 3}
       propertyPath: m_Name
       value: Player

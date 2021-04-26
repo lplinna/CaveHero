@@ -16,12 +16,13 @@ public class KingBehavior : MonoBehaviour
     public GameObject spit;
     public KingHealth kingHealth;
     public Message0 message;
+    public bool dieOnce;
 
     // Start is called before the first frame update
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");
-
+        message = target.GetComponent<Message0>();
 
         if (!PlayerModifiers.hasNot)
         {
@@ -94,11 +95,16 @@ public class KingBehavior : MonoBehaviour
 
         if (kingHealth.currentHealth <= 0)
         {
-            Death();
+            if (!dieOnce)
+            {
+                Death();
+                dieOnce = true;
+            }
+
         }
     }
 
-    private void Death()
+    public void Death()
     {
         doNot.setKingDead(true);
         message.Throne3();

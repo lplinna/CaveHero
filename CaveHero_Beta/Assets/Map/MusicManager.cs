@@ -10,6 +10,7 @@ public class MusicManager : MonoBehaviour
     private static MusicManager instance;
     static bool elevator;
     static bool bossTrigger;
+    public bool muteAudio;
 
     void Awake()
     {
@@ -27,6 +28,7 @@ public class MusicManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        muteAudio = false;
         audioSrc = GetComponent<AudioSource>();
         slime = Resources.Load<AudioClip>("CrystalCaves");
         ice = Resources.Load<AudioClip>("IceMusic");
@@ -74,7 +76,23 @@ public class MusicManager : MonoBehaviour
 
     void Update()
     {
-        if(!isPlayingNow() && !elevator)
+        if (Input.GetKeyDown("m"))
+        {
+            if (!muteAudio)
+            {
+                AudioListener.pause = true;
+                muteAudio = true;
+                elevator = true;
+            }
+            else
+            {
+                AudioListener.pause = false;
+                muteAudio = false;
+                elevator = false;
+            }
+        }
+
+        if ( !elevator && !muteAudio && !isPlayingNow())
         {
             if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("TutorialLevel"))
             {

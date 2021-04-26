@@ -33,12 +33,6 @@ public class DoNotDestroy : MonoBehaviour
 
     private void Start()
     {
-        challengeRoomFinished = false;
-        iceKey = false;
-        lavaKey = false;
-        throneKey = false;
-        introduceMerchant = false;
-
         stoneCount = 0;
         amethystCount = 0;
         emeraldCount = 0;

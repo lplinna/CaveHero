@@ -8,6 +8,7 @@ public class SoundManager : MonoBehaviour
     public static AudioClip winChallenge, elevator, batDeath, beetleDeath;
     public static AudioClip coinClink, caveCollapse, pickup, chestOpening;
     static AudioSource audioSrc;
+    public static bool muteAudio;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,73 +28,89 @@ public class SoundManager : MonoBehaviour
 
 
         audioSrc = GetComponent<AudioSource>();
-        audioSrc.volume = 1f;
+        muteAudio = false;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (Input.GetKeyDown("m"))
+        {
+            if (!muteAudio)
+            {
+                AudioListener.pause = true;
+                muteAudio = true;
+            }
+            else
+            {
+                AudioListener.pause = false;
+                muteAudio = false;
+            }
+        }
     }
 
     public static void PlaySound (string clip)
     {
-        switch (clip)
+        if (!muteAudio)
         {
-            case "SpiderDeath":
-                audioSrc.volume = 0.4f;
-                audioSrc.PlayOneShot(spiderDeath);
-                break;
+            switch (clip)
+            {
+                case "SpiderDeath":
+                    audioSrc.volume = 0.4f;
+                    audioSrc.PlayOneShot(spiderDeath);
+                    break;
 
-            case "PlayerDeath":
-                audioSrc.volume = 0.6f;
-                audioSrc.PlayOneShot(playerDeath);
-                break;
+                case "PlayerDeath":
+                    audioSrc.volume = 0.6f;
+                    audioSrc.PlayOneShot(playerDeath);
+                    break;
 
-            case "HealthPotion":
-                audioSrc.volume = 0.4f;
-                audioSrc.PlayOneShot(healthPotion);
-                break;
+                case "HealthPotion":
+                    audioSrc.volume = 0.4f;
+                    audioSrc.PlayOneShot(healthPotion);
+                    break;
 
-            case "WinChallenge":
-                audioSrc.volume = 0.4f;
-                audioSrc.PlayOneShot(winChallenge);
-                break;
+                case "WinChallenge":
+                    audioSrc.volume = 0.4f;
+                    audioSrc.PlayOneShot(winChallenge);
+                    break;
 
-            case "ElevatorOpening":
-                audioSrc.volume = 1f;
-                audioSrc.PlayOneShot(elevator);
-                break;
+                case "ElevatorOpening":
+                    audioSrc.volume = 1f;
+                    audioSrc.PlayOneShot(elevator);
+                    break;
 
-            case "BatDeath":
-                audioSrc.volume = 0.5f;
-                audioSrc.PlayOneShot(batDeath);
-                break;
+                case "BatDeath":
+                    audioSrc.volume = 0.5f;
+                    audioSrc.PlayOneShot(batDeath);
+                    break;
 
-            case "BeetleDeath":
-                audioSrc.volume = 0.5f;
-                audioSrc.PlayOneShot(beetleDeath);
-                break;
+                case "BeetleDeath":
+                    audioSrc.volume = 0.5f;
+                    audioSrc.PlayOneShot(beetleDeath);
+                    break;
 
-            case "Cave":
-                audioSrc.volume = 0.5f;
-                audioSrc.PlayOneShot(caveCollapse);
-                break;
+                case "Cave":
+                    audioSrc.volume = 0.5f;
+                    audioSrc.PlayOneShot(caveCollapse);
+                    break;
 
-            case "Coin":
-                audioSrc.volume = 1f;
-                audioSrc.PlayOneShot(coinClink);
-                break;
+                case "Coin":
+                    audioSrc.volume = 1f;
+                    audioSrc.PlayOneShot(coinClink);
+                    break;
 
-            case "Pickup":
-                audioSrc.volume = 0.5f;
-                audioSrc.PlayOneShot(pickup);
-                break;
+                case "Pickup":
+                    audioSrc.volume = 0.5f;
+                    audioSrc.PlayOneShot(pickup);
+                    break;
 
-            case "Chest":
-                audioSrc.volume = 0.1f;
-                audioSrc.PlayOneShot(chestOpening);
-                break;
+                case "Chest":
+                    audioSrc.volume = 0.1f;
+                    audioSrc.PlayOneShot(chestOpening);
+                    break;
+            }
         }
+        
     }
 }

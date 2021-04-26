@@ -180,6 +180,8 @@ MonoBehaviour:
   DebugFight: 0
   appearance: {fileID: 0}
   spit: {fileID: 5613767429477842853, guid: 1310e463390f118479c273a7fab28954, type: 3}
+  kingHealth: {fileID: 2783347775371076839}
+  message: {fileID: 0}
 --- !u!50 &2783347775371076836
 Rigidbody2D:
   serializedVersion: 4

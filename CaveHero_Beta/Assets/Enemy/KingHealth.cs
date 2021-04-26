@@ -29,10 +29,9 @@ public class KingHealth : EnemyHealth
             Debug.Log(currentHealth);
 
         }
-        if (currentHealth <= 0)
+        else
         {
-            this.gameObject.SetActive(false);
-            Invoke("Death", 3f);
+            currentHealth = 0;
         }
     }
 
