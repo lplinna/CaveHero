@@ -32,6 +32,7 @@ public class EndTutorial : MonoBehaviour
         if (endTutorialTriggered)
         {
             MusicManager.stopPlaying();
+            MusicManager.muteAudio = true;
             SoundManager.PlaySound("Cave");
             shake.TriggerShake();
             yield return new WaitForSeconds(1f);

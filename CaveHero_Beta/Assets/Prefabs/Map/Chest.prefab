@@ -130,7 +130,8 @@ MonoBehaviour:
   emerald: {fileID: 1014937616318301606, guid: e8c3736c9f59d1b41be49e409128e305, type: 3}
   ruby: {fileID: 1909790653865126526, guid: d0104dd2eaf406a489070f58d01ca65b, type: 3}
   diamond: {fileID: 5188921473392777641, guid: 04ef31446a2f6c343b5c1e8625812bed, type: 3}
-  sapphire: {fileID: 0}
+  sapphire: {fileID: 3109532333619716396, guid: 1d3457348990ad743a93db2b7103a98e, type: 3}
+  gold: {fileID: 23514089335914084, guid: b92f5b010e1667a4ea5b3513a9801bdd, type: 3}
   closed: {fileID: 4061617432807807955, guid: c04741d0584330e4fa519b47dbe4e4d0, type: 3}
   broken: {fileID: -3695632875296075607, guid: c04741d0584330e4fa519b47dbe4e4d0, type: 3}
   smidge: {fileID: 3415855908799870861, guid: c04741d0584330e4fa519b47dbe4e4d0, type: 3}
@@ -140,9 +141,9 @@ MonoBehaviour:
   dead: 0
   alreadyOpened: 0
   elementalChest: 0
-  money: {fileID: 0}
   doNot: {fileID: 0}
   message: {fileID: 0}
+  spawnObject: {x: 0, y: 0, z: 0}
 --- !u!50 &819107498326554323
 Rigidbody2D:
   serializedVersion: 4

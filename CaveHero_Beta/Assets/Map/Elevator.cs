@@ -16,8 +16,6 @@ public class Elevator : MonoBehaviour
     void Awake()
     {
         MusicManager.setElevator(false);
-
-
         if (!PlayerModifiers.hasNot)
         {
             Debug.Log(this.gameObject.name + " awaiting doNot");

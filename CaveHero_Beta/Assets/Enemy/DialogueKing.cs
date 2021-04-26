@@ -10,6 +10,7 @@ public class DialogueKing : MonoBehaviour
     public GameObject fightKing;
     public SpriteRenderer drill;
     public Sprite drillWithGem;
+    public ThroneRoomHealth healthPotionSpawner;
 
     DialogManager b;
 
@@ -84,7 +85,7 @@ public class DialogueKing : MonoBehaviour
             var q = Instantiate(fightKing);
             q.transform.position = transform.position;
             b._current_Data.Character = "NONE";
-
+            healthPotionSpawner.startSpawn();
         }
 
         

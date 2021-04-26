@@ -5,7 +5,7 @@ using UnityEngine;
 public class ChestBehavior : MonoBehaviour
 {
     public float currHealth;
-    public GameObject healthPotion, stone, amethyst, emerald, ruby, diamond, sapphire;
+    public GameObject healthPotion, stone, amethyst, emerald, ruby, diamond, sapphire, gold;
 
     public Sprite closed, broken, smidge, partial, open;
     public SpriteRenderer chest;
@@ -14,7 +14,6 @@ public class ChestBehavior : MonoBehaviour
     public bool alreadyOpened;
     public bool elementalChest;
 
-    public MoneyCounter money;
     public DoNotDestroy doNot;
     public Message0 message;
     public Vector3 spawnObject;
@@ -63,7 +62,7 @@ public class ChestBehavior : MonoBehaviour
 
     void Update()
     {
-        
+
     }
 
     public void Damage(float amount)
@@ -102,30 +101,44 @@ public class ChestBehavior : MonoBehaviour
             }
             else
             {
-                int rewardChance = Random.Range(0,10);
-                if(rewardChance < 3) // 20% chance of Lots of Coin
+                float rewardChance = Random.value;
+                if (rewardChance <= 0.2) // 20% chance of Lots of Coin
                 {
-                    int rewardAmount = Random.Range(0, 10);
-                    if (rewardAmount < 2) // 10% of 100 gold
+                    float rewardAmount = Random.value;
+                    if (rewardAmount <= 0.1) // 10% of 100 gold
                     {
-                        money.AddMoney(100);
+                        for(int i = 0; i < 100; i++)
+                        {
+                            randomizeXY();
+                            Instantiate(gold, spawnObject, Quaternion.identity);
+                        }
                     }
-                    else if (rewardAmount < 6) // 50% chance of 50 gold
+                    else if (rewardAmount <= 0.5) // 50% chance of 50 gold
                     {
-                        money.AddMoney(50);
+                        for (int i = 0; i < 50; i++)
+                        {
+                            randomizeXY();
+                            Instantiate(gold, spawnObject, Quaternion.identity);
+                        }
                     }
                     else // 25 gold
                     {
-                        money.AddMoney(25);
+                        for (int i = 0; i < 25; i++)
+                        {
+                            randomizeXY();
+                            Instantiate(gold, spawnObject, Quaternion.identity);
+                        }
                     }
 
                 }
-                else if (rewardChance < 6) { // 50% chance of Health Potions
-                    int rewardAmount = Random.Range(0, 10);
-                    if (rewardAmount < 6) // 50% of 2 health potions
+                else if (rewardChance <= 0.5)
+                { // 50% chance of Health Potions
+                    float rewardAmount = Random.value;
+                    if (rewardAmount <= 5) // 50% of 2 health potions
                     {
                         for (int i = 0; i < 2; i++)
                         {
+                            randomizeXY();
                             Instantiate(healthPotion, spawnObject, Quaternion.identity);
                         }
                     }
@@ -136,32 +149,36 @@ public class ChestBehavior : MonoBehaviour
                 }
                 else // Stones Dropped
                 {
-                    int rewardAmount = Random.Range(0, 10);
-                    if (rewardAmount < 2) // 2 Diamond
+                    float rewardAmount = Random.value;
+                    if (rewardAmount <= 0.1) // 10% of 2 Diamond
                     {
                         for (int i = 0; i < 2; i++)
                         {
+                            randomizeXY();
                             Instantiate(diamond, spawnObject, Quaternion.identity);
                         }
                     }
-                    else if (rewardAmount < 4) // 4 Emerald
+                    else if (rewardAmount <= 0.25) // 25% of 4 Emerald
                     {
                         for (int i = 0; i < 4; i++)
                         {
+                            randomizeXY();
                             Instantiate(emerald, spawnObject, Quaternion.identity);
                         }
                     }
-                    else if (rewardAmount < 6) // 6 Ruby
+                    else if (rewardAmount <= 0.35) // 35% of 6 Ruby
                     {
                         for (int i = 0; i < 6; i++)
                         {
+                            randomizeXY();
                             Instantiate(ruby, spawnObject, Quaternion.identity);
                         }
                     }
-                    else if (rewardAmount < 8) // 8 Amethyst
+                    else if (rewardAmount <= 0.6) // 60% of 8 Amethyst
                     {
                         for (int i = 0; i < 8; i++)
                         {
+                            randomizeXY();
                             Instantiate(amethyst, spawnObject, Quaternion.identity);
                         }
                     }
@@ -169,6 +186,7 @@ public class ChestBehavior : MonoBehaviour
                     {
                         for (int i = 0; i < 10; i++)
                         {
+                            randomizeXY();
                             Instantiate(stone, spawnObject, Quaternion.identity);
                         }
                     }
@@ -178,7 +196,7 @@ public class ChestBehavior : MonoBehaviour
         }
     }
 
-   
+
     IEnumerator breakOpen()
     {
         if (!alreadyOpened)
@@ -194,7 +212,7 @@ public class ChestBehavior : MonoBehaviour
             Opened();
             alreadyOpened = true;
         }
-        
+
     }
 
     public void randomizeXY()

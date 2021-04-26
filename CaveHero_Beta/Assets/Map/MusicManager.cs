@@ -10,7 +10,7 @@ public class MusicManager : MonoBehaviour
     private static MusicManager instance;
     static bool elevator;
     static bool bossTrigger;
-    public bool muteAudio;
+    public static bool muteAudio;
 
     void Awake()
     {
@@ -38,7 +38,7 @@ public class MusicManager : MonoBehaviour
         tutorial = Resources.Load<AudioClip>("TutorialMusic");
         boss = Resources.Load<AudioClip>("BossMusic");
 
-
+        bossTrigger = false;
         elevator = false;
 
         if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("TutorialLevel"))
@@ -59,7 +59,7 @@ public class MusicManager : MonoBehaviour
         }
         else if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("ThroneRoom"))
         {
-            if (boss)
+            if (bossTrigger)
             {
                 PlayMusic("Boss");
             }
@@ -92,7 +92,7 @@ public class MusicManager : MonoBehaviour
             }
         }
 
-        if ( !elevator && !muteAudio && !isPlayingNow())
+        if (!elevator && !muteAudio && !isPlayingNow())
         {
             if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("TutorialLevel"))
             {
@@ -112,7 +112,14 @@ public class MusicManager : MonoBehaviour
             }
             if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("ThroneRoom"))
             {
-                PlayMusic("ThroneRoom");
+                if (bossTrigger)
+                {
+                    PlayMusic("Boss");
+                }
+                else
+                {
+                    PlayMusic("ThroneRoom");
+                }
             }
             if (SceneManager.GetActiveScene() == SceneManager.GetSceneByName("Merchant"))
             {

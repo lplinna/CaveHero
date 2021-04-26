@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-
-
-
 public class EnemyHealth : MonoBehaviour
 {
     public float currentHealth;
     public GameObject pickup;
-
+    public Vector3 spawnObject;
+    public GameObject gold;
     public AudioSource audioSrc;
 
     void Start()
@@ -49,28 +47,45 @@ public class EnemyHealth : MonoBehaviour
             if (name.Contains("Spider"))
             {
                 SoundManager.PlaySound("SpiderDeath");
-                int randomGain = (int)Random.Range(4, 8);
-                GameObject.FindGameObjectWithTag("Money").GetComponent<MoneyCounter>().AddMoney(randomGain);
+                int randomAmount = (int)Random.Range(4, 8);
+                spawnGold(randomAmount);
             }
 
             if (name.Contains("Bat"))
             {
                 SoundManager.PlaySound("BatDeath");
-                int randomGain = (int)Random.Range(2, 6);
-                GameObject.FindGameObjectWithTag("Money").GetComponent<MoneyCounter>().AddMoney(randomGain);
+                int randomAmount = (int)Random.Range(2, 6);
+                spawnGold(randomAmount);
             }
 
             if (name.Contains("Beetle"))
             {
                 SoundManager.PlaySound("BeetleDeath");
-                int randomGain = (int)Random.Range(6, 10);
-                GameObject.FindGameObjectWithTag("Money").GetComponent<MoneyCounter>().AddMoney(randomGain);
+                int randomAmount = (int)Random.Range(6, 10);
+                spawnGold(randomAmount);
             }
 
             doDrops();
         }
     }
 
+    public void randomizeXY()
+    {
+        float randomY = Random.Range(0f, 0.75f);
+        float randomX = Random.Range(-0.50f, 0.50f);
+        spawnObject.x = this.gameObject.transform.position.x - randomX;
+        spawnObject.y = this.gameObject.transform.position.y - randomY;
+        spawnObject.z = this.gameObject.transform.position.z;
+    }
+
+    public void spawnGold(int amount)
+    {
+        for (int i = 0; i < amount; i++)
+        {
+            randomizeXY();
+            Instantiate(gold, spawnObject, Quaternion.identity);
+        }
+    }
 
     public void doDrops()
     {

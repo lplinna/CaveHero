@@ -433,6 +433,7 @@ MonoBehaviour:
   fightKing: {fileID: 2783347775371076833, guid: f886f1e4be9135b4bb7f86dc26c0c401, type: 3}
   drill: {fileID: 2130350505}
   drillWithGem: {fileID: -6267844718549991842, guid: b50ef366c0b9f1e4d94b3249f95e9d40, type: 3}
+  healthPotionSpawner: {fileID: 809694563}
 --- !u!1001 &331046732
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5827,6 +5828,57 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 24d5eb309f55262478f8feef13bdc23b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &809694561
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 809694562}
+  - component: {fileID: 809694563}
+  m_Layer: 0
+  m_Name: HealthPotionSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &809694562
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809694561}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 15
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &809694563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 809694561}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28e08e681465d284084cab7cb114200d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rangeX1: -12
+  rangeX2: 12
+  rangeY1: -6
+  rangeY2: 6
+  randX: 0
+  randY: 0
+  whereToSpawn: {x: 0, y: 0}
+  healthPot: {fileID: 1381075947213038704, guid: 3293a1575fbc1f641b95fcf903126a07, type: 3}
 --- !u!1 &843368938
 GameObject:
   m_ObjectHideFlags: 0
@@ -11525,6 +11577,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6327391077458177413, guid: d15b3809d66832b4eaf7f58e16cc5385, type: 3}
   m_PrefabInstance: {fileID: 1834393952}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1834393955 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4345501556487705125, guid: d15b3809d66832b4eaf7f58e16cc5385, type: 3}
+  m_PrefabInstance: {fileID: 1834393952}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1834393954}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 21fd61ea719bef641a168547ebad8f73, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &1865527917 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 2418701300093404652, guid: 0baf52075d60b324d80df9c7908b55b5, type: 3}
@@ -11943,7 +12006,7 @@ GameObject:
   - component: {fileID: 2130350507}
   m_Layer: 0
   m_Name: DrillSprite
-  m_TagString: Untagged
+  m_TagString: EndTutorial
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -12053,6 +12116,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   endGame: {fileID: 1249731529}
   doNot: {fileID: 0}
+  healthPotionSpawner: {fileID: 809694563}
+  finished: 0
+  message: {fileID: 1834393955}
 --- !u!1001 &4322545800678056437
 PrefabInstance:
   m_ObjectHideFlags: 0

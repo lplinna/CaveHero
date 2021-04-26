@@ -38,18 +38,28 @@ public class SoundManager : MonoBehaviour
         {
             if (!muteAudio)
             {
-                AudioListener.pause = true;
-                muteAudio = true;
+                stopAudio();
             }
             else
             {
-                AudioListener.pause = false;
-                muteAudio = false;
+                resumeAudio();
             }
         }
     }
 
-    public static void PlaySound (string clip)
+    public static void stopAudio()
+    {
+        AudioListener.pause = true;
+        muteAudio = true;
+    }
+
+    public static void resumeAudio()
+    {
+        AudioListener.pause = false;
+        muteAudio = false;
+    }
+
+    public static void PlaySound(string clip)
     {
         if (!muteAudio)
         {
@@ -111,6 +121,6 @@ public class SoundManager : MonoBehaviour
                     break;
             }
         }
-        
+
     }
 }

@@ -19,7 +19,7 @@ public class MerchantMessage : MonoBehaviour
     {
         DialogManager.gameObject.SetActive(false);
         doNot = GameObject.FindGameObjectWithTag("DoNotDestroy").GetComponent<DoNotDestroy>();
-        
+
     }
 
     void Update()
@@ -49,7 +49,7 @@ public class MerchantMessage : MonoBehaviour
     }
 
 
-   
+
 
 
     public void Advance()
@@ -69,13 +69,15 @@ public class MerchantMessage : MonoBehaviour
     public void Introduction()
     {
         DialogManager.gameObject.SetActive(true);
-        
+
         var dialogTexts = new List<DialogData>();
 
         //Add text here
-        dialogTexts.Add(new DialogData("\"/speed:0.03/I've never seen you before. You new here or something?\"","Li"));
+        dialogTexts.Add(new DialogData("\"/speed:0.03/I've never seen you before. You new here or something?\"", "Li"));
         dialogTexts.Add(new DialogData("\"/speed:0.03/You aren't exactly what I normally see in these mineshafts.\"", "Li"));
         dialogTexts.Add(new DialogData("\"/speed:0.03/Well, nonetheless, the name's Axol! And welcome to my traveling shop.\"", "Li"));
+        dialogTexts.Add(new DialogData("\"/speed:0.03/I sell some upgrades for you to keep you alive in these mineshafts.\"", "Li"));
+        dialogTexts.Add(new DialogData("\"/speed:0.03/I also sell the keys to the mineshafts. They do cost both money and materials to make though.\"", "Li"));
         dialogTexts.Add(new DialogData("\"/speed:0.03/I've been here many years,/wait:0.3/ and know many things.\"", "Li"));
         dialogTexts.Add(new DialogData("\"/speed:0.03/I heard the cave collapse./wait:0.6/Was that you? I hope you are okay.", "Li"));
         dialogTexts.Add(new DialogData("\"/speed:0.03/If you're running errands for the king, take this key. Go through that door to the right. Get mining!\"", "Li"));
@@ -207,7 +209,7 @@ public class MerchantMessage : MonoBehaviour
             if (!doNot.getThroneKey() && doNot.getLavaKey() && doNot.getIceKey())
             {
                 //Add text here
-                dialogTexts.Add(new DialogData("\"That is the key to the final elevator for the next mineshaft! Good luck!\"", "Li"));
+                dialogTexts.Add(new DialogData("\"That is the key to the final elevator for the next leg of your journey! Good luck!\"", "Li"));
                 //End of text
             }
             else if (!doNot.getIceKey())

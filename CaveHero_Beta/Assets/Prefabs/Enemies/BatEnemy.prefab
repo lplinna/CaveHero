@@ -164,6 +164,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 40
   pickup: {fileID: 1381075947213038704, guid: 3293a1575fbc1f641b95fcf903126a07, type: 3}
+  spawnObject: {x: 0, y: 0, z: 0}
+  gold: {fileID: 23514089335914084, guid: b92f5b010e1667a4ea5b3513a9801bdd, type: 3}
   audioSrc: {fileID: 0}
 --- !u!95 &2775126230855140347
 Animator:

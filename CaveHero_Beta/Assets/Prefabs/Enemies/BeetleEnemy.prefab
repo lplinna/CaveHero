@@ -76,7 +76,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -1823539731
-  m_SortingLayer: 2
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -2135271436459858007, guid: 9ceb12e1756d38e4bad4527d37f98cd6, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -150,6 +150,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   beetleSprite: {fileID: 0}
+  beetleType: 0
+  onFire: 0
 --- !u!114 &4940531537442786077
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -164,6 +166,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 100
   pickup: {fileID: 1381075947213038704, guid: 3293a1575fbc1f641b95fcf903126a07, type: 3}
+  spawnObject: {x: 0, y: 0, z: 0}
+  gold: {fileID: 23514089335914084, guid: b92f5b010e1667a4ea5b3513a9801bdd, type: 3}
   audioSrc: {fileID: 0}
 --- !u!82 &913584980970379068
 AudioSource:

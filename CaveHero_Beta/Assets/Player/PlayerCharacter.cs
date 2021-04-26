@@ -47,6 +47,8 @@ public class PlayerCharacter : MonoBehaviour
     public DoNotDestroy doNot;
     public GameObject tempDoNot;
     public GameObject tempInv;
+
+    private bool endGameOnce;
     // Start is called before the first frame update
     void Start()
     {
@@ -79,6 +81,8 @@ public class PlayerCharacter : MonoBehaviour
         onSlippery = false;
         isPaused = false;
         escMenu.SetActive(false);
+        MusicManager.muteAudio = false;
+        endGameOnce = false;
 
 
         if(!PlayerModifiers.hasInventory)
@@ -654,8 +658,12 @@ public class PlayerCharacter : MonoBehaviour
 
         if (collision.gameObject.name.Contains("EndGame") && doNot.getKingDead())
         {
-            GameObject.FindGameObjectWithTag("Player").GetComponent<Message0>().EndGame();
-            collision.gameObject.SetActive(false);
+            if (!endGameOnce)
+            {
+                GameObject.FindGameObjectWithTag("Player").GetComponent<Message0>().EndGame();
+                endGameOnce = true;
+                GameObject.FindGameObjectWithTag("EndTutorial").GetComponent<EndGame>().finished = true;
+            }
         }
     }
 
@@ -698,6 +706,10 @@ public class PlayerCharacter : MonoBehaviour
         escMenu.SetActive(true);
         isPaused = true;
         inventoryMenu.SetActive(false);
+        MusicManager.stopPlaying();
+        MusicManager.muteAudio = true;
+        SoundManager.stopAudio();
+
         try
         {
             GetComponentInChildren<DialogManager>().Hide();
@@ -719,13 +731,16 @@ public class PlayerCharacter : MonoBehaviour
         doNot.hasReset = true;
         inventoryMenu.SetActive(false);
 
+        MusicManager.muteAudio = false;
+        SoundManager.resumeAudio();
     }
     public void ResumeEverything()
     {
         Time.timeScale = 1f;
         isPaused = false;
         escMenu.SetActive(false);
+
+        MusicManager.muteAudio = false;
+        SoundManager.resumeAudio();
     }
-
-
 }
