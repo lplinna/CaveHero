@@ -23,13 +23,27 @@ public class Message0 : MonoBehaviour
 
        
 
-        try
+        if(!PlayerModifiers.hasNot)
         {
-            doNot = GameObject.FindGameObjectWithTag("DoNotDestroy").GetComponent<DoNotDestroy>();
-        }
-        catch
-        {
+            Debug.Log(this.gameObject.name + " awaiting doNot");
             Invoke("Awake", 0.001f);
+            return;
+        }
+        else
+        {
+            doNot = PlayerModifiers.doNot;
+        }
+
+
+        if (!PlayerModifiers.hasNot)
+        {
+            Debug.Log(this.gameObject.name + " awaiting doNot");
+            Invoke("Awake", 0.001f);
+            return;
+        }
+        else
+        {
+            doNot = PlayerModifiers.doNot;
         }
 
         try

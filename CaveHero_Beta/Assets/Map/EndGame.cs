@@ -11,16 +11,18 @@ public class EndGame : MonoBehaviour
     {
 
 
-        try
+        if (!PlayerModifiers.hasNot)
         {
-            doNot = GameObject.FindGameObjectWithTag("DoNotDestroy").GetComponent<DoNotDestroy>();
+            Debug.Log(this.gameObject.name + " awaiting doNot");
+            Invoke("Start", 0.001f);
+            return;
         }
-        catch
+        else
         {
-            Invoke("Start", 0.2f);
+            doNot = PlayerModifiers.doNot;
         }
-        
-        
+
+
     }
 
     // Update is called once per frame

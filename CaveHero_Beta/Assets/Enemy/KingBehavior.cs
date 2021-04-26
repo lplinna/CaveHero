@@ -21,7 +21,21 @@ public class KingBehavior : MonoBehaviour
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player");
-        doNot = GameObject.FindGameObjectWithTag("DoNotDestroy").GetComponent<DoNotDestroy>();
+
+
+        if (!PlayerModifiers.hasNot)
+        {
+            Debug.Log(this.gameObject.name + " awaiting doNot");
+            Invoke("Start", 0.001f);
+            return;
+        }
+        else
+        {
+            doNot = PlayerModifiers.doNot;
+        }
+
+
+
         body = GetComponent<Rigidbody2D>();
         reftime = Time.time;
         this.gameObject.SetActive(false);

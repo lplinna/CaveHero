@@ -33,7 +33,19 @@ public class ChallengeRoom : MonoBehaviour
         changeEnemySprites(Enemy2);
         changeEnemySprites(Enemy3);
 
-        challengeRoomTrigger = GameObject.FindGameObjectWithTag("DoNotDestroy").GetComponent<DoNotDestroy>();
+
+        if (!PlayerModifiers.hasNot)
+        {
+            Debug.Log(this.gameObject.name + " awaiting doNot");
+            Invoke("Start", 0.001f);
+            return;
+        }
+        else
+        {
+            challengeRoomTrigger = PlayerModifiers.doNot;
+        }
+
+        
         this.gameObject.transform.position.Set(changedPositionX, changedPositionY, changedPositionZ);
     }
 
@@ -49,7 +61,7 @@ public class ChallengeRoom : MonoBehaviour
     {
         if (!debugMode)
         {
-            challengeRoomTrigger = GameObject.FindGameObjectWithTag("DoNotDestroy").GetComponent<DoNotDestroy>();
+            challengeRoomTrigger = PlayerModifiers.doNot;
             if (triggered && !challengeRoomTrigger.getChallengeTrigger())
             {
                 tilemapWall.SetActive(true);

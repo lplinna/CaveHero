@@ -8,6 +8,7 @@ public class AoEActorBehavior : MonoBehaviour
     public float longevity;
     public float startTime;
     public float hurtTime;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -37,7 +38,7 @@ public class AoEActorBehavior : MonoBehaviour
         {
             if ((Time.time - hurtTime) > 0.02f)
             {
-                collision.gameObject.GetComponent<EnemyHealth>().Damage(4f);
+                collision.gameObject.GetComponent<EnemyHealth>().Damage(4f * PlayerModifiers.damageModifier);
                 hurtTime = Time.time;
             }
             

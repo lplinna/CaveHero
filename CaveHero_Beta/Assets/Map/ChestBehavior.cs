@@ -25,7 +25,21 @@ public class ChestBehavior : MonoBehaviour
         currHealth = 1f;
         chest.sprite = closed;
         alreadyOpened = false;
-        doNot = GameObject.FindGameObjectWithTag("DoNotDestroy").GetComponent<DoNotDestroy>();
+
+
+        if (!PlayerModifiers.hasNot)
+        {
+            Debug.Log(this.gameObject.name + " awaiting doNot");
+            Invoke("Start", 0.001f);
+            return;
+        }
+        else
+        {
+            doNot = PlayerModifiers.doNot;
+        }
+
+
+
         if (doNot.getPoisonAttack() && this.gameObject.name.Contains("Poison"))
         {
             this.gameObject.SetActive(false);

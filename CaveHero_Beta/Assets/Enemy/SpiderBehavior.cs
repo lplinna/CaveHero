@@ -151,7 +151,7 @@ public class SpiderBehavior : MonoBehaviour
         if (readyFire)
         {
             FirePellet(towards.normalized);
-            Invoke("ReadyToShoot", 1.2f);
+            Invoke("ReadyToShoot", 2.2f);
             readyFire = false;
         }
 

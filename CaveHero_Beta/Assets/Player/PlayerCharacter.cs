@@ -83,28 +83,26 @@ public class PlayerCharacter : MonoBehaviour
         escMenu.SetActive(false);
 
 
+        if(!PlayerModifiers.hasInventory)
+        {
+            PlayerModifiers.inventory = GameObject.Instantiate(tempInv);
+            PlayerModifiers.hasInventory = true;
+        }
+        inventoryMenu = PlayerModifiers.inventory.transform.GetChild(0).gameObject;
+        inventoryCounter = PlayerModifiers.inventory.GetComponent<InventoryCounter>();
+        inventoryMenu.SetActive(false);
 
-        try
-        {
-            doNot = GameObject.FindGameObjectWithTag("DoNotDestroy").GetComponent<DoNotDestroy>();
-        }
-        catch
-        {
-            doNot = GameObject.Instantiate(tempDoNot).GetComponent<DoNotDestroy>();
-        }
 
-        try
+        if (!PlayerModifiers.hasNot)
         {
-            inventoryMenu = GameObject.FindGameObjectWithTag("Inventory").transform.GetChild(0).gameObject;
-            inventoryCounter = GameObject.FindGameObjectWithTag("Inventory").GetComponent<InventoryCounter>();
-            inventoryMenu.SetActive(false);
+            PlayerModifiers.doNot = GameObject.Instantiate(tempDoNot).GetComponent<DoNotDestroy>();
+            PlayerModifiers.hasNot = true;
         }
-        catch
-        {
-            GameObject.Instantiate(tempInv);
+        doNot = PlayerModifiers.doNot;
+       
 
-            Start();
-        }
+
+        
 
 
         if (doNot.hasReset)
@@ -200,7 +198,7 @@ public class PlayerCharacter : MonoBehaviour
     {
         if (Input.GetKey(KeyCode.Escape))
         {
-            if (escMenu.active)
+            if (escMenu.activeSelf)
             {
                 ResumeEverything();
             }
@@ -716,10 +714,14 @@ public class PlayerCharacter : MonoBehaviour
     public void PauseEverything()
     {
         escMenu.SetActive(true);
-        Time.timeScale = 0;
         isPaused = true;
         inventoryMenu.SetActive(false);
-        GetComponentInChildren<DialogManager>().Hide();
+        try
+        {
+            GetComponentInChildren<DialogManager>().Hide();
+        }
+        catch { }
+        Time.timeScale = 0;
     }
 
     public void CloseGame()

@@ -16,8 +16,22 @@ public class Elevator : MonoBehaviour
     void Awake()
     {
         MusicManager.setElevator(false);
-        doNot = GameObject.FindGameObjectWithTag("DoNotDestroy").GetComponent<DoNotDestroy>();
+
+
+        if (!PlayerModifiers.hasNot)
+        {
+            Debug.Log(this.gameObject.name + " awaiting doNot");
+            Invoke("Awake", 0.001f);
+            return;
+        }
+        else
+        {
+            doNot = PlayerModifiers.doNot;
+        }
+
+
     }
+
 
     void Update()
     {

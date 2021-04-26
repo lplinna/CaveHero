@@ -35,24 +35,17 @@ public class Merchant : MonoBehaviour
 
 
 
-        try
+        if (!PlayerModifiers.hasNot)
         {
-            doNot = GameObject.FindGameObjectWithTag("DoNotDestroy").GetComponent<DoNotDestroy>();
+            Debug.Log(this.gameObject.name + " awaiting doNot");
+            Invoke("Awake", 0.001f);
+            return;
         }
-        catch
+        else
         {
-           Invoke("Awake",0.2f);
+            doNot = PlayerModifiers.doNot;
+            inventory = PlayerModifiers.inventory.GetComponent<InventoryCounter>();
         }
-
-        try
-        {
-            inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<InventoryCounter>();
-        }
-        catch
-        {
-            Invoke("Awake", 0.2f);
-        }
-
     }
 
 

@@ -22,14 +22,22 @@ public class PlayerAttackMining : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").GetComponentInChildren<PlayerCharacter>();
         pickaxe = GameObject.FindGameObjectWithTag("Pickaxe");
-        try
+
+
+        if (!PlayerModifiers.hasNot)
         {
-            doNot = GameObject.FindGameObjectWithTag("DoNotDestroy").GetComponent<DoNotDestroy>();
+            Debug.Log(this.gameObject.name + " awaiting doNot");
+            Invoke("Start", 0.001f);
+            return;
         }
-        catch
+        else
         {
-            Invoke("Start", 0.2f);
+            doNot = PlayerModifiers.doNot;
         }
+
+
+
+
         poisonAttack = false;
         iceAttack = false;
         fireAttack = false;
@@ -42,6 +50,9 @@ public class PlayerAttackMining : MonoBehaviour
             fireIndicator = GameObject.Find("UI").transform.GetChild(5).gameObject;
         }
         catch { Invoke("Start", 0.5f); }
+
+
+            
     }
 
 

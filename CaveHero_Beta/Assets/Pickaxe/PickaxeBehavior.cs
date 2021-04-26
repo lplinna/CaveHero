@@ -18,6 +18,9 @@ public class PickaxeBehavior : MonoBehaviour
     {
         canHit = true;
         audioSrc = GetComponent<AudioSource>();
+        //PlayerModifiers.damageModifier = 300f;
+        //PlayerModifiers.healthModifier = 300f;
+        //PlayerModifiers.energyModifier = 300f;
     }
 
 
@@ -33,7 +36,7 @@ public class PickaxeBehavior : MonoBehaviour
 
 
 
-
+    
 
 
 

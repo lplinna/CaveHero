@@ -643,7 +643,7 @@ MonoBehaviour:
   muteAudio: 0
   isDialog: 0
   doNot: {fileID: 0}
-  tempDoNot: {fileID: 8223919525519690165, guid: e9c20d553b351a849b4db452f98cc456, type: 3}
+  tempDoNot: {fileID: 3351909559396303460, guid: 11cbb674318f51f4589bec7a2d260c26, type: 3}
   tempInv: {fileID: 8551592812475088389, guid: 4ca2f69de5dde5a49bf52478b11c2260, type: 3}
   forward: 0
   shop: {fileID: 0}

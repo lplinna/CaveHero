@@ -20040,6 +20040,10 @@ PrefabInstance:
       propertyPath: inventoryMenu
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6327391077458177415, guid: d15b3809d66832b4eaf7f58e16cc5385, type: 3}
+      propertyPath: escMenu
+      value: 
+      objectReference: {fileID: 1284608919}
     - target: {fileID: 6327391077458177464, guid: d15b3809d66832b4eaf7f58e16cc5385, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -68252,6 +68256,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1215935813672248733, guid: d1f77f27a03cd754281dde09dc5879c0, type: 3}
   m_PrefabInstance: {fileID: 1283888453}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1284608919 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 682922996708062031, guid: d15b3809d66832b4eaf7f58e16cc5385, type: 3}
+  m_PrefabInstance: {fileID: 975121132}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1292149932
 PrefabInstance:
