@@ -53,7 +53,7 @@ public class EndGame : MonoBehaviour
                 MusicManager.muteAudio = true;
                 SoundManager.stopAudio();
 
-                LoadingNextLevel.setLevelName("TitleScreen");
+                LoadingNextLevel.setLevelName("EndGame");
                 SceneManager.LoadScene("LoadingNextLevel");
             }
         }

@@ -385,22 +385,4 @@ public class Message0 : MonoBehaviour
         DialogManager.Show(dialogTexts);
         StartCoroutine(AwaitDLOG());
     }
-
-    public void EndGame()
-    {
-        DialogManager.gameObject.SetActive(true);
-        this.GetComponent<PlayerCharacter>().isDialog = true;
-        this.GetComponent<AudioSource>().Stop();
-        var dialogTexts = new List<DialogData>();
-
-        //Add text here
-        dialogTexts.Add(new DialogData("/speed:0.04/You have defeated the King!", "Li"));
-        dialogTexts.Add(new DialogData("/speed:0.04/Time to go back to the surface. Back to your home.", "Li"));
-        dialogTexts.Add(new DialogData("/speed:0.04/Thank you for playing.", "Li"));
-        //End of text
-        endGame = true;
-        DialogManager.Show(dialogTexts);
-        StartCoroutine(AwaitDLOG());
-    }
-
 }

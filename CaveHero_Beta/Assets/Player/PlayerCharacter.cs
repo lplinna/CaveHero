@@ -660,7 +660,6 @@ public class PlayerCharacter : MonoBehaviour
         {
             if (!endGameOnce)
             {
-                GameObject.FindGameObjectWithTag("Player").GetComponent<Message0>().EndGame();
                 endGameOnce = true;
                 GameObject.FindGameObjectWithTag("EndTutorial").GetComponent<EndGame>().finished = true;
             }
