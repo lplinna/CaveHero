@@ -50,12 +50,14 @@ public class SoundManager : MonoBehaviour
     public static void stopAudio()
     {
         AudioListener.pause = true;
+        AudioListener.volume = 0;
         muteAudio = true;
     }
 
     public static void resumeAudio()
     {
         AudioListener.pause = false;
+        AudioListener.volume = 1;
         muteAudio = false;
     }
 
@@ -76,7 +78,7 @@ public class SoundManager : MonoBehaviour
                     break;
 
                 case "HealthPotion":
-                    audioSrc.volume = 0.4f;
+                    audioSrc.volume = 0.2f;
                     audioSrc.PlayOneShot(healthPotion);
                     break;
 

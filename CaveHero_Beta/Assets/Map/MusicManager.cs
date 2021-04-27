@@ -81,12 +81,14 @@ public class MusicManager : MonoBehaviour
             if (!muteAudio)
             {
                 AudioListener.pause = true;
+                AudioListener.volume = 0;
                 muteAudio = true;
                 elevator = true;
             }
             else
             {
                 AudioListener.pause = false;
+                AudioListener.volume = 1;
                 muteAudio = false;
                 elevator = false;
             }

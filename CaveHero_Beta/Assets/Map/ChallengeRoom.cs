@@ -65,6 +65,7 @@ public class ChallengeRoom : MonoBehaviour
             if (triggered && !challengeRoomTrigger.getChallengeTrigger())
             {
                 tilemapWall.SetActive(true);
+                endChallengeWall.SetActive(true);
                 triggered = false;
                 this.gameObject.transform.position = Vector3.zero;
                 Debug.Log("Active");
@@ -172,7 +173,6 @@ public class ChallengeRoom : MonoBehaviour
                     Debug.Log("Finished!!");
                     SoundManager.PlaySound("WinChallenge");
                     tilemapWall.SetActive(false);
-
                     endChallengeWall.SetActive(false);
                     challengeRoomTrigger.setChallengeTrigger(true);
                 }
@@ -186,7 +186,6 @@ public class ChallengeRoom : MonoBehaviour
                 Debug.Log("Finished!!");
                 SoundManager.PlaySound("WinChallenge");
                 tilemapWall.SetActive(false);
-
                 endChallengeWall.SetActive(false);
                 challengeRoomTrigger.setChallengeTrigger(true);
             }
