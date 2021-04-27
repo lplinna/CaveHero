@@ -245,8 +245,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currentHealth: 1000
   pickup: {fileID: 0}
+  spawnObject: {x: 0, y: 0, z: 0}
+  gold: {fileID: 0}
   audioSrc: {fileID: 0}
-  maxHealth: 1000
+  maxHealth: 1500
   healthBar: {fileID: 2783347776638665494}
 --- !u!95 &442278697838228153
 Animator:
