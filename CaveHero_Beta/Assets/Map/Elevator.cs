@@ -43,13 +43,27 @@ public class Elevator : MonoBehaviour
         {
             if (!triggered)
             {
-                if (!doNot.getBeenToThrone())
+                if(SceneManager.GetActiveScene().name == "ThroneRoom")
                 {
-                    StartCoroutine(SceneChange());
-                    triggered = true;
-                    checkpoint.triggered = false;
-                    StopCoroutine(SceneChange());
+                    if(!doNot.getBeenToThrone())
+                    {
+                        StartCoroutine(SceneChange());
+                        triggered = true;
+                        checkpoint.triggered = false;
+                        StopCoroutine(SceneChange());
+                    }
                 }
+                else
+                {
+                    if (doNot.getChallengeTrigger())
+                    {
+                        StartCoroutine(SceneChange());
+                        triggered = true;
+                        checkpoint.triggered = false;
+                        StopCoroutine(SceneChange());
+                    }
+                }
+                
             }
         }
     }
