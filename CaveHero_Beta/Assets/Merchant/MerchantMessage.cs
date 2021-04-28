@@ -87,7 +87,7 @@ public class MerchantMessage : MonoBehaviour
         dialogTexts.Add(new DialogData("\"/speed:0.03/I've never seen you before. You new here or something?\"", "Li"));
         dialogTexts.Add(new DialogData("\"/speed:0.03/You aren't exactly what I normally see in these mineshafts.\"", "Li"));
         dialogTexts.Add(new DialogData("\"/speed:0.03/Well, nonetheless, the name's Axol! And welcome to my traveling shop.\"", "Li"));
-        dialogTexts.Add(new DialogData("\"/speed:0.03/I sell some upgrades for you to keep you alive in these mineshafts.\"", "Li"));
+        dialogTexts.Add(new DialogData("\"/speed:0.03/I sell some upgrades that can keep you alive in these mineshafts.\"", "Li"));
         dialogTexts.Add(new DialogData("\"/speed:0.03/I also sell the keys to the mineshafts. They do cost both money and materials to make though.\"", "Li"));
         dialogTexts.Add(new DialogData("\"/speed:0.03/I've been here many years,/wait:0.3/ and know many things.\"", "Li"));
         dialogTexts.Add(new DialogData("\"/speed:0.03/I heard the cave collapse./wait:0.6/Was that you? I hope you are okay.", "Li"));
