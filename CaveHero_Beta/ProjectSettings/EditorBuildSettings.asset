@@ -32,4 +32,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/LoadingNextLevel.unity
     guid: fa97dc0959667504fbf389b0c94c7f7b
+  - enabled: 1
+    path: Assets/Scenes/EndGame.unity
+    guid: a54dc79c85c766941a014b18c19b9487
   m_configObjects: {}

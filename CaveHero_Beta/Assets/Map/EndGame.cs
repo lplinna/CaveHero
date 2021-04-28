@@ -45,19 +45,21 @@ public class EndGame : MonoBehaviour
             }
         }
 
-        if(message.endGame)
-        { 
-            if (finished)
-            {
-                MusicManager.stopPlaying();
-                MusicManager.muteAudio = true;
-                SoundManager.stopAudio();
-
-                LoadingNextLevel.setLevelName("EndGame");
-                SceneManager.LoadScene("LoadingNextLevel");
-            }
-        }
-
         
+        if (finished)
+        {
+            StartCoroutine(FinalTransition());
+        }
+    }
+
+    IEnumerator FinalTransition()
+    {
+        yield return new WaitForSeconds(1f);
+        MusicManager.stopPlaying();
+        MusicManager.muteAudio = true;
+        SoundManager.stopAudio();
+
+        LoadingNextLevel.setLevelName("EndGame");
+        SceneManager.LoadScene("LoadingNextLevel");
     }
 }

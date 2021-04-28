@@ -184,6 +184,7 @@ public class Health : MonoBehaviour
             {
                 SoundManager.PlaySound("HealthPotion");
                 currHealth += 20;
+                healthBar.SetHealth(currHealth);
                 collision.gameObject.SetActive(false);
             }
         }
