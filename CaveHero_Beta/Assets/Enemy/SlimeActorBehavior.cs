@@ -11,44 +11,48 @@ public class SlimeActorBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        longevity = 500 + (Random.Range(0,3000));
+        longevity = 2 + Random.Range(3, 7);
         transform.position = actee.transform.position;
         transform.parent = actee.transform;
-
+        StartCoroutine(PoisonYou(longevity));
     }
 
 
 
+    public IEnumerator PoisonYou(int l)
+    {
+        while (true)
+        {
+            if (longevity >= 0)
+            {
+                longevity -= 1;
+                DoHurt();
+                yield return new WaitForSeconds(0.2f);
+            }
+            else
+            {
+                actee.GetComponent<SpriteRenderer>().color = new Color(1f, 1f, 1f);
+                GameObject.Destroy(this);
+                break;
+            }
+        }
+    }
 
 
-
+    void DoHurt()
+    {
+        float damage = 1f * PlayerModifiers.damageModifier;
+        if (actee.name.Contains("King")) actee.GetComponent<EnemyHealth>().Damage(damage * 5f);
+        else actee.GetComponent<EnemyHealth>().Damage(damage);
+    }
 
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(longevity);
-        longevity -= 1;
-
-
 
         var p = actee.GetComponent<SpriteRenderer>();
-        
-
-        if (longevity%80 == 0)
-        {
-            
-            if (actee.name.Contains("Player")) actee.GetComponent<Health>().Damage(1f);
-            else actee.GetComponent<EnemyHealth>().Damage(1f);
-        }
         p.color = new Color(0.5f, Mathf.Sin(Time.time * 15), 0.5f);
-        
-        
-        if (longevity <= 0)
-        {
-            p.color = new Color(1f, 1f, 1f);
-            Object.Destroy(this);
-        }
-        
+ 
     }
 }

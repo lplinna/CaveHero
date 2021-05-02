@@ -47,6 +47,7 @@ public class KingBehavior : MonoBehaviour
         {
             this.gameObject.SetActive(true);
             StartCoroutine(BOSSMIND());
+            CalculateKingHealth();
         }
 
 
@@ -76,13 +77,19 @@ public class KingBehavior : MonoBehaviour
 
 
 
-
+    void CalculateKingHealth()
+    {
+        kingHealth.currentHealth = 7000f * PlayerModifiers.damageModifier;
+        kingHealth.maxHealth = kingHealth.currentHealth;
+        kingHealth.healthBar.healthBar.maxValue = kingHealth.maxHealth;
+        kingHealth.healthBar.healthBar.value = kingHealth.maxHealth;
+    }
     
    
     // Update is called once per frame
     void FixedUpdate()
     {
-        if(doNot.getBeenToThrone() == true || DebugFight)
+        if (doNot.getBeenToThrone() == true || DebugFight)
         {
             if (bossState == 0)
             {
@@ -141,6 +148,7 @@ public class KingBehavior : MonoBehaviour
 
     private IEnumerator BOSSMIND()
     {
+        CalculateKingHealth();
         while (true)
         {
             if (bossState == 2) { yield break; }

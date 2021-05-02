@@ -11,7 +11,15 @@ public class KingHealthbar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        health = GameObject.Find("FightKing").GetComponent<Health>();
+        try
+        {
+            health = GameObject.Find("FightKing").GetComponent<Health>();
+        }
+        catch
+        {
+            Invoke("Start", 0.02f);
+            return;
+        }
         healthBar = GetComponent<Slider>();
         healthBar.maxValue = health.maxHealth;
         healthBar.value = health.maxHealth;

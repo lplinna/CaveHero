@@ -14,8 +14,11 @@ public class KingHealth : EnemyHealth
     // Start is called before the first frame update
     void Start()
     {
-        maxHealth = 1000.0f;
-        currentHealth = maxHealth;
+        if (currentHealth == 0f)
+        {
+            maxHealth = 1000.0f;
+            currentHealth = maxHealth;
+        }
 
     }
 

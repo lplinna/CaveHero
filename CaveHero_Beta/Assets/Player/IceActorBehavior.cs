@@ -13,10 +13,10 @@ public class IceActorBehavior : MonoBehaviour
     void Start()
     {
 
-        longevity = 500 + (Random.Range(0, 3000));
+        longevity = 50 + (Random.Range(0, 100));
         transform.position = actee.transform.position;
         transform.parent = actee.transform;
-        freezeEnemy();
+        StartCoroutine(FreezeUnfreeze(longevity));
     }
 
 
@@ -47,17 +47,14 @@ public class IceActorBehavior : MonoBehaviour
     }
 
 
-    // Update is called once per frame
-    void Update()
+
+    public IEnumerator FreezeUnfreeze(float l)
     {
-        longevity -= 1;
-        
-
-        if (longevity <= 0)
-        {
-            unfreezeEnemy();
-            GameObject.Destroy(this);
-        }
-
+        freezeEnemy();
+        yield return new WaitForSeconds(l * (1f / 30f));
+        unfreezeEnemy();
+        GameObject.Destroy(this);
     }
+
+ 
 }

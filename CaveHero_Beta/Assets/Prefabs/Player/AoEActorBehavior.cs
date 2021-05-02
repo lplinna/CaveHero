@@ -38,7 +38,16 @@ public class AoEActorBehavior : MonoBehaviour
         {
             if ((Time.time - hurtTime) > 0.02f)
             {
-                collision.gameObject.GetComponent<EnemyHealth>().Damage(4f * PlayerModifiers.damageModifier);
+                float damage = 4f * PlayerModifiers.damageModifier;
+                var ehealth = collision.gameObject.GetComponent<EnemyHealth>();
+                if (collision.gameObject.CompareTag("King"))
+                {
+                    ehealth.Damage(damage * 0.7f);
+                }
+                else
+                {
+                    ehealth.Damage(damage);
+                }
                 hurtTime = Time.time;
             }
             

@@ -11,11 +11,12 @@ public class FireActorBehavior : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        longevity = 5000 + (Random.Range(0,3000));
+        longevity = 20 + Random.Range(10, 30);
         transform.position = actee.transform.position;
         transform.position += new Vector3(0, 0, -9f);
         transform.parent = actee.transform;
 
+        StartCoroutine(OnFire(longevity));
     }
 
 
@@ -61,37 +62,51 @@ public class FireActorBehavior : MonoBehaviour
             actee.GetComponent<BeetleBehavior>().onFire = false;
             actee.transform.rotation = Quaternion.AngleAxis(0, Vector3.forward);
         }
+        
+        if(actee.tag == "Bat")
+        {
+            actee.GetComponent<BatBehavior>().onFire = false;
+            actee.transform.rotation = Quaternion.AngleAxis(0, Vector3.forward);
+        }
 
 
     }
 
+    public IEnumerator OnFire(int l)
+    {
+        while(true)
+        {
 
+            if(longevity <= 0)
+            {
+                this.gameObject.GetComponent<ParticleSystem>().Stop();
+                endFieryAgony();
+                Object.Destroy(this);
+                break;
+            }
+            else
+            {
+                longevity -= 1;
+                DoHurt();
+                yield return new WaitForSeconds(1f / 7.5f);
+            }
 
+        }
+    }
 
+    void DoHurt()
+    {
+        float damage = Random.Range(0, 3) * PlayerModifiers.damageModifier;
+        if (actee.name.Contains("King")) actee.GetComponent<EnemyHealth>().Damage(damage * 5f);
+        else actee.GetComponent<EnemyHealth>().Damage(damage);
+    }
 
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(longevity);
-        longevity -= 1;
-
-
+        
+       
         doFieryAgony();
-
-
-        if (longevity%80 == 0)
-        {
-            if(actee.name.Contains("Player")) actee.GetComponent<Health>().Damage(Random.Range(0, 3));
-            else actee.GetComponent<EnemyHealth>().Damage(Random.Range(0, 3));
-        }
-
-
-        if (longevity <= 0)
-        {
-            this.gameObject.GetComponent<ParticleSystem>().Stop();
-            endFieryAgony();
-            Object.Destroy(this);
-        }
         
     }
 }
